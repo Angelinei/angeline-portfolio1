@@ -375,42 +375,49 @@ function Archive({ project, lang }: { project: Project; lang: Lang }) {
     <Group title={t.work}>
       {entries.length > 0 ? (
         <ul className="border-t border-black/10">
-          {entries.map((entry) => (
-            <li
-              key={entry.title}
-              className="grid gap-2 border-b border-black/10 py-5 sm:grid-cols-[64px_1fr_auto] sm:gap-6"
-            >
-              <span className="text-xs text-black/45 tabular-nums">{entry.year ?? "—"}</span>
-              <div>
-                <h3 className="text-lg font-medium tracking-[-0.03em]">{entry.title}</h3>
-                {entry.description && (
-                  <p className="mt-1 text-sm leading-6 text-black/65">{entry.description[lang]}</p>
-                )}
-                {entry.tags && entry.tags.length > 0 && (
-                  <p className="mt-2 text-[11px] text-black/45">{entry.tags.join(" · ")}</p>
-                )}
-              </div>
-              <div className="flex gap-2 sm:justify-end sm:self-start">
-                {entry.href && (
-                  <ExternalLink
-                    href={entry.href}
-                    newTab={t.newTab}
-                    className="rounded-full px-3.5 py-2 text-[11px] leading-none text-white transition-opacity hover:opacity-70"
-                    style={{ backgroundColor: project.ink }}
-                  >
-                    {t.project} ↗
-                  </ExternalLink>
-                )}
-                {entry.github && (
-                  <ExternalLink
-                    href={entry.github}
-                    newTab={t.newTab}
-                    className="rounded-full border px-3.5 py-2 text-[11px] leading-none transition-opacity hover:opacity-70"
-                    style={{ borderColor: project.ink, color: project.ink }}
-                  >
-                    {t.code} ↗
-                  </ExternalLink>
-                )}
+          {entries.map((entry, i) => (
+            <li key={`${i}-${entry.title}`} className="border-b border-black/10">
+              {entry.group && entry.group[lang] !== entries[i - 1]?.group?.[lang] && (
+                <p
+                  className={`pb-1 text-[10px] tracking-[0.18em] uppercase ${i === 0 ? "pt-5" : "pt-10"}`}
+                  style={{ color: project.ink }}
+                >
+                  {entry.group[lang]}
+                </p>
+              )}
+              <div className="grid gap-2 py-5 sm:grid-cols-[64px_1fr_auto] sm:gap-6">
+                <span className="text-xs text-black/45 tabular-nums">{entry.year ?? "—"}</span>
+                <div>
+                  <h3 className="text-lg font-medium tracking-[-0.03em]">{entry.title}</h3>
+                  {entry.description && (
+                    <p className="mt-1 text-sm leading-6 text-black/65">{entry.description[lang]}</p>
+                  )}
+                  {entry.tags && entry.tags.length > 0 && (
+                    <p className="mt-2 text-[11px] text-black/45">{entry.tags.join(" · ")}</p>
+                  )}
+                </div>
+                <div className="flex gap-2 sm:justify-end sm:self-start">
+                  {entry.href && (
+                    <ExternalLink
+                      href={entry.href}
+                      newTab={t.newTab}
+                      className="rounded-full px-3.5 py-2 text-[11px] leading-none text-white transition-opacity hover:opacity-70"
+                      style={{ backgroundColor: project.ink }}
+                    >
+                      {t.project} ↗
+                    </ExternalLink>
+                  )}
+                  {entry.github && (
+                    <ExternalLink
+                      href={entry.github}
+                      newTab={t.newTab}
+                      className="rounded-full border px-3.5 py-2 text-[11px] leading-none transition-opacity hover:opacity-70"
+                      style={{ borderColor: project.ink, color: project.ink }}
+                    >
+                      {t.code} ↗
+                    </ExternalLink>
+                  )}
+                </div>
               </div>
             </li>
           ))}
