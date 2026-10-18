@@ -138,7 +138,7 @@ export function SiteHeader({
   );
 }
 
-/** Giant italic line scrolling behind a case. */
+/** Giant line scrolling behind a case. */
 export function Marquee({
   text,
   color,
@@ -148,7 +148,7 @@ export function Marquee({
   text: string;
   color: string;
   state?: "active" | "before" | "after";
-  /** First screen: a wider band, so the portrait can sit on the letters. */
+  /** Same band as the opening screen: heavy sans, tight, tall enough to run through the case. */
   large?: boolean;
 }) {
   return (
@@ -569,7 +569,7 @@ export function ProjectVisual({
           fill
           sizes={sizes}
           preload={preload}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
         />
       )}
 

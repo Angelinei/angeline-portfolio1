@@ -202,7 +202,7 @@ export default function CasesStage({
           key={slide.id}
           text={slide.marquee}
           color={slide.marqueeColor}
-          large={slide.id === "approach"}
+          large={slide.id === "approach" || slide.id === "skillxtube"}
           state={i === current ? "active" : i < current ? "before" : "after"}
         />
       ))}
@@ -266,7 +266,11 @@ export default function CasesStage({
         </span>
       </div>
 
-      <Stalker visible={hovered === active.id} color={active.ink} label={active.cta?.[lang] ?? ui[lang].view} />
+      <Stalker
+        visible={hovered === active.id}
+        color={active.id === "skillxtube" ? active.marqueeColor : active.ink}
+        label={active.cta?.[lang] ?? ui[lang].view}
+      />
 
       <p className="sr-only" role="status" aria-live="polite">
         {active.nav[lang]}
