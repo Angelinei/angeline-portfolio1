@@ -14,7 +14,8 @@ const projects = [
     description:
       "An AI-powered learning experience that transforms online videos into structured learning paths, notes and exercises.",
     tags: ["AI", "EdTech", "Product design", "Next.js"],
-    href: "/studio/skillxtube",
+    href: "https://skillxtube.vercel.app/",
+    cta: "site",
     accent: "#A78BFA",
   },
   {
@@ -26,7 +27,8 @@ const projects = [
     description:
       "A personal digital studio exploring how generative AI can accelerate research, design decisions, development and creative direction.",
     tags: ["Generative AI", "Web design", "Vercel", "GitHub"],
-    href: "/studio/portfolio",
+    href: "https://github.com/Angelinei/angeline-portfolio1",
+    cta: "code",
     accent: "#7DD3FC",
   },
   {
@@ -38,10 +40,11 @@ const projects = [
     description:
       "A growing collection of experiments around prompting, AI-assisted workflows, learning experiences and practical adoption.",
     tags: ["AI workflows", "Prompting", "Learning design"],
-    href: "/studio/ai-experiments",
+    href: "https://github.com/Angelinei",
+    cta: "github",
     accent: "#F0ABFC",
   },
-];
+] as const;
 
 const copy = {
   EN: {
@@ -52,7 +55,7 @@ const copy = {
       "A selection of digital products, AI experiments and learning experiences. Each project starts with a question and develops through research, iteration and making.",
     index: "PROJECT INDEX",
     count: "SELECTED PROJECTS",
-    view: "EXPLORE PROJECT",
+    cta: { site: "VISIT THE SITE", code: "VIEW THE CODE", github: "VIEW ON GITHUB" },
     about: "A little about the approach",
     aboutText:
       "I work at the intersection of generative AI, learning design and digital products. I use AI as a creative and technical partner, with a focus on useful outcomes rather than technology for its own sake.",
@@ -70,7 +73,7 @@ const copy = {
       "Une sélection de produits numériques, d'expérimentations IA et d'expériences pédagogiques. Chaque projet part d'une question, puis évolue grâce à la recherche, aux itérations et à la pratique.",
     index: "INDEX DES PROJETS",
     count: "PROJETS SÉLECTIONNÉS",
-    view: "DÉCOUVRIR LE PROJET",
+    cta: { site: "VOIR LE SITE", code: "VOIR LE CODE", github: "VOIR SUR GITHUB" },
     about: "Une approche, en quelques mots",
     aboutText:
       "Je travaille à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques. J'utilise l'IA comme partenaire créatif et technique, avec une priorité : produire quelque chose d'utile, pas simplement technologique.",
@@ -178,15 +181,17 @@ export default function StudioPage() {
                   </div>
                 </div>
 
-                <Link
+                <a
                   href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between border-b border-white/20 pb-2 text-[10px] tracking-[0.12em] text-white/70 transition hover:border-violet-300 hover:text-violet-200 md:justify-self-end"
                 >
-                  {t.view}
+                  {t.cta[project.cta]}
                   <span className="ml-4 text-base transition-transform group-hover:translate-x-1">
                     ↗
                   </span>
-                </Link>
+                </a>
               </article>
             ))}
           </div>
@@ -216,7 +221,9 @@ export default function StudioPage() {
           <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <p className="text-white/50">{t.contactText}</p>
             <a
-              href="mailto:contact@angelinepoitout.com"
+              href="https://www.linkedin.com/in/angelinepoitoutpro/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-fit border-b border-violet-300 pb-2 text-xs tracking-[0.12em] text-violet-200 transition hover:text-white"
             >
               {t.contactLink}

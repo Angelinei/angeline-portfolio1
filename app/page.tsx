@@ -14,7 +14,8 @@ const projects = [
     description:
       "Un produit EdTech qui explore comment l'IA peut transformer des vidéos en parcours d'apprentissage actifs.",
     tags: ["AI", "Learning", "Product"],
-    href: "/studio/skillxtube",
+    href: "https://skillxtube.vercel.app/",
+    cta: "site",
     color: "#DCD3FF",
     ink: "#5940A5",
     kind: "skill",
@@ -28,7 +29,8 @@ const projects = [
     description:
       "Un laboratoire vivant où direction artistique, IA générative et développement web se rencontrent.",
     tags: ["Generative AI", "Web", "Vercel"],
-    href: "/studio/portfolio",
+    href: "https://github.com/Angelinei/angeline-portfolio1",
+    cta: "code",
     color: "#C9E7FF",
     ink: "#164E87",
     kind: "portfolio",
@@ -42,12 +44,13 @@ const projects = [
     description:
       "Des expérimentations autour du prompting, des workflows augmentés et de l'adoption concrète de l'IA.",
     tags: ["AI workflows", "Prompting", "Pedagogy"],
-    href: "/studio/ai-experiments",
+    href: "https://github.com/Angelinei",
+    cta: "github",
     color: "#FFE0C8",
     ink: "#974A20",
     kind: "lab",
   },
-];
+] as const;
 
 const translations = {
   EN: {
@@ -57,7 +60,7 @@ const translations = {
     intro:
       "A growing collection of digital products, AI experiments and learning experiences. Built through curiosity, thoughtful design and a hands-on approach.",
     index: "A SELECTION OF WORK",
-    explore: "EXPLORE CASE",
+    cta: { site: "VISIT THE SITE", code: "VIEW THE CODE", github: "VIEW ON GITHUB" },
     aboutLabel: "THE SPACE BETWEEN",
     aboutTitle: "Technology is the tool. Human potential is the point.",
     about:
@@ -66,7 +69,6 @@ const translations = {
     contactTitle: "Let's make it real.",
     contactLink: "LET'S TALK ↗",
     footer: "INDEPENDENT STUDIO · FRANCE & BEYOND",
-    back: "BACK HOME ↗",
   },
   FR: {
     label: "STUDIO CRÉATIF INDÉPENDANT",
@@ -75,7 +77,7 @@ const translations = {
     intro:
       "Une collection vivante de produits numériques, d'expérimentations IA et d'expériences pédagogiques. Des projets façonnés par la curiosité, le design et la pratique.",
     index: "UNE SÉLECTION DE PROJETS",
-    explore: "VOIR LE PROJET",
+    cta: { site: "VOIR LE SITE", code: "VOIR LE CODE", github: "VOIR SUR GITHUB" },
     aboutLabel: "ENTRE DEUX MONDES",
     aboutTitle: "La technologie est un outil. Le potentiel humain, le but.",
     about:
@@ -84,11 +86,10 @@ const translations = {
     contactTitle: "Donnons-lui vie.",
     contactLink: "ÉCHANGEONS ↗",
     footer: "STUDIO INDÉPENDANT · FRANCE & AILLEURS",
-    back: "ACCUEIL ↗",
   },
 };
 
-export default function StudioPage() {
+export default function HomePage() {
   const [lang, setLang] = useState<"FR" | "EN">("FR");
   const t = translations[lang];
 
@@ -159,7 +160,12 @@ export default function StudioPage() {
                   {project.number}
                 </p>
 
-                <Link href={project.href} className="group block">
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
                   <div
                     className="relative mb-6 flex aspect-[1.35/1] items-center justify-center overflow-hidden rounded-sm transition-transform duration-500 group-hover:scale-[0.99]"
                     style={{ backgroundColor: project.color }}
@@ -224,7 +230,7 @@ export default function StudioPage() {
                   <p className="mt-2 font-serif text-lg italic text-black/55">
                     {project.subtitle}
                   </p>
-                </Link>
+                </a>
 
                 <div className="flex flex-col justify-between gap-6 md:py-1">
                   <p className="max-w-lg text-sm leading-7 text-black/65">
@@ -239,12 +245,14 @@ export default function StudioPage() {
                         {tag}
                       </span>
                     ))}
-                    <Link
+                    <a
                       href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="ml-auto self-center text-[10px] tracking-[0.1em] transition hover:text-[#7660D8]"
                     >
-                      {t.explore} ↗
-                    </Link>
+                      {t.cta[project.cta]} ↗
+                    </a>
                   </div>
                 </div>
               </article>
@@ -280,7 +288,7 @@ export default function StudioPage() {
             <a
               href="https://www.linkedin.com/in/angelinepoitoutpro/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-fit border-b border-[#7660D8] pb-2 text-xs tracking-[0.12em] text-[#5940A5] transition hover:text-black"
             >
               {t.contactLink}
@@ -291,9 +299,6 @@ export default function StudioPage() {
         <footer className="flex flex-col gap-4 border-t border-black/10 py-6 text-[10px] tracking-[0.1em] text-black/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 ANGÉLINE POITOUT</p>
           <p>{t.footer}</p>
-          <Link href="/" className="transition hover:text-[#7660D8]">
-            {t.back}
-          </Link>
         </footer>
       </div>
     </main>
