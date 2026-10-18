@@ -21,6 +21,7 @@ export type Visual =
   | "cemetery"
   | "lab"
   | "path"
+  | "writing"
   | "contact";
 
 /** Rich text: paragraphs and/or a bullet list. */
