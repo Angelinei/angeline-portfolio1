@@ -1,8 +1,10 @@
-
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { TranslationNote } from "@/components/translation-note";
+import { requireLocale } from "@/lib/locale";
+import { aboutQuotes, contactOffer, services } from "@/lib/services";
+import { pageMetadata } from "@/lib/site";
 
 const projects = [
   {
@@ -11,8 +13,10 @@ const projects = [
     year: "2026",
     title: "Skillxtube",
     subtitle: "Learn differently.",
-    description:
-      "Un produit EdTech qui explore comment l'IA peut transformer des vidéos en parcours d'apprentissage actifs.",
+    description: {
+      en: "An AI-powered learning experience that transforms online videos into structured learning paths, notes and exercises.",
+      fr: "Un produit EdTech qui explore comment l'IA peut transformer des vidéos en parcours d'apprentissage actifs.",
+    },
     tags: ["AI", "Learning", "Product"],
     href: "https://skillxtube.vercel.app/",
     cta: "site",
@@ -26,8 +30,10 @@ const projects = [
     year: "2026",
     title: "The Portfolio",
     subtitle: "A studio in the making.",
-    description:
-      "Un laboratoire vivant où direction artistique, IA générative et développement web se rencontrent.",
+    description: {
+      en: "A personal digital studio exploring how generative AI can accelerate research, design decisions, development and creative direction.",
+      fr: "Un laboratoire vivant où direction artistique, IA générative et développement web se rencontrent.",
+    },
     tags: ["Generative AI", "Web", "Vercel"],
     href: "https://github.com/Angelinei/angeline-portfolio1",
     cta: "code",
@@ -41,8 +47,10 @@ const projects = [
     year: "2026",
     title: "AI Learning Lab",
     subtitle: "Curiosity into capability.",
-    description:
-      "Des expérimentations autour du prompting, des workflows augmentés et de l'adoption concrète de l'IA.",
+    description: {
+      en: "A growing collection of experiments around prompting, AI-assisted workflows, learning experiences and practical adoption.",
+      fr: "Des expérimentations autour du prompting, des workflows augmentés et de l'adoption concrète de l'IA.",
+    },
     tags: ["AI workflows", "Prompting", "Pedagogy"],
     href: "https://github.com/Angelinei",
     cta: "github",
@@ -53,67 +61,77 @@ const projects = [
 ] as const;
 
 const translations = {
-  EN: {
+  en: {
     label: "INDEPENDENT CREATIVE STUDIO",
     headline: "Curiosity,",
     headline2: "made tangible.",
     intro:
       "A growing collection of digital products, AI experiments and learning experiences. Built through curiosity, thoughtful design and a hands-on approach.",
     index: "A SELECTION OF WORK",
+    casesLink: "CASES",
     cta: { site: "VISIT THE SITE", code: "VIEW THE CODE", github: "VIEW ON GITHUB" },
     aboutLabel: "THE SPACE BETWEEN",
     aboutTitle: "Technology is the tool. Human potential is the point.",
     about:
       "My work brings together generative AI, learning design and digital strategy. I explore how ideas become useful experiences — from the first question to the working product.",
+    servicesLabel: "SERVICES",
+    servicesTitle: "Training, integration, workflows.",
     contactLabel: "SOMETHING IN MIND?",
     contactTitle: "Let's make it real.",
     contactLink: "LET'S TALK ↗",
-    footer: "INDEPENDENT STUDIO · FRANCE & BEYOND",
+    contactText: "AI training, learning experiences and digital product projects.",
+    title: "Angéline Poitout — Generative AI, learning and digital products",
+    description:
+      "Independent studio at the intersection of generative AI, learning design and digital products: training, experiments and learning experiences.",
   },
-  FR: {
+  fr: {
     label: "STUDIO CRÉATIF INDÉPENDANT",
     headline: "La curiosité",
     headline2: "prend forme.",
     intro:
       "Une collection vivante de produits numériques, d'expérimentations IA et d'expériences pédagogiques. Des projets façonnés par la curiosité, le design et la pratique.",
     index: "UNE SÉLECTION DE PROJETS",
+    casesLink: "CASES",
     cta: { site: "VOIR LE SITE", code: "VOIR LE CODE", github: "VOIR SUR GITHUB" },
     aboutLabel: "ENTRE DEUX MONDES",
     aboutTitle: "La technologie est un outil. Le potentiel humain, le but.",
     about:
       "Mon travail relie IA générative, ingénierie pédagogique et stratégie digitale. J'explore comment transformer une idée en expérience utile, de la première question au produit fonctionnel.",
+    servicesLabel: "SERVICES",
+    servicesTitle: "Training, integration, workflows.",
     contactLabel: "UNE IDÉE EN TÊTE ?",
     contactTitle: "Donnons-lui vie.",
     contactLink: "ÉCHANGEONS ↗",
-    footer: "STUDIO INDÉPENDANT · FRANCE & AILLEURS",
+    contactText: "AI training, learning experiences and digital product projects.",
+    title: "Angéline Poitout — IA générative, apprentissage et innovation numérique",
+    description:
+      "Studio créatif indépendant à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques : formations, expérimentations IA et expériences d'apprentissage.",
   },
-};
+} as const;
 
-export default function HomePage() {
-  const [lang, setLang] = useState<"FR" | "EN">("FR");
-  const t = translations[lang];
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]">) {
+  const locale = await requireLocale(params);
+  const t = translations[locale];
+  return pageMetadata({
+    locale,
+    path: "",
+    title: t.title,
+    description: t.description,
+    absoluteTitle: true,
+  });
+}
+
+export default async function HomePage({ params }: PageProps<"/[locale]">) {
+  const locale = await requireLocale(params);
+  const t = translations[locale];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#F8F7F2] text-[#20201E]">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
-        <header className="flex items-center justify-between border-b border-black/10 py-6">
-          <Link href="/" className="text-sm font-semibold tracking-[-0.04em]">
-            ANGÉLINE POITOUT<span className="text-[#7660D8]">.</span>
-          </Link>
-
-          <div className="flex items-center gap-5">
-            <span className="hidden text-[10px] tracking-[0.14em] text-black/45 sm:inline">
-              AI · DESIGN · LEARNING
-            </span>
-            <button
-              onClick={() => setLang(lang === "FR" ? "EN" : "FR")}
-              className="rounded-full border border-black/15 px-4 py-2 text-xs transition hover:bg-[#20201E] hover:text-white"
-              aria-label="Change language"
-            >
-              {lang === "FR" ? "FR ↔ EN" : "EN ↔ FR"}
-            </button>
-          </div>
-        </header>
+        <SiteHeader />
+        {locale === "fr" ? <TranslationNote /> : null}
 
         <section className="grid gap-12 pb-20 pt-20 sm:pt-28 lg:grid-cols-[1.4fr_0.6fr] lg:pb-28">
           <div>
@@ -121,7 +139,6 @@ export default function HomePage() {
               <span className="h-2 w-2 rounded-full bg-[#7660D8]" />
               {t.label}
             </p>
-
             <h1 className="max-w-5xl text-[clamp(3.7rem,10vw,9rem)] font-medium leading-[0.87] tracking-[-0.085em]">
               {t.headline}
               <br />
@@ -130,7 +147,6 @@ export default function HomePage() {
               </span>
             </h1>
           </div>
-
           <div className="flex flex-col justify-end lg:pb-2">
             <div className="mb-6 h-px w-12 bg-[#7660D8]" />
             <p className="max-w-md text-base leading-7 text-black/65 sm:text-lg sm:leading-8">
@@ -142,24 +158,23 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section>
+        <section id="work">
           <div className="flex items-center justify-between border-y border-black/15 py-4">
             <p className="text-[10px] tracking-[0.18em]">{t.index}</p>
-            <p className="text-[10px] tracking-[0.15em] text-black/40">
-              001 — 003
-            </p>
+            <Link
+              href={`/${locale}/cases`}
+              className="text-[10px] tracking-[0.15em] text-black/40 transition hover:text-[#7660D8]"
+            >
+              {t.casesLink} ↗
+            </Link>
           </div>
-
           <div>
             {projects.map((project) => (
               <article
                 key={project.number}
                 className="grid gap-5 border-b border-black/10 py-8 sm:py-10 md:grid-cols-[44px_0.9fr_1.1fr] md:gap-8 md:py-12"
               >
-                <p className="pt-1 text-xs text-black/35">
-                  {project.number}
-                </p>
-
+                <p className="pt-1 text-xs text-black/35">{project.number}</p>
                 <a
                   href={project.href}
                   target="_blank"
@@ -189,7 +204,6 @@ export default function HomePage() {
                         </div>
                       </div>
                     )}
-
                     {project.kind === "portfolio" && (
                       <div className="w-[76%] rotate-2 border border-black/10 bg-[#F8F7F2] p-5 shadow-xl sm:p-8">
                         <p className="mb-5 text-[8px] tracking-[0.18em] text-black/50">
@@ -205,7 +219,6 @@ export default function HomePage() {
                         <div className="mt-6 h-px bg-black/15" />
                       </div>
                     )}
-
                     {project.kind === "lab" && (
                       <div className="relative flex h-36 w-36 items-center justify-center rounded-full border border-[#974A20]/25 sm:h-48 sm:w-48">
                         <div className="absolute inset-3 rounded-full border border-dashed border-[#974A20]/40" />
@@ -215,12 +228,10 @@ export default function HomePage() {
                         </span>
                       </div>
                     )}
-
                     <span className="absolute bottom-4 right-4 text-xs text-black/50">
                       ↗
                     </span>
                   </div>
-
                   <p className="mb-2 text-[9px] tracking-[0.16em] text-black/45">
                     {project.category} · {project.year}
                   </p>
@@ -231,10 +242,9 @@ export default function HomePage() {
                     {project.subtitle}
                   </p>
                 </a>
-
                 <div className="flex flex-col justify-between gap-6 md:py-1">
                   <p className="max-w-lg text-sm leading-7 text-black/65">
-                    {project.description}
+                    {project.description[locale]}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -260,7 +270,37 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="grid gap-8 border-b border-black/15 py-20 sm:py-28 lg:grid-cols-2">
+        <section
+          id="services"
+          className="border-b border-black/15 py-20 sm:py-28"
+        >
+          <p className="mb-6 text-[10px] tracking-[0.18em] text-[#7660D8]">
+            {t.servicesLabel}
+          </p>
+          <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.065em] sm:text-6xl">
+            {t.servicesTitle}
+          </h2>
+          <div className="mt-14 grid gap-12 lg:grid-cols-3">
+            {services.map((service) => (
+              <article key={service.id}>
+                <p className="text-[10px] tracking-[0.16em] text-black/40">
+                  {service.kicker}
+                </p>
+                <h3 className="mt-4 text-2xl font-medium tracking-[-0.04em]">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-black/65">
+                  {service.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="about"
+          className="grid gap-8 border-b border-black/15 py-20 sm:py-28 lg:grid-cols-2"
+        >
           <div>
             <p className="mb-6 text-[10px] tracking-[0.18em] text-[#7660D8]">
               {t.aboutLabel}
@@ -269,12 +309,15 @@ export default function HomePage() {
               {t.aboutTitle}
             </h2>
           </div>
-          <p className="max-w-xl self-end text-base leading-8 text-black/60">
-            {t.about}
-          </p>
+          <div className="max-w-xl self-end space-y-6 text-base leading-8 text-black/60">
+            <p>{t.about}</p>
+            {aboutQuotes.map((quote) => (
+              <p key={quote}>{quote}</p>
+            ))}
+          </div>
         </section>
 
-        <section className="py-20 sm:py-28">
+        <section id="contact" className="py-20 sm:py-28">
           <p className="mb-5 text-[10px] tracking-[0.18em] text-[#7660D8]">
             {t.contactLabel}
           </p>
@@ -282,9 +325,10 @@ export default function HomePage() {
             {t.contactTitle}
           </h2>
           <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <p className="max-w-md text-sm leading-7 text-black/60">
-              AI training, learning experiences and digital product projects.
-            </p>
+            <div className="max-w-md space-y-4 text-sm leading-7 text-black/60">
+              <p>{t.contactText}</p>
+              <p>{contactOffer}</p>
+            </div>
             <a
               href="https://www.linkedin.com/in/angelinepoitoutpro/"
               target="_blank"
@@ -294,12 +338,26 @@ export default function HomePage() {
               {t.contactLink}
             </a>
           </div>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[10px] tracking-[0.14em] text-black/45">
+            <a
+              href="https://github.com/Angelinei"
+              className="transition hover:text-black"
+            >
+              GITHUB
+            </a>
+            <a
+              href="https://www.behance.net/angelinepoitout"
+              className="transition hover:text-black"
+            >
+              BEHANCE
+            </a>
+            <Link href={`/${locale}/blog`} className="transition hover:text-black">
+              BLOG
+            </Link>
+          </div>
         </section>
 
-        <footer className="flex flex-col gap-4 border-t border-black/10 py-6 text-[10px] tracking-[0.1em] text-black/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 ANGÉLINE POITOUT</p>
-          <p>{t.footer}</p>
-        </footer>
+        <SiteFooter locale={locale} />
       </div>
     </main>
   );

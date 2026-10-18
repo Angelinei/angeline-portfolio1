@@ -1,8 +1,6 @@
-
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import { requireLocale } from "@/lib/locale";
+import { pageMetadata } from "@/lib/site";
 
 const projects = [
   {
@@ -47,14 +45,13 @@ const projects = [
 ] as const;
 
 const copy = {
-  EN: {
+  en: {
     eyebrow: "INDEPENDENT DIGITAL STUDIO · 2026",
     title: "Ideas, made",
     titleAccent: "tangible.",
     intro:
       "A selection of digital products, AI experiments and learning experiences. Each project starts with a question and develops through research, iteration and making.",
     index: "PROJECT INDEX",
-    count: "SELECTED PROJECTS",
     cta: { site: "VISIT THE SITE", code: "VIEW THE CODE", github: "VIEW ON GITHUB" },
     about: "A little about the approach",
     aboutText:
@@ -64,15 +61,17 @@ const copy = {
     contactLink: "GET IN TOUCH ↗",
     back: "← BACK HOME",
     footer: "INDEPENDENT · FRANCE · WORKING EVERYWHERE",
+    pageTitle: "Studio",
+    description:
+      "A darker cut of the studio: Skillxtube, the portfolio, and the AI learning lab.",
   },
-  FR: {
+  fr: {
     eyebrow: "STUDIO DIGITAL INDÉPENDANT · 2026",
     title: "Des idées",
     titleAccent: "au concret.",
     intro:
       "Une sélection de produits numériques, d'expérimentations IA et d'expériences pédagogiques. Chaque projet part d'une question, puis évolue grâce à la recherche, aux itérations et à la pratique.",
     index: "INDEX DES PROJETS",
-    count: "PROJETS SÉLECTIONNÉS",
     cta: { site: "VOIR LE SITE", code: "VOIR LE CODE", github: "VOIR SUR GITHUB" },
     about: "Une approche, en quelques mots",
     aboutText:
@@ -82,48 +81,71 @@ const copy = {
     contactLink: "ME CONTACTER ↗",
     back: "← RETOUR À L'ACCUEIL",
     footer: "INDÉPENDANTE · FRANCE · PROJETS PARTOUT",
+    pageTitle: "Studio",
+    description:
+      "Une version plus sombre du studio : Skillxtube, le portfolio, et le laboratoire d'apprentissage IA.",
   },
-};
+} as const;
 
-export default function StudioPage() {
-  const [lang, setLang] = useState<"EN" | "FR">("EN");
-  const t = copy[lang];
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/studio">) {
+  const locale = await requireLocale(params);
+  const t = copy[locale];
+  return pageMetadata({
+    locale,
+    path: "/studio",
+    title: t.pageTitle,
+    description: t.description,
+  });
+}
+
+export default async function StudioPage({
+  params,
+}: PageProps<"/[locale]/studio">) {
+  const locale = await requireLocale(params);
+  const t = copy[locale];
+  const nextLocale = locale === "en" ? "fr" : "en";
 
   return (
     <main className="min-h-screen bg-[#09090b] text-[#f1f0ed] selection:bg-violet-300 selection:text-black">
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
         <header className="flex items-center justify-between border-b border-white/10 py-6">
-          <Link href="/" className="text-sm font-semibold tracking-tight">
+          <Link href={`/${locale}`} className="text-sm font-semibold tracking-tight">
             ANGÉLINE POITOUT<span className="text-violet-300">.</span>
           </Link>
-
           <div className="flex items-center gap-6 text-xs">
-            <span className="hidden text-white/40 sm:inline">
-              DIGITAL STUDIO / 001
-            </span>
-            <button
-              onClick={() => setLang(lang === "EN" ? "FR" : "EN")}
+            <span className="hidden text-white/40 sm:inline">DIGITAL STUDIO / 001</span>
+            <Link
+              href={`/${nextLocale}/studio`}
+              hrefLang={nextLocale}
               className="rounded-full border border-white/20 px-3 py-2 transition hover:border-violet-300 hover:text-violet-200"
-              aria-label="Change language"
+              aria-label={locale === "fr" ? "English version" : "Version française"}
             >
-              {lang === "EN" ? "FR / EN" : "EN / FR"}
-            </button>
+              {locale === "en" ? "EN ↔ FR" : "FR ↔ EN"}
+            </Link>
           </div>
         </header>
+        {locale === "fr" ? (
+          <p
+            role="note"
+            className="mt-6 border border-white/15 px-4 py-3 text-sm text-white/70"
+          >
+            Traduction en cours
+          </p>
+        ) : null}
 
         <section className="grid gap-10 pb-20 pt-20 md:grid-cols-[1.4fr_0.6fr] md:pb-28 md:pt-32">
           <div>
             <p className="mb-8 text-[10px] tracking-[0.25em] text-violet-300">
               {t.eyebrow}
             </p>
-
             <h1 className="max-w-4xl text-6xl font-medium leading-[0.98] tracking-[-0.065em] sm:text-8xl lg:text-[112px]">
               {t.title}
               <br />
               <span className="text-white/40">{t.titleAccent}</span>
             </h1>
           </div>
-
           <div className="flex flex-col justify-end md:pb-3">
             <div className="mb-6 h-px w-12 bg-violet-300" />
             <p className="max-w-md text-base leading-7 text-white/60 sm:text-lg">
@@ -134,14 +156,9 @@ export default function StudioPage() {
 
         <section>
           <div className="flex items-center justify-between border-y border-white/15 py-4">
-            <p className="text-[10px] tracking-[0.22em] text-white/60">
-              {t.index}
-            </p>
-            <p className="text-[10px] tracking-[0.18em] text-white/40">
-              001 — 003
-            </p>
+            <p className="text-[10px] tracking-[0.22em] text-white/60">{t.index}</p>
+            <p className="text-[10px] tracking-[0.18em] text-white/40">001 — 003</p>
           </div>
-
           <div>
             {projects.map((project) => (
               <article
@@ -149,7 +166,6 @@ export default function StudioPage() {
                 className="group grid gap-6 border-b border-white/10 py-10 transition-colors hover:bg-white/[0.02] sm:py-12 md:grid-cols-[70px_1fr_1fr_150px] md:items-center md:gap-8"
               >
                 <p className="text-xs text-white/30">{project.number}</p>
-
                 <div>
                   <p className="mb-3 text-[9px] tracking-[0.17em] text-white/40">
                     {project.type} / {project.year}
@@ -160,11 +176,8 @@ export default function StudioPage() {
                   >
                     {project.title}
                   </h2>
-                  <p className="mt-2 text-sm text-white/50">
-                    {project.subtitle}
-                  </p>
+                  <p className="mt-2 text-sm text-white/50">{project.subtitle}</p>
                 </div>
-
                 <div>
                   <p className="max-w-md text-sm leading-6 text-white/60">
                     {project.description}
@@ -180,7 +193,6 @@ export default function StudioPage() {
                     ))}
                   </div>
                 </div>
-
                 <a
                   href={project.href}
                   target="_blank"
@@ -234,7 +246,7 @@ export default function StudioPage() {
         <footer className="flex flex-col gap-4 border-t border-white/10 py-6 text-[10px] tracking-[0.12em] text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 ANGÉLINE POITOUT</p>
           <p>{t.footer}</p>
-          <Link href="/" className="transition hover:text-white">
+          <Link href={`/${locale}`} className="transition hover:text-white">
             {t.back}
           </Link>
         </footer>

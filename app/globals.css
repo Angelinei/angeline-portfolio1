@@ -12,15 +12,115 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: #f8f7f2;
+  color: #20201e;
+  font-family: var(--font-geist-sans), sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.essay {
+  color: rgba(32, 32, 30, 0.82);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.essay h2,
+.essay h3,
+.essay h4 {
+  color: #20201e;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.essay h2 {
+  font-size: 1.85rem;
+  margin-top: 2.75rem;
+}
+
+.essay h3 {
+  font-size: 1.35rem;
+  margin-top: 2.1rem;
+}
+
+.essay h4 {
+  font-size: 1.12rem;
+  margin-top: 1.75rem;
+}
+
+.essay p,
+.essay ul,
+.essay ol,
+.essay blockquote,
+.essay pre {
+  margin-top: 1.1rem;
+}
+
+.essay ul,
+.essay ol {
+  padding-left: 1.25rem;
+}
+
+.essay ul {
+  list-style: disc;
+}
+
+.essay ol {
+  list-style: decimal;
+}
+
+.essay li + li {
+  margin-top: 0.35rem;
+}
+
+.essay blockquote {
+  border-left: 1px solid rgba(32, 32, 30, 0.2);
+  color: rgba(32, 32, 30, 0.7);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  padding-left: 1rem;
+}
+
+.essay hr {
+  border: 0;
+  border-top: 1px solid rgba(32, 32, 30, 0.12);
+  margin: 2.5rem 0;
+}
+
+.essay table {
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  width: 100%;
+}
+
+.essay th,
+.essay td {
+  border-bottom: 1px solid rgba(32, 32, 30, 0.12);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.essay th {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.essay a {
+  text-decoration: underline;
+  text-decoration-color: rgba(118, 96, 216, 0.75);
+  text-underline-offset: 3px;
+}
+
+.essay code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.92em;
+}
+
+.essay pre {
+  overflow-x: auto;
+  border: 1px solid rgba(32, 32, 30, 0.1);
+  padding: 1rem;
 }

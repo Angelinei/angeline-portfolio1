@@ -1,0 +1,156 @@
+---
+title: "The art of writing rules for AI Agents"
+date: "2026-09-29"
+excerpt: "What I learned building a learning platform where AI writes the exercises. Most guides on prompt engineering tell you to “be specific” and “give examples.” That’s like telling a chef to “use good ingredients.” It’s true, it’s useless, and…"
+cover: null
+coverWidth: null
+coverHeight: null
+originalUrl: "https://angelinepoitout.com/the-art-of-writing-rules-for-ai-agents/"
+kind: "essay"
+---
+
+What I learned building a learning platform where AI writes the exercises.
+
+Most guides on prompt engineering tell you to “be specific” and “give examples.” That’s like telling a chef to “use good ingredients.” It’s true, it’s useless, and it doesn’t explain why your agent keeps producing mediocre output that passes every check you wrote.
+
+I spent a week writing rules for an AI agent that generates practical exercises from YouTube lessons. Here’s what actually worked and the three mistakes I kept making until I stopped.
+
+### The only question that matters
+
+Before writing a single rule, ask this : ***can I reject a specific output by pointing at this rule?***
+
+If the answer is “it depends” or “I’d have to think about it,” the rule is decorative. It makes you feel like you’ve been thorough. It does nothing at runtime.
+
+Here’s a decorative rule :
+
+*Reject if the exercise is not adapted to the difficulty level chosen by the learner.*
+
+Sounds rigorous. Now show me an exercise and tell me if it violates this rule. You can’t because “adapted” requires a definition of what Beginner means, which the rule doesn’t provide, and the model already believes it’s being careful about difficulty.
+
+Here’s the same concern, made **observable** :
+
+*Reject if it cannot be completed the same day using the lesson and the data in the brief no account, no audience, no filming, no waiting for external results.*
+
+This one, you can check in ten seconds by reading the exercise text. No judgment call, no context needed. A model can apply it. A test can verify it. A human reviewer can enforce it without asking the author what they meant.
+
+The difference isn’t precision. It’s falsifiability. A rule that can’t reject anything protects nothing.
+
+### Write the rejection, not the aspiration
+
+The most reliable trick I found : phrase every rule as “reject if” rather than “a good exercise should.”
+
+*“A good exercise should be connected to the video”*doesn’t tell the model what failure looks like. It will nod and produce an exercise that mentions the video title in the introduction and has nothing to do with its content.
+
+“Reject if a learner who had not watched this specific passage could produce the same deliverable” – now the model has a test to run against its own output. The negative framing forces you to describe the failure mode, which is the only thing that’s actionable.
+
+I wrote **6 rules per sub-agents**. The first draft had two that used positive framing. Both let bad exercises through. When I rewrote them as rejections, they started catching things.
+
+---
+
+**YouTube is where people go to learn CapCut, TikTok Organic, YouTube SEO, Prompting. It’s also where focus dies. Come on you saw the thumbnails of Mr Beast style? Clic clic. I’m weak.**
+
+**SkillxTube takes curated lessons, locks them into a paid path that unlocks day by day when you validate, and helps you produce today’s post from the work you just finished. Join the waitlist here and get free gifts while waiting launch :**
+
+[**https://skillxtube.com/linkedin**](https://skillxtube.com/linkedin)
+
+---
+
+### The test that kills weak rules
+
+Every rule needs two examples: one that fails it (✗) and one that passes it (✓), on the same subject. This constraint does more work than it appears to.
+
+- **If your ✗ and ✓ are on different topics, you don’t know what the rule is actually testing.**
+- **Is the ✓ better because it follows the rule, or because it’s a better topic ?**
+- **But the real test is harder : can your ✗ be rejected by a rule you already wrote?**
+
+I had a rule about exercises being calibrated to the path duration: don’t give a 3-day path the workload of a 21 one day (I suppressed 30 days after discussion with my team mates).
+
+My ✗ example was *“produce a complete audit of 10 competitor posts, an editorial calendar, and three filmed scripts.”* Sounds like a c**lear violation of the calibration rule.**
+
+Except it also requires filming (rule 1: not finishable today) and finding 10 competitor posts (external resources). Rule 1 already catches it. The calibration rule never fired — its own test case was claimed by someone else.
+
+**If you can’t write a ✗ that only your rule rejects, the rule adds nothing. Delete it and look for what’s actually missing.**
+
+### The rule you find by accident is the best one
+
+After cutting two rules that didn’t hold up, I was left with four that worked. But I knew I needed something about exercise size a 175-word deliverable with six instructions is absurd, and nothing in my four rules caught it.
+
+The answer had been sitting in my own example the whole time. I’d written a detailed exercise with six numbered instructions for a deliverable of **150 to 200 words**. When I noticed the mismatch, I said “that’s too many instructions for that size.” The rule wrote itself:
+
+*Reject if it stacks more than three distinct instructions for one deliverable.*
+
+I’d considered two forms: a minimum word count per instruction (a ratio), or a hard cap on instructions (a ceiling). The cap won, because it forces a different behavior: if the material needs six steps, it becomes two exercises instead of one compressed mess. That side effect solved another problem I hadn’t addressed how to handle the difference between a 3-day and a 21-day path without writing a rule about path duration that I’d already failed to make observable.
+
+**The lesson : the rules you discover by testing your own examples are better than the rules you design top-down. Top-down rules describe what you want. Bottom-up rules describe what actually goes wrong.**
+
+### What goes in the prompt vs. what stays in the doc
+
+Your rule document and your system prompt are two different things with two different audiences.
+
+The rule document has three fields per rule :
+
+- **Reject (the condition),**
+- **Why (the reasoning), and**
+- **Test (✗/✓)**
+
+And the rules go after the production brief, not before. “Here’s what to build; now check it against these” works better than “here are seven constraints; now figure out what to build.”
+
+The model follows “produce, then verify” more reliably than a wall of restrictions.
+
+<ImageTodo src="https://media.licdn.com/dms/image/v2/D4E12AQGkuCkDnaW2RA/article-inline_image-shrink_1500_2232/B4EaDO6_idIgAQ-/0/1790177966519?e=1792022400&amp;v=beta&amp;t=mBHI7Wz55YQbet_8JlyDdqM_RmF8N2DbqPZo7RHIGrE" />
+
+### Rules don’t live in the prompt alone
+
+The most effective rule in my system isn’t a rule at all. It’s a TypeScript assertion that checks whether every timestamp cited in an exercise actually exists in the video’s chapter list.
+
+No prompt instruction can guarantee a model won’t hallucinate a timestamp. An assertion catches it in zero milliseconds, for free, every time. The prompt says “never cite a timestamp you weren’t given” and the code enforces it.
+
+The principle : if a rule can be checked mechanically, check it mechanically. Reserve prompt rules for things that require judgment “does this exercise actually need the lesson passage?” can’t be checked with a function. “Does this timestamp exist?” can.
+
+### The number question
+
+**How many rules per agent?** It depends on how many ways the agent can fail meaningfully.
+
+- An agent that generates exercises has five to seven meaningful failure modes = I found five.
+- An agent that recommends tools has two (inventing a tool that doesn’t exist, not disclosing that it’s paid).
+- An agent that returns a binary grounding verdict has maybe one, and its real protection is the TypeScript assertion anyway.
+
+The ceiling matters more than the floor. Beyond seven or eight rules, two things happen : the model starts silently ignoring some (and you don’t know which), and your rules start contradicting each other (“be concise” vs. “give enough context”).
+
+When you can’t recite your rules from memory, you have too many.
+
+**The way to know you have enough : take 10 outputs, find the ones you don’t like, and ask which rule would have rejected them. If none does, you’re missing one. If all ten pass and you’re happy, stop adding.**
+
+### The eval is the rule that rules the rules
+
+Everything above assumes you can tell whether a rule is working. That requires outputs to test against. Not five but **10,** across your real topics, with expected results written by hand.
+
+Once you have that, something remarkable happens : you can have**AI optimize the prompt itself.**Generate five variants of the system prompt, score each against your ten cases, keep the winner. The model is better at exploring phrasings than you are but only when it has a score to optimize toward.
+
+Without the eval, you’re choosing between prompt variants by reading outputs and going with your gut. With it, you’re measuring.
+
+The eval is what turns prompt engineering from craft into engineering.
+
+### The checklist
+
+Before shipping a rule :
+
+1. **Can I reject a specific real-looking output by pointing at this rule? If not, delete it.**
+
+**2. Is my ✗ example something the model would plausibly produce? Caricatures prove nothing.**
+
+**3. Is my ✗ caught by an existing rule? If yes, this rule adds nothing. Delete it.**
+
+**4. Can the rule be checked mechanically? If yes, put it in code, not in the prompt.**
+
+**5. Does the rule use “adapted,” “appropriate,” “relevant,” or “high-quality”? Rewrite it until it doesn’t.**
+
+**6. Can I recite all my rules from memory? If not, I have too many.**
+
+<ImageTodo src="https://media.licdn.com/dms/image/v2/D4E12AQF5ZjMqfR7IcA/article-inline_image-shrink_400_744/B4EaDO6qUgIoAM-/0/1790177879606?e=1792022400&amp;v=beta&amp;t=IbKuIZiB7phZ7xqPJpKR0QdlJMwbdmClXaiJSkh1eaU" />
+
+That last one sounds flippant. It isn’t. If you can’t hold your rules in your head, the model certainly can’t hold them in its context and the ones it drops will be the ones you needed most.
+
+*This is part of what I’m building at**[SkillxTube](https://skillxtube.com/linkedin)**: structured learning paths from real YouTube videos, with exercises and quizzes generated by AI agents. The rules in this article govern the agent that writes the exercises, the part of the product learners actually interact with.*
+
+[https://www.linkedin.com/in/angelinepoitoutpro/](https://www.linkedin.com/in/angelinepoitoutpro/)[https://www.linkedin.com/in/angelinepoitoutpro/](https://www.linkedin.com/in/angelinepoitoutpro/)
