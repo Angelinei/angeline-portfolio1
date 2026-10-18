@@ -38,10 +38,10 @@ const contact: Slide = {
   id: "contact",
   nav: { EN: "Contact", FR: "Contact" },
   eyebrow: { EN: "OPEN TO COLLABORATION", FR: "OUVERTE AUX COLLABORATIONS" },
-  title: { EN: "Say hello", FR: "Écrivez-moi" },
+  title: { EN: "Say “Hey!”", FR: "Dites « Hey ! »" },
   text: {
-    EN: "Have a project in mind? Let's turn the idea into something real.",
-    FR: "Une idée à concrétiser ? Donnons-lui une forme réelle.",
+    EN: "Send me a message on LinkedIn, okay?",
+    FR: "Envoyez-moi un message sur LinkedIn, d'accord ?",
   },
   marquee: "Have a project in mind? Let's make it real.",
   tags: [],
