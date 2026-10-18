@@ -26,6 +26,8 @@ import {
 } from "./case-parts";
 import { ExternalLink, Group, enter, useInView } from "./editorial";
 import { useLang } from "./use-lang";
+import type { GalleryFile } from "./covers";
+import { PortfolioCase } from "./portfolio-case";
 
 // Placeholders for undocumented content are only rendered while developing.
 const SHOW_TODO = process.env.NODE_ENV !== "production";
@@ -83,12 +85,15 @@ export default function ProjectDetail({
   slug,
   covers,
   images,
+  portfolioFiles = {},
 }: {
   slug: string;
   /** Slug → cover path (all projects, used for the "next project" block). */
   covers: Record<string, string>;
   /** Visuals of this project, from public/projects/<slug>/. */
   images: string[];
+  /** Gallery files of the portfolio case study, from public/portfolio/. */
+  portfolioFiles?: Record<string, GalleryFile>;
 }) {
   const [lang, setLang] = useLang();
   const project = getProject(slug)!;
@@ -154,84 +159,88 @@ export default function ProjectDetail({
             </div>
           </figure>
 
-          <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
-            {/* Category + scope */}
-            {project.tags.length > 0 && (
-              <ul className="mb-12 flex flex-wrap gap-2" aria-label="Tags">
-                {project.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full px-4 py-2.5 text-xs leading-none text-white"
-                    style={{ backgroundColor: project.ink }}
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            )}
+          {project.slug === "portfolio" ? (
+            <PortfolioCase lang={lang} ink={project.ink} tags={project.tags} files={portfolioFiles} />
+          ) : (
+            <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
+              {/* Category + scope */}
+              {project.tags.length > 0 && (
+                <ul className="mb-12 flex flex-wrap gap-2" aria-label="Tags">
+                  {project.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full px-4 py-2.5 text-xs leading-none text-white"
+                      style={{ backgroundColor: project.ink }}
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
 
-            <dl className="mb-16 grid grid-cols-2 gap-x-8 gap-y-6 border-y border-black/10 py-6 text-xs sm:grid-cols-3">
-              <Scope label={t.discipline} value={project.eyebrow[lang]} />
-              <Scope label={t.year} value={project.year} field="year" />
-              <Scope label={t.role} value={project.role?.[lang]} field="role" />
-            </dl>
+              <dl className="mb-16 grid grid-cols-2 gap-x-8 gap-y-6 border-y border-black/10 py-6 text-xs sm:grid-cols-3">
+                <Scope label={t.discipline} value={project.eyebrow[lang]} />
+                <Scope label={t.year} value={project.year} field="year" />
+                <Scope label={t.role} value={project.role?.[lang]} field="role" />
+              </dl>
 
-            <Section title={t.intro} content={intro} lang={lang} ink={project.ink} field={project.intro ? undefined : "intro"} />
-            <Section title={t.context} content={project.context} lang={lang} ink={project.ink} field="context" />
-            <Section title={t.intention} content={project.intention} lang={lang} ink={project.ink} field="intention" />
-            <Section title={t.process} content={project.process} lang={lang} ink={project.ink} field="process" />
+              <Section title={t.intro} content={intro} lang={lang} ink={project.ink} field={project.intro ? undefined : "intro"} />
+              <Section title={t.context} content={project.context} lang={lang} ink={project.ink} field="context" />
+              <Section title={t.intention} content={project.intention} lang={lang} ink={project.ink} field="intention" />
+              <Section title={t.process} content={project.process} lang={lang} ink={project.ink} field="process" />
 
-            {project.archive && <Archive project={project} lang={lang} />}
+              {project.archive && <Archive project={project} lang={lang} />}
 
-            {(images.length > 0 || SHOW_TODO) && (
-              <Group title={t.visuals}>
-                {images.length > 0 ? (
-                  <div className="flex flex-col gap-6">
-                    {images.map((src) => (
-                      <Visual key={src} src={src} project={project} lang={lang} />
-                    ))}
-                  </div>
-                ) : (
-                  <Todo>
-                    Aucun visuel : déposez des images ou vidéos dans <code>public/projects/{project.slug}/</code>{" "}
-                    (triées par nom ; <code>cover.*</code> sert de couverture).
-                  </Todo>
-                )}
-              </Group>
-            )}
+              {(images.length > 0 || SHOW_TODO) && (
+                <Group title={t.visuals}>
+                  {images.length > 0 ? (
+                    <div className="flex flex-col gap-6">
+                      {images.map((src) => (
+                        <Visual key={src} src={src} project={project} lang={lang} />
+                      ))}
+                    </div>
+                  ) : (
+                    <Todo>
+                      Aucun visuel : déposez des images ou vidéos dans <code>public/projects/{project.slug}/</code>{" "}
+                      (triées par nom ; <code>cover.*</code> sert de couverture).
+                    </Todo>
+                  )}
+                </Group>
+              )}
 
-            {(project.links.length > 0 || SHOW_TODO) && (
-              <Group title={t.links}>
-                {project.links.length > 0 ? (
-                  <ul className="border-t border-black/10">
-                    {project.links.map((link) => (
-                      <li key={link.href}>
-                        <ExternalLink
-                          href={link.href}
-                          newTab={t.newTab}
-                          className="group flex items-center justify-between gap-4 border-b border-black/10 py-4"
-                        >
-                          <span className="text-lg font-medium tracking-[-0.03em]">
-                            <RollText color={project.ink}>{link.label[lang]}</RollText>
-                          </span>
-                          <span className="flex items-center gap-3 text-xs text-black/45">
-                            <span className="hidden sm:inline">{new URL(link.href).hostname.replace(/^www\./, "")}</span>
-                            <span aria-hidden="true" style={{ color: project.ink }}>
-                              ↗
+              {(project.links.length > 0 || SHOW_TODO) && (
+                <Group title={t.links}>
+                  {project.links.length > 0 ? (
+                    <ul className="border-t border-black/10">
+                      {project.links.map((link) => (
+                        <li key={link.href}>
+                          <ExternalLink
+                            href={link.href}
+                            newTab={t.newTab}
+                            className="group flex items-center justify-between gap-4 border-b border-black/10 py-4"
+                          >
+                            <span className="text-lg font-medium tracking-[-0.03em]">
+                              <RollText color={project.ink}>{link.label[lang]}</RollText>
                             </span>
-                          </span>
-                        </ExternalLink>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <Todo>
-                    Aucun lien connu : ajoutez-les dans <code>links</code> (app/_data/projects.ts).
-                  </Todo>
-                )}
-              </Group>
-            )}
-          </div>
+                            <span className="flex items-center gap-3 text-xs text-black/45">
+                              <span className="hidden sm:inline">{new URL(link.href).hostname.replace(/^www\./, "")}</span>
+                              <span aria-hidden="true" style={{ color: project.ink }}>
+                                ↗
+                              </span>
+                            </span>
+                          </ExternalLink>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <Todo>
+                      Aucun lien connu : ajoutez-les dans <code>links</code> (app/_data/projects.ts).
+                    </Todo>
+                  )}
+                </Group>
+              )}
+            </div>
+          )}
         </article>
 
         <NextProject project={next} cover={covers[next.slug]} lang={lang} />
