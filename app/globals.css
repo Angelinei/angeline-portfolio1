@@ -35,15 +35,15 @@ body {
   }
 }
 
-/* One eye closes, holds, then opens again. The rest of the loop stays open. */
+/* The closed-eye frame fades in, holds, then fades out. Most of the loop stays open. */
 @keyframes portrait-wink {
   0%,
   74%,
   100% {
-    transform: scaleY(0);
+    opacity: 0;
   }
   80%,
   88% {
-    transform: scaleY(1);
+    opacity: 1;
   }
 }
