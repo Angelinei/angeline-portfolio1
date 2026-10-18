@@ -9,12 +9,14 @@ import { useLang } from "./use-lang";
 
 const INK = "#7660D8";
 const TINT = "#F6F1E6";
+const SUBSTACK = "https://easywebie.substack.com/";
 
 const copy = {
   EN: {
     eyebrow: "WRITING",
     title: "Writing",
     intro: "Essays on building products, learning, and working with AI.",
+    substack: "Also on Substack",
     studio: "← Studio",
     back: "Back to the studio",
     all: "← All writing",
@@ -26,6 +28,7 @@ const copy = {
     eyebrow: "ÉCRITS",
     title: "Écrits",
     intro: "Essais sur la construction de produits, l'apprentissage et le travail avec l'IA.",
+    substack: "Aussi sur Substack",
     studio: "← Studio",
     back: "Retour au studio",
     all: "← Tous les écrits",
@@ -92,6 +95,15 @@ export function WritingIndex({ posts }: { posts: WritingPost[] }) {
         <p className={`mt-8 max-w-xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}>
           {t.intro}
         </p>
+        <a
+          href={SUBSTACK}
+          target="_blank"
+          rel="noreferrer"
+          className={`mt-6 inline-block rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70 ${enter("delay-300")}`}
+          style={{ borderColor: INK, color: INK }}
+        >
+          {t.substack} ↗<span className="sr-only"> {ui[lang].newTab}</span>
+        </a>
         {lang === "FR" && (
           <div className="mt-4">
             <TranslationNote />

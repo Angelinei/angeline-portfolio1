@@ -232,6 +232,7 @@ export const projects: Project[] = [
           EN: "Rapid product development, AI agents and the fast-moving EdTech landscape: an experiment in innovation, 12 micro products in 12 months, followed live.",
           FR: "Développement produit rapide, agents IA et un paysage EdTech en mouvement : une expérience d'innovation, 12 micro-produits en 12 mois, suivie en direct.",
         },
+        href: "https://easywebie.substack.com/",
         tags: ["AI agents", "EdTech"],
       },
       {
