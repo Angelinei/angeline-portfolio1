@@ -8,7 +8,7 @@
  */
 import Image from "next/image";
 import type { Lang } from "../_data/projects";
-import { designPortfolioText } from "../_data/design-portfolio";
+import { designPortfolioText, edtechUseCases } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
 import img1 from "../../public/portfolio/design/skillxtube-logo.png";
 import img2 from "../../public/portfolio/design/zip.png";
@@ -2268,6 +2268,62 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("behance.12")}
             </span>
           </a>
+        </div>
+      </section>
+      {/* 14 USE CASES */}
+      <section id="usecases" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
+        <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+          <span style={{ color: "#C62828" }}>14</span> {edtechUseCases.label[lang]}
+        </div>
+        <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{edtechUseCases.title[lang]}</h2>
+        <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", color: "#4A4943", maxWidth: "720px" }}>
+          {edtechUseCases.intro[lang]}
+        </p>
+        <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))", gap: "16px" }}>
+          {edtechUseCases.cases.map((useCase) => {
+            const content = (
+              <>
+                <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase" }}>
+                  {useCase.tag[lang]}
+                </span>
+                <span style={{ fontSize: "20px", fontWeight: "900" }}>{useCase.title}</span>
+                <span style={{ fontSize: "14px", color: "#4A4943" }}>{useCase.text[lang]}</span>
+                <span
+                  style={{
+                    marginTop: "auto",
+                    paddingTop: "8px",
+                    fontFamily: "var(--font-jbmono), ui-monospace, monospace",
+                    fontSize: "11px",
+                    textTransform: "uppercase",
+                    color: useCase.pdf ? "#C62828" : "#8A8983",
+                  }}
+                >
+                  {useCase.pdf ? `${edtechUseCases.open[lang]} ↗` : edtechUseCases.soon[lang]}
+                </span>
+              </>
+            );
+            const card = {
+              textDecoration: "none",
+              color: "#1A1A1A",
+              border: useCase.pdf ? "0.5px solid #D8D6D0" : "0.5px dashed #D8D6D0",
+              borderRadius: "12px",
+              padding: "24px",
+              display: "flex",
+              flexDirection: "column" as const,
+              gap: "8px",
+              opacity: useCase.pdf ? 1 : 0.6,
+            };
+            return useCase.pdf ? (
+              <a key={useCase.title} href={useCase.pdf} target="_blank" rel="noopener noreferrer" style={card}>
+                {content}
+                <span className="sr-only"> {edtechUseCases.newTab[lang]}</span>
+              </a>
+            ) : (
+              <div key={useCase.title} style={card}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </section>
       {/* METHODE + FOOTER */}
