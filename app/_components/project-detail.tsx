@@ -444,7 +444,7 @@ function NextProject({ project, cover, lang }: { project: Project; cover?: strin
         <span className="h-px flex-1 bg-black/10" />
       </p>
       <div ref={ref} className="relative h-[640px] overflow-clip sm:h-[680px]">
-        <Marquee text={project.marquee} color={project.marqueeColor} state={inView ? "active" : "after"} />
+        <Marquee text={project.marquee} color={project.marqueeColor} large state={inView ? "active" : "after"} />
         <CaseItem
           slide={slide}
           cover={cover}
