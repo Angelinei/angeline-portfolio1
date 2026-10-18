@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { thePath, type PathBlock } from "../_data/the-path";
-import { BRAND, EASE, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
+import { BRAND, EASE, LINKEDIN, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
 import { ExternalLink, Group, Inline, enter } from "./editorial";
 import { useLang } from "./use-lang";
 
@@ -121,8 +121,15 @@ export default function ThePathPage({ cover }: { cover?: string }) {
             <div className="mb-20 border-t border-black/10 pt-10">
               <p className="text-base leading-8 text-black/75">
                 {thePath.contact}{" "}
-                <a href={`mailto:${thePath.email}`} className="font-medium underline underline-offset-4" style={{ color: INK }}>
-                  {thePath.email}
+                <a
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium underline underline-offset-4"
+                  style={{ color: INK }}
+                >
+                  LinkedIn
+                  <span className="sr-only"> {t.newTab}</span>
                 </a>
                 .
               </p>

@@ -23,7 +23,6 @@ export type Slide = {
   ink: string;
 };
 
-export const EMAIL = "mailto:contact@angelinepoitout.com";
 export const LINKEDIN = "https://www.linkedin.com/in/angelinepoitoutpro/";
 export const EASE = "ease-[cubic-bezier(.25,.46,.45,.94)]";
 export const BRAND = "#7660D8";
@@ -40,11 +39,15 @@ export const ui = {
     disciplines: ["Generative AI", "Learning Design", "Digital Products"],
     view: "View project",
     switchLang: "Passer en français",
+    collaborate: "Open to collaboration",
+    newTab: "(opens in a new tab)",
   },
   FR: {
     disciplines: ["IA générative", "Ingénierie pédagogique", "Produits digitaux"],
     view: "Voir le projet",
     switchLang: "Switch to English",
+    collaborate: "Ouverte aux collaborations",
+    newTab: "(nouvel onglet)",
   },
 };
 
@@ -86,12 +89,23 @@ export function SiteHeader({
   return (
     <header className="pointer-events-none absolute inset-x-0 top-3.5 z-30 flex items-start justify-between px-4 sm:top-6 sm:px-10">
       <div className="pointer-events-auto flex flex-col gap-4">
-        <Link
-          href="/"
-          className="text-xl leading-none font-semibold tracking-[-0.04em] transition-opacity hover:opacity-50 sm:text-2xl"
-        >
-          Angéline Poitout<span style={{ color: BRAND }}>.</span>
-        </Link>
+        <div className="flex flex-col gap-2">
+          <Link
+            href="/"
+            className="text-xl leading-none font-semibold tracking-[-0.04em] transition-opacity hover:opacity-50 sm:text-2xl"
+          >
+            Angéline Poitout<span style={{ color: BRAND }}>.</span>
+          </Link>
+          <a
+            href={LINKEDIN}
+            target="_blank"
+            rel="noreferrer"
+            className={`w-fit text-[11px] leading-none text-black/55 underline decoration-black/20 underline-offset-[5px] transition-colors duration-300 hover:text-[#7660D8] hover:decoration-[#7660D8] ${EASE}`}
+          >
+            {t.collaborate}
+            <span className="sr-only"> {t.newTab}</span>
+          </a>
+        </div>
         <p
           className={`hidden text-xs leading-[1.2] text-black/60 sm:block ${
             compactBelow === "700px" ? "[@media(max-height:700px)]:hidden" : ""
@@ -226,7 +240,6 @@ export function CaseItem({
   state,
   label,
   preload = false,
-  emailLabel = "Email",
   standalone = false,
   onHover,
 }: {
@@ -237,7 +250,6 @@ export function CaseItem({
   /** Accessible name of the slide, e.g. "2 / 7 — Skillxtube". */
   label: string;
   preload?: boolean;
-  emailLabel?: string;
   /** Rendered on its own (e.g. "next project"), not as a carousel slide. */
   standalone?: boolean;
   onHover: (on: boolean) => void;
@@ -278,8 +290,9 @@ export function CaseItem({
         {slide.eyebrow[lang]}
       </span>
       {slide.visual === "contact" ? (
-        <a href={EMAIL} className="group">
+        <a href={LINKEDIN} target="_blank" rel="noreferrer" className="group">
           {title}
+          <span className="sr-only"> {ui[lang].newTab}</span>
         </a>
       ) : (
         title
@@ -316,24 +329,16 @@ export function CaseItem({
           </span>
         ))}
         {slide.visual === "contact" && (
-          <>
-            <a
-              href={EMAIL}
-              className="rounded-full px-4 py-2.5 text-xs leading-none text-white transition-opacity hover:opacity-70"
-              style={{ backgroundColor: slide.ink }}
-            >
-              {emailLabel} ↗
-            </a>
-            <a
-              href={LINKEDIN}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70"
-              style={{ borderColor: slide.ink, color: slide.ink }}
-            >
-              LinkedIn ↗
-            </a>
-          </>
+          <a
+            href={LINKEDIN}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70"
+            style={{ borderColor: slide.ink, color: slide.ink }}
+          >
+            LinkedIn ↗
+            <span className="sr-only"> {ui[lang].newTab}</span>
+          </a>
         )}
       </span>
     </>
@@ -527,6 +532,21 @@ export function ProjectVisual({
         </span>
       )}
 
+      {!cover && kind === "writing" && (
+        <span className="relative block h-[62cqw] w-[70cqw]">
+          <span className="absolute inset-0 translate-x-[4cqw] -translate-y-[3cqw] rotate-3 rounded-[2.5cqw] border border-black/10 bg-white shadow-lg" />
+          <span className="absolute inset-0 block -rotate-2 rounded-[2.5cqw] border border-black/10 bg-[#F8F7F2] p-[6cqw] shadow-xl transition-transform duration-700 group-hover:rotate-0">
+            <span className="mb-[4cqw] block h-[2cqw] w-1/4 rounded-full" style={{ backgroundColor: ink }} />
+            <span className="block font-serif text-[9cqw] leading-[1.05] tracking-[-0.04em] italic" style={{ color: ink }}>
+              Essays
+            </span>
+            <span className="mt-[5cqw] block h-px bg-black/15" />
+            <span className="mt-[3.5cqw] block h-[1.6cqw] w-4/5 rounded-full bg-black/10" />
+            <span className="mt-[2.2cqw] block h-[1.6cqw] w-3/5 rounded-full bg-black/10" />
+          </span>
+        </span>
+      )}
+
       {!cover && kind === "contact" && (
         <span className="block w-[74cqw] -rotate-3 rounded-[5cqw] bg-white p-[7cqw] shadow-xl">
           <span className="block font-serif text-[15cqw] leading-none tracking-[-0.04em] italic" style={{ color: ink }}>
@@ -534,7 +554,7 @@ export function ProjectVisual({
             <span className="ml-[1cqw] inline-block h-[12cqw] w-[0.8cqw] translate-y-[1.5cqw] animate-pulse bg-[#20201E]" />
           </span>
           <span className="mt-[6cqw] block h-px bg-black/10" />
-          <span className="mt-[3cqw] block text-[3.6cqw] text-black/50">contact@angelinepoitout.com</span>
+          <span className="mt-[3cqw] block text-[3.2cqw] text-black/50">Open to collaboration</span>
         </span>
       )}
 

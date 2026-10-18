@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
+import { legacyRedirects } from "./lib/redirects";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  // Next inserts a higher-priority "/:path+/" → "/:path+" redirect ahead of
+  // this list. Skipping it lets each legacy path, with or without a trailing
+  // slash, redirect straight to its destination.
+  skipTrailingSlashRedirect: true,
   turbopack: {
     rules: {
       "*.css": {
@@ -11,6 +15,9 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  async redirects() {
+    return legacyRedirects();
   },
 };
 

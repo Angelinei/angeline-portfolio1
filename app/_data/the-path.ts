@@ -60,7 +60,6 @@ export const thePath = {
             "Ongoing learning by praticing: Python, Informatic General, LLMS, Generative AI, AI Agents, sales of micro products, and customer support (since 2025, after Bali)",
           ],
         },
-        { type: "p", text: "Launching international offerings in English in 2026." },
       ],
     },
     {
@@ -174,7 +173,6 @@ export const thePath = {
       ],
     },
   ] satisfies PathSection[],
-  contact: "Want a professionnal contact ? Let’s discuss at",
-  email: "hello@angelinepoitout.com",
+  contact: "Want a professionnal contact ? Let’s discuss on",
   signoff: ["Techie yours", "Angéline"],
 };

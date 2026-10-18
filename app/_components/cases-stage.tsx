@@ -68,11 +68,30 @@ const path: Slide = {
   ink: "#2E6A48",
 };
 
-const slides: Slide[] = [approach, ...projects.map(projectToSlide), path, contact];
+const writing: Slide = {
+  id: "writing",
+  nav: { EN: "Writing", FR: "Écrits" },
+  eyebrow: { EN: "WRITING", FR: "ÉCRITS" },
+  title: { EN: "Writing", FR: "Écrits" },
+  text: {
+    EN: "Essays on building products, learning, and working with AI.",
+    FR: "Essais sur la construction de produits, l'apprentissage et le travail avec l'IA.",
+  },
+  marquee: "Essays on building, learning and working with AI.",
+  tags: ["Essays", "Building", "AI"],
+  href: "/writing",
+  cta: { EN: "Read", FR: "Lire" },
+  visual: "writing",
+  tint: "#F6F1E6",
+  marqueeColor: "#E7DCC4",
+  ink: "#7660D8",
+};
+
+const slides: Slide[] = [approach, ...projects.map(projectToSlide), path, writing, contact];
 
 const copy = {
-  EN: { email: "Email", hint: "Scroll", nav: "Projects" },
-  FR: { email: "E-mail", hint: "Défiler", nav: "Projets" },
+  EN: { hint: "Scroll", nav: "Projects" },
+  FR: { hint: "Défiler", nav: "Projets" },
 };
 
 const LOCK_MS = 1000;
@@ -197,7 +216,6 @@ export default function CasesStage({
           state={i === current ? "active" : i < current ? "before" : "after"}
           label={`${i + 1} / ${slides.length} — ${slide.nav[lang]}`}
           preload={i === 0}
-          emailLabel={t.email}
           onHover={(on) => setHovered(on ? slide.id : null)}
         />
       ))}
