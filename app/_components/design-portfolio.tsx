@@ -8,7 +8,7 @@
  */
 import Image from "next/image";
 import type { Lang } from "../_data/projects";
-import { demoVideo, designPortfolioText, edtechUseCases } from "../_data/design-portfolio";
+import { demoVideo, designPortfolioText, edtechUseCases, rankbidOrigin } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
 import img1 from "../../public/portfolio/design/skillxtube-logo.png";
 import img2 from "../../public/portfolio/design/zip.png";
@@ -2175,6 +2175,9 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </h2>
             <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>
               {t("rankbid.3")}
+            </p>
+            <p style={{ margin: "24px 0 0", padding: "16px 20px", borderRadius: "12px", background: "#FF4D4D", color: "#FFFFFF", fontSize: "15px", lineHeight: "1.55", fontWeight: "700" }}>
+              {rankbidOrigin[lang]}
             </p>
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", background: "#14161A", borderRadius: "12px", padding: "28px", display: "flex", flexWrap: "wrap", gap: "20px", color: "#FFFFFF" }}>

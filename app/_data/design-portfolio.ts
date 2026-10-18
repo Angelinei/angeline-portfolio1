@@ -2057,3 +2057,9 @@ export const demoVideo = {
   },
   label2: { EN: "SkillxTube demo video", FR: "Vidéo de démonstration SkillxTube" },
 };
+
+/** Red banner under the RankBid.Body description: where it came from and why it is here. */
+export const rankbidOrigin = {
+  EN: "It started with the outbid.lol trend on X (Twitter): I built my own take on it before refocusing on SkillxTube. The idea stayed. Bidding for visibility shaped SkillxTube's Advertise program, which is why it earns its place in this portfolio.",
+  FR: "Tout est parti de la tendance outbid.lol sur X (Twitter) : j'en avais lancé ma propre déclinaison avant de me recentrer sur SkillxTube. L'idée, elle, est restée : ces enchères de visibilité ont inspiré le programme Advertise de SkillxTube, d'où sa place dans ce portfolio.",
+};
