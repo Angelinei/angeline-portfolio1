@@ -26,8 +26,7 @@ import {
 } from "./case-parts";
 import { ExternalLink, Group, enter, useInView } from "./editorial";
 import { useLang } from "./use-lang";
-import type { GalleryFile } from "./covers";
-import { PortfolioCase } from "./portfolio-case";
+import { DesignPortfolio } from "./design-portfolio";
 
 // Placeholders for undocumented content are only rendered while developing.
 const SHOW_TODO = process.env.NODE_ENV !== "production";
@@ -85,15 +84,12 @@ export default function ProjectDetail({
   slug,
   covers,
   images,
-  portfolioFiles = {},
 }: {
   slug: string;
   /** Slug → cover path (all projects, used for the "next project" block). */
   covers: Record<string, string>;
   /** Visuals of this project, from public/projects/<slug>/. */
   images: string[];
-  /** Gallery files of the portfolio case study, from public/portfolio/. */
-  portfolioFiles?: Record<string, GalleryFile>;
 }) {
   const [lang, setLang] = useLang();
   const project = getProject(slug)!;
@@ -138,29 +134,36 @@ export default function ProjectDetail({
             )}
           </header>
 
-          {/* Cover */}
-          <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-            <div
-              className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
-              style={{ backgroundColor: project.tint }}
-            >
-              <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
-                <ProjectVisual
-                  kind={project.visual}
-                  tint={project.tint}
-                  ink={project.ink}
-                  linked={false}
-                  cover={covers[project.slug]}
-                  alt={project.title}
-                  preload
-                  sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
-                />
+          {/* Cover (the portfolio case opens on its own hero instead) */}
+          {project.slug !== "portfolio" && (
+            <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
+              <div
+                className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
+                style={{ backgroundColor: project.tint }}
+              >
+                <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
+                  <ProjectVisual
+                    kind={project.visual}
+                    tint={project.tint}
+                    ink={project.ink}
+                    linked={false}
+                    cover={covers[project.slug]}
+                    alt={project.title}
+                    preload
+                    sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
+                  />
+                </div>
               </div>
-            </div>
-          </figure>
+            </figure>
+          )}
 
           {project.slug === "portfolio" ? (
-            <PortfolioCase lang={lang} ink={project.ink} tags={project.tags} files={portfolioFiles} />
+            <>
+              <div className="mt-14 sm:mt-20">
+                <DesignPortfolio lang={lang} />
+              </div>
+              <ContactBlock lang={lang} ink={project.ink} />
+            </>
           ) : (
             <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
               {/* Category + scope */}
@@ -281,6 +284,30 @@ export default function ProjectDetail({
         <span>{ui[lang].disciplines.join(" · ")}</span>
       </footer>
     </div>
+  );
+}
+
+const CONTACT_EMAIL = "hello@angelinepoitout.com";
+
+function ContactBlock({ lang, ink }: { lang: Lang; ink: string }) {
+  const label = lang === "FR" ? "UNE IDÉE EN TÊTE ?" : "SOMETHING IN MIND?";
+  const title = lang === "FR" ? "Construisons la suivante." : "Let's build the next one.";
+  return (
+    <section className="mx-auto w-full max-w-[1120px] px-5 pt-20 pb-8 sm:px-10 sm:pt-28">
+      <div className="border-t border-black/10 pt-12">
+        <p className="mb-5 text-[10px] tracking-[0.18em] text-black/50">{label}</p>
+        <p className="text-[clamp(2.25rem,6vw,4rem)] leading-[1.05] font-medium tracking-[-0.06em]">{title}</p>
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="group mt-8 inline-flex items-center gap-3 text-[clamp(1.25rem,3vw,1.75rem)] font-medium tracking-[-0.03em]"
+        >
+          <RollText color={ink}>{CONTACT_EMAIL}</RollText>
+          <span aria-hidden="true" style={{ color: ink }}>
+            ↗
+          </span>
+        </a>
+      </div>
+    </section>
   );
 }
 
