@@ -242,7 +242,7 @@ export function Stalker({ visible, color, label }: { visible: boolean; color: st
   );
 }
 
-/** The open portrait, with one eyelid that closes on a loop. */
+/** Landing portrait. A closed-eye frame fades over the open one, on a loop. */
 export function WinkingPortrait({
   className = "",
   preload = false,
@@ -261,10 +261,16 @@ export function WinkingPortrait({
         draggable={false}
         className="h-auto w-full"
       />
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[18.3%] left-[56.8%] h-[4.6%] w-[9.6%] origin-top rounded-[50%] bg-[#C69678] shadow-[inset_0_-1.5px_0_#6E4638] animate-[portrait-wink_4.8s_ease-in-out_infinite] motion-reduce:hidden"
-      />
+      <span aria-hidden="true" className="pointer-events-none absolute inset-0 motion-reduce:hidden">
+        <Image
+          src="/portrait-wink.png"
+          alt=""
+          width={333}
+          height={482}
+          draggable={false}
+          className="h-full w-full animate-[portrait-wink_4.8s_ease-in-out_infinite]"
+        />
+      </span>
     </span>
   );
 }

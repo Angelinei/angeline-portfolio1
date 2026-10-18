@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { BRAND, EASE, LINKEDIN, RollText, SiteHeader, WinkingPortrait, ui } from "./case-parts";
+import { BRAND, EASE, LINKEDIN, RollText, SiteHeader, ui } from "./case-parts";
 import { enter } from "./editorial";
 import { useLang } from "./use-lang";
 
@@ -70,7 +71,15 @@ export default function AboutPage() {
           </header>
 
           <figure className={`mx-auto mt-10 flex w-full max-w-[760px] justify-center px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-            <WinkingPortrait preload className="w-[min(220px,52vw)]" />
+            <Image
+              src="/about-portrait.png"
+              alt="Angéline Poitout"
+              width={236}
+              height={316}
+              preload
+              draggable={false}
+              className="h-auto w-[min(220px,52vw)]"
+            />
           </figure>
 
           <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
