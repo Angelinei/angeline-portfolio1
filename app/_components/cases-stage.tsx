@@ -202,7 +202,7 @@ export default function CasesStage({
           key={slide.id}
           text={slide.marquee}
           color={slide.marqueeColor}
-          large={slide.id === "approach"}
+          large={slide.id === "approach" || slide.id === "skillxtube"}
           state={i === current ? "active" : i < current ? "before" : "after"}
         />
       ))}
