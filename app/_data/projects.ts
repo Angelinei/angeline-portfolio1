@@ -91,13 +91,13 @@ export const projects: Project[] = [
       EN: "An AI-powered learning experience that transforms online videos into structured learning paths, notes and exercises.",
       FR: "Un produit EdTech qui explore comment l'IA peut transformer des vidéos en parcours d'apprentissage actifs.",
     },
-    marquee: "Turn content into learning. Learn differently.",
+    marquee: 'From "watch later" to "I made this"',
     tags: ["AI", "EdTech", "Product design", "Next.js"],
     year: "2026",
     visual: "skill",
-    tint: "#DCD3FF",
-    marqueeColor: "#CFC3FB",
-    ink: "#5940A5",
+    tint: "#FFF7F7",
+    marqueeColor: "#F86058",
+    ink: "#C2313C",
     intro: {
       paragraphs: [
         {

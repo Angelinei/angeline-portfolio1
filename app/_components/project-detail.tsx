@@ -136,10 +136,10 @@ export default function ProjectDetail({
           {/* Cover */}
           <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
             <div
-              className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
+              className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
               style={{ backgroundColor: project.tint }}
             >
-              <div className="size-[78cqw] sm:size-[44cqw]">
+              <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
                 <ProjectVisual
                   kind={project.visual}
                   tint={project.tint}
@@ -148,7 +148,7 @@ export default function ProjectDetail({
                   cover={covers[project.slug]}
                   alt={project.title}
                   preload
-                  sizes="(min-width: 640px) 44vw, 78vw"
+                  sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
                 />
               </div>
             </div>

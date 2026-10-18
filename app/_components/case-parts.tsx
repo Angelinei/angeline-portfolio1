@@ -550,7 +550,7 @@ export function ProjectVisual({
           fill
           sizes={sizes}
           preload={preload}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
         />
       )}
 
