@@ -140,10 +140,13 @@ export function Marquee({
   text,
   color,
   state = "active",
+  large = false,
 }: {
   text: string;
   color: string;
   state?: "active" | "before" | "after";
+  /** First screen: a wider band, so the portrait can sit on the letters. */
+  large?: boolean;
 }) {
   return (
     <div
@@ -156,7 +159,13 @@ export function Marquee({
             : "translate-y-[18%] opacity-0 duration-500"
       }`}
     >
-      <div className="flex w-max animate-[cases-marquee_48s_linear_infinite] whitespace-nowrap font-serif text-[clamp(5rem,12vw,10.5rem)] leading-[1.2] tracking-[-0.03em] italic motion-reduce:animate-none">
+      <div
+        className={`flex w-max animate-[cases-marquee_48s_linear_infinite] whitespace-nowrap motion-reduce:animate-none ${
+          large
+            ? "font-[family-name:var(--font-geist-sans)] text-[clamp(13rem,28vw,22rem)] leading-[0.72] font-black tracking-[-0.06em]"
+            : "font-serif text-[clamp(5rem,12vw,10.5rem)] leading-[1.2] tracking-[-0.04em] italic"
+        }`}
+      >
         <p className="pr-[0.5em]" style={{ color }}>
           {text}
         </p>
@@ -233,6 +242,69 @@ export function Stalker({ visible, color, label }: { visible: boolean; color: st
   );
 }
 
+/** First screen, composed like the Mild Sugar about case: title, portrait, caption. */
+function AboutSlide({
+  slide,
+  lang,
+  state,
+  label,
+  preload,
+}: {
+  slide: Slide;
+  lang: Lang;
+  state: "active" | "before" | "after";
+  label: string;
+  preload: boolean;
+}) {
+  const isActive = state === "active";
+  const reveal = (delay: keyof typeof DELAYS) =>
+    `transition-[opacity,translate] motion-reduce:transition-none ${EASE} ${
+      isActive
+        ? `opacity-100 translate-y-0 duration-700 ${DELAYS[delay]}`
+        : `opacity-0 delay-0 duration-300 ${state === "before" ? "-translate-y-4" : "translate-y-4"}`
+    }`;
+
+  return (
+    <section
+      aria-roledescription="slide"
+      aria-label={label}
+      aria-hidden={!isActive}
+      inert={!isActive}
+      className={`absolute inset-0 z-10 ${isActive ? "" : "pointer-events-none"}`}
+    >
+      <div className="grid h-full w-full grid-rows-[1fr_auto_1fr] justify-items-center px-8 pb-16 pt-20 sm:px-16">
+        <h2 className="self-end overflow-clip pb-[0.08em] text-center text-[clamp(3.25rem,7vw,5.75rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832] [@media(max-height:700px)]:text-5xl">
+          <span
+            className={`block transition-transform motion-reduce:transition-none ${EASE} ${
+              isActive
+                ? "translate-y-0 duration-[900ms] delay-150"
+                : state === "before"
+                  ? "-translate-y-[110%] duration-500"
+                  : "translate-y-[110%] duration-500"
+            }`}
+          >
+            {slide.title[lang]}
+          </span>
+        </h2>
+        <Image
+          src="/portrait.png"
+          alt="Angéline Poitout"
+          width={333}
+          height={482}
+          preload={preload}
+          draggable={false}
+          className={`h-auto w-[min(250px,58vw)] [@media(max-height:700px)]:w-[min(190px,46vw)] ${reveal(250)}`}
+        />
+        <p
+          className={`mt-1 max-w-[26rem] self-start text-center text-[13px] leading-[1.65] font-medium text-[#2C2A26] sm:text-sm ${reveal(350)}`}
+        >
+          {slide.text[lang]}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export function CaseItem({
   slide,
   cover,
@@ -254,6 +326,10 @@ export function CaseItem({
   standalone?: boolean;
   onHover: (on: boolean) => void;
 }) {
+  if (slide.visual === "about") {
+    return <AboutSlide slide={slide} lang={lang} state={state} label={label} preload={preload} />;
+  }
+
   const isActive = state === "active";
   // Each block enters with a staggered delay and leaves without one.
   const reveal = (delay: keyof typeof DELAYS) =>

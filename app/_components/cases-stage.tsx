@@ -28,7 +28,7 @@ const approach: Slide = {
   tags: ["Generative AI", "Learning design", "Digital products"],
   visual: "about",
   tint: "#ECE8FB",
-  marqueeColor: "#D9D1FA",
+  marqueeColor: "#6A4FE0",
   ink: "#7660D8",
 };
 
@@ -200,6 +200,7 @@ export default function CasesStage({
           key={slide.id}
           text={slide.marquee}
           color={slide.marqueeColor}
+          large={slide.id === "approach"}
           state={i === current ? "active" : i < current ? "before" : "after"}
         />
       ))}
