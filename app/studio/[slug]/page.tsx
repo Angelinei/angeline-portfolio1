@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectDetail from "../../_components/project-detail";
-import { getCovers, getProjectImages } from "../../_components/covers";
+import { getCovers, getPortfolioFiles, getProjectImages } from "../../_components/covers";
 import { getProject, projects } from "../../_data/projects";
 
 // Every project page is prerendered from generateStaticParams; reading params
@@ -26,5 +26,12 @@ export default async function ProjectPage({ params }: PageProps<"/studio/[slug]"
   const { slug } = await params;
   if (!getProject(slug)) notFound();
 
-  return <ProjectDetail slug={slug} covers={getCovers()} images={getProjectImages(slug)} />;
+  return (
+    <ProjectDetail
+      slug={slug}
+      covers={getCovers()}
+      images={getProjectImages(slug)}
+      portfolioFiles={slug === "portfolio" ? getPortfolioFiles() : undefined}
+    />
+  );
 }
