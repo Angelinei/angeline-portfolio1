@@ -1,7 +1,7 @@
 /**
  * Legacy WordPress paths. Sources come from the closed import branch.
  * "/", "/studio", "/the-path" and "/about" are omitted: those routes exist.
- * "/about/" still redirects to "/about".
+ * Trailing-slash copies of the live routes redirect to the unslashed URL.
  * Imported essays point at /writing; every other path points at /.
  */
 const writingDestinations: Record<string, string> = {
@@ -87,5 +87,9 @@ export function legacyRedirects() {
       ];
     }),
     { source: "/about/", destination: "/about", permanent: true as const },
+    { source: "/the-path/", destination: "/the-path", permanent: true as const },
+    { source: "/writing/", destination: "/writing", permanent: true as const },
+    { source: "/writing/:slug/", destination: "/writing/:slug", permanent: true as const },
+    { source: "/studio/:slug/", destination: "/studio/:slug", permanent: true as const },
   ];
 }

@@ -20,6 +20,10 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://angelinepoitout.com"),
+  alternates: {
+    canonical: "./",
+  },
   title: "Angéline Poitout — IA générative, apprentissage & innovation numérique",
   description:
     "Studio créatif indépendant à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques : formations, expérimentations IA et expériences d'apprentissage.",
