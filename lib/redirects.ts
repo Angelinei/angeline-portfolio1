@@ -1,6 +1,7 @@
 /**
  * Legacy WordPress paths. Sources come from the closed import branch.
- * "/", "/studio" and "/the-path" are omitted: those routes already exist.
+ * "/", "/studio", "/the-path" and "/about" are omitted: those routes exist.
+ * "/about/" still redirects to "/about".
  * The five kept essays point at /writing; every other path points at /.
  */
 const writingDestinations: Record<string, string> = {
@@ -19,7 +20,6 @@ const legacySources = [
   "/love-temple",
   "/blog",
   "/contact",
-  "/about",
   "/introduction",
   "/gen-ai-training",
   "/ai-integration",
@@ -58,11 +58,14 @@ const legacySources = [
 ] as const;
 
 export function legacyRedirects() {
-  return legacySources.flatMap((source) => {
-    const destination = writingDestinations[source] ?? "/";
-    return [
-      { source, destination, permanent: true as const },
-      { source: `${source}/`, destination, permanent: true as const },
-    ];
-  });
+  return [
+    ...legacySources.flatMap((source) => {
+      const destination = writingDestinations[source] ?? "/";
+      return [
+        { source, destination, permanent: true as const },
+        { source: `${source}/`, destination, permanent: true as const },
+      ];
+    }),
+    { source: "/about/", destination: "/about", permanent: true as const },
+  ];
 }

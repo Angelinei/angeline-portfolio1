@@ -26,6 +26,8 @@ const approach: Slide = {
   },
   marquee: "Technology is the tool. Human potential is the point.",
   tags: ["Generative AI", "Learning design", "Digital products"],
+  href: "/about",
+  cta: { EN: "Go further", FR: "Aller plus loin" },
   visual: "about",
   tint: "#ECE8FB",
   marqueeColor: "#6A4FE0",

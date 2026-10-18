@@ -230,7 +230,7 @@ export function Stalker({ visible, color, label }: { visible: boolean; color: st
       className="pointer-events-none fixed top-0 left-0 z-40 hidden [@media(hover:hover)_and_(pointer:fine)]:block"
     >
       <div
-        className={`-mt-[120px] -ml-[120px] flex size-60 items-center justify-center gap-2.5 rounded-full text-lg font-medium tracking-[-0.02em] text-white shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-[scale,opacity,background-color] duration-500 ${EASE} ${
+        className={`-mt-[120px] -ml-[120px] flex size-60 items-center justify-center gap-2.5 rounded-full px-8 text-center text-lg leading-tight font-medium tracking-[-0.02em] text-white shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-[scale,opacity,background-color] duration-500 ${EASE} ${
           visible ? "scale-100 opacity-100" : "scale-0 opacity-0"
         }`}
         style={{ backgroundColor: color }}
@@ -242,6 +242,33 @@ export function Stalker({ visible, color, label }: { visible: boolean; color: st
   );
 }
 
+/** The open portrait, with one eyelid that closes on a loop. */
+export function WinkingPortrait({
+  className = "",
+  preload = false,
+}: {
+  className?: string;
+  preload?: boolean;
+}) {
+  return (
+    <span className={`relative block ${className}`}>
+      <Image
+        src="/portrait.png"
+        alt="Angéline Poitout"
+        width={333}
+        height={482}
+        preload={preload}
+        draggable={false}
+        className="h-auto w-full"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute top-[18.3%] left-[56.8%] h-[4.6%] w-[9.6%] origin-top rounded-[50%] bg-[#C69678] shadow-[inset_0_-1.5px_0_#6E4638] animate-[portrait-wink_4.8s_ease-in-out_infinite] motion-reduce:hidden"
+      />
+    </span>
+  );
+}
+
 /** First screen, composed like the Mild Sugar about case: title, portrait, caption. */
 function AboutSlide({
   slide,
@@ -249,12 +276,14 @@ function AboutSlide({
   state,
   label,
   preload,
+  onHover,
 }: {
   slide: Slide;
   lang: Lang;
   state: "active" | "before" | "after";
   label: string;
   preload: boolean;
+  onHover: (on: boolean) => void;
 }) {
   const isActive = state === "active";
   const reveal = (delay: keyof typeof DELAYS) =>
@@ -264,6 +293,40 @@ function AboutSlide({
         : `opacity-0 delay-0 duration-300 ${state === "before" ? "-translate-y-4" : "translate-y-4"}`
     }`;
 
+  const goFurther = slide.cta?.[lang] ?? "Go further";
+  const grid = (
+    <div className="relative grid h-full w-full grid-rows-[1fr_auto_1fr] justify-items-center px-8 pb-16 pt-20 sm:px-16">
+      <h2 className="self-end overflow-clip pb-[0.08em] text-center text-[clamp(3.25rem,7vw,5.75rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832] [@media(max-height:700px)]:text-5xl">
+        <span
+          className={`block transition-transform motion-reduce:transition-none ${EASE} ${
+            isActive
+              ? "translate-y-0 duration-[900ms] delay-150"
+              : state === "before"
+                ? "-translate-y-[110%] duration-500"
+                : "translate-y-[110%] duration-500"
+          }`}
+        >
+          {slide.title[lang]}
+        </span>
+      </h2>
+      <WinkingPortrait
+        preload={preload}
+        className={`w-[min(250px,58vw)] [@media(max-height:700px)]:w-[min(190px,46vw)] ${reveal(250)}`}
+      />
+      <p
+        className={`mt-1 max-w-[26rem] self-start text-center text-[13px] leading-[1.65] font-medium text-[#2C2A26] sm:text-sm ${reveal(350)}`}
+      >
+        {slide.text[lang]}
+      </p>
+      {slide.href && (
+        <span className="absolute top-[60%] left-[calc(50%+4.75rem)] z-20 flex size-24 items-center justify-center rounded-full bg-[#7660D8] px-3 text-center text-[11px] leading-tight font-medium text-white shadow-[0_8px_24px_rgba(0,0,0,0.1)] [@media(hover:hover)_and_(pointer:fine)]:hidden">
+          {goFurther}
+          <span aria-hidden="true"> ↗</span>
+        </span>
+      )}
+    </div>
+  );
+
   return (
     <section
       aria-roledescription="slide"
@@ -272,35 +335,20 @@ function AboutSlide({
       inert={!isActive}
       className={`absolute inset-0 z-10 ${isActive ? "" : "pointer-events-none"}`}
     >
-      <div className="grid h-full w-full grid-rows-[1fr_auto_1fr] justify-items-center px-8 pb-16 pt-20 sm:px-16">
-        <h2 className="self-end overflow-clip pb-[0.08em] text-center text-[clamp(3.25rem,7vw,5.75rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832] [@media(max-height:700px)]:text-5xl">
-          <span
-            className={`block transition-transform motion-reduce:transition-none ${EASE} ${
-              isActive
-                ? "translate-y-0 duration-[900ms] delay-150"
-                : state === "before"
-                  ? "-translate-y-[110%] duration-500"
-                  : "translate-y-[110%] duration-500"
-            }`}
-          >
-            {slide.title[lang]}
-          </span>
-        </h2>
-        <Image
-          src="/portrait.png"
-          alt="Angéline Poitout"
-          width={333}
-          height={482}
-          preload={preload}
-          draggable={false}
-          className={`h-auto w-[min(250px,58vw)] [@media(max-height:700px)]:w-[min(190px,46vw)] ${reveal(250)}`}
-        />
-        <p
-          className={`mt-1 max-w-[26rem] self-start text-center text-[13px] leading-[1.65] font-medium text-[#2C2A26] sm:text-sm ${reveal(350)}`}
+      {slide.href ? (
+        <Link
+          href={slide.href}
+          className="block h-full"
+          onPointerEnter={(e) => e.pointerType === "mouse" && onHover(true)}
+          onPointerLeave={() => onHover(false)}
+          onFocus={() => onHover(false)}
+          onClick={() => onHover(false)}
         >
-          {slide.text[lang]}
-        </p>
-      </div>
+          {grid}
+        </Link>
+      ) : (
+        grid
+      )}
     </section>
   );
 }
@@ -327,7 +375,16 @@ export function CaseItem({
   onHover: (on: boolean) => void;
 }) {
   if (slide.visual === "about") {
-    return <AboutSlide slide={slide} lang={lang} state={state} label={label} preload={preload} />;
+    return (
+      <AboutSlide
+        slide={slide}
+        lang={lang}
+        state={state}
+        label={label}
+        preload={preload}
+        onHover={onHover}
+      />
+    );
   }
 
   const isActive = state === "active";
