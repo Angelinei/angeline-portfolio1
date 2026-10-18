@@ -399,8 +399,14 @@ export function CaseItem({
         : `opacity-0 delay-0 duration-300 ${state === "before" ? "-translate-y-4" : "translate-y-4"}`
     }`;
 
+  // The contact slide uses the rounded face of the "Say Hey!" reference.
+  const isContact = slide.visual === "contact";
   const title = (
-    <span className="block overflow-clip pb-[0.08em] text-[clamp(2.6rem,11vw,4rem)] leading-[1.05] font-medium tracking-[-0.06em] [@media(max-height:680px)]:text-[2.75rem]">
+    <span
+      className={`block overflow-clip pb-[0.08em] text-[clamp(2.6rem,11vw,4rem)] leading-[1.05] [@media(max-height:680px)]:text-[2.75rem] ${
+        isContact ? "font-[family-name:var(--font-fredoka)] font-bold tracking-[-0.02em]" : "font-medium tracking-[-0.06em]"
+      }`}
+    >
       <span
         className={`flex items-center gap-4 transition-transform motion-reduce:transition-none ${EASE} ${
           isActive
@@ -420,10 +426,11 @@ export function CaseItem({
     </span>
   );
 
-  const isContact = slide.visual === "contact";
   const text = (delay: keyof typeof DELAYS) => (
     <span
-      className={`block w-[400px] max-w-[calc(100vw-4rem)] text-[15px] leading-[1.6] font-medium text-black/75 sm:text-base [@media(max-height:680px)]:text-sm ${reveal(delay)}`}
+      className={`block w-[400px] max-w-[calc(100vw-4rem)] text-[15px] leading-[1.6] text-black/75 sm:text-base [@media(max-height:680px)]:text-sm ${
+        isContact ? "font-[family-name:var(--font-fredoka)] font-semibold sm:text-lg" : "font-medium"
+      } ${reveal(delay)}`}
     >
       {slide.text[lang]}
     </span>
