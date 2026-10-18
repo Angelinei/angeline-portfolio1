@@ -1,7 +1,7 @@
 ---
 title: "The education system didn't prepare me to build products. The internet did."
 date: "2026-10-09"
-excerpt: "I have the diplomas: a BTS in tourism, a master’s from EFREI, and a certification in instructional design. Each one taught me something real. None of them taught me how to ship. At school I learned to answer questions someone else had…"
+excerpt: "I have a BTS in tourism, a master's from EFREI, and a certification in instructional design. Four years of my life are documented in transcripts. None of them taught me how to ship anything."
 cover: null
 coverWidth: null
 coverHeight: null
@@ -9,18 +9,62 @@ originalUrl: "https://angelinepoitout.com/internet-taught-me-build-products/"
 kind: "essay"
 ---
 
-I have the diplomas: a BTS in tourism, a master’s from EFREI, and a certification in instructional design. Each one taught me something real. None of them taught me how to ship.
+I have a BTS in tourism, a master's from EFREI, and a certification in instructional design. Four years of my life are documented in transcripts. None of them taught me how to ship anything.
 
-At school I learned to answer questions someone else had written, inside a timeframe someone else had set. Success meant a grade and an ending. Building a product works the other way. Nobody hands you the question. You have to find the problem, decide it’s worth solving, and then live with it long after the “assignment” would have ended.
+That sounds like a complaint. It isn't. I want to be precise about what actually happened, because the usual version of this story is lazy, and the lazy version gets the mechanism wrong.
 
-I learned that part online. I learned it from YouTube tutorials paused every thirty seconds, from documentation I read three times before it made sense, from GitHub repos I took apart to see how they worked, and from forum threads where a stranger had hit the same error two years before me. I learned it by shipping small, imperfect things and watching what broke.
+## The mechanism is feedback latency
 
-The internet doesn’t just give you information. It gives you permission. You don’t need anyone to approve your curriculum. You can decide on a Tuesday that you’re going to understand how an AI agent works, and by Friday you’ve built a bad version of one. By the next month you’ve built a better one.
+School taught me plenty. How to structure an argument. How to read a balance sheet. How to tell when someone is hiding something in a slide deck. I use all of it.
 
-That is how most of my projects started, including [**SkillxTube**](https://skillxtube.com/). The idea came from my own learning habits: all that knowledge was sitting in YouTube videos, but it was scattered, unstructured, and easy to drop halfway through. So I’m building the tool I wish I’d had, one that turns videos into real learning paths. 
+What school could not give me was a short loop.
 
-The internet taught me to build, and now I’m building something to help other people learn from it.
+In a classroom, you submit work and wait. Two weeks later a single person returns a grade, based on a rubric, about a thing that does not exist outside the assignment. The feedback is slow, singular, and about a simulation.
 
-I don’t think school failed me. It was built for a different goal: producing people who can follow a framework. Products need people who can work without one. That’s a different skill, and it’s learned by doing, in public, with a browser tab always open.
+Build something on the internet and the loop collapses. You push a change, and in ninety seconds reality tells you whether you were right. Not a person with an opinion. Reality. The page loads or it doesn't. The payment goes through or it doesn't. Someone signs up or nobody does.
 
-So if you feel like your degree didn’t prepare you for what you actually want to make, you’re probably right. That’s okay. Most of what you’ll need is already out there, free, and waiting for you to type the first question into a search bar.
+That's the whole difference. Not the content. The latency.
+
+## What that actually looks like
+
+This week I was debugging access rules on a database. I found that any signed-up user could have granted themselves unlimited paid access with a single request. The guard that was supposed to prevent this watched exactly one column out of eight, and the order the checks ran in meant it never even fired.
+
+No course prepared me for that. There is no module called "the thing you built has a hole in it and you will find it on a Tuesday."
+
+I found it because I went looking, and I went looking because I had learned, expensively, that the parts of a system nobody has tested are the parts that are broken. That lesson came from breaking things, repeatedly, with money and users on the line. It does not transfer from a textbook. I don't think it can.
+
+## The internet is also a terrible teacher
+
+Here's where I break from the version of this post you've read fifty times.
+
+The internet did not teach me because it is a better library. It's a worse one. It's unsorted, unranked, and optimized against me. Half of what surfaces is someone's second-hand summary of something they also didn't do.
+
+I have watched a nine-hour tutorial and built nothing. I have finished a course, felt the small clean satisfaction of the progress bar hitting the end, and retained approximately none of it. That feeling is a counterfeit. It's the feeling of having learned, sold separately from the learning.
+
+You can spend two years like this. Many people do. They are not lazy and they are not stupid. They are doing exactly what the platform rewards, which is watching.
+
+## What was missing was structure, and I had to build it myself
+
+What finally worked wasn't discipline. It was a change in shape.
+
+I stopped consuming and started shipping on a fixed rhythm. Something finished, every day, however small. Not something learned. Something that existed at the end of the day and didn't exist at the start.
+
+The videos became inputs instead of the point. I'd watch fifteen minutes with a specific question, then close the tab and go make the thing. If I couldn't make the thing, I hadn't understood, and no amount of additional watching was going to fix that.
+
+The difference between those two modes is total. Same platform, same videos, same hours. One produced a portfolio. The other produced a feeling.
+
+## The part that took me longest to accept
+
+School was not trying to do the thing I needed. It was trying to do a different thing, and it did that thing adequately.
+
+The gap isn't that education failed. It's that education optimizes for transferable understanding assessed at low frequency, and building optimizes for specific competence assessed constantly. Those are different machines. Neither replaces the other. I would not want a surgeon who learned on YouTube.
+
+But if what you want is to make things that other people use, the second machine is the one that works, and almost nobody hands it to you. You have to assemble it yourself out of parts that weren't designed to fit together.
+
+That's what I spent four years doing, badly, by accident.
+
+It's also, I'll admit, why I'm now building a product that does it deliberately. Turns out the thing I most wanted to exist was the structure I had to invent from scratch. That's usually where products come from.
+
+Techie yours.
+
+Angéline
