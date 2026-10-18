@@ -1977,7 +1977,7 @@ export const designPortfolioText = {
 /**
  * 14 · AI use cases for EdTechs: the documents of the former "Usecases" page
  * (angelinepoitout.com/ai-edtech-usecases/), produced with generative AI.
- * A case without `pdf` is shown as coming soon.
+ * A case without `pdf` is shown as coming soon (all six have one now).
  */
 export const edtechUseCases = {
   label: { EN: "· AI use cases", FR: "· Cas d'usage IA" },
@@ -2033,6 +2033,7 @@ export const edtechUseCases = {
         EN: "Skill graphs and personalized recommendations.",
         FR: "Graphes de compétences et recommandations personnalisées.",
       },
+      pdf: "/portfolio/use-cases/linkedin-microsoft-skill-graphs.pdf",
     },
     {
       tag: { EN: "LMS", FR: "LMS" },
@@ -2041,6 +2042,18 @@ export const edtechUseCases = {
         EN: "Automating assessment with AI-enhanced grading tools.",
         FR: "Automatiser l'évaluation avec des outils de correction assistés par l'IA.",
       },
+      pdf: "/portfolio/use-cases/schoology-canvas-ai-grading.pdf",
     },
   ] as { tag: { EN: string; FR: string }; title: string; text: { EN: string; FR: string }; pdf?: string }[],
+};
+
+/** 11.1 · Demo video, shown under the resources block. */
+export const demoVideo = {
+  label: { EN: "· Demo video", FR: "· Vidéo démo" },
+  title: { EN: "SkillxTube in 35 seconds", FR: "SkillxTube en 35 secondes" },
+  text: {
+    EN: "“You wanted to learn.” Then a path generated in a few clicks, and the promise: daily actions, not more videos.",
+    FR: "« You wanted to learn. » Puis un parcours généré en quelques clics, et la promesse : des actions chaque jour, pas plus de vidéos.",
+  },
+  label2: { EN: "SkillxTube demo video", FR: "Vidéo de démonstration SkillxTube" },
 };

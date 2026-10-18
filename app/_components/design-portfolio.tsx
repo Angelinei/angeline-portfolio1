@@ -8,7 +8,7 @@
  */
 import Image from "next/image";
 import type { Lang } from "../_data/projects";
-import { designPortfolioText, edtechUseCases } from "../_data/design-portfolio";
+import { demoVideo, designPortfolioText, edtechUseCases } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
 import img1 from "../../public/portfolio/design/skillxtube-logo.png";
 import img2 from "../../public/portfolio/design/zip.png";
@@ -2134,6 +2134,29 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
                 {t("resources.11")}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* 11.1 DEMO VIDEO */}
+      <section id="video" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "center" }}>
+          <div style={{ flex: "1 1 280px", minWidth: "0" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <span style={{ color: "#C62828" }}>11.1</span> {demoVideo.label[lang]}
+            </div>
+            <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{demoVideo.title[lang]}</h2>
+            <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", color: "#4A4943" }}>{demoVideo.text[lang]}</p>
+          </div>
+          <div style={{ flex: "999 1 460px", minWidth: "0" }}>
+            <video
+              src="/portfolio/design/skillxtube-demo.mp4"
+              poster="/portfolio/design/skillxtube-demo-poster.jpg"
+              controls
+              playsInline
+              preload="none"
+              aria-label={demoVideo.label2[lang]}
+              style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16 / 9", borderRadius: "12px", border: "0.5px solid #D8D6D0", background: "#F5F4EF" }}
+            />
           </div>
         </div>
       </section>
