@@ -6,7 +6,9 @@ import type { Lang } from "../_data/projects";
 import {
   CONTACT_EMAIL,
   SHOW_TO_FILL,
+  contentSeo,
   designed,
+  earlyAi,
   gallery,
   hero,
   links,
@@ -34,6 +36,12 @@ const copy = {
     tools: "05 · Tools",
     tool: "Tool",
     usedFor: "Used for",
+    seo: "05b · Content & SEO system",
+    seoSection: "Section",
+    seoPages: "Pages",
+    seoHow: "How the system works",
+    early: "05c · Early AI design",
+    earlyPublished: "Published",
     outcomes: "06 · Outcomes",
     links: "07 · Links",
     gallery: "08 · Gallery",
@@ -52,6 +60,12 @@ const copy = {
     tools: "05 · Outils",
     tool: "Outil",
     usedFor: "Utilisé pour",
+    seo: "05b · Système de contenus & SEO",
+    seoSection: "Section",
+    seoPages: "Pages",
+    seoHow: "Comment le système fonctionne",
+    early: "05c · Premiers designs IA",
+    earlyPublished: "Publié",
     outcomes: "06 · Résultats",
     links: "07 · Liens",
     gallery: "08 · Galerie",
@@ -197,6 +211,75 @@ export function PortfolioCase({
           <p className="mt-6 text-xl font-medium tracking-[-0.02em]" style={{ color: ink }}>
             {toolsClosing[lang]}
           </p>
+        </Group>
+
+        <Group title={t.seo}>
+          <p className="mb-6 text-base leading-8 font-medium text-[#20201E]">{contentSeo.lead[lang]}</p>
+          <ul className="border-t border-black/10">
+            {contentSeo.rows.map((row) => (
+              <li key={row.section.EN} className="grid gap-1 border-b border-black/10 py-4 sm:grid-cols-[120px_1fr] sm:gap-6">
+                <span className="text-[15px] font-medium tracking-[-0.02em]">{row.section[lang]}</span>
+                <span className="min-w-0">
+                  <span className="block text-sm leading-6 text-black/75">{row.pages[lang]}</span>
+                  <span className="mt-1 block font-mono text-[11px] leading-5 break-words text-black/45">{row.urls}</span>
+                </span>
+              </li>
+            ))}
+            <li className="grid gap-1 border-b border-black/10 py-4 sm:grid-cols-[120px_1fr] sm:gap-6">
+              <span className="text-[15px] font-semibold tracking-[-0.02em]">Total</span>
+              <span className="text-[15px] font-semibold" style={{ color: ink }}>
+                {contentSeo.total[lang]}
+              </span>
+            </li>
+          </ul>
+          <p className="mt-3 text-xs leading-5 text-black/45">{contentSeo.source[lang]}</p>
+          <h3 className="mt-10 mb-4 text-lg font-medium tracking-[-0.03em]" style={{ color: ink }}>
+            {t.seoHow}
+          </h3>
+          <ul className="flex flex-col gap-4">
+            {contentSeo.mechanics.map((m) => (
+              <li key={m.label.EN} className="text-[15px] leading-7 text-black/70">
+                <span className="font-semibold text-[#20201E]">{m.label[lang]}. </span>
+                {m.text[lang]}
+              </li>
+            ))}
+          </ul>
+          {SHOW_TO_FILL && (
+            <div className="mt-8">
+              <ToFill label={t.toFill}>{contentSeo.toFill[lang]}</ToFill>
+            </div>
+          )}
+        </Group>
+
+        <Group title={t.early}>
+          <p className="mb-6 text-base leading-8 font-medium text-[#20201E]">{earlyAi.lead[lang]}</p>
+          <ul className="border-t border-black/10">
+            {earlyAi.projects.map((project) => (
+              <li key={project.href} className="border-b border-black/10 py-5">
+                <ExternalLink href={project.href} newTab={t.newTab} className="group inline-flex items-baseline gap-2">
+                  <span className="text-lg font-medium tracking-[-0.03em]">
+                    <RollText color={ink}>{project.title}</RollText>
+                  </span>
+                  <span aria-hidden="true" className="text-xs" style={{ color: ink }}>
+                    ↗
+                  </span>
+                </ExternalLink>
+                <p className="text-xs text-black/45">
+                  {project.subtitle} · {t.earlyPublished} {project.published[lang]}
+                </p>
+                <p className="mt-2 text-[15px] leading-7 text-black/70">{project.text[lang]}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs leading-5 text-black/45">{earlyAi.profile[lang]}</p>
+          <p className="mt-8 font-serif text-xl leading-[1.5] italic" style={{ color: ink }}>
+            {earlyAi.framing[lang]}
+          </p>
+          {SHOW_TO_FILL && (
+            <div className="mt-8">
+              <ToFill label={t.toFill}>{earlyAi.toFill[lang]}</ToFill>
+            </div>
+          )}
         </Group>
 
         <Group title={t.outcomes}>

@@ -245,8 +245,8 @@ export const designed: DesignBlock[] = [
       },
     ],
     closing: {
-      EN: "Each character has its own sheet (three poses, silhouette test, legibility, palette), plus a relationship map (“who cares about whom”) and a slide on why the crew is easy to love: group dynamics, visible continuity, fragility with no moral, silhouettes readable in 0.5 s.",
-      FR: "Chaque personnage a sa propre fiche (trois poses, test de silhouette, lisibilité, palette), avec une carte des relations (« qui tient à qui ») et une slide sur ce qui rend la bande attachante : dynamique de groupe, continuité visible, fragilité sans morale, silhouettes lisibles en 0,5 s.",
+      EN: "Each character has its own sheet (three poses, silhouette test, legibility, palette). The latest crew deck (v3, 21 slides) adds CC's sheet, a storyboard for each of the seven Season 0 episodes (timed beats, on-screen text, sound cues, end card) and a three-step reveal plan for CC. It also has a relationship map (“who cares about whom”) and a slide on why the crew is easy to love: group dynamics, visible continuity, fragility with no moral, silhouettes readable in 0.5 s.",
+      FR: "Chaque personnage a sa propre fiche (trois poses, test de silhouette, lisibilité, palette). Le dernier deck de la bande (v3, 21 slides) ajoute la fiche de CC, un storyboard pour chacun des sept épisodes de la saison 0 (temps forts minutés, textes à l'écran, indications sonores, carton de fin) et un plan de révélation de CC en trois étapes. Il contient aussi une carte des relations (« qui tient à qui ») et une slide sur ce qui rend la bande attachante : dynamique de groupe, continuité visible, fragilité sans morale, silhouettes lisibles en 0,5 s.",
     },
   },
   {
@@ -275,6 +275,13 @@ export const designed: DesignBlock[] = [
         text: {
           EN: "22 to 28 s, vertical 9:16, readable with the sound off, 7 storyboards",
           FR: "22 à 28 s, vertical 9:16, lisible sans le son, 7 storyboards",
+        },
+      },
+      {
+        label: { EN: "Episode taglines", FR: "Accroches des épisodes" },
+        text: {
+          EN: "“Episode 1 of a lot.” · “He's not even that surprised.” · “Ding has never been noticed before.” · “He took 5 seconds to say 3 words.” · “It's been tomorrow for 3 years.” · “He'll finish it. Someday.”",
+          FR: "“Episode 1 of a lot.” · “He's not even that surprised.” · “Ding has never been noticed before.” · “He took 5 seconds to say 3 words.” · “It's been tomorrow for 3 years.” · “He'll finish it. Someday.”",
         },
       },
       {
@@ -365,12 +372,164 @@ export const tools: { tool: string; use: Localized }[] = [
   { tool: "Grok", use: { EN: "Strategy, research and QA bots", FR: "Stratégie, recherche et bots de QA" } },
   { tool: "Astrocade", use: { EN: "Zip vs the Brainrot mini-game", FR: "Mini-jeu Zip vs the Brainrot" } },
   {
+    tool: "ChatGPT custom GPTs, PartyRock",
+    use: { EN: "Early AI products (Behance, 2024)", FR: "Premiers produits IA (Behance, 2024)" },
+  },
+  {
     tool: "Next.js · React · TypeScript · Tailwind · GitHub · Vercel",
     use: { EN: "Portfolio and product stack", FR: "Stack du portfolio et du produit" },
   },
 ];
 
 export const toolsClosing: Localized = { EN: "Zero Figma.", FR: "Zéro Figma." };
+
+/** 05b · Content & SEO system of skillxtube.com. */
+export const contentSeo = {
+  lead: {
+    EN: "Every content page on skillxtube.com was written and produced with AI under one editorial line: play doesn't count, proof does. Each page argues one idea in plain, short sentences, then ends on a tool, a demo or a path.",
+    FR: "Chaque page de contenu de skillxtube.com a été écrite et produite avec l'IA sous une seule ligne éditoriale : jouer ne compte pas, la preuve si. Chaque page défend une idée en phrases simples et courtes, puis se termine sur un outil, une démo ou un parcours.",
+  },
+  source: {
+    EN: "Counts come from skillxtube.com/sitemap.xml (82 URLs in total, last updated 28 Sept to 17 Oct 2026) and the site's own links, checked on 19 Oct 2026.",
+    FR: "Les chiffres viennent de skillxtube.com/sitemap.xml (82 URL au total, mises à jour du 28 septembre au 17 octobre 2026) et des liens du site, vérifiés le 19 octobre 2026.",
+  },
+  rows: [
+    {
+      section: { EN: "Free tools", FR: "Outils gratuits" },
+      pages: { EN: "14 (hub + 6 standalone tools + 7 demo-feature pages)", FR: "14 (hub + 6 outils autonomes + 7 pages de fonctionnalités de démo)" },
+      urls: "/freetools · /freetools/shipped-or-watched, /monday-edit, /playlist-to-path, /video-worth-it, /playlist-hours, /unused-training-budget · /generate-path, /today, /challenge, /hint, /proof, /progress, /events",
+    },
+    {
+      section: { EN: "Use cases", FR: "Cas d'usage" },
+      pages: {
+        EN: "4 (hub + 3 pages); the hub lists 7 cases, 4 of which point to Learn paths",
+        FR: "4 (hub + 3 pages) ; le hub liste 7 cas, dont 4 renvoient vers des parcours Learn",
+      },
+      urls: "/use-cases, /use-cases/tutorial-to-project, /daily-habit, /client-ready-skill · cards → /learn/capcut, /tiktok-organic, /youtube-seo, /prompt-engineering",
+    },
+    {
+      section: { EN: "Guides", FR: "Guides" },
+      pages: { EN: "8 (no hub page; /guides returns 404)", FR: "8 (pas de page hub ; /guides renvoie une 404)" },
+      urls: "/guides/playlist-is-not-a-path, /watched-is-not-shipped, /certificate-vs-file, /a-course-is-not-practice, /hours-are-not-skill, /a-tutorial-is-not-an-edit, /a-thumbnail-is-not-a-lesson, /learn-from-youtube-without-distraction",
+    },
+    {
+      section: { EN: "Alternatives", FR: "Alternatives" },
+      pages: { EN: "8 (hub + 7)", FR: "8 (hub + 7)" },
+      urls: "/alternatives, /alternatives/youtube, /chatgpt, /skillshare, /udemy, /coursera, /notion, /youtube-premium",
+    },
+    {
+      section: { EN: "Learn", FR: "Learn" },
+      pages: { EN: "18 (hub + 17 skill paths)", FR: "18 (hub + 17 parcours de compétences)" },
+      urls: "/learn + capcut, tiktok-organic, youtube-seo, social-media-strategy, sql, linkedin, prompt-engineering, excel, canva, notion, seo, google-analytics-4, premiere-pro, n8n, zapier, cursor-ai-coding, figma",
+    },
+    {
+      section: { EN: "Answers", FR: "Réponses" },
+      pages: { EN: "8 (no hub; /answers returns 404)", FR: "8 (pas de hub ; /answers renvoie une 404)" },
+      urls: "/answers/what-is-a-learning-path, what-counts-as-proof, why-playlists-fail, path-vs-course, what-is-a-daily-challenge, what-does-proof-unlock, how-long-is-a-skillxtube-path, what-is-shipped-work",
+    },
+  ],
+  total: { EN: "60 content pages", FR: "60 pages de contenu" },
+  mechanics: [
+    {
+      label: { EN: "Guides use an “X is not Y” formula", FR: "Les guides suivent la formule « X n'est pas Y »" },
+      text: {
+        EN: "A playlist is not a path, Watched is not shipped, Hours are not skill… Each one turns a habit into a clear distinction, then gives a side-by-side table, a “Do this tonight” list of three steps and a “Common mistake” box, and ends with links to the demo, a path and a tool.",
+        FR: "A playlist is not a path, Watched is not shipped, Hours are not skill… Chacun transforme une habitude en distinction claire, puis donne un tableau comparatif, une liste « À faire ce soir » en trois étapes et un encadré « Erreur fréquente », et se termine par des liens vers la démo, un parcours et un outil.",
+      },
+    },
+    {
+      label: { EN: "Free tools are calculators, not lead magnets", FR: "Les outils gratuits sont des calculateurs, pas des aimants à leads" },
+      text: {
+        EN: "They need no account and make no YouTube fetch. Each gives a score or verdict with Copy / Save / Download PNG / Copy for LinkedIn, and links to a matching path (“Play doesn't count. Proof does.”).",
+        FR: "Ils ne demandent aucun compte et n'interrogent pas YouTube. Chacun donne un score ou un verdict avec Copier / Enregistrer / Télécharger en PNG / Copier pour LinkedIn, et renvoie vers le parcours correspondant (« Play doesn't count. Proof does. »).",
+      },
+    },
+    {
+      label: { EN: "Alternatives pages share one structure", FR: "Les pages Alternatives partagent une seule structure" },
+      text: {
+        EN: "“[Tool] is good at X, but…”, then the same three-part answer: Today, a Challenge, Deposit proof.",
+        FR: "« [Outil] est bon pour X, mais… », puis la même réponse en trois temps : Today, un Challenge, Deposit proof.",
+      },
+    },
+    {
+      label: { EN: "Learn pages are written for search", FR: "Les pages Learn sont écrites pour la recherche" },
+      text: {
+        EN: "“Learn [skill] from YouTube in 7 days”, each listing the real topics it covers.",
+        FR: "« Learn [skill] from YouTube in 7 days », chacune listant les vrais sujets couverts.",
+      },
+    },
+    {
+      label: { EN: "Answers are short definitions", FR: "Les réponses sont des définitions courtes" },
+      text: {
+        EN: "They pin down the product's vocabulary: path, proof, shipped work, daily challenge.",
+        FR: "Elles fixent le vocabulaire du produit : parcours, preuve, travail livré, défi quotidien.",
+      },
+    },
+    {
+      label: { EN: "Characters cross over", FR: "Les personnages circulent" },
+      text: {
+        EN: "Thumby's shocked face shows up on the “A thumbnail is not a lesson” guide and in the site banner (“Find Thumby”).",
+        FR: "La tête choquée de Thumby apparaît dans le guide « A thumbnail is not a lesson » et dans la bannière du site (« Find Thumby »).",
+      },
+    },
+  ],
+  toFill: {
+    EN: "Organic traffic, indexed pages and top queries (Search Console), plus tool usage, if tracked",
+    FR: "Trafic organique, pages indexées et principales requêtes (Search Console), et usage des outils, si mesuré",
+  },
+};
+
+/** 05c · Early AI design, Behance 2024. */
+export const earlyAi = {
+  lead: {
+    EN: "Where it started: three AI product concepts published on Behance in February 2024, well before SkillxTube. They show the same reflex that drives SkillxTube: take a model, give it one job and a clean interface.",
+    FR: "Là où tout a commencé : trois concepts de produits IA publiés sur Behance en février 2024, bien avant SkillxTube. Ils montrent le même réflexe que SkillxTube : prendre un modèle, lui donner une seule mission et une interface nette.",
+  },
+  framing: {
+    EN: "2024: first experiments. Three assistants, three single-purpose interfaces. SkillxTube is what happened when one of them grew up.",
+    FR: "2024 : premières expériences. Trois assistants, trois interfaces à usage unique. SkillxTube, c'est ce qui s'est passé quand l'un d'eux a grandi.",
+  },
+  projects: [
+    {
+      title: "Henrri Financial Assistant",
+      subtitle: "Votre assistant finance AI",
+      href: "https://www.behance.net/gallery/190756749/Henrri-Financial-Assistant-Votre-assistant-finance-AI",
+      published: { EN: "5 Feb 2024", FR: "5 févr. 2024" },
+      text: {
+        EN: "Chat interface: “Build a financial assistant and visualize it into Python,” with suggested prompts (help me, what kind of financial data, build a financial model for my business). 20 views.",
+        FR: "Interface de chat : « Build a financial assistant and visualize it into Python », avec des prompts suggérés (help me, what kind of financial data, build a financial model for my business). 20 vues.",
+      },
+    },
+    {
+      title: "Coursekey",
+      subtitle: "Générateur IA de résumés de cours",
+      href: "https://www.behance.net/gallery/190755881/Coursekey-Gnerateur-IAde-rsums-de-cours",
+      published: { EN: "Feb 2024", FR: "Févr. 2024" },
+      text: {
+        EN: "An app built on PartyRock: “CourseKey – Course to Keys Summaries.” Paste a course description, get the key points and actionable steps. 9 views.",
+        FR: "Une app construite sur PartyRock : « CourseKey – Course to Keys Summaries ». On colle la description d'un cours, on obtient les points clés et les étapes concrètes. 9 vues.",
+      },
+    },
+    {
+      title: "Thought Companion",
+      subtitle: "Votre partenaire de pensées AI",
+      href: "https://www.behance.net/gallery/191389231/Thought-Companion-Votre-partenaire-de-penses-AI",
+      published: { EN: "13 Feb 2024", FR: "13 févr. 2024" },
+      text: {
+        EN: "A thinking partner set up as a custom GPT in ChatGPT, shown with an AIPRM prompt panel. 5 views.",
+        FR: "Un partenaire de réflexion configuré comme GPT personnalisé dans ChatGPT, présenté avec un panneau de prompts AIPRM. 5 vues.",
+      },
+    },
+  ],
+  profile: {
+    EN: "Profile: behance.net/angelinepoitout, member since Dec 2022, 34 project views, 3 appreciations.",
+    FR: "Profil : behance.net/angelinepoitout, membre depuis décembre 2022, 34 vues de projets, 3 appréciations.",
+  },
+  toFill: {
+    EN: "One line per project on the intent and what was learned; exact publication date of Coursekey",
+    FR: "Une ligne par projet sur l'intention et ce qui en a été appris ; date de publication exacte de Coursekey",
+  },
+};
 
 /** Facts from the source files. `value` is the figure shown big, `text` the rest of the line. */
 export const outcomes: { value: string; text: Localized }[] = [
@@ -398,6 +557,13 @@ export const outcomes: { value: string; text: Localized }[] = [
     },
   },
   { value: "1", text: { EN: "playable mini-game built into the product", FR: "mini-jeu jouable intégré au produit" } },
+  {
+    value: "60",
+    text: {
+      EN: "AI-produced content pages on skillxtube.com: 14 free-tool pages, 18 Learn pages, 8 guides, 8 answers, 8 alternatives, 4 use-case pages",
+      FR: "pages de contenu produites avec l'IA sur skillxtube.com : 14 pages d'outils gratuits, 18 pages Learn, 8 guides, 8 réponses, 8 alternatives, 4 pages de cas d'usage",
+    },
+  },
 ];
 
 /** Still unknown: shown as discreet placeholders while SHOW_TO_FILL is true. */
@@ -574,12 +740,12 @@ export const gallery: GalleryItem[] = [
   {
     files: ["later.png"],
     caption: {
-      EN: "Later, the burrito that grows one video fuller every episode.",
-      FR: "Later, le burrito qui grossit d'une vidéo à chaque épisode.",
+      EN: "Later, an early sheet, before he became the burrito of the v3 deck.",
+      FR: "Later, une première fiche, avant qu'il devienne le burrito du deck v3.",
     },
     alt: {
-      EN: "Character sheet of Later, the “Watch later” burrito filled with videos, with three poses and its palette.",
-      FR: "Fiche personnage de Later, le burrito « À regarder plus tard » rempli de vidéos, avec trois poses et sa palette.",
+      EN: "Early character sheet of Later, the “Watch later” character, with three poses and its palette.",
+      FR: "Première fiche personnage de Later, le personnage « À regarder plus tard », avec trois poses et sa palette.",
     },
   },
   {
@@ -612,6 +778,160 @@ export const gallery: GalleryItem[] = [
     alt: {
       EN: "Closing slide with Zip and the line “He watches YouTube so you don't have to.”",
       FR: "Slide de clôture avec Zip et la phrase « Il regarde YouTube pour que tu n'aies pas à le faire. »",
+    },
+  },
+  {
+    files: ["crew-v3-p12.png"],
+    caption: {
+      EN: "Season 0: seven Shorts, one new friend per episode.",
+      FR: "Saison 0 : sept Shorts, un nouvel ami par épisode.",
+    },
+    alt: {
+      EN: "Crew deck v3 slide giving the plan of Season 0: seven Shorts, one new friend per episode.",
+      FR: "Slide du deck v3 présentant le plan de la saison 0 : sept Shorts, un nouvel ami par épisode.",
+    },
+  },
+  {
+    files: ["crew-v3-p13.png"],
+    caption: {
+      EN: "Episode 1 storyboard: six beats in 26 seconds.",
+      FR: "Storyboard de l'épisode 1 : six temps forts en 26 secondes.",
+    },
+    alt: {
+      EN: "Storyboard of episode 1 in six timed beats, with on-screen text and sound cues.",
+      FR: "Storyboard de l'épisode 1 en six temps forts minutés, avec textes à l'écran et indications sonores.",
+    },
+  },
+  {
+    files: ["crew-v3-p19.png"],
+    caption: {
+      EN: "Episode 7: the whole crew, and a subtitle nobody wrote.",
+      FR: "Épisode 7 : toute la bande, et un sous-titre que personne n'a écrit.",
+    },
+    alt: {
+      EN: "Storyboard of episode 7 with the whole crew together and a mysterious subtitle.",
+      FR: "Storyboard de l'épisode 7 avec toute la bande réunie et un sous-titre mystérieux.",
+    },
+  },
+  {
+    files: ["crew-v3-p9.png"],
+    caption: {
+      EN: "CC: she subtitles everything, except her feelings for Zip.",
+      FR: "CC : elle sous-titre tout, sauf ses sentiments pour Zip.",
+    },
+    alt: {
+      EN: "Character sheet of CC, the subtitles, with her poses and palette.",
+      FR: "Fiche personnage de CC, les sous-titres, avec ses poses et sa palette.",
+    },
+  },
+  {
+    files: ["crew-v3-p20.png"],
+    caption: {
+      EN: "CC's arrival, staged as a riddle in three steps.",
+      FR: "L'arrivée de CC, mise en scène comme une énigme en trois étapes.",
+    },
+    alt: {
+      EN: "Slide of the three-step plan that reveals CC as a riddle.",
+      FR: "Slide du plan en trois étapes qui révèle CC comme une énigme.",
+    },
+  },
+  {
+    files: ["site-guide-playlist.png"],
+    caption: {
+      EN: "A guide page: the claim, the comparison, the task for tonight.",
+      FR: "Une page guide : l'affirmation, la comparaison, la tâche du soir.",
+    },
+    alt: {
+      EN: "Screenshot of the skillxtube.com guide “A playlist is not a path”, with its comparison table and its task for tonight.",
+      FR: "Capture du guide skillxtube.com « A playlist is not a path », avec son tableau comparatif et sa tâche du soir.",
+    },
+  },
+  {
+    files: ["site-freetools.png"],
+    caption: {
+      EN: "The free-tools hub: one result a day, no account.",
+      FR: "Le hub des outils gratuits : un résultat par jour, sans compte.",
+    },
+    alt: {
+      EN: "Screenshot of the skillxtube.com free-tools hub listing the calculators.",
+      FR: "Capture du hub des outils gratuits de skillxtube.com listant les calculateurs.",
+    },
+  },
+  {
+    files: ["site-tool-shipped-or-watched.png"],
+    caption: {
+      EN: "Shipped or watched?: score a video by what it produced.",
+      FR: "Shipped or watched? : noter une vidéo selon ce qu'elle a produit.",
+    },
+    alt: {
+      EN: "Screenshot of the “Shipped or watched?” tool giving a score to a video.",
+      FR: "Capture de l'outil « Shipped or watched? » qui attribue un score à une vidéo.",
+    },
+  },
+  {
+    files: ["site-learn.png"],
+    caption: {
+      EN: "17 skill paths built from real YouTube lessons.",
+      FR: "17 parcours de compétences construits à partir de vraies leçons YouTube.",
+    },
+    alt: {
+      EN: "Screenshot of the skillxtube.com Learn hub with its 17 skill paths.",
+      FR: "Capture du hub Learn de skillxtube.com avec ses 17 parcours de compétences.",
+    },
+  },
+  {
+    files: ["site-use-cases.png"],
+    caption: {
+      EN: "Seven use cases, one promise: a file by Day 7.",
+      FR: "Sept cas d'usage, une promesse : un fichier au jour 7.",
+    },
+    alt: {
+      EN: "Screenshot of the skillxtube.com use-cases hub with its seven cases.",
+      FR: "Capture du hub des cas d'usage de skillxtube.com avec ses sept cas.",
+    },
+  },
+  {
+    files: ["site-alternatives.png"],
+    caption: {
+      EN: "Alternatives: SkillxTube against YouTube, ChatGPT, Udemy and others.",
+      FR: "Alternatives : SkillxTube face à YouTube, ChatGPT, Udemy et d'autres.",
+    },
+    alt: {
+      EN: "Screenshot of the skillxtube.com alternatives hub comparing SkillxTube with YouTube, ChatGPT, Udemy and others.",
+      FR: "Capture du hub Alternatives de skillxtube.com comparant SkillxTube à YouTube, ChatGPT, Udemy et d'autres.",
+    },
+  },
+  {
+    files: ["behance-henrri.png"],
+    caption: {
+      EN: "Henrri Financial Assistant (2024): an early AI assistant concept.",
+      FR: "Henrri Financial Assistant (2024) : un premier concept d'assistant IA.",
+    },
+    alt: {
+      EN: "Behance cover of Henrri Financial Assistant, a chat interface for an AI finance assistant.",
+      FR: "Couverture Behance de Henrri Financial Assistant, une interface de chat pour un assistant financier IA.",
+    },
+  },
+  {
+    files: ["behance-thought-companion.png"],
+    caption: {
+      EN: "Thought Companion (2024): a thinking partner built as a custom GPT.",
+      FR: "Thought Companion (2024) : un partenaire de réflexion construit comme un GPT personnalisé.",
+    },
+    alt: {
+      EN: "Behance cover of Thought Companion, a custom GPT shown with an AIPRM prompt panel.",
+      FR: "Couverture Behance de Thought Companion, un GPT personnalisé présenté avec un panneau de prompts AIPRM.",
+    },
+  },
+  {
+    files: ["behance-coursekey-cover.png"],
+    caption: {
+      EN: "Coursekey (2024): course-to-key-points summaries, built on PartyRock.",
+      FR: "Coursekey (2024) : des résumés de cours en points clés, construits sur PartyRock.",
+    },
+    alt: {
+      EN: "Behance cover of Coursekey, a PartyRock app that turns a course description into key points.",
+      FR: "Couverture Behance de Coursekey, une app PartyRock qui transforme la description d'un cours en points clés.",
     },
   },
 ];
