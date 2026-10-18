@@ -1,8 +1,17 @@
 import { useId } from "react";
 
+// Each pose is shown in turn (see the avatar-pose-* keyframes in globals.css).
+// With reduced motion, only the last pose stays visible.
+const POSE_CLASSES = [
+  "animate-[avatar-pose-1_7s_step-end_infinite] motion-reduce:animate-none motion-reduce:opacity-0",
+  "animate-[avatar-pose-2_7s_step-end_infinite] motion-reduce:animate-none motion-reduce:opacity-0",
+  "animate-[avatar-pose-3_7s_step-end_infinite] motion-reduce:animate-none",
+];
+
 /**
- * Full-body 3D-style avatar, standing with one finger raised and a big smile.
- * Taken from the "Avatar en pied" design (third pose), default hair colour.
+ * Full-body 3D-style avatar from the "Avatar en pied" design, cycling through
+ * its three poses: a knowing wink while pointing at the viewer, a finger
+ * raised with a soft smile, then a finger raised with a big smile.
  */
 export function StandingAvatar({ className = "", label }: { className?: string; label: string }) {
   // Gradient and filter ids must be unique when the avatar renders more than once.
@@ -87,7 +96,7 @@ export function StandingAvatar({ className = "", label }: { className?: string; 
         <stop offset="0" stopColor="#FFFFFF" />
         <stop offset="1" stopColor="#DCD8D6" />
         </linearGradient>
-        
+
         <g id={`${p}headBack`}>
         <path d="M330,142 L296,64 L352,128 Z" fill={`url(#${p}spike)`} />
         <path d="M356,132 L372,40 L390,130 Z" fill={`url(#${p}spike)`} />
@@ -117,7 +126,7 @@ export function StandingAvatar({ className = "", label }: { className?: string; 
         <ellipse cx="360" cy="520" rx="15" ry="10" fill="#8F5536" opacity="0.4" filter={`url(#${p}b3)`} />
         <ellipse cx="357" cy="513" rx="6" ry="4" fill="#FFF" opacity="0.4" />
         </g>
-        
+
         <g id={`${p}headFront`}>
         <path d="M176,360 C156,220 252,136 360,136 C468,136 564,220 544,360 C530,300 470,250 372,236 L360,250 L348,236 C250,250 190,300 176,360 Z" fill={`url(#${p}hairFront)`} />
         <path d="M352,238 C300,250 240,290 214,350 C204,380 200,410 206,440 L218,404 L226,430 C232,380 262,320 318,282 C334,270 348,256 352,238 Z" fill={`url(#${p}hairFront)`} />
@@ -157,7 +166,7 @@ export function StandingAvatar({ className = "", label }: { className?: string; 
         </g>
         </g>
         </g>
-        
+
         <g id={`${p}lowerBody`}>
         <ellipse cx="250" cy="742" rx="120" ry="14" fill="#3A2010" opacity="0.18" filter={`url(#${p}b8)`} />
         <rect x="190" y="540" width="56" height="176" rx="22" fill={`url(#${p}pants)`} />
@@ -176,35 +185,96 @@ export function StandingAvatar({ className = "", label }: { className?: string; 
         </g>
       </defs>
       <g filter={`url(#${p}shadow)`}>
-      <use href={`#${p}lowerBody`} />
-      <path d="M318,346 Q356,430 352,500" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
-      <circle cx="352" cy="518" r="20" fill={`url(#${p}hand)`} />
-      <g transform="translate(70,0) scale(0.5) rotate(-7 360 400)">
-      <use href={`#${p}headBack`} />
-      <path d="M244,364 Q286,336 328,350" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
-      <path d="M392,350 Q434,336 476,364" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
-      <ellipse cx="282" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
-      <circle cx="274" cy="430" r="29" fill={`url(#${p}iris)`} />
-      <circle cx="274" cy="430" r="14" fill="#0E0905" />
-      <circle cx="263" cy="418" r="9" fill="#FFF" />
-      <circle cx="286" cy="444" r="3.5" fill="#FFF" opacity="0.85" />
-      <path d="M243,440 Q282,394 321,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
-      <ellipse cx="438" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
-      <circle cx="428" cy="430" r="29" fill={`url(#${p}iris)`} />
-      <circle cx="428" cy="430" r="14" fill="#0E0905" />
-      <circle cx="417" cy="418" r="9" fill="#FFF" />
-      <circle cx="440" cy="444" r="3.5" fill="#FFF" opacity="0.85" />
-      <path d="M399,440 Q438,394 477,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
-      <path d="M316,548 Q360,562 404,548 Q398,604 360,606 Q322,604 316,548 Z" fill="#5A1A1E" />
-      <ellipse cx="360" cy="592" rx="22" ry="10" fill="#E0605E" />
-      <path d="M324,552 Q360,564 396,552 Q394,566 360,569 Q326,566 324,552 Z" fill="#FFFFFF" />
-      <path d="M316,548 Q360,562 404,548 Q398,604 360,606 Q322,604 316,548 Z" fill="none" stroke="#7A3550" strokeWidth="4" strokeLinejoin="round" />
-      <use href={`#${p}headFront`} />
-      </g>
-      <path d="M186,346 Q128,262 112,186" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
-      <circle cx="110" cy="166" r="22" fill={`url(#${p}hand)`} />
-      <rect x="101" y="108" width="15" height="48" rx="7.5" fill={`url(#${p}hand)`} transform="rotate(-10 108 150)" />
-      <ellipse cx="128" cy="168" rx="8" ry="11" fill="#C08660" transform="rotate(30 128 168)" />
+        <g className={POSE_CLASSES[0]}>
+          <use href={`#${p}lowerBody`} />
+          <path d="M318,346 Q348,440 336,512" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="336" cy="530" r="20" fill={`url(#${p}hand)`} />
+          <path d="M184,346 Q140,440 198,428" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="214" cy="414" r="22" fill={`url(#${p}hand)`} />
+          <rect x="212" y="364" width="15" height="44" rx="7.5" fill={`url(#${p}hand)`} transform="rotate(24 219 404)" />
+          <ellipse cx="200" cy="402" rx="8" ry="11" fill="#C08660" transform="rotate(-20 200 402)" />
+          <g transform="translate(70,0) scale(0.5) rotate(4 360 400)">
+          <use href={`#${p}headBack`} />
+          <path d="M244,368 Q286,344 328,358" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <path d="M392,370 Q434,360 476,374" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <ellipse cx="282" cy="454" rx="40" ry="34" fill={`url(#${p}sclera)`} />
+          <circle cx="290" cy="458" r="27" fill={`url(#${p}iris)`} />
+          <circle cx="290" cy="458" r="13" fill="#0E0905" />
+          <circle cx="279" cy="448" r="8" fill="#FFF" />
+          <path d="M234,458 Q282,428 330,458 L332,398 L232,398 Z" fill="#C48A64" />
+          <path d="M240,456 Q282,430 324,456" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <path d="M250,482 Q282,494 314,482" fill="none" stroke="#A86A47" strokeWidth="4" strokeLinecap="round" opacity="0.6" />
+          <ellipse cx="438" cy="454" rx="40" ry="34" fill={`url(#${p}sclera)`} />
+          <circle cx="446" cy="458" r="27" fill={`url(#${p}iris)`} />
+          <circle cx="446" cy="458" r="13" fill="#0E0905" />
+          <circle cx="435" cy="448" r="8" fill="#FFF" />
+          <path d="M390,458 Q438,428 486,458 L488,398 L388,398 Z" fill="#C48A64" />
+          <path d="M396,456 Q438,430 480,456" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <path d="M406,482 Q438,494 470,482" fill="none" stroke="#A86A47" strokeWidth="4" strokeLinecap="round" opacity="0.6" />
+          <path d="M330,562 Q364,582 398,552" fill="none" stroke="#5A1A1E" strokeWidth="7" strokeLinecap="round" />
+          <path d="M336,570 Q364,586 392,562" fill="none" stroke="#7A3550" strokeWidth="3" strokeLinecap="round" opacity="0.45" />
+          <use href={`#${p}headFront`} />
+          </g>
+        </g>
+        <g className={POSE_CLASSES[1]}>
+          <use href={`#${p}lowerBody`} />
+          <path d="M318,346 Q348,440 336,512" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="336" cy="530" r="20" fill={`url(#${p}hand)`} />
+          <g transform="translate(70,0) scale(0.5) rotate(-4 360 400)">
+          <use href={`#${p}headBack`} />
+          <path d="M244,370 Q286,344 328,358" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <path d="M392,358 Q434,344 476,370" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <ellipse cx="282" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
+          <circle cx="276" cy="432" r="29" fill={`url(#${p}iris)`} />
+          <circle cx="276" cy="432" r="14" fill="#0E0905" />
+          <circle cx="265" cy="420" r="9" fill="#FFF" />
+          <circle cx="288" cy="446" r="3.5" fill="#FFF" opacity="0.85" />
+          <path d="M243,440 Q282,394 321,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <ellipse cx="438" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
+          <circle cx="430" cy="432" r="29" fill={`url(#${p}iris)`} />
+          <circle cx="430" cy="432" r="14" fill="#0E0905" />
+          <circle cx="419" cy="420" r="9" fill="#FFF" />
+          <circle cx="442" cy="446" r="3.5" fill="#FFF" opacity="0.85" />
+          <path d="M399,440 Q438,394 477,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <path d="M334,562 Q360,580 386,562" fill="none" stroke="#5A1A1E" strokeWidth="7" strokeLinecap="round" />
+          <use href={`#${p}headFront`} />
+          </g>
+          <path d="M184,346 Q150,270 142,206" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="141" cy="186" r="22" fill={`url(#${p}hand)`} />
+          <rect x="133" y="128" width="15" height="48" rx="7.5" fill={`url(#${p}hand)`} />
+          <ellipse cx="158" cy="188" rx="8" ry="11" fill="#C08660" transform="rotate(30 158 188)" />
+        </g>
+        <g className={POSE_CLASSES[2]}>
+          <use href={`#${p}lowerBody`} />
+          <path d="M318,346 Q356,430 352,500" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="352" cy="518" r="20" fill={`url(#${p}hand)`} />
+          <g transform="translate(70,0) scale(0.5) rotate(-7 360 400)">
+          <use href={`#${p}headBack`} />
+          <path d="M244,364 Q286,336 328,350" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <path d="M392,350 Q434,336 476,364" fill="none" stroke="#2B1A10" strokeWidth="9" strokeLinecap="round" />
+          <ellipse cx="282" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
+          <circle cx="274" cy="430" r="29" fill={`url(#${p}iris)`} />
+          <circle cx="274" cy="430" r="14" fill="#0E0905" />
+          <circle cx="263" cy="418" r="9" fill="#FFF" />
+          <circle cx="286" cy="444" r="3.5" fill="#FFF" opacity="0.85" />
+          <path d="M243,440 Q282,394 321,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <ellipse cx="438" cy="446" rx="40" ry="43" fill={`url(#${p}sclera)`} />
+          <circle cx="428" cy="430" r="29" fill={`url(#${p}iris)`} />
+          <circle cx="428" cy="430" r="14" fill="#0E0905" />
+          <circle cx="417" cy="418" r="9" fill="#FFF" />
+          <circle cx="440" cy="444" r="3.5" fill="#FFF" opacity="0.85" />
+          <path d="M399,440 Q438,394 477,440" fill="none" stroke="#24160D" strokeWidth="7" strokeLinecap="round" />
+          <path d="M316,548 Q360,562 404,548 Q398,604 360,606 Q322,604 316,548 Z" fill="#5A1A1E" />
+          <ellipse cx="360" cy="592" rx="22" ry="10" fill="#E0605E" />
+          <path d="M324,552 Q360,564 396,552 Q394,566 360,569 Q326,566 324,552 Z" fill="#FFFFFF" />
+          <path d="M316,548 Q360,562 404,548 Q398,604 360,606 Q322,604 316,548 Z" fill="none" stroke="#7A3550" strokeWidth="4" strokeLinejoin="round" />
+          <use href={`#${p}headFront`} />
+          </g>
+          <path d="M186,346 Q128,262 112,186" fill="none" stroke="#26262B" strokeWidth="44" strokeLinecap="round" />
+          <circle cx="110" cy="166" r="22" fill={`url(#${p}hand)`} />
+          <rect x="101" y="108" width="15" height="48" rx="7.5" fill={`url(#${p}hand)`} transform="rotate(-10 108 150)" />
+          <ellipse cx="128" cy="168" rx="8" ry="11" fill="#C08660" transform="rotate(30 128 168)" />
+        </g>
       </g>
     </svg>
   );

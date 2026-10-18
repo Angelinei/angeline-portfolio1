@@ -1,0 +1,189 @@
+---
+title: "Let's talk about business model"
+date: "2026-07-24"
+excerpt: "A high-margin, low-cost learning platform. Simple pricing, two ways to pay: subscribe or buy credits. That's the whole model. Keep pricing simple. No decision fatigue, no complicated tiers. Credits never expire and can be combined with any…"
+cover: null
+coverWidth: null
+coverHeight: null
+originalUrl: "https://angelinepoitout.com/business-model/"
+kind: "essay"
+---
+
+### The Idea in One Line
+
+A high-margin, low-cost learning platform. Simple pricing, two ways to pay: subscribe or buy credits. That's the whole model.
+
+### Core Philosophy
+
+Keep pricing simple. No decision fatigue, no complicated tiers.
+
+- **Subscription** — recurring access, best value for regular use
+- **Skill Credits Packs** — one-time top-ups, no commitment
+
+Credits never expire and can be combined with any plan.
+
+### The gym analogy (We'll start here if it's still fuzzy)
+
+Think of a gym.
+
+- **monthly membership** — $30/month, unlimited access
+- **day pass** — $15 per visit, zero commitment
+
+The day pass costs more per visit if you go often (4 visits = $60, vs $30 for the membership). But it still exists - for someone who wants to go once, without signing up for anything. the gym doesn't ban non-members from the day pass. it just makes the membership the naturally better deal if you show up regularly.
+
+that's the whole model. not a wall, just gravity — the subscription should always pull harder than the packs, for anyone using the product regularly.
+
+### How credits actually work
+
+Earlier draft had a real bug : subscription and credit packs were doing the exact same job (hand out credits) at different rates. That's why they felt interchangeable instead of complementary — nothing pointed you toward one over the other.
+
+**One option we tried and rejected:** restrict credit packs to active subscribers only. Rejected, because it directly breaks the doc's own promise — "credit packs = flexible, no commitment." If buying a pack requires a subscription, there is no commitment-free option left. Contradiction, scrapped.
+
+**The actual fix, two rules, not a wall:**
+
+1. **Subscriptions unlock a tier, not just a credit amount.** Each plan gives access to real features (more parallel paths, exports, analytics, priority support) — credits are the fuel, the tier is what the car can do.
+2. **The two credit pools behave differently, and packs stay open to everyone:**
+
+|  | Subscription credits | Pack credits |
+| --- | --- | --- |
+| Who can buy | Subscribers only (it's part of the plan) | Anyone, subscribed or not |
+| Expiry | Reset every month, don't carry over | Never expire |
+| $ per credit | Always cheaper, if usage matches your monthly plan | Always a bit more expensive |
+| Purpose | Your predictable, regular usage | Overflow, one-off use, no-commitment try-out |
+
+Nobody is locked out of anything. The subscription just wins on price *for regular use*, the same way the gym membership wins over day passes for someone who goes weekly.
+
+### The pricing rule to apply in step 2
+
+This is the one rule that makes the whole model make sense, and it's currently broken in the numbers below, on purpose left as-is until step 2:
+
+&gt; **A subscription's included credits must always cost less per credit than any pack, at the plan's own consumption level.**
+
+### Worked example (illustrative numbers, not final)
+
+Say Starter subscription = $14.90 for 250 credits/month, and the smallest pack = $25 for 370 credits.
+
+- Subscription: $14.90 / 250 = **$0.060 per credit**
+- Pack: $25 / 370 = **$0.068 per credit**
+
+Now the simulation: you're subscribed to Starter, you burn through your 250 monthly credits, and top up with one pack.
+
+- **This month: $14.90 + $25 = $39.90 for 620 credits.**
+- If you cancel and try to buy 620 credits purely through packs instead: roughly **$42** — more expensive, and you lose your plan's features (parallel paths, exports, analytics) on top of that.
+
+That gap is small on purpose. It's not meant to punish pack buyers, just to make the subscription the obviously better deal the moment your usage is regular — exactly like the gym membership.
+
+### Why the tables below don't satisfy this rule yet
+
+Checking the current numbers against this rule: Starter subscription is $0.149/credit, while the *cheapest* pack is $0.027/credit — five times cheaper. Anyone doing the math would cancel the subscription and buy packs only. This needs to be corrected in step 2, using the worked example above as the target shape (subscription always a bit cheaper per credit than packs, at the plan's expected usage level).
+
+### Subscription plans *(numbers pending — see rule above)*
+
+| Plan | Monthly price | Credits / month* | Unlocks | Best for |
+| --- | --- | --- | --- | --- |
+| Starter | $14.90 | 100 | 1 active path at a time | Try one skill |
+| Plus | $24.90 | 500 | Multiple paths in parallel, PDF export | Growing use |
+| Creator ★ | $39.90 | 1,000 | Unlimited exports, progress analytics | Most popular |
+| Max | $89.90 | 5,000 (or unlimited) | Early access to new skills/formats, priority support | Power users |
+
+*Credits reset at the start of each billing cycle — unused credits don't carry over.
+
+Annual billing adds bonus credits every month, from +15 (Starter) up to +750 (Max), on top of the monthly allowance.
+
+### Credit packs (one-time) *(numbers pending — see rule above)*
+
+Open to everyone, subscribed or not. No feature tier, no expiry — just credits, priced to be a fair but slightly less efficient option than subscribing.
+
+| Pack | Price | Credits | Bonus paths |
+| --- | --- | --- | --- |
+| Starter | $9.50 | 350 | +3 |
+| Value | $25 | 700 | +5 |
+| Pro ★ | $50 | 1,000 | +50 |
+| Studio | $100 | 1,500 | +100 |
+
+Credits never expire · Added instantly · No subscription required
+
+### Credit cost by path length
+
+| Duration | Credits |
+| --- | --- |
+| 3 days | 50 |
+| 7 days | 100 |
+| 21 days | 250 |
+| 30 days | 350 |
+
+### Year 1 : what success could look like
+
+Target market: US, UK, Canada, Australia. Mostly organic + content-led growth.
+
+**Assumptions:**
+
+- 2.5–4% free-to-paid conversion
+- 6–9% monthly churn
+- $28–42 average revenue per paying user
+- 90%+ gross margin even in the worst case
+
+| Scenario | Paying users | MRR | ARR | Net profit | Margin |
+| --- | --- | --- | --- | --- | --- |
+| Pessimistic | 50–70 | $1.4–2.2k | $17–26k | $15–24k | 85–90% |
+| Conservative | 100–140 | $3–4.5k | $36–54k | $33–51k | 90–93% |
+| Moderate | 200–280 | $6.5–9.5k | $78–114k | $73–109k | 92–95% |
+| Ambitious | 380–480 | $13–18k | $156–216k | $148–208k | 93–96% |
+
+### Why the margins are so high
+
+Generating one full path costs $0.08–$0.15 in AI inference — nothing else scales with users. No manual production, no expensive per-user infrastructure.
+
+- Gross margin per path: 96–99%, even on the cheapest plan
+- Monthly infrastructure (Vercel + Supabase + AI): $15–100
+- Annual operating cost: $1,500–5,000
+
+### Beyond the core offer
+
+| Layer | Type | Status |
+| --- | --- | --- |
+| Skill Credits | Core revenue | Active |
+| Unlimited plan | High lifetime value | Active |
+| Affiliate program | Passive income | Ready to launch |
+| Team / B2B plans | High ticket | Next |
+| API / white-label | Platform revenue | Future |
+| Marketplace | High margin | Future |
+
+### Where this goes next
+
+1. **Now:** B2C — credits + subscriptions
+2. **Day one:** turn on the affiliate program
+3. **Next:** lightweight team plans for B2B
+4. **Later:** sell the engine via API / white-label
+5. **Later:** replicate the model across other micro-niches
+6. **Later:** enterprise / corporate training integration
+
+### What could go wrong
+
+| Risk | Level | Mitigation |
+| --- | --- | --- |
+| "I'll just use free tools" | High | No free plan + strong before/after demo |
+| High churn | High | Progress tracking, streaks, re-engagement nudges |
+| Price resistance | Medium-High | Low entry price + clear "Most Popular" plan |
+| Platform/API changes (e.g. YouTube) | Medium-High | Official APIs + caching + fallbacks |
+| Hard to acquire users | Medium-High | Content engine + SEO + short-form video |
+| Competitors | Medium | Full structured path, not just a content summary |
+| AI mistakes / hallucinations | Medium | Multi-agent validation + fallback models |
+
+The 90%+ gross margin is the real safety net — it buys room to spend on acquisition, absorb refunds, and survive churn while staying profitable.
+
+---
+
+*This is the model on paper. the market decides the rest.*
+
+**Update 05/08/2026 : look at the difference between the idea and the concept. Foundations matter (not the definitive version but so close because satisfyin') :**
+
+<VideoTodo src="https://angelinepoitout.com/wp-content/uploads/2026/08/flow4.mp4" />
+
+<VideoTodo src="https://angelinepoitout.com/wp-content/uploads/2026/08/flow5-1.mp4" />
+
+<ImageTodo src="https://angelinepoitout.com/wp-content/uploads/2026/08/price.png" />
+
+Techie yours,
+
+Angéline
