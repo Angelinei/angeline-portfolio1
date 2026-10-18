@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Lang, Localized, Project, Visual } from "../_data/projects";
 import { projectHref } from "../_data/projects";
+import { StandingAvatar } from "./standing-avatar";
 
 export type Slide = {
   id: string;
@@ -41,6 +42,7 @@ export const ui = {
     switchLang: "Passer en français",
     collaborate: "Open to collaboration",
     newTab: "(opens in a new tab)",
+    avatar: "Angéline's avatar, one finger raised, smiling",
   },
   FR: {
     disciplines: ["IA générative", "Ingénierie pédagogique", "Produits digitaux"],
@@ -48,6 +50,7 @@ export const ui = {
     switchLang: "Switch to English",
     collaborate: "Ouverte aux collaborations",
     newTab: "(nouvel onglet)",
+    avatar: "Avatar d'Angéline, un doigt levé, souriante",
   },
 };
 
@@ -417,6 +420,15 @@ export function CaseItem({
     </span>
   );
 
+  const isContact = slide.visual === "contact";
+  const text = (delay: keyof typeof DELAYS) => (
+    <span
+      className={`block w-[400px] max-w-[calc(100vw-4rem)] text-[15px] leading-[1.6] font-medium text-black/75 sm:text-base [@media(max-height:680px)]:text-sm ${reveal(delay)}`}
+    >
+      {slide.text[lang]}
+    </span>
+  );
+
   const body = (
     <>
       <span className={`mb-3 block text-[10px] tracking-[0.18em] text-black/50 ${reveal(100)}`}>
@@ -430,25 +442,32 @@ export function CaseItem({
       ) : (
         title
       )}
-      <span
-        className={`my-5 block size-[min(280px,32svh)] [@media(max-height:560px)]:my-2 ${reveal(250)}`}
-      >
-        <ProjectVisual
-          kind={slide.visual}
-          tint={slide.tint}
-          ink={slide.ink}
-          linked={Boolean(slide.href)}
-          cover={cover}
-          alt={slide.title[lang]}
-          preload={preload}
-          sizes="280px"
-        />
-      </span>
-      <span
-        className={`block w-[400px] max-w-[calc(100vw-4rem)] text-[15px] leading-[1.6] font-medium text-black/75 sm:text-base [@media(max-height:680px)]:text-sm ${reveal(350)}`}
-      >
-        {slide.text[lang]}
-      </span>
+      {isContact ? (
+        <>
+          {text(250)}
+          <span className={`mt-2 block h-[min(360px,40svh)] ${reveal(350)}`}>
+            <StandingAvatar label={ui[lang].avatar} className="h-full w-auto" />
+          </span>
+        </>
+      ) : (
+        <>
+          <span
+            className={`my-5 block size-[min(280px,32svh)] [@media(max-height:560px)]:my-2 ${reveal(250)}`}
+          >
+            <ProjectVisual
+              kind={slide.visual}
+              tint={slide.tint}
+              ink={slide.ink}
+              linked={Boolean(slide.href)}
+              cover={cover}
+              alt={slide.title[lang]}
+              preload={preload}
+              sizes="280px"
+            />
+          </span>
+          {text(350)}
+        </>
+      )}
       <span
         className={`mt-4 flex w-[400px] max-w-[calc(100vw-4rem)] flex-wrap gap-2 ${reveal(450)}`}
       >
