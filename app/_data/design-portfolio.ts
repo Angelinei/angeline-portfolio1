@@ -1973,3 +1973,87 @@ export const designPortfolioText = {
     FR: "behance.net/angelinepoitout",
   },
 } as const;
+
+/**
+ * 14 · AI use cases for EdTechs: the documents of the former "Usecases" page
+ * (angelinepoitout.com/ai-edtech-usecases/), produced with generative AI.
+ * A case without `pdf` is shown as coming soon (all six have one now).
+ */
+export const edtechUseCases = {
+  label: { EN: "· AI use cases", FR: "· Cas d'usage IA" },
+  title: { EN: "What AI can already do for EdTechs", FR: "Ce que l'IA fait déjà pour les EdTechs" },
+  intro: {
+    EN: "Real-life use cases written for EdTech companies on my former site, each produced with generative AI: 3 clicks, less than 5 minutes per document, 2 tools. The point: show what AI can already do in education.",
+    FR: "Des cas d'usage concrets rédigés pour les EdTechs sur mon ancien site, chacun produit avec l'IA générative : 3 clics, moins de 5 minutes par document, 2 outils. Le but : montrer ce que l'IA sait déjà faire dans l'éducation.",
+  },
+  open: { EN: "PDF · 8 pages", FR: "PDF · 8 pages" },
+  soon: { EN: "Coming soon", FR: "Bientôt" },
+  newTab: { EN: "(PDF, opens in a new tab)", FR: "(PDF, nouvel onglet)" },
+  cases: [
+    {
+      tag: { EN: "Language learning", FR: "Apprentissage des langues" },
+      title: "Duolingo",
+      text: {
+        EN: "AI at Duolingo: BirdBrain, adaptive challenges and smart retention.",
+        FR: "L'IA chez Duolingo : BirdBrain, des défis adaptatifs et une rétention intelligente.",
+      },
+      pdf: "/portfolio/use-cases/duolingo-ai-language-learning.pdf",
+    },
+    {
+      tag: { EN: "AI agents", FR: "Agents IA" },
+      title: "Khan Academy",
+      text: {
+        EN: "Khanmigo: an AI tutor for students, an assistant for teachers, built with OpenAI.",
+        FR: "Khanmigo : un tuteur IA pour les élèves, un assistant pour les enseignants, construit avec OpenAI.",
+      },
+      pdf: "/portfolio/use-cases/khan-academy-khanmigo-ai-agents.pdf",
+    },
+    {
+      tag: { EN: "Content curation", FR: "Curation de contenus" },
+      title: "Coursera",
+      text: {
+        EN: "AI-powered content tagging, skill mapping and learning support.",
+        FR: "Tagging des contenus, cartographie des compétences et accompagnement par l'IA.",
+      },
+      pdf: "/portfolio/use-cases/coursera-ai-content-curation.pdf",
+    },
+    {
+      tag: { EN: "AI tutoring", FR: "Tutorat IA" },
+      title: "Quizlet",
+      text: {
+        EN: "Q-Chat, a Socratic AI tutor on the ChatGPT API, and intelligent study tools.",
+        FR: "Q-Chat, un tuteur IA socratique sur l'API ChatGPT, et des outils d'étude intelligents.",
+      },
+      pdf: "/portfolio/use-cases/quizlet-ai-learning-tools.pdf",
+    },
+    {
+      tag: { EN: "Skill graphs", FR: "Graphes de compétences" },
+      title: "LinkedIn Learning / Microsoft",
+      text: {
+        EN: "Skill graphs and personalized recommendations.",
+        FR: "Graphes de compétences et recommandations personnalisées.",
+      },
+      pdf: "/portfolio/use-cases/linkedin-microsoft-skill-graphs.pdf",
+    },
+    {
+      tag: { EN: "LMS", FR: "LMS" },
+      title: "Schoology / Canvas",
+      text: {
+        EN: "Automating assessment with AI-enhanced grading tools.",
+        FR: "Automatiser l'évaluation avec des outils de correction assistés par l'IA.",
+      },
+      pdf: "/portfolio/use-cases/schoology-canvas-ai-grading.pdf",
+    },
+  ] as { tag: { EN: string; FR: string }; title: string; text: { EN: string; FR: string }; pdf?: string }[],
+};
+
+/** 11.1 · Demo video, shown under the resources block. */
+export const demoVideo = {
+  label: { EN: "· Demo video", FR: "· Vidéo démo" },
+  title: { EN: "SkillxTube in 35 seconds", FR: "SkillxTube en 35 secondes" },
+  text: {
+    EN: "“You wanted to learn.” Then a path generated in a few clicks, and the promise: daily actions, not more videos.",
+    FR: "« You wanted to learn. » Puis un parcours généré en quelques clics, et la promesse : des actions chaque jour, pas plus de vidéos.",
+  },
+  label2: { EN: "SkillxTube demo video", FR: "Vidéo de démonstration SkillxTube" },
+};
