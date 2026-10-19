@@ -58,6 +58,11 @@ function Li(props: ComponentPropsWithoutRef<"li">) {
   return <li className="text-base leading-8 text-black/75" {...props} />;
 }
 
+function Img({ alt = "", ...props }: ComponentPropsWithoutRef<"img">) {
+  // eslint-disable-next-line @next/next/no-img-element -- MDX images come with no known size
+  return <img alt={alt} loading="lazy" className="my-8 h-auto w-full rounded-[18px] border border-black/10" {...props} />;
+}
+
 function Hr() {
   return <hr className="my-10 border-0 border-t border-black/10" />;
 }
@@ -82,6 +87,7 @@ const components = {
   ol: Ol,
   li: Li,
   hr: Hr,
+  img: Img,
   blockquote: Blockquote,
   VideoTodo,
   ImageTodo,
