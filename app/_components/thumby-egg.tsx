@@ -1,127 +1,98 @@
 "use client";
 
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import Image from "next/image";
-import type { Lang, Localized } from "../_data/projects";
-import { CONTACT_EMAIL } from "./case-parts";
-
-/** The three portfolio Thumbys stay hidden on the site for one year. */
-const ENDS_AT = Date.parse("2027-10-19T23:59:59Z");
-const ENDS_LABEL: Localized = { EN: "October 19, 2027", FR: "19 octobre 2027" };
-
-const subscribe = () => () => {};
-const isOpen = () => Date.now() <= ENDS_AT;
-
-export type ThumbyPrize = "xp" | "credits" | "ad";
-
-const PRIZES: Record<ThumbyPrize, { code: string; label: Localized }> = {
-  xp: { code: "THUMBY-2500XP", label: { EN: "2,500 SkillXP", FR: "2 500 SkillXP" } },
-  credits: { code: "THUMBY-150CREDITS", label: { EN: "150 credits", FR: "150 crédits" } },
-  ad: { code: "THUMBY-ADSPOT199", label: { EN: "1 ad spot ($199)", FR: "1 spot publicitaire (199 $)" } },
-};
-
-const copy = {
-  EN: {
-    trigger: "A hidden Thumby",
-    title: "You found Thumby!",
-    prize: "He was hiding",
-    body: "A SkillxTube easter egg hidden on my portfolio. Email me this code from the address of your SkillxTube account and I'll add it.",
-    until: "Valid until",
-    claim: "Claim by email",
-    copy: "Copy",
-    copied: "Copied",
-    close: "Close",
-  },
-  FR: {
-    trigger: "Un Thumby caché",
-    title: "Tu as trouvé Thumby !",
-    prize: "Il cachait",
-    body: "Un easter egg SkillxTube caché dans mon portfolio. Envoie-moi ce code depuis l'adresse de ton compte SkillxTube et je l'ajoute.",
-    until: "Valable jusqu'au",
-    claim: "Réclamer par mail",
-    copy: "Copier",
-    copied: "Copié",
-    close: "Fermer",
-  },
-};
+import type { Lang } from "../_data/projects";
 
 /**
- * A small Thumby peeking from a block: a click opens what he hides. The parent places it
- * (absolute) and must be `relative`. Gone after ENDS_AT.
+ * Three Thumbys hide on the site until October 19, 2027, each on a spot drawn at random per visit
+ * (tab). A click opens its claim page on SkillxTube, which handles sign-up, one prize per account,
+ * and sends a taken prize to the demo.
  */
-export function ThumbyEgg({ prize, lang, className = "" }: { prize: ThumbyPrize; lang: Lang; className?: string }) {
-  // Read on the client only, so the static page never bakes in the date.
-  const active = useSyncExternalStore(subscribe, isOpen, () => false);
-  const [copied, setCopied] = useState(false);
-  const dialog = useRef<HTMLDialogElement>(null);
-  const t = copy[lang];
-  const { code, label } = PRIZES[prize];
+const ENDS_AT = Date.parse("2027-10-19T23:59:59Z");
+const CLAIM_URL = "https://skillxtube.com/thumby/";
+const CODES = ["THUMBY-2500XP", "THUMBY-150CREDITS", "THUMBY-ADSPOT199"];
 
-  if (!active) return null;
+export const THUMBY_SPOTS = [
+  "home",
+  "skillxtube",
+  "portfolio",
+  "archives",
+  "cimetiere",
+  "ai-experiments",
+  "the-path",
+  "about",
+  "writing",
+] as const;
 
-  const subject = encodeURIComponent(`Thumby ${code}`);
-  const body = encodeURIComponent(`${t.title}\n\n${code} · ${label[lang]}\n\nSkillxTube account email: `);
+export type ThumbySpot = (typeof THUMBY_SPOTS)[number];
+
+const SEED_KEY = "thumby-seed";
+
+/** A small seeded generator, so a visit keeps the same three spots on every page. */
+function seeded(seed: number) {
+  let value = seed >>> 0 || 1;
+  return () => {
+    value = (Math.imul(value, 1664525) + 1013904223) >>> 0;
+    return value / 4294967296;
+  };
+}
+
+function visitSeed(): number {
+  try {
+    let seed = Number(sessionStorage.getItem(SEED_KEY)) || 0;
+    if (!seed) {
+      seed = Math.floor(Math.random() * 2 ** 31) + 1;
+      sessionStorage.setItem(SEED_KEY, String(seed));
+    }
+    return seed;
+  } catch {
+    return 1;
+  }
+}
+
+/** Spot → code for this visit: three spots drawn from THUMBY_SPOTS, one code each. */
+let assignment: Map<string, string> | null = null;
+function spotCode(spot: ThumbySpot): string | null {
+  if (Date.now() > ENDS_AT) return null;
+  if (!assignment) {
+    const random = seeded(visitSeed());
+    const spots = [...THUMBY_SPOTS];
+    for (let i = spots.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(random() * (i + 1));
+      [spots[i], spots[j]] = [spots[j], spots[i]];
+    }
+    assignment = new Map(CODES.map((code, i) => [spots[i], code]));
+  }
+  return assignment.get(spot) ?? null;
+}
+
+const subscribe = () => () => {};
+
+/**
+ * A small Thumby peeking from a block, shown only when this visit hid one on `spot`. The parent
+ * places it (absolute) and must be `relative`.
+ */
+export function ThumbyEgg({ spot, lang, className = "" }: { spot: ThumbySpot; lang: Lang; className?: string }) {
+  // Read on the client only: the static page never bakes in a spot or the date.
+  const code = useSyncExternalStore(subscribe, () => spotCode(spot), () => null);
+  if (!code) return null;
 
   return (
-    <>
-      <button
-        type="button"
-        aria-label={t.trigger}
-        onClick={() => dialog.current?.showModal()}
-        className={`group absolute z-30 block w-[46px] cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:rotate-6 sm:w-[54px] ${className}`}
-      >
-        <Image
-          src="/thumby/thumby.png"
-          alt=""
-          width={160}
-          height={174}
-          className="h-auto w-full drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]"
-        />
-      </button>
-
-      <dialog
-        ref={dialog}
-        onClick={(event) => {
-          if (event.target === dialog.current) dialog.current?.close();
-        }}
-        className="m-auto w-[min(420px,calc(100vw-2rem))] rounded-[22px] bg-[#F8F7F2] p-0 text-[#20201E] backdrop:bg-black/40"
-      >
-        <div className="flex flex-col items-center px-7 pt-8 pb-7 text-center">
-          <Image src="/thumby/thumby.png" alt="" width={160} height={174} className="h-auto w-20" />
-          <p className="mt-4 text-2xl font-semibold tracking-[-0.03em]">{t.title}</p>
-          <p className="mt-3 text-xs tracking-[0.16em] text-black/50 uppercase">{t.prize}</p>
-          <p className="mt-1 text-xl font-semibold text-[#7660D8]">{label[lang]}</p>
-          <p className="mt-4 text-sm leading-6 text-black/70">{t.body}</p>
-          <div className="mt-5 flex items-center gap-2 rounded-full border border-black/15 py-1.5 pr-1.5 pl-4">
-            <code className="font-[family-name:var(--font-geist-mono)] text-sm">{code}</code>
-            <button
-              type="button"
-              onClick={() => {
-                navigator.clipboard?.writeText(code).then(() => setCopied(true), () => {});
-              }}
-              className="rounded-full bg-black/5 px-3 py-1.5 text-xs transition-colors hover:bg-black/10"
-            >
-              {copied ? t.copied : t.copy}
-            </button>
-          </div>
-          <p className="mt-3 text-xs text-black/45">
-            {t.until} {ENDS_LABEL[lang]}
-          </p>
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`}
-            className="mt-6 rounded-full bg-[#7660D8] px-5 py-3 text-sm leading-none text-white transition-opacity hover:opacity-85"
-          >
-            {t.claim}
-          </a>
-          <button
-            type="button"
-            onClick={() => dialog.current?.close()}
-            className="mt-3 text-xs text-black/50 underline underline-offset-4 hover:text-black"
-          >
-            {t.close}
-          </button>
-        </div>
-      </dialog>
-    </>
+    <a
+      href={`${CLAIM_URL}${code}`}
+      target="_blank"
+      rel="noopener"
+      aria-label={lang === "FR" ? "Un Thumby caché (nouvel onglet)" : "A hidden Thumby (opens in a new tab)"}
+      className={`group absolute z-30 block w-[46px] cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:rotate-6 sm:w-[54px] ${className}`}
+    >
+      <Image
+        src="/thumby/thumby.png"
+        alt=""
+        width={160}
+        height={174}
+        className="h-auto w-full drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]"
+      />
+    </a>
   );
 }

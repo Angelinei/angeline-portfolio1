@@ -26,7 +26,7 @@ import {
   type Slide,
 } from "./case-parts";
 import { ExternalLink, Group, PageHero, useInView } from "./editorial";
-import { ThumbyEgg } from "./thumby-egg";
+import { ThumbyEgg, type ThumbySpot } from "./thumby-egg";
 import { useLang } from "./use-lang";
 import { DesignPortfolio } from "./design-portfolio";
 
@@ -144,9 +144,7 @@ export default function ProjectDetail({
                       sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
                     />
                   </div>
-                  {project.slug === "skillxtube" && (
-                    <ThumbyEgg prize="credits" lang={lang} className="right-4 -bottom-2 sm:right-8" />
-                  )}
+                  <ThumbyEgg spot={project.slug as ThumbySpot} lang={lang} className="right-4 -bottom-2 sm:right-8" />
                 </div>
               )
             }

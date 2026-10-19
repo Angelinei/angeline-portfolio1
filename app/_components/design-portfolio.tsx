@@ -1752,7 +1752,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               </span>
             </div>
             <div style={{ position: "relative", padding: "28px", display: "flex", justifyContent: "center" }}>
-              <ThumbyEgg prize="ad" lang={lang} className="right-3 bottom-2" />
+              <ThumbyEgg spot="portfolio" lang={lang} className="right-3 bottom-2" />
               <Image src={img18} alt={t("game.img0")} loading="lazy" style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block", borderRadius: "12px" }} />
             </div>
           </div>

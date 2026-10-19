@@ -5,6 +5,7 @@ import Link from "next/link";
 import { formatWritingDate, type WritingPost } from "../_data/writing";
 import { BRAND, EASE, ProjectVisual, RollText, SiteHeader, ui, writingSlide } from "./case-parts";
 import { PageHero, enter } from "./editorial";
+import { ThumbyEgg } from "./thumby-egg";
 import { useLang } from "./use-lang";
 
 const INK = "#7660D8";
@@ -88,7 +89,7 @@ export function WritingIndex({ posts }: { posts: WritingPost[] }) {
         marqueeColor={writingSlide.marqueeColor}
         visual={
           <div
-            className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/7]"
+            className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/7]"
             style={{ backgroundColor: TINT }}
           >
             <div className="size-[70cqw] sm:size-[34cqw]">
@@ -102,6 +103,7 @@ export function WritingIndex({ posts }: { posts: WritingPost[] }) {
                 sizes="(min-width: 640px) 34vw, 70vw"
               />
             </div>
+            <ThumbyEgg spot="writing" lang={lang} className="right-4 -bottom-2 sm:right-8" />
           </div>
         }
       >
