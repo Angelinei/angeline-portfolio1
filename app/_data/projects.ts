@@ -618,6 +618,16 @@ export const projects: Project[] = [
       },
       {
         group: { EN: "Hobbies", FR: "Loisirs" },
+        title: "Music — Studio sessions with Lucas",
+        description: {
+          EN: "Tracks recorded with Lucas, my sound engineer.",
+          FR: "Les sons réalisés avec Lucas, mon ingé son.",
+        },
+        href: "https://drive.google.com/drive/folders/12h1qAqblbLTi4pzFe3N37BbaNWWx09gq?usp=sharing",
+        tags: ["Music"],
+      },
+      {
+        group: { EN: "Hobbies", FR: "Loisirs" },
         title: "Acting",
         description: {
           EN: "Extra in the web series “Dans un autre monde”.",
