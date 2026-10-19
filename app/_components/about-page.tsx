@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { BRAND, RollText, SiteHeader, WinkingPortrait, approachSlide, ui } from "./case-parts";
 import { Group, PageHero } from "./editorial";
+import { ThumbyEgg } from "./thumby-egg";
 import { useLang } from "./use-lang";
 
 const copy = {
@@ -68,7 +69,12 @@ export default function AboutPage() {
             title={t.title}
             marquee={approachSlide.marquee}
             marqueeColor={approachSlide.marqueeColor}
-            visual={<WinkingPortrait preload className="w-[min(240px,56vw)]" />}
+            visual={
+              <div className="relative">
+                <WinkingPortrait preload className="w-[min(240px,56vw)]" />
+                <ThumbyEgg spot="about" lang={lang} className="-right-6 bottom-2" />
+              </div>
+            }
             visualSize="card"
           >
             <p className="text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl">{t.lead}</p>

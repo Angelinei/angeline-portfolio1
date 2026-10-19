@@ -212,7 +212,7 @@ export default function CasesStage({
         </span>
       </div>
 
-      <ThumbyEgg prize="xp" lang={lang} className="right-[22%] -bottom-3 sm:right-[30%]" />
+      <ThumbyEgg spot="home" lang={lang} className="right-[22%] -bottom-3 sm:right-[30%]" />
 
       <Stalker
         visible={hovered === active.id}
