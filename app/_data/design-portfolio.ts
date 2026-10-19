@@ -2063,3 +2063,177 @@ export const rankbidOrigin = {
   EN: "It started with the outbid.lol trend on X (Twitter): I built my own take on it before refocusing on SkillxTube. The idea stayed. Bidding for visibility shaped SkillxTube's Advertise program, which is why it earns its place in this portfolio.",
   FR: "Tout est parti de la tendance outbid.lol sur X (Twitter) : j'en avais lancé ma propre déclinaison avant de me recentrer sur SkillxTube. L'idée, elle, est restée : ces enchères de visibilité ont inspiré le programme Advertise de SkillxTube, d'où sa place dans ce portfolio.",
 };
+
+type L = { EN: string; FR: string };
+export type LinkCard = { tag: L; title: string; text: L; href: string };
+
+/** 05.1 · Bug reports, under the community block. Facts from the SkillxTube code. */
+export const bugReports = {
+  label: { EN: "· Bug reports", FR: "· Signalement de bugs" },
+  title: { EN: "Report a bug, from any screen", FR: "Signaler un bug, depuis n'importe quel écran" },
+  text: {
+    EN: "One modal in the app and the demo: a category (bug, content, UX, suggestion), a severity (minor, normal, blocking), what went wrong, optional steps and email. Only the browser name and screen size are attached.",
+    FR: "Une seule fenêtre, dans l'app comme dans la démo : une catégorie (bug, contenu, UX, suggestion), une gravité (mineure, normale, bloquante), ce qui s'est passé, les étapes et l'e-mail en option. Seuls le nom du navigateur et la taille d'écran sont joints.",
+  },
+  text2: {
+    EN: "Each report emails the admins and lands in an admin view (new, triaging, confirmed, resolved, rejected); a confirmed report can be promoted to a GitHub issue. A honeypot and an hourly limit keep bots out, and the email is deleted when the report is closed, or after 90 days.",
+    FR: "Chaque signalement prévient les admins par e-mail et arrive dans une vue admin (nouveau, en tri, confirmé, résolu, rejeté) ; un signalement confirmé peut devenir une issue GitHub. Un pot de miel et une limite horaire écartent les bots, et l'e-mail est supprimé à la clôture du signalement, ou au bout de 90 jours.",
+  },
+  pills: [
+    { EN: "4 categories", FR: "4 catégories" },
+    { EN: "3 severities", FR: "3 gravités" },
+    { EN: "GitHub issues", FR: "Issues GitHub" },
+  ],
+  alt: {
+    EN: "SkillxTube Report a bug modal: category, severity, what went wrong, steps to reproduce, page and optional email",
+    FR: "Fenêtre Report a bug de SkillxTube : catégorie, gravité, description du problème, étapes, page et e-mail optionnel",
+  },
+  communityAlt: {
+    EN: "SkillxTube community space Content Creation: posts feed with filters, a pinned community pack, inbox, SkillXP, next event and members",
+    FR: "Espace communautaire Content Creation de SkillxTube : fil de posts avec filtres, pack communautaire épinglé, boîte de réception, SkillXP, prochain événement et membres",
+  },
+};
+
+const SITE = "https://skillxtube.com";
+
+/** 11.2 · Free tools of skillxtube.com (libs/tools-catalog.js, live ones), plus the hub. */
+export const freeTools = {
+  label: { EN: "· Free tools", FR: "· Outils gratuits" },
+  title: { EN: "Free tools: one result a day", FR: "Outils gratuits : un résultat par jour" },
+  intro: {
+    EN: "Calculators, not lead magnets: no account, no YouTube fetch. Each one gives a score or a verdict, then points to a matching path.",
+    FR: "Des calculateurs, pas des aimants à leads : aucun compte, aucun appel à YouTube. Chacun donne un score ou un verdict, puis renvoie vers le parcours correspondant.",
+  },
+  button: { EN: "Open the free tools", FR: "Voir les outils gratuits" },
+  href: `${SITE}/freetools`,
+  cards: [
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Shipped or watched?",
+      text: {
+        EN: "Name the video. Name the file. Tick what you did. Get a score and the next step.",
+        FR: "On nomme la vidéo et le fichier, on coche ce qui est fait : un score et l'étape suivante.",
+      },
+      href: `${SITE}/freetools/shipped-or-watched`,
+    },
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Monday edit",
+      text: {
+        EN: "Name the clip. Tick the edit. Monday needs a file, not another tutorial.",
+        FR: "On nomme le clip, on coche le montage : lundi, il faut un fichier, pas un tutoriel de plus.",
+      },
+      href: `${SITE}/freetools/monday-edit`,
+    },
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Playlist to path",
+      text: {
+        EN: "Paste a playlist URL. Keep 3 or 7 videos. One day, one video.",
+        FR: "On colle l'URL d'une playlist, on garde 3 ou 7 vidéos : un jour, une vidéo.",
+      },
+      href: `${SITE}/freetools/playlist-to-path`,
+    },
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Is this video worth it?",
+      text: {
+        EN: "Answer five questions before you press play. Keep or skip.",
+        FR: "Cinq questions avant d'appuyer sur play : on garde ou on passe.",
+      },
+      href: `${SITE}/freetools/video-worth-it`,
+    },
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Playlist hours",
+      text: {
+        EN: "Paste durations. See the real watch time.",
+        FR: "On colle les durées, on voit le vrai temps de visionnage.",
+      },
+      href: `${SITE}/freetools/playlist-hours`,
+    },
+    {
+      tag: { EN: "Free tool", FR: "Outil gratuit" },
+      title: "Unused training budget",
+      text: {
+        EN: "See the training budget still unused before the year ends.",
+        FR: "Le budget formation encore inutilisé, avant la fin de l'année.",
+      },
+      href: `${SITE}/freetools/unused-training-budget`,
+    },
+    {
+      tag: { EN: "Hub", FR: "Hub" },
+      title: "All free tools",
+      text: { EN: "One result a day, no account needed.", FR: "Un résultat par jour, sans compte." },
+      href: `${SITE}/freetools`,
+    },
+  ] as LinkCard[],
+};
+
+/** 11.3 · Guides of skillxtube.com, in the footer order. */
+export const guides = {
+  label: { EN: "· Guides", FR: "· Guides" },
+  title: { EN: "Guides: X is not Y", FR: "Guides : X n'est pas Y" },
+  intro: {
+    EN: "Each guide turns a habit into a clear distinction, then gives a side-by-side table, a “Do this tonight” list and a “Common mistake” box.",
+    FR: "Chaque guide transforme une habitude en distinction claire, puis donne un tableau comparatif, une liste « À faire ce soir » et un encadré « Erreur fréquente ».",
+  },
+  cards: [
+    {
+      title: "A playlist is not a path",
+      text: {
+        EN: "A YouTube playlist is a pile of related videos. A path is seven days and a file.",
+        FR: "Une playlist YouTube est un tas de vidéos liées. Un parcours, c'est sept jours et un fichier.",
+      },
+      slug: "playlist-is-not-a-path",
+    },
+    {
+      title: "Watched is not shipped",
+      text: {
+        EN: "Playing a tutorial to the end is not the work, the file is.",
+        FR: "Regarder un tutoriel jusqu'au bout n'est pas le travail : le fichier, si.",
+      },
+      slug: "watched-is-not-shipped",
+    },
+    {
+      title: "Certificate vs file",
+      text: {
+        EN: "A completion PDF is not the work, the file is.",
+        FR: "Une attestation PDF n'est pas le travail : le fichier, si.",
+      },
+      slug: "certificate-vs-file",
+    },
+    {
+      title: "A course is not practice",
+      text: {
+        EN: "Buying a Udemy or Skillshare course is not this week's work. Practice is a file on a deadline.",
+        FR: "Acheter un cours Udemy ou Skillshare n'est pas le travail de la semaine. La pratique, c'est un fichier avec une échéance.",
+      },
+      slug: "a-course-is-not-practice",
+    },
+    {
+      title: "Hours are not skill",
+      text: {
+        EN: "Eleven hours of CapCut tutorials is watch time, not skill. Skill is the file you can send.",
+        FR: "Onze heures de tutoriels CapCut, c'est du temps de visionnage, pas une compétence. La compétence, c'est le fichier qu'on peut envoyer.",
+      },
+      slug: "hours-are-not-skill",
+    },
+    {
+      title: "A tutorial is not an edit",
+      text: {
+        EN: "Watching a CapCut tutorial is not editing. An edit is footage in, a rough cut, a hook, captions, an export.",
+        FR: "Regarder un tutoriel CapCut, ce n'est pas monter. Un montage : des rushs, un premier jet, une accroche, des sous-titres, un export.",
+      },
+      slug: "a-tutorial-is-not-an-edit",
+    },
+    {
+      title: "A thumbnail is not a lesson",
+      text: {
+        EN: "A shocked face and a red arrow are not a reason to watch. Five questions to ask before you press play.",
+        FR: "Une tête choquée et une flèche rouge ne sont pas une raison de regarder. Cinq questions à se poser avant d'appuyer sur play.",
+      },
+      slug: "a-thumbnail-is-not-a-lesson",
+    },
+  ].map((g) => ({ tag: { EN: "Guide", FR: "Guide" }, title: g.title, text: g.text, href: `${SITE}/guides/${g.slug}` })) as LinkCard[],
+};

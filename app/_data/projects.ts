@@ -247,12 +247,6 @@ export const projects: Project[] = [
       },
       {
         group: { EN: "MadshipAI", FR: "MadshipAI" },
-        title: "Medium",
-        href: "https://medium.com/@angelinepfreelance",
-        tags: ["Writing"],
-      },
-      {
-        group: { EN: "MadshipAI", FR: "MadshipAI" },
         title: "Instagram",
         year: "2025",
         description: {
