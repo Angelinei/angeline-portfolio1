@@ -226,7 +226,7 @@ export const projects: Project[] = [
     // Taken from the former WordPress portfolio page (angelinepoitout.com/studio/).
     archive: [
       {
-        group: { EN: "MadshipAI", FR: "MadshipAI" },
+        group: { EN: "Madship", FR: "Madship" },
         title: "Substack",
         description: {
           EN: "Rapid product development, AI agents and the fast-moving EdTech landscape: an experiment in innovation, 12 micro products in 12 months, followed live.",
@@ -236,7 +236,7 @@ export const projects: Project[] = [
         tags: ["AI agents", "EdTech"],
       },
       {
-        group: { EN: "MadshipAI", FR: "MadshipAI" },
+        group: { EN: "Madship", FR: "Madship" },
         title: "LinkedIn",
         description: {
           EN: "Building AI agents for EdTechs: 12 micro agents in 12 months, 7+ partnerships signed in France and internationally. Results after daily posting and reposting.",
@@ -246,7 +246,7 @@ export const projects: Project[] = [
         tags: ["AI agents", "Personal branding"],
       },
       {
-        group: { EN: "MadshipAI", FR: "MadshipAI" },
+        group: { EN: "Madship", FR: "Madship" },
         title: "Instagram",
         year: "2025",
         description: {
@@ -277,13 +277,13 @@ export const projects: Project[] = [
         tags: ["Hackathon", "Instructional design"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "EAA",
         href: "https://chimerical-eclair-21431a.netlify.app/",
         tags: ["AI", "EdTech"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "X",
         description: {
           EN: "Learning Python to build micro-SaaS for my industry, and a weekly digest of tips for EdTechs.",
@@ -293,7 +293,7 @@ export const projects: Project[] = [
         tags: ["Python", "EdTech"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "OpenAI — Thought Companion",
         description: {
           EN: "A custom GPT: a partner for reflective thinking and pattern discovery.",
@@ -303,7 +303,7 @@ export const projects: Project[] = [
         tags: ["Custom GPT"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "Hackathon AWS — CourseKey",
         description: {
           EN: "CourseKey: from a course to key summaries, built on AWS PartyRock.",
@@ -313,13 +313,13 @@ export const projects: Project[] = [
         tags: ["Hackathon", "AWS", "AI"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "AI Financial Assistant",
         href: "https://henrrifinancialassistant-2150.chipp.ai",
         tags: ["AI assistant"],
       },
       {
-        group: { EN: "AIAI — When AI met EdTechs", FR: "AIAI — Quand l'IA a rencontré les EdTechs" },
+        group: { EN: "AI — When AI met EdTechs", FR: "AI — Quand l'IA a rencontré les EdTechs" },
         title: "GitHub",
         github: GITHUB_PROFILE,
         tags: ["Code"],
@@ -331,7 +331,7 @@ export const projects: Project[] = [
           EN: "A free challenge inspired by 100DaysOfCode: master web marketing in 100 days, without any investment. The whole challenge, from the editorial line to deployment, lives in my Drive.",
           FR: "Un challenge gratuit inspiré de 100DaysOfCode : maîtriser le webmarketing en 100 jours, sans aucun investissement. Tout le challenge, de la ligne éditoriale au déploiement, tient dans mon Drive.",
         },
-        href: "https://www.youtube.com/watch?v=gUTZ-V7_28E",
+        href: "/portfolio/archives/100-days-of-webmarketing.mp4",
         tags: ["Web marketing", "Challenge"],
       },
       {
@@ -413,10 +413,6 @@ export const projects: Project[] = [
       },
       {
         group: { EN: "EdTech parts 2 & 3 — An EdTech love story", FR: "EdTech, parties 2 et 3 — Une histoire d'amour EdTech" },
-        title: "Business Africa",
-      },
-      {
-        group: { EN: "EdTech parts 2 & 3 — An EdTech love story", FR: "EdTech, parties 2 et 3 — Une histoire d'amour EdTech" },
         title: "E-book — Hack Ton Stage / Alternance",
         description: {
           EN: "Author of the e-book, and a webinar for EFREI Paris students. The organiser's feedback: “You succeeded in boosting our young people!”",
@@ -433,6 +429,7 @@ export const projects: Project[] = [
           FR: "La force d'une communauté inspirée par l'excellence : de la visibilité pour les entreprises, un réseau ambitieux et des liens avec des investisseurs.",
         },
         tags: ["Community"],
+        href: "https://drive.google.com/drive/folders/124IK4mTWmUaQomlr6Pd7N1JCH3J2rSvB?usp=sharing",
       },
       {
         group: { EN: "EdTech parts 2 & 3 — An EdTech love story", FR: "EdTech, parties 2 et 3 — Une histoire d'amour EdTech" },
@@ -567,6 +564,7 @@ export const projects: Project[] = [
           EN: "Language stay, work and business option.",
           FR: "Séjour linguistique, option travail et business.",
         },
+        href: "https://drive.google.com/drive/folders/1FiRrQaRJAEPkE9XWZbAS_BqMf0I4EMnV?usp=sharing",
       },
       {
         group: { EN: "Before EdTech", FR: "Avant les EdTechs" },
