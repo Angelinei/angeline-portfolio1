@@ -8,8 +8,7 @@ import type { WritingSlug } from "../_data/writing";
 import { ImageTodo } from "./image-todo";
 import { VideoTodo } from "./video-todo";
 
-const heading =
-  "mt-14 mb-4 text-[1.65rem] leading-[1.2] font-medium tracking-[-0.04em] text-[#20201E]";
+const heading = "mt-14 mb-4 text-[1.65rem] leading-[1.2] font-medium tracking-[-0.04em] text-[#20201E]";
 
 function H2(props: ComponentPropsWithoutRef<"h2">) {
   return <h2 className={heading} {...props} />;
@@ -60,7 +59,14 @@ function Li(props: ComponentPropsWithoutRef<"li">) {
 
 function Img({ alt = "", ...props }: ComponentPropsWithoutRef<"img">) {
   // eslint-disable-next-line @next/next/no-img-element -- MDX images come with no known size
-  return <img alt={alt} loading="lazy" className="mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10" {...props} />;
+  return (
+    <img
+      alt={alt}
+      loading="lazy"
+      className="mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10"
+      {...props}
+    />
+  );
 }
 
 /** A clip hosted with the site (public/writing). */
@@ -94,6 +100,33 @@ function DriveVideo({ id, label }: { id: string; label: string }) {
   );
 }
 
+/** GFM tables: scroll sideways on narrow screens instead of squeezing the columns. */
+function Table(props: ComponentPropsWithoutRef<"table">) {
+  return (
+    <div className="my-8 overflow-x-auto rounded-[18px] border border-black/10 bg-white">
+      <table className="w-full min-w-[520px] border-collapse text-left text-sm leading-6" {...props} />
+    </div>
+  );
+}
+
+function Th(props: ComponentPropsWithoutRef<"th">) {
+  return (
+    <th
+      className="border-b border-black/10 bg-[#F3F1EA] px-4 py-3 text-xs font-medium tracking-[0.04em] text-[#20201E]"
+      {...props}
+    />
+  );
+}
+
+function Td(props: ComponentPropsWithoutRef<"td">) {
+  return (
+    <td
+      className="border-b border-black/5 px-4 py-3 align-top text-black/75 first:font-medium first:text-[#20201E]"
+      {...props}
+    />
+  );
+}
+
 function Hr() {
   return <hr className="my-10 border-0 border-t border-black/10" />;
 }
@@ -118,6 +151,9 @@ const components = {
   ol: Ol,
   li: Li,
   hr: Hr,
+  table: Table,
+  th: Th,
+  td: Td,
   img: Img,
   blockquote: Blockquote,
   Video,
@@ -131,10 +167,6 @@ export function WritingBody({ slug }: { slug: WritingSlug }) {
   const { content } = matter(fs.readFileSync(file, "utf8"));
 
   return (
-    <MDXRemote
-      source={content}
-      components={components}
-      options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-    />
+    <MDXRemote source={content} components={components} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
   );
 }
