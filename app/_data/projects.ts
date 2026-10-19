@@ -22,6 +22,7 @@ export type Visual =
   | "lab"
   | "path"
   | "writing"
+  | "testimonials"
   | "contact";
 
 /** Rich text: paragraphs and/or a bullet list. */

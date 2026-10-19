@@ -15,6 +15,7 @@ import {
   ui,
   type Slide,
 } from "./case-parts";
+import { TestimonialsSlide } from "./testimonials-slide";
 import { ThumbyEgg } from "./thumby-egg";
 import { useLang } from "./use-lang";
 
@@ -35,7 +36,24 @@ const contact: Slide = {
   ink: "#7660D8",
 };
 
-const slides: Slide[] = [approach, ...projects.map(projectToSlide), path, writing, contact];
+const testimonials: Slide = {
+  id: "testimonials",
+  nav: { EN: "Kind words", FR: "Ils en parlent" },
+  eyebrow: { EN: "TESTIMONIALS", FR: "TÉMOIGNAGES" },
+  title: { EN: "Kind words", FR: "Ils en parlent" },
+  text: {
+    EN: "Managers, partners and learners, in their own words.",
+    FR: "Managers, partenaires et apprenants, avec leurs mots.",
+  },
+  marquee: "In their own words. Learning, shipped together.",
+  tags: [],
+  visual: "testimonials",
+  tint: "#ECE8FB",
+  marqueeColor: "#E6E0FB",
+  ink: "#7660D8",
+};
+
+const slides: Slide[] = [approach, ...projects.map(projectToSlide), path, writing, testimonials, contact];
 
 const copy = {
   EN: { hint: "Scroll", nav: "Projects" },
@@ -54,7 +72,7 @@ export default function CasesStage({
   const [current, setCurrent] = useState(0);
   const [hovered, setHovered] = useState<string | null>(null);
   const lockedUntil = useRef(0);
-  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const touchStart = useRef<{ x: number; y: number; row: boolean } | null>(null);
   const t = copy[lang];
   const active = slides[current];
 
@@ -92,12 +110,18 @@ export default function CasesStage({
 
   // Wheel, keyboard and swipe navigation between cases.
   useEffect(() => {
+    // A horizontal gesture on a row that scrolls by hand (testimonials) stays in that row.
+    const ownsScrollX = (target: EventTarget | null) =>
+      target instanceof Element && target.closest("[data-scroll-x]") !== null;
     const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && ownsScrollX(e.target)) return;
       const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
       if (Math.abs(delta) < 12) return;
       step(delta > 0 ? 1 : -1);
     };
     const onKey = (e: KeyboardEvent) => {
+      // An open dialog (a full testimonial) keeps the keyboard.
+      if (document.querySelector("dialog[open]")) return;
       if (["ArrowDown", "ArrowRight", "PageDown"].includes(e.key)) {
         e.preventDefault();
         step(1);
@@ -111,7 +135,7 @@ export default function CasesStage({
       }
     };
     const onTouchStart = (e: TouchEvent) => {
-      touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY, row: ownsScrollX(e.target) };
     };
     const onTouchEnd = (e: TouchEvent) => {
       const start = touchStart.current;
@@ -119,6 +143,7 @@ export default function CasesStage({
       if (!start) return;
       const dx = start.x - e.changedTouches[0].clientX;
       const dy = start.y - e.changedTouches[0].clientY;
+      if (start.row && Math.abs(dx) > Math.abs(dy)) return;
       const delta = Math.abs(dy) > Math.abs(dx) ? dy : dx;
       if (Math.abs(delta) < 50) return;
       step(delta > 0 ? 1 : -1);
@@ -156,18 +181,28 @@ export default function CasesStage({
       <SiteHeader lang={lang} onLangChange={setLang} />
 
       {/* Cases */}
-      {slides.map((slide, i) => (
-        <CaseItem
-          key={slide.id}
-          slide={slide}
-          cover={covers[slide.id]}
-          lang={lang}
-          state={i === current ? "active" : i < current ? "before" : "after"}
-          label={`${i + 1} / ${slides.length} — ${slide.nav[lang]}`}
-          preload={i === 0}
-          onHover={(on) => setHovered(on ? slide.id : null)}
-        />
-      ))}
+      {slides.map((slide, i) =>
+        slide.visual === "testimonials" ? (
+          <TestimonialsSlide
+            key={slide.id}
+            slide={slide}
+            lang={lang}
+            state={i === current ? "active" : i < current ? "before" : "after"}
+            label={`${i + 1} / ${slides.length} — ${slide.nav[lang]}`}
+          />
+        ) : (
+          <CaseItem
+            key={slide.id}
+            slide={slide}
+            cover={covers[slide.id]}
+            lang={lang}
+            state={i === current ? "active" : i < current ? "before" : "after"}
+            label={`${i + 1} / ${slides.length} — ${slide.nav[lang]}`}
+            preload={i === 0}
+            onHover={(on) => setHovered(on ? slide.id : null)}
+          />
+        ),
+      )}
 
       {/* Case navigation */}
       <nav
