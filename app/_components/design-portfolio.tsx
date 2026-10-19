@@ -1356,18 +1356,18 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("monetization.4")}
             </p>
             <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.5")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.6")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.7")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.8")}
-              </span>
+              </a>
             </div>
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "12px" }}>
