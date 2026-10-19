@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { projects } from "../_data/projects";
-import { thePath } from "../_data/the-path";
 import {
   CaseItem,
   EASE,
@@ -10,6 +9,7 @@ import {
   SiteHeader,
   Stalker,
   projectToSlide,
+  thePathSlide as path,
   ui,
   type Slide,
 } from "./case-parts";
@@ -40,8 +40,8 @@ const contact: Slide = {
   eyebrow: { EN: "OPEN TO COLLABORATION", FR: "OUVERTE AUX COLLABORATIONS" },
   title: { EN: "Say “Hey!”", FR: "Dites « Hey ! »" },
   text: {
-    EN: "Send me a message on LinkedIn, okay?",
-    FR: "Envoyez-moi un message sur LinkedIn, d'accord ?",
+    EN: "Send me a message on LinkedIn or by email, okay?",
+    FR: "Envoyez-moi un message sur LinkedIn ou par mail, d'accord ?",
   },
   marquee: "Have a project in mind? Let's make it real.",
   tags: [],
@@ -49,25 +49,6 @@ const contact: Slide = {
   tint: "#ECE8FB",
   marqueeColor: "#D9D1FA",
   ink: "#7660D8",
-};
-
-const path: Slide = {
-  id: "the-path",
-  nav: { EN: "The Path", FR: "The Path" },
-  eyebrow: { EN: "THE PATH · BRICK METHOD", FR: "THE PATH · BRICK METHOD" },
-  title: { EN: thePath.title, FR: thePath.title },
-  text: {
-    EN: thePath.tagline,
-    FR: "Agents IA et micro-SaaS pour l'éducation | 7+ partenariats EdTech en France | Internationalisation en cours",
-  },
-  marquee: "Indie everywheeere. Techie yours.",
-  tags: ["EdTech", "AI agents", "Indie Hacking"],
-  href: "/the-path",
-  cta: { EN: "Read", FR: "Lire" },
-  visual: "path",
-  tint: "#DCEADF",
-  marqueeColor: "#C5DCCB",
-  ink: "#2E6A48",
 };
 
 const writing: Slide = {

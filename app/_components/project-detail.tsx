@@ -22,7 +22,9 @@ import {
   Stalker,
   isVideo,
   projectToSlide,
+  thePathSlide,
   ui,
+  type Slide,
 } from "./case-parts";
 import { ExternalLink, Group, enter, useInView } from "./editorial";
 import { useLang } from "./use-lang";
@@ -96,7 +98,9 @@ export default function ProjectDetail({
   const t = copy[lang];
   const index = projects.indexOf(project);
   const prev = projects[(index - 1 + projects.length) % projects.length];
-  const next = projects[(index + 1) % projects.length];
+  // After the last project comes The Path, as on the home stage.
+  const next: Slide =
+    index < projects.length - 1 ? projectToSlide(projects[index + 1]) : thePathSlide;
   const intro: Rich | undefined = project.intro ?? { paragraphs: [project.summary] };
 
   return (
@@ -246,7 +250,7 @@ export default function ProjectDetail({
           )}
         </article>
 
-        <NextProject project={next} cover={covers[next.slug]} lang={lang} />
+        <NextProject slide={next} cover={covers[next.id]} lang={lang} />
 
         {/* Project navigation + back to the gallery */}
         <nav aria-label={t.projects} className="mx-auto w-full max-w-[1120px] px-5 sm:px-10">
@@ -257,10 +261,10 @@ export default function ProjectDetail({
                 <RollText color={prev.ink}>{prev.title}</RollText>
               </span>
             </Link>
-            <Link href={projectHref(next.slug)} className="group flex flex-col items-end gap-2 text-right">
+            <Link href={next.href ?? "/"} className="group flex flex-col items-end gap-2 text-right">
               <span className="text-[10px] tracking-[0.18em] text-black/45">{t.following.toUpperCase()} →</span>
               <span className="text-lg font-medium tracking-[-0.03em] sm:text-2xl">
-                <RollText color={next.ink}>{next.title}</RollText>
+                <RollText color={next.ink}>{next.title[lang]}</RollText>
               </span>
             </Link>
           </div>
@@ -473,12 +477,11 @@ function Archive({ project, lang }: { project: Project; lang: Lang }) {
   );
 }
 
-function NextProject({ project, cover, lang }: { project: Project; cover?: string; lang: Lang }) {
+function NextProject({ slide, cover, lang }: { slide: Slide; cover?: string; lang: Lang }) {
   const t = copy[lang];
   const [ref, inView] = useInView<HTMLDivElement>();
   const [hovered, setHovered] = useState(false);
-  const slide = projectToSlide(project);
-  const label = `${t.next} — ${project.title}`;
+  const label = `${t.next} — ${slide.title[lang]}`;
 
   return (
     <section aria-label={label} className="mt-8 sm:mt-16">
@@ -487,7 +490,7 @@ function NextProject({ project, cover, lang }: { project: Project; cover?: strin
         <span className="h-px flex-1 bg-black/10" />
       </p>
       <div ref={ref} className="relative h-[640px] overflow-clip sm:h-[680px]">
-        <Marquee text={project.marquee} color={project.marqueeColor} large state={inView ? "active" : "after"} />
+        <Marquee text={slide.marquee} color={slide.marqueeColor} large state={inView ? "active" : "after"} />
         <CaseItem
           slide={slide}
           cover={cover}
@@ -498,7 +501,7 @@ function NextProject({ project, cover, lang }: { project: Project; cover?: strin
           onHover={setHovered}
         />
       </div>
-      <Stalker visible={hovered && inView} color={project.ink} label={ui[lang].view} />
+      <Stalker visible={hovered && inView} color={slide.ink} label={slide.cta?.[lang] ?? ui[lang].view} />
     </section>
   );
 }
