@@ -1,6 +1,6 @@
 /**
  * "The Path – Brick method", migrated verbatim from
- * https://angelinepoitout.com/the-path/ (English only, as on the original).
+ * https://angelinepoitout.com/the-path/, with a French translation (thePathFr).
  *
  * Inline markup: **bold**, *italic*, [label](https://url).
  */
@@ -20,11 +20,10 @@ export const thePath = {
     "Building AI agents & micro-SaaS for education | 7+ EdTech partnerships in France | Internationalization in progress",
   intro:
     "Algolicious | From FR to expanding in bubbles only international EN Edtechs Tech Art. So, building a learning AI agent ecosystem based on social medias . Go connect !",
-  location: "📍 Digital Nomad",
+  location: "📍 Digital Nomad (From France)",
   links: [
     { label: "🌐 angelinepoitout.com/studio", href: "https://angelinepoitout.com/" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/angelinepoitoutpro/" },
-    { label: "Twitter/X", href: "https://twitter.com/AngelinePoitout" },
     { label: "GitHub", href: "https://github.com/Angelinei" },
   ],
   sections: [
@@ -173,6 +172,165 @@ export const thePath = {
       ],
     },
   ] satisfies PathSection[],
-  contact: "Want a professionnal contact ? Let’s discuss on",
+  contact: "Want a professional contact? Let’s discuss on",
+  contactOr: "or by email at",
+  signoff: ["Techie yours", "Angéline"],
+};
+
+export const thePathFr: typeof thePath = {
+  ...thePath,
+  tagline:
+    "Agents IA et micro-SaaS pour l'éducation | 7+ partenariats EdTech en France | Internationalisation en cours",
+  intro:
+    "Algolicious | De la France vers une expansion dans des bulles internationales uniquement : EdTech anglophones, Tech, Art. Je construis donc un écosystème d'agents IA d'apprentissage basé sur les réseaux sociaux. On se connecte !",
+  location: "📍 Digital Nomad (From France)",
+  sections: [
+    {
+      title: "Résumé professionnel",
+      blocks: [
+        {
+          type: "p",
+          text: "Passionnée d'EdTech et créatrice indépendante, avec plus de 8 ans d'expérience en gestion de projets digitaux, webmarketing, formation et animation de communautés. Passage des postes en entreprise et en freelance à l'**Indie Hacking** en 2026 (préparation technique en parallèle en 2024-2025), avec un focus sur les agents IA et l'automatisation pour des solutions EdTech B2C/B2B. Experte WordPress, analytics, ingénierie pédagogique et passage à l'échelle d'expériences éducatives. Résultats concrets en partenariats (Google Ateliers Numériques, Studi, OpenClassrooms, etc.), stratégie de contenu et événements à fort impact. Je lance actuellement des micro-produits propulsés par l'IA tout en me développant à l'international.",
+        },
+        {
+          type: "p",
+          text: "En parallèle, j'aime la musique, l'art indé, la révolution tech, le nomadisme digital, les disciplines aériennes et le chill dans la vraie vie. J'aime aussi m'occuper de mes affaires.",
+        },
+      ],
+    },
+    {
+      title: "Focus actuel (2025–2027)",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "**Indie Hacking dans l'EdTech** : développement rapide d'agents IA et de solutions micro-SaaS pensés pour les écosystèmes éducatifs B2C et B2B.",
+          ],
+        },
+        { type: "p", text: "**Étapes clés** :" },
+        {
+          type: "list",
+          items: [
+            "7+ partenariats EdTech signés en France.",
+            "1re place (en équipe) au **DigiEduHack 2024** – « Building Open Source Data-Driven Content for Tomorrow’s Educators ».",
+            "Communautés inactives, mais elles ont existé, et Meetup était trop cher pour les besoins du moment ; je comprends pourquoi et j'y reviendrai plus tard parce que j'aime ça : WebNewbies (2 400+ membres) et Padawebies (1 300+ membres) – 19 webinaires organisés avec une satisfaction de 4,5–4,6/5.",
+            "Apprentissage continu par la pratique : Python, informatique générale, LLM, IA générative, agents IA, vente de micro-produits et support client (depuis 2025, après Bali).",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Expériences clés",
+      blocks: [
+        {
+          type: "role",
+          title: "Indépendante – Angéline Poitout Studio",
+          subtitle: "Formatrice EdTech, consultante et AI builder",
+          meta: "2020 – aujourd'hui (à distance / France)",
+          items: [
+            "Formatrice et coach pour de grandes plateformes EdTech : **Studi, Senza Formation, Iscod/Visiplus, OpenClassrooms**, **Digitaforma**",
+            "Ingénierie pédagogique, jurys d'examen, coaching individuel (+70 étudiants accompagnés, note de 4,8/5).",
+            "Coach Google Ateliers Numériques (2022–2024) : conférences, webinaires, animation.",
+            "Communauté et contenu : organisatrice de Meetups, autrice de *Hack Ton Stage / Alternance* (Amazon), intervenante au Café Freelance, au Salon Business Africa, etc.",
+            "Projets annexes 2020 : Hack La Crise (coordinatrice), coordinatrice de sprint Makesense.",
+          ],
+        },
+        {
+          type: "role",
+          title: "Siparex XAnge Venture – Cheffe de projet digital",
+          meta: "2018 – 2019 | Paris",
+          description: "Société de capital-risque gérant 450 M€, qui investit dans des startups à impact (Ledger, Wandercraft, etc.).",
+          items: [
+            "Gestion complète des réseaux sociaux (LinkedIn, Twitter, Instagram, etc.) et animation de communauté (#ParlerCommeUnVC).",
+            "Gestion du CMS (WordPress), SEO, newsletter (Mailjet), communiqués de presse.",
+            "Soutien aux événements et reporting (Excel/PowerPoint).",
+            "Création et croissance du compte Instagram en partant de zéro.",
+            "Mises à jour du site Siparex et relais des contenus FCPI.",
+          ],
+        },
+        {
+          type: "role",
+          title: "Ministère des Armées – Chargée de projet digital (BLMN)",
+          meta: "2017 – 2018",
+          items: [
+            "Refonte et animation de l'extranet (Drupal).",
+            "Gestion de la newsletter mensuelle.",
+            "Co-organisation d'événements (séminaires, JDC, Salon Mondial du Tourisme).",
+            "Marketing de contenu et relations avec les parties prenantes.",
+          ],
+        },
+        {
+          type: "role",
+          title: "Hubstart Center – Chargée de communication",
+          meta: "2016 – 2017 | Tremblay-en-France",
+          description: "Incubateur et espace de coworking.",
+          items: [
+            "Stratégie de communication digitale et print (Facebook, Twitter, LinkedIn).",
+            "Gestion du site et du CMS, SEO, analytics.",
+            "Newsletter (SendInBlue), création de l'annuaire de l'incubateur.",
+            "Organisation d'événements (conférences, networking).",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Compétences",
+      note: "Parce que l'entrepreneuriat mène à la multi-expertise",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "**EdTech et apprentissage** : ingénierie pédagogique, formation et coaching, développement e-learning, création de programmes.",
+            "**Marketing digital** : webmarketing, community management, SEO/GEO, analytics, WordPress, stratégie de contenu.",
+            "**IA et produit** : agents IA, IA générative, Python (bases), prototypage rapide, développement micro-SaaS.",
+            "**Projet et opérations** : gestion de projet, organisation d'événements, développement de partenariats, analytics et reporting.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Projets et réalisations",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "**6 ans d'entrepreneuriat / de nomadisme digital** – Bonus : tout cela m'a fait grandir et m'a permis de guérir intelligemment, en compartimentant, du harcèlement scolaire vécu en master (côté classe). Depuis, l'algorithme continue réellement de se débloquer.",
+            "**Hack Ton Stage / Alternance** – E-book sur Amazon (2020). Pas vendu, mais il m'a ouvert l'opportunité d'animer un atelier gratuit pour les étudiants de l'Efrei, et d'être signée chez Google Ateliers Numériques.",
+            "**100 Days of Webmarketing** – Challenge gratuit jamais sorti. Allez, il y a l'IA : même le fondateur de l'idée, qui avait une belle audience (alors que je suis d'autres leviers), [**a pivoté récemment**](https://www.100school.com/).",
+            "**Meetups** : taux d'engagement et de satisfaction élevés.",
+            "**Hackathons** : gagnante du DigiEduHack, AWS PartyRock, etc.",
+            "**Open source / GitHub** : contributions à des projets tournés vers l'éducation.",
+            "Projets musicaux et créatifs (Instagram @angeline.poitout.music) – l'idée est de jouer en live dans des bulles comme Bali et d'attirer des musiciens du monde entier. Mon travail actuel le financera entièrement (ou en grande partie) pour garder un maximum d'indépendance dans ma vision. Indie everywheeere.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Formation et certifications",
+      blocks: [
+        { type: "p", text: "Diplôme d'ingénierie pédagogique OpenClassrooms. Master à l'Efrei Paris." },
+        {
+          type: "p",
+          text: "Apprentissage continu en IA, pédagogie et digital (certifications Google, Codecademy AI Bootcamp, Lion School, etc.).",
+        },
+        { type: "p", text: "Formation initiale : BTS Tourisme + expériences internationales." },
+      ],
+    },
+    {
+      title: "Langues",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "Français (langue maternelle)",
+            "Anglais (niveau professionnel / affaires internationales)",
+            "Apprendre le mandarin dans les 10 prochaines années (tellement complexe, ça me rappelle la difficulté du russe à l'école avec un nouvel alphabet)",
+          ],
+        },
+      ],
+    },
+  ],
+  contact: "Envie d'un contact professionnel ? Échangeons sur",
+  contactOr: "ou par mail à",
   signoff: ["Techie yours", "Angéline"],
 };

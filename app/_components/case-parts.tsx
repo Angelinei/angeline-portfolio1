@@ -26,6 +26,7 @@ export type Slide = {
 };
 
 export const LINKEDIN = "https://www.linkedin.com/in/angelinepoitoutpro/";
+export const CONTACT_EMAIL = "angelinedigitalworld@gmail.com";
 export const EASE = "ease-[cubic-bezier(.25,.46,.45,.94)]";
 export const BRAND = "#7660D8";
 
@@ -518,6 +519,15 @@ export function CaseItem({
           >
             LinkedIn ↗
             <span className="sr-only"> {ui[lang].newTab}</span>
+          </a>
+        )}
+        {slide.visual === "contact" && (
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70"
+            style={{ borderColor: slide.ink, color: slide.ink }}
+          >
+            {CONTACT_EMAIL}
           </a>
         )}
       </span>

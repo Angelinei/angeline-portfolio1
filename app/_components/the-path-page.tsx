@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { thePath, type PathBlock } from "../_data/the-path";
-import { BRAND, EASE, LINKEDIN, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
+import { thePath as thePathEn, thePathFr, type PathBlock } from "../_data/the-path";
+import { BRAND, CONTACT_EMAIL, EASE, LINKEDIN, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
 import { ExternalLink, Group, Inline, enter } from "./editorial";
 import { useLang } from "./use-lang";
 
@@ -15,20 +15,19 @@ const copy = {
     allProjects: "← All projects",
     back: "Back to projects",
     newTab: "(opens in a new tab)",
-    englishOnly: null,
   },
   FR: {
     eyebrow: "THE PATH · BRICK METHOD",
     allProjects: "← Tous les projets",
     back: "Retour aux projets",
     newTab: "(nouvel onglet)",
-    englishOnly: "Cette page est rédigée en anglais.",
   },
 };
 
 export default function ThePathPage({ cover }: { cover?: string }) {
   const [lang, setLang] = useLang();
   const t = copy[lang];
+  const thePath = lang === "FR" ? thePathFr : thePathEn;
 
   return (
     <div className="relative min-h-svh bg-[#F8F7F2] text-[#20201E] selection:bg-[#7660D8] selection:text-white">
@@ -42,9 +41,9 @@ export default function ThePathPage({ cover }: { cover?: string }) {
       </SiteHeader>
 
       <main>
-        <article lang="en">
+        <article lang={lang.toLowerCase()}>
           <header className="mx-auto w-full max-w-[1120px] px-5 pt-36 sm:px-10 sm:pt-[200px]">
-            <p lang={lang.toLowerCase()} className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
+            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
               {t.eyebrow}
             </p>
             <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
@@ -64,11 +63,6 @@ export default function ThePathPage({ cover }: { cover?: string }) {
             <p className={`mt-8 max-w-3xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}>
               {thePath.tagline}
             </p>
-            {t.englishOnly && (
-              <p lang="fr" className="mt-4 text-xs text-black/45">
-                {t.englishOnly}
-              </p>
-            )}
           </header>
 
           <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
@@ -130,6 +124,14 @@ export default function ThePathPage({ cover }: { cover?: string }) {
                 >
                   LinkedIn
                   <span className="sr-only"> {t.newTab}</span>
+                </a>{" "}
+                {thePath.contactOr}{" "}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="font-medium underline underline-offset-4"
+                  style={{ color: INK }}
+                >
+                  {CONTACT_EMAIL}
                 </a>
                 .
               </p>

@@ -40,8 +40,8 @@ const contact: Slide = {
   eyebrow: { EN: "OPEN TO COLLABORATION", FR: "OUVERTE AUX COLLABORATIONS" },
   title: { EN: "Say “Hey!”", FR: "Dites « Hey ! »" },
   text: {
-    EN: "Send me a message on LinkedIn, okay?",
-    FR: "Envoyez-moi un message sur LinkedIn, d'accord ?",
+    EN: "Send me a message on LinkedIn or by email, okay?",
+    FR: "Envoyez-moi un message sur LinkedIn ou par mail, d'accord ?",
   },
   marquee: "Have a project in mind? Let's make it real.",
   tags: [],
