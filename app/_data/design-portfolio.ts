@@ -1413,8 +1413,8 @@ export const designPortfolioText = {
     FR: "Intégré dans l'espace communauté de SkillxTube, avec Zip en casque audio : chaque manche gagnée rapporte 150 SkillXP, sans limite de parties.",
   },
   "game.5": {
-    EN: "Play on Astrocade",
-    FR: "Jouer sur Astrocade",
+    EN: "Win Zip and the brainrot",
+    FR: "Gagner avec Zip contre le brainrot",
   },
   "game.6": {
     EN: "+150 SkillXP per round",

@@ -19,6 +19,7 @@ import {
   type LinkCard,
 } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
+import { ThumbyEgg } from "./thumby-egg";
 import img1 from "../../public/portfolio/design/skillxtube-logo.png";
 import img2 from "../../public/portfolio/design/zip.png";
 import img3 from "../../public/portfolio/design/cc-happy.png";
@@ -123,7 +124,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             <Image src={img1} alt="" aria-hidden="true" loading="lazy" style={{ width: "22px", height: "22px" }} />
             {t("hero.4")}
           </a>
-          <a href="https://www.astrocade.com/games/zip-vs-the-brainrot/01M4BBVE5HTMCFA8DZXY4F21A4" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 22px", borderRadius: "999px", border: "0.5px solid #1A1A1A", fontWeight: "800", fontSize: "15px", textDecoration: "none" }}>
+          <a href="https://skillxtube.com/play" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 22px", borderRadius: "999px", border: "0.5px solid #1A1A1A", fontWeight: "800", fontSize: "15px", textDecoration: "none" }}>
             {t("hero.5")}
           </a>
         </div>
@@ -1355,18 +1356,18 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("monetization.4")}
             </p>
             <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.5")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.6")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.7")}
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+              </a>
+              <a href="https://skillxtube.com/brand-program/book" target="_blank" rel="noopener noreferrer" style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px", color: "inherit", textDecoration: "none" }}>
                 {t("monetization.8")}
-              </span>
+              </a>
             </div>
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "12px" }}>
@@ -1733,7 +1734,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("game.4")}
             </p>
             <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "10px" }}>
-              <a href="https://www.astrocade.com/games/zip-vs-the-brainrot/01M4BBVE5HTMCFA8DZXY4F21A4" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+              <a href="https://skillxtube.com/play" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
                 {t("game.5")}
               </a>
               <span style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 16px", borderRadius: "999px", border: "0.5px solid #D8D6D0", fontSize: "13px", fontWeight: "700" }}>
@@ -1750,7 +1751,8 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
                 {t("game.7")}
               </span>
             </div>
-            <div style={{ padding: "28px", display: "flex", justifyContent: "center" }}>
+            <div style={{ position: "relative", padding: "28px", display: "flex", justifyContent: "center" }}>
+              <ThumbyEgg prize="ad" lang={lang} className="right-3 bottom-2" />
               <Image src={img18} alt={t("game.img0")} loading="lazy" style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block", borderRadius: "12px" }} />
             </div>
           </div>
