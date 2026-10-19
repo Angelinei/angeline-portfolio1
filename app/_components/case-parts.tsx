@@ -121,15 +121,21 @@ export function SiteHeader({
           >
             Angéline Poitout<span style={{ color: BRAND }}>.</span>
           </Link>
-          <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noreferrer"
-            className={`w-fit text-[11px] leading-none text-black/55 underline decoration-black/20 underline-offset-[5px] transition-colors duration-300 hover:text-[#7660D8] hover:decoration-[#7660D8] ${EASE}`}
-          >
-            {t.collaborate}
-            <span className="sr-only"> {t.newTab}</span>
-          </a>
+          <span className="flex items-center gap-2">
+            <span aria-hidden="true" className="relative flex size-1.5">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#22C55E] opacity-60 [animation-duration:2s] motion-reduce:animate-none" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-[#22C55E]" />
+            </span>
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+              className={`w-fit text-[11px] leading-none text-black/55 underline decoration-black/20 underline-offset-[5px] transition-colors duration-300 hover:text-[#7660D8] hover:decoration-[#7660D8] ${EASE}`}
+            >
+              {t.collaborate}
+              <span className="sr-only"> {t.newTab}</span>
+            </a>
+          </span>
         </div>
         <p
           className={`hidden text-xs leading-[1.2] text-black/60 sm:block ${
