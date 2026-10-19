@@ -121,7 +121,7 @@ function Th(props: ComponentPropsWithoutRef<"th">) {
 function Td(props: ComponentPropsWithoutRef<"td">) {
   return (
     <td
-      className="border-b border-black/5 px-4 py-3 align-top text-black/75 first:font-medium first:whitespace-nowrap first:text-[#20201E]"
+      className="border-b border-black/5 px-4 py-3 align-top text-black/75 first:font-medium first:min-w-[8.5rem] first:text-[#20201E]"
       {...props}
     />
   );
