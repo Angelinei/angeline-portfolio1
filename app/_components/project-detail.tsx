@@ -14,8 +14,8 @@ import {
 import {
   BRAND,
   CaseItem,
-  EASE,
   Marquee,
+  PageStage,
   ProjectVisual,
   RollText,
   SiteHeader,
@@ -112,50 +112,48 @@ export default function ProjectDetail({
 
       <main>
         <article>
-          {/* Head */}
-          <header className="mx-auto w-full max-w-[1120px] px-5 pt-36 sm:px-10 sm:pt-[200px]">
-            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-              {project.number} · {project.eyebrow[lang]}
-            </p>
-            <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-              <span
-                className={`block transition-transform duration-[1000ms] delay-150 motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
-              >
-                {project.title}
-              </span>
-            </h1>
+          <PageStage
+            eyebrow={`${project.number} · ${project.eyebrow[lang]}`}
+            title={project.title}
+            marquee={project.marquee}
+            marqueeColor={project.marqueeColor}
+          >
             {project.subtitle && (
               <p
-                className={`mt-3 font-serif text-xl italic sm:text-2xl ${enter("delay-300")}`}
+                className={`mt-5 text-[clamp(1.35rem,2.4vw,1.85rem)] font-medium tracking-[-0.03em] ${enter("delay-300")}`}
                 style={{ color: project.ink }}
               >
                 {project.subtitle[lang]}
               </p>
             )}
-          </header>
-
-          {/* Cover (the portfolio case opens on its own hero instead) */}
-          {project.slug !== "portfolio" && (
-            <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-              <div
-                className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
-                style={{ backgroundColor: project.tint }}
-              >
-                <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
-                  <ProjectVisual
-                    kind={project.visual}
-                    tint={project.tint}
-                    ink={project.ink}
-                    linked={false}
-                    cover={covers[project.slug]}
-                    alt={project.title}
-                    preload
-                    sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
-                  />
-                </div>
-              </div>
-            </figure>
-          )}
+            {project.slug !== "portfolio" && (
+              <figure className={`relative mt-8 size-[min(300px,34svh)] [@media(max-height:700px)]:size-[min(190px,26svh)] ${enter("delay-450")}`}>
+                <ProjectVisual
+                  kind={project.visual}
+                  tint={project.tint}
+                  ink={project.ink}
+                  linked={false}
+                  cover={covers[project.slug]}
+                  alt={project.title}
+                  preload
+                  sizes="300px"
+                />
+              </figure>
+            )}
+            {project.tags.length > 0 && (
+              <ul className={`mt-6 flex max-w-[28rem] flex-wrap justify-center gap-2 ${enter("delay-500")}`} aria-label="Tags">
+                {project.tags.map((tag) => (
+                  <li
+                    key={tag}
+                    className="rounded-full px-4 py-2.5 text-[11px] leading-none text-white sm:text-xs"
+                    style={{ backgroundColor: project.ink }}
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </PageStage>
 
           {project.slug === "portfolio" ? (
             <>
@@ -166,21 +164,6 @@ export default function ProjectDetail({
             </>
           ) : (
             <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
-              {/* Category + scope */}
-              {project.tags.length > 0 && (
-                <ul className="mb-12 flex flex-wrap gap-2" aria-label="Tags">
-                  {project.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full px-4 py-2.5 text-xs leading-none text-white"
-                      style={{ backgroundColor: project.ink }}
-                    >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
               <dl className="mb-16 grid grid-cols-2 gap-x-8 gap-y-6 border-y border-black/10 py-6 text-xs sm:grid-cols-3">
                 <Scope label={t.discipline} value={project.eyebrow[lang]} />
                 <Scope label={t.year} value={project.year} field="year" />

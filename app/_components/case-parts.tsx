@@ -245,7 +245,7 @@ export function Stalker({ visible, color, label }: { visible: boolean; color: st
   );
 }
 
-/** The open portrait, with one eyelid that closes on a loop. */
+/** The open portrait, with the viewer's right eye closing on a loop. */
 export function WinkingPortrait({
   className = "",
   preload = false,
@@ -264,11 +264,50 @@ export function WinkingPortrait({
         draggable={false}
         className="h-auto w-full"
       />
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[18.3%] left-[56.8%] h-[4.6%] w-[9.6%] origin-top rounded-[50%] bg-[#C69678] shadow-[inset_0_-1.5px_0_#6E4638] animate-[portrait-wink_4.8s_ease-in-out_infinite] motion-reduce:hidden"
+      <Image
+        src="/portrait-wink.png"
+        alt=""
+        width={333}
+        height={482}
+        aria-hidden
+        draggable={false}
+        className="pointer-events-none absolute inset-0 h-full w-full animate-[portrait-wink_4.8s_ease-in-out_infinite] motion-reduce:hidden"
       />
     </span>
+  );
+}
+
+/** First screen of a page opened from the landing: the same giant line, the same title. */
+export function PageStage({
+  eyebrow,
+  title,
+  marquee,
+  marqueeColor,
+  children,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  marquee: string;
+  marqueeColor: string;
+  children?: ReactNode;
+}) {
+  return (
+    <header className="relative flex min-h-svh flex-col items-center justify-center overflow-clip px-6 pt-28 pb-16 text-center sm:px-10">
+      <Marquee text={marquee} color={marqueeColor} large />
+      <div className="relative z-10 flex w-full max-w-[920px] flex-col items-center">
+        <p className={`mb-5 text-[10px] tracking-[0.18em] text-black/50 transition-[opacity,translate] duration-700 motion-reduce:transition-none starting:translate-y-4 starting:opacity-0 delay-100 ${EASE}`}>
+          {eyebrow}
+        </p>
+        <h1 className="overflow-clip pb-[0.08em] text-[clamp(3.25rem,7vw,5.75rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832] [@media(max-height:700px)]:text-5xl">
+          <span
+            className={`block transition-transform duration-[900ms] delay-150 motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
+          >
+            {title}
+          </span>
+        </h1>
+        {children}
+      </div>
+    </header>
   );
 }
 
