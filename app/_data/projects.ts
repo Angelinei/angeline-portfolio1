@@ -410,6 +410,7 @@ export const projects: Project[] = [
           EN: "Sprint coordinator with my teammate Anaïs: supporting high-impact entrepreneurial project leaders from concept to prototype, with the tools of the Makesense incubator.",
           FR: "Sprint coordinator avec ma coéquipière Anaïs : accompagner des porteurs de projets entrepreneuriaux à fort impact, de la conception au prototypage, avec les outils de l'incubateur Makesense.",
         },
+        href: "https://drive.google.com/drive/folders/1xaUnKidxVnJ4Phv0udoccfBlYCgEBG1c?usp=sharing",
         tags: ["Entrepreneurship", "Coaching"],
       },
       {
