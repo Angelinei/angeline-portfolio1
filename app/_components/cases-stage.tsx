@@ -15,6 +15,7 @@ import {
   ui,
   type Slide,
 } from "./case-parts";
+import { ThumbyEgg } from "./thumby-egg";
 import { useLang } from "./use-lang";
 
 const contact: Slide = {
@@ -210,6 +211,8 @@ export default function CasesStage({
           {t.hint} ↓
         </span>
       </div>
+
+      <ThumbyEgg prize="xp" lang={lang} className="right-[22%] -bottom-3 sm:right-[30%]" />
 
       <Stalker
         visible={hovered === active.id}
