@@ -8,7 +8,16 @@
  */
 import Image from "next/image";
 import type { Lang } from "../_data/projects";
-import { demoVideo, designPortfolioText, edtechUseCases, rankbidOrigin } from "../_data/design-portfolio";
+import {
+  bugReports,
+  demoVideo,
+  designPortfolioText,
+  edtechUseCases,
+  freeTools,
+  guides,
+  rankbidOrigin,
+  type LinkCard,
+} from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
 import img1 from "../../public/portfolio/design/skillxtube-logo.png";
 import img2 from "../../public/portfolio/design/zip.png";
@@ -38,6 +47,8 @@ import img25 from "../../public/portfolio/design/cc-blushing.png";
 import img26 from "../../public/portfolio/design/tiktok-ep5-later.png";
 import img27 from "../../public/portfolio/design/tiktok-ep7-teaser.png";
 import img28 from "../../public/portfolio/design/tiktok-ep7-gang.png";
+import communitySpace from "../../public/portfolio/design/community-space.png";
+import bugReport from "../../public/portfolio/design/bug-report.png";
 
 export function DesignPortfolio({ lang }: { lang: Lang }) {
   const t = (key: keyof typeof designPortfolioText) => designPortfolioText[key][lang];
@@ -1172,77 +1183,43 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               </span>
             </div>
           </div>
-          <div style={{ flex: "999 1 560px", minWidth: "0", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px", display: "flex", flexWrap: "wrap", gap: "16px", position: "relative" }}>
-            <div style={{ flex: "1 1 180px", minWidth: "0", background: "#FFFFFF", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "16px", display: "flex", flexDirection: "column", gap: "6px", fontSize: "14px" }}>
-              <div style={{ fontWeight: "900", paddingBottom: "8px", borderBottom: "0.5px solid #D8D6D0" }}>
-                {t("community.7")}
-              </div>
-              <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "10px", color: "#5F5E58", textTransform: "uppercase", marginTop: "6px" }}>
-                {t("community.8")}
-              </div>
-              <div style={{ padding: "6px 10px", borderRadius: "8px", background: "#FFE8EA", color: "#C62828", fontWeight: "800" }}>
-                {t("community.9")}
-              </div>
-              <div style={{ padding: "6px 10px" }}>
-                {t("community.10")}
-              </div>
-              <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "10px", color: "#5F5E58", textTransform: "uppercase", marginTop: "6px" }}>
-                {t("community.11")}
-              </div>
-              <div style={{ padding: "6px 10px" }}>
-                {t("community.12")}
-              </div>
-              <div style={{ padding: "6px 10px", color: "#5F5E58", display: "flex", alignItems: "center", gap: "6px" }}>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                  <rect x="5" y="11" width="14" height="10" rx="2" />
-                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-                </svg>
-                {t("community.13")}
-              </div>
+          <div style={{ flex: "999 1 560px", minWidth: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF" }}>
+            <Image
+              src={communitySpace}
+              alt={bugReports.communityAlt[lang]}
+              loading="lazy"
+              sizes="(min-width: 1200px) 760px, 100vw"
+              style={{ display: "block", width: "100%", height: "auto" }}
+            />
+          </div>
+        </div>
+      </section>
+      {/* 05.1 BUG REPORTS */}
+      <section style={{ maxWidth: "1200px", margin: "0 auto", padding: "56px 32px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "center" }}>
+          <div style={{ flex: "1 1 320px", minWidth: "0" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <span style={{ color: "#C62828" }}>05.1</span> {bugReports.label[lang]}
             </div>
-            <div style={{ flex: "999 1 280px", minWidth: "0", display: "flex", flexDirection: "column", gap: "12px" }}>
-              <div style={{ background: "#FFFFFF", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "16px" }}>
-                <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "10px", color: "#5F5E58", textTransform: "uppercase" }}>
-                  {t("community.14")}
-                </div>
-                <div style={{ marginTop: "6px", fontWeight: "800" }}>
-                  {t("community.15")}
-                </div>
-                <div style={{ marginTop: "4px", fontSize: "13px", color: "#4A4943" }}>
-                  {t("community.16")}
-                </div>
-              </div>
-              <div style={{ background: "#FFFFFF", border: "1px solid #1A1A1A", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-                <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "#FFF4DA", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6414" strokeWidth="2">
-                    <rect x="5" y="11" width="14" height="10" rx="2" />
-                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-                  </svg>
-                </div>
-                <div style={{ fontWeight: "900", fontSize: "17px" }}>
-                  {t("community.17")}
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "13px" }}>
-                  <span>
-                    {t("community.18")}
-                  </span>
-                  <span>
-                    {t("community.19")}
-                  </span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "13px", color: "#5F5E58" }}>
-                  <span>
-                    {t("community.20")}
-                  </span>
-                  <span>
-                    {t("community.21")}
-                  </span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "44px", borderRadius: "999px", background: "#E3B450", color: "#1A1A1A", fontWeight: "800" }}>
-                  {t("community.22")}
-                </div>
-              </div>
+            <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{bugReports.title[lang]}</h2>
+            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{bugReports.text[lang]}</p>
+            <p style={{ margin: "12px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{bugReports.text2[lang]}</p>
+            <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {bugReports.pills.map((pill) => (
+                <span key={pill.EN} style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
+                  {pill[lang]}
+                </span>
+              ))}
             </div>
+          </div>
+          <div style={{ flex: "999 1 460px", minWidth: "0", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "32px", display: "flex", justifyContent: "center" }}>
+            <Image
+              src={bugReport}
+              alt={bugReports.alt[lang]}
+              loading="lazy"
+              sizes="400px"
+              style={{ display: "block", width: "100%", maxWidth: "400px", height: "auto", borderRadius: "22px", boxShadow: "0 12px 32px rgba(26, 26, 26, 0.12)" }}
+            />
           </div>
         </div>
       </section>
@@ -2160,6 +2137,12 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
+      {/* 11.2 FREE TOOLS */}
+      <LinkCardsSection id="freetools" number="11.2" lang={lang} {...freeTools} />
+
+      {/* 11.3 GUIDES */}
+      <LinkCardsSection id="guides" number="11.3" lang={lang} {...guides} />
+
       {/* 12 RANKBID */}
       <section id="side" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "56px 32px 96px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
@@ -2429,5 +2412,69 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </div>
       </section>
     </div>
+  );
+}
+
+/** Header + grid of outbound cards, in the style of the Behance block. */
+function LinkCardsSection({
+  id,
+  number,
+  lang,
+  label,
+  title,
+  intro,
+  button,
+  href,
+  cards,
+}: {
+  id: string;
+  number: string;
+  lang: Lang;
+  label: { EN: string; FR: string };
+  title: { EN: string; FR: string };
+  intro: { EN: string; FR: string };
+  button?: { EN: string; FR: string };
+  href?: string;
+  cards: LinkCard[];
+}) {
+  return (
+    <section id={id} style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px" }}>
+        <div style={{ flex: "1 1 460px", minWidth: "0" }}>
+          <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+            <span style={{ color: "#C62828" }}>{number}</span> {label[lang]}
+          </div>
+          <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{title[lang]}</h2>
+          <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", color: "#4A4943", maxWidth: "720px" }}>{intro[lang]}</p>
+        </div>
+        {button && href && (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}
+          >
+            {button[lang]}
+          </a>
+        )}
+      </div>
+      <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
+        {cards.map((card) => (
+          <a
+            key={card.href}
+            href={card.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none", color: "#1A1A1A", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px", display: "flex", flexDirection: "column", gap: "8px" }}
+          >
+            <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase" }}>
+              {card.tag[lang]}
+            </span>
+            <span style={{ fontSize: "20px", fontWeight: "900" }}>{card.title}</span>
+            <span style={{ fontSize: "14px", color: "#4A4943" }}>{card.text[lang]}</span>
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
