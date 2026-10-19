@@ -4,6 +4,7 @@ import Link from "next/link";
 import { thePath as thePathEn, thePathFr, type PathBlock } from "../_data/the-path";
 import { BRAND, CONTACT_EMAIL, LINKEDIN, ProjectVisual, RollText, SiteHeader, thePathSlide, ui } from "./case-parts";
 import { ExternalLink, Group, Inline, PageHero } from "./editorial";
+import { ThumbyEgg } from "./thumby-egg";
 import { useLang } from "./use-lang";
 
 const INK = "#2E6A48";
@@ -51,7 +52,7 @@ export default function ThePathPage({ cover }: { cover?: string }) {
             marqueeColor={thePathSlide.marqueeColor}
             visual={
               <div
-                className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/9]"
+                className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/9]"
                 style={{ backgroundColor: TINT }}
               >
                 <div className="size-[78cqw] sm:size-[44cqw]">
@@ -66,6 +67,7 @@ export default function ThePathPage({ cover }: { cover?: string }) {
                     sizes="(min-width: 640px) 44vw, 78vw"
                   />
                 </div>
+                <ThumbyEgg spot="the-path" lang={lang} className="right-4 -bottom-2 sm:right-8" />
               </div>
             }
           >

@@ -22,7 +22,7 @@ export const thePath = {
     "Algolicious | From FR to expanding in bubbles only international EN Edtechs Tech Art. So, building a learning AI agent ecosystem based on social medias . Go connect !",
   location: "📍 Digital Nomad (From France)",
   links: [
-    { label: "🌐 angelinepoitout.com/studio", href: "https://angelinepoitout.com/" },
+    { label: "🌐 indiepa.ge/madship", href: "https://indiepa.ge/madship" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/angelinepoitoutpro/" },
     { label: "GitHub", href: "https://github.com/Angelinei" },
   ],
