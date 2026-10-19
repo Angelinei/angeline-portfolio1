@@ -32,8 +32,8 @@ export function useInView<T extends Element>() {
 export function Group({ title, children }: { title: string; children: ReactNode }) {
   const [ref, inView] = useInView<HTMLElement>();
   return (
-    <section ref={ref} className="mb-16 grid gap-4 sm:mb-20 md:grid-cols-[180px_1fr] md:gap-10">
-      <h2 className="h-fit overflow-clip text-xl leading-[1.5] font-medium tracking-[-0.03em] sm:text-2xl">
+    <section ref={ref} className="mb-20 sm:mb-28">
+      <h2 className="mb-6 h-fit overflow-clip pb-[0.08em] text-[clamp(2rem,4vw,3rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832]">
         <span
           className={`block transition-transform duration-700 motion-reduce:transition-none ${EASE} ${
             inView ? "translate-y-0" : "translate-y-full"

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BRAND, EASE, LINKEDIN, RollText, SiteHeader, WinkingPortrait, ui } from "./case-parts";
+import { BRAND, LINKEDIN, PageStage, RollText, SiteHeader, WinkingPortrait, ui } from "./case-parts";
 import { Group, enter } from "./editorial";
 import { useLang } from "./use-lang";
 
@@ -55,27 +55,22 @@ export default function AboutPage() {
 
       <main>
         <article>
-          <header className="mx-auto w-full max-w-[760px] px-5 pt-36 sm:px-10 sm:pt-[180px]">
-            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-              {t.eyebrow}
-            </p>
-            <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-              <span
-                className={`block transition-transform delay-150 duration-[1000ms] motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
-              >
-                {t.title}
-              </span>
-            </h1>
+          <PageStage
+            eyebrow={t.eyebrow}
+            title={t.title}
+            marquee="Technology is the tool. Human potential is the point."
+            marqueeColor="#6A4FE0"
+          >
+            <WinkingPortrait
+              preload
+              className={`mt-6 w-[min(220px,46vw)] [@media(max-height:700px)]:w-[min(160px,36vw)] ${enter("delay-300")}`}
+            />
             <p
-              className={`mt-8 max-w-3xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}
+              className={`mt-5 max-w-[26rem] text-[13px] leading-[1.65] font-medium text-[#2C2A26] sm:text-sm ${enter("delay-450")}`}
             >
               {t.lead}
             </p>
-          </header>
-
-          <figure className={`mx-auto mt-10 flex w-full max-w-[760px] justify-center px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-            <WinkingPortrait preload className="w-[min(220px,52vw)]" />
-          </figure>
+          </PageStage>
 
           <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
             <Group title={t.workTitle}>

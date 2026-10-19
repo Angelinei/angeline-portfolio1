@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { formatWritingDate, type WritingPost } from "../_data/writing";
-import { BRAND, EASE, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
+import { BRAND, EASE, PageStage, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
 import { enter } from "./editorial";
 import { useLang } from "./use-lang";
 
@@ -81,25 +81,31 @@ export function WritingIndex({ posts }: { posts: WritingPost[] }) {
 
   return (
     <Frame backHref="/#writing" backLabel={t.studio}>
-      <header className="mx-auto w-full max-w-[1120px] px-5 pt-36 sm:px-10 sm:pt-[200px]">
-        <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-          {t.eyebrow}
-        </p>
-        <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-          <span
-            className={`block transition-transform delay-150 duration-[1000ms] motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
-          >
-            {t.title}
-          </span>
-        </h1>
-        <p className={`mt-8 max-w-xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}>
+      <PageStage
+        eyebrow={t.eyebrow}
+        title={t.title}
+        marquee="Essays on building, learning and working with AI."
+        marqueeColor="#E7DCC4"
+      >
+        <figure className={`relative mt-8 size-[min(300px,34svh)] [@media(max-height:700px)]:size-[min(190px,26svh)] ${enter("delay-300")}`}>
+          <ProjectVisual
+            kind="writing"
+            tint={TINT}
+            ink={INK}
+            linked={false}
+            alt={t.title}
+            preload
+            sizes="300px"
+          />
+        </figure>
+        <p className={`mt-6 max-w-[28rem] text-[15px] leading-[1.6] font-medium text-black/75 sm:text-base ${enter("delay-450")}`}>
           {t.intro}
         </p>
         <a
           href={SUBSTACK}
           target="_blank"
           rel="noreferrer"
-          className={`mt-6 inline-block rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70 ${enter("delay-300")}`}
+          className={`mt-5 inline-block rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70 ${enter("delay-500")}`}
           style={{ borderColor: INK, color: INK }}
         >
           {t.substack} ↗<span className="sr-only"> {ui[lang].newTab}</span>
@@ -109,26 +115,7 @@ export function WritingIndex({ posts }: { posts: WritingPost[] }) {
             <TranslationNote />
           </div>
         )}
-      </header>
-
-      <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-        <div
-          className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/7]"
-          style={{ backgroundColor: TINT }}
-        >
-          <div className="size-[70cqw] sm:size-[34cqw]">
-            <ProjectVisual
-              kind="writing"
-              tint={TINT}
-              ink={INK}
-              linked={false}
-              alt={t.title}
-              preload
-              sizes="(min-width: 640px) 34vw, 70vw"
-            />
-          </div>
-        </div>
-      </figure>
+      </PageStage>
 
       <ol className="mx-auto w-full max-w-[1120px] px-5 pt-12 sm:px-10 sm:pt-16">
         {posts.map((post, index) => (
@@ -182,7 +169,7 @@ export function WritingArticle({
             <span aria-hidden="true"> · </span>
             <time dateTime={post.date}>{formatWritingDate(post.date)}</time>
           </p>
-          <h1 className="text-[clamp(2.2rem,6vw,3.75rem)] leading-[1.08] font-medium tracking-[-0.05em]">
+          <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.4rem,5vw,3.75rem)] leading-none font-semibold tracking-[-0.045em] text-[#3A3832]">
             <span
               className={`block transition-transform delay-150 duration-[1000ms] motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
             >
