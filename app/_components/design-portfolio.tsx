@@ -1202,15 +1202,15 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               <span style={{ color: "#C62828" }}>05.1</span> {bugReports.label[lang]}
             </div>
             <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{bugReports.title[lang]}</h2>
-            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{bugReports.text[lang]}</p>
-            <p style={{ margin: "12px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{bugReports.text2[lang]}</p>
-            <div style={{ marginTop: "20px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {bugReports.pills.map((pill) => (
-                <span key={pill.EN} style={{ fontSize: "13px", fontWeight: "700", padding: "6px 12px", border: "0.5px solid #D8D6D0", borderRadius: "999px" }}>
-                  {pill[lang]}
-                </span>
+            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{bugReports.intro[lang]}</p>
+            <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "flex", flexDirection: "column", gap: "10px" }}>
+              {bugReports.points.map((point) => (
+                <li key={point.EN} style={{ display: "flex", gap: "10px", fontSize: "16px", lineHeight: "1.5", color: "#1A1A1A" }}>
+                  <span aria-hidden="true" style={{ flex: "none", width: "6px", height: "6px", marginTop: "9px", borderRadius: "999px", background: "#FF4D4D" }} />
+                  {point[lang]}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
           <div style={{ flex: "999 1 460px", minWidth: "0", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "32px", display: "flex", justifyContent: "center" }}>
             <Image
