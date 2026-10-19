@@ -622,6 +622,7 @@ export const projects: Project[] = [
           EN: "Extra in the web series “Dans un autre monde”.",
           FR: "Figuration dans la websérie « Dans un autre monde ».",
         },
+        href: "https://drive.google.com/drive/folders/1uHTiLeYl0uqtQyHGmlzsf4uZt7ENQFYu?usp=sharing",
         tags: ["Acting"],
       },
     ],
