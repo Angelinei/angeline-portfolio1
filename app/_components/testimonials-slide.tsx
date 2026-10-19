@@ -17,12 +17,14 @@ const SOURCES: Record<TestimonialSource, { EN: string; FR: string }> = {
   digitaforma: { EN: "Digitaforma", FR: "Digitaforma" },
   facebook: { EN: "Facebook", FR: "Facebook" },
   article: { EN: "Article", FR: "Article" },
+  adobe: { EN: "Adobe", FR: "Adobe" },
 };
 
 /** Past this length (or with line breaks) a card is clamped and offers "Read more". */
 const CLAMP_AT = 150;
 
 const quoteOf = (item: Testimonial, lang: Lang) => (lang === "FR" ? item.quote_fr : item.quote_en);
+const nameOf = (item: Testimonial, lang: Lang) => (lang === "EN" && item.name_en) || item.name;
 const roleOf = (item: Testimonial, lang: Lang) => (lang === "FR" ? item.role_fr : item.role_en);
 
 // Alternate the list over two rows so both carry long and short quotes.
@@ -59,12 +61,12 @@ function Card({
             style={{ color: ink }}
           >
             {copy[lang].more}
-            <span className="sr-only"> : {item.name}</span>
+            <span className="sr-only"> : {nameOf(item, lang)}</span>
           </button>
         )}
         <figcaption className="mt-auto flex items-end justify-between gap-3 pt-4">
           <span className="min-w-0">
-            <span className="block text-sm font-medium tracking-[-0.01em] text-[#20201E]">{item.name}</span>
+            <span className="block text-sm font-medium tracking-[-0.01em] text-[#20201E]">{nameOf(item, lang)}</span>
             <span className="block text-xs leading-snug text-black/60">{roleOf(item, lang)}</span>
           </span>
           {item.source && (
@@ -193,7 +195,7 @@ export function TestimonialsSlide({
         onClick={(event) => {
           if (event.target === dialog.current) dialog.current?.close();
         }}
-        aria-label={open?.name}
+        aria-label={open ? nameOf(open, lang) : undefined}
         className="m-auto max-h-[85svh] w-[min(560px,calc(100vw-2rem))] overflow-y-auto rounded-[22px] bg-[#F8F7F2] p-0 text-[#20201E] backdrop:bg-black/40"
       >
         {open && (
@@ -206,7 +208,7 @@ export function TestimonialsSlide({
             </blockquote>
             <figcaption className="mt-6 flex items-end justify-between gap-4 border-t border-black/10 pt-4">
               <span>
-                <span className="block font-medium">{open.name}</span>
+                <span className="block font-medium">{nameOf(open, lang)}</span>
                 <span className="block text-sm text-black/60">{roleOf(open, lang)}</span>
               </span>
               {open.source && (

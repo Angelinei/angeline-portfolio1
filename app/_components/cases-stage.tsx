@@ -42,8 +42,8 @@ const testimonials: Slide = {
   eyebrow: { EN: "TESTIMONIALS", FR: "TÉMOIGNAGES" },
   title: { EN: "Kind words", FR: "Ils en parlent" },
   text: {
-    EN: "Managers, partners and learners, in their own words.",
-    FR: "Managers, partenaires et apprenants, avec leurs mots.",
+    EN: "Managers, partners, learners and customers, in their own words.",
+    FR: "Managers, partenaires, apprenants et clients, avec leurs mots.",
   },
   marquee: "In their own words. Learning, shipped together.",
   tags: [],

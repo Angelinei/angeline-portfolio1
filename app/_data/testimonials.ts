@@ -3,22 +3,27 @@
  * Temoignages_Angeline_Poitout_FR_EN.md (original typos kept); long letters and posts are
  * trimmed to the passage about Angéline, marked with […].
  *
- * To add one: append an object below. `source` is optional (see TestimonialSource).
+ * Adobe customer comments: verbatim from Commentaires_Adobe_FR_EN.docx (support satisfaction
+ * surveys, May–June 2026, the "for the portfolio" set only), anonymous, mixed into the list.
+ *
+ * To add one: append an object to `people` (or `adobe`). `source` is optional (see
+ * TestimonialSource); `name_en` replaces `name` in English when the name itself is translated.
  */
 
-export type TestimonialSource = "letter" | "linkedin" | "google" | "digitaforma" | "facebook" | "article";
+export type TestimonialSource = "letter" | "linkedin" | "google" | "digitaforma" | "facebook" | "article" | "adobe";
 
 export type Testimonial = {
   id: string;
   quote_fr: string;
   quote_en: string;
   name: string;
+  name_en?: string;
   role_fr: string;
   role_en: string;
   source?: TestimonialSource;
 };
 
-export const testimonials: Testimonial[] = [
+const people: Testimonial[] = [
   {
     id: "alexandre-deniaud",
     quote_fr:
@@ -260,3 +265,123 @@ export const testimonials: Testimonial[] = [
     role_en: "Training organisation, interview",
   },
 ];
+
+const adobe: Testimonial[] = [
+  {
+    id: "adobe-1",
+    quote_fr: "La conseillère était parfaite",
+    quote_en: "The advisor was perfect.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, juin 2026",
+    role_en: "Satisfaction survey ★5, June 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-2",
+    quote_fr: "tellement friendly comprehensive et efficace !",
+    quote_en: "So friendly, understanding and efficient!",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, juin 2026",
+    role_en: "Satisfaction survey ★5, June 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-3",
+    quote_fr: "Merci infiniment à Angeline",
+    quote_en: "Thank you so much to Angeline.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, juin 2026",
+    role_en: "Satisfaction survey ★5, June 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-4",
+    quote_fr:
+      "Personne très agréable et qui a prit tout son temps pour résoudre mon problème. Très à l'écoute et bienveillante on sentait qu'elle souhaitait résoudre ce problème quitte à prendre le plus de temps possible. Merci à elle.",
+    quote_en:
+      "A very pleasant person who took all the time needed to solve my problem. Very attentive and caring; you could tell she wanted to solve it, even if it meant taking as much time as necessary. Thanks to her.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, juin 2026",
+    role_en: "Satisfaction survey ★5, June 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-5",
+    quote_fr: "parfait avec Angelique",
+    quote_en: "Perfect with Angelique.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, juin 2026",
+    role_en: "Satisfaction survey ★5, June 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-6",
+    quote_fr: "Très bon accueil Opérateurs compétents et à l'écoute du client. Satisfaction complète",
+    quote_en: "Very warm welcome. Skilled agents who listen to the customer. Complete satisfaction.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-7",
+    quote_fr: "écoute et propositions interrésistantes par une personne aimable et compétente",
+    quote_en: "Attentive listening and interesting suggestions from a kind and competent person.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-8",
+    quote_fr: "Très réactif d'une patience et d'une gentillesse exemplaire",
+    quote_en: "Very responsive, with exemplary patience and kindness.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-9",
+    quote_fr: "Très bonne accueil efficace.",
+    quote_en: "Very good, efficient welcome.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-10",
+    quote_fr: "Très satisfaite",
+    quote_en: "Very satisfied.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+  {
+    id: "adobe-11",
+    quote_fr: "Très aimable et très patient. Bonne proposition de produits pour améliorer notre travail.",
+    quote_en: "Very kind and very patient. Good product suggestions to improve our work.",
+    name: "Avis client Adobe",
+    name_en: "Adobe customer review",
+    role_fr: "Enquête de satisfaction ★5, mai 2026",
+    role_en: "Satisfaction survey ★5, May 2026",
+    source: "adobe",
+  },
+];
+
+/** People first, with one Adobe comment after every two of them so the rows stay mixed. */
+export const testimonials: Testimonial[] = people
+  .flatMap((item, i) => (i % 2 === 1 && adobe[(i - 1) / 2] ? [item, adobe[(i - 1) / 2]] : [item]))
+  .concat(adobe.slice(Math.floor(people.length / 2)));
