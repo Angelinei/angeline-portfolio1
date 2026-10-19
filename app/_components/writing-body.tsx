@@ -60,7 +60,7 @@ function Li(props: ComponentPropsWithoutRef<"li">) {
 
 function Img({ alt = "", ...props }: ComponentPropsWithoutRef<"img">) {
   // eslint-disable-next-line @next/next/no-img-element -- MDX images come with no known size
-  return <img alt={alt} loading="lazy" className="my-8 h-auto w-full rounded-[18px] border border-black/10" {...props} />;
+  return <img alt={alt} loading="lazy" className="mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10" {...props} />;
 }
 
 function Hr() {
