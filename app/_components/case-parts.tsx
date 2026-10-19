@@ -26,9 +26,7 @@ export type Slide = {
 };
 
 export const LINKEDIN = "https://www.linkedin.com/in/angelinepoitoutpro/";
-export const CONTACT_EMAIL = "angelinedigitalworld@gmail.com";
-/** Email shown on the home contact slide. */
-const SLIDE_EMAIL = "webnomadland@gmail.com";
+export const CONTACT_EMAIL = "webnomadland@gmail.com";
 export const EASE = "ease-[cubic-bezier(.25,.46,.45,.94)]";
 export const BRAND = "#7660D8";
 
@@ -531,11 +529,11 @@ export function CaseItem({
         )}
         {slide.visual === "contact" && (
           <a
-            href={`mailto:${SLIDE_EMAIL}`}
+            href={`mailto:${CONTACT_EMAIL}`}
             className="rounded-full border px-4 py-2.5 text-xs leading-none transition-opacity hover:opacity-70"
             style={{ borderColor: slide.ink, color: slide.ink }}
           >
-            {SLIDE_EMAIL}
+            {CONTACT_EMAIL}
           </a>
         )}
       </span>
