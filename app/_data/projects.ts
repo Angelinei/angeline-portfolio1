@@ -750,6 +750,16 @@ export const projects: Project[] = [
         href: GITHUB_PROFILE,
         kind: "github",
       },
+      {
+        label: { EN: "Behance portfolio", FR: "Portfolio Behance" },
+        href: BEHANCE_PROFILE,
+        kind: "behance",
+      },
+      {
+        label: { EN: "SkillxTube", FR: "SkillxTube" },
+        href: "https://skillxtube.com/",
+        kind: "site",
+      },
     ],
   },
 ];

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Lang, Localized, Project, Visual } from "../_data/projects";
 import { projectHref } from "../_data/projects";
+import { thePath } from "../_data/the-path";
 import { StandingAvatar } from "./standing-avatar";
 
 export type Slide = {
@@ -52,6 +53,26 @@ export const ui = {
     newTab: "(nouvel onglet)",
     avatar: "Avatar d'Angéline, un doigt levé, souriante",
   },
+};
+
+/** The Path, shown after the last project (home stage and "next" block). */
+export const thePathSlide: Slide = {
+  id: "the-path",
+  nav: { EN: "The Path", FR: "The Path" },
+  eyebrow: { EN: "THE PATH · BRICK METHOD", FR: "THE PATH · BRICK METHOD" },
+  title: { EN: thePath.title, FR: thePath.title },
+  text: {
+    EN: thePath.tagline,
+    FR: "Agents IA et micro-SaaS pour l'éducation | 7+ partenariats EdTech en France | Internationalisation en cours",
+  },
+  marquee: "Indie everywheeere. Techie yours.",
+  tags: ["EdTech", "AI agents", "Indie Hacking"],
+  href: "/the-path",
+  cta: { EN: "Read", FR: "Lire" },
+  visual: "path",
+  tint: "#DCEADF",
+  marqueeColor: "#C5DCCB",
+  ink: "#2E6A48",
 };
 
 export function projectToSlide(project: Project): Slide {
