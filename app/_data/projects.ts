@@ -663,6 +663,7 @@ export const projects: Project[] = [
           EN: "My first website and idea. Looks familiar on certain points, huh?",
           FR: "Mon premier site et ma première idée. Ça vous rappelle quelque chose sur certains points, non ?",
         },
+        href: "/portfolio/archives/drive-freelance.mp4",
       },
       {
         title: "YouTube music channel",
@@ -680,12 +681,23 @@ export const projects: Project[] = [
         href: "https://drive.google.com/drive/folders/1L2IDfjIErZnE_u70-O6UVImDQ5aY2KqJ?usp=sharing",
       },
       {
+        title: "Hack Ton Stage / Alternance",
+        year: "2020",
+        description: {
+          EN: "A self-published e-book to help students land an internship or a work-study contract.",
+          FR: "Un e-book autopublié pour aider les étudiants à décrocher un stage ou une alternance.",
+        },
+        href: "https://www.amazon.fr/Hack-Ton-Stage-Alternance-d%C3%A9crocher-ebook/dp/B0889Y13TQ",
+        tags: ["E-book", "Self-published"],
+      },
+      {
         title: "WebNewbies",
         year: "–2024",
         description: {
           EN: "Meetup group on web marketing, business and website creation (2,639 members): monthly face-to-face conferences until April 2024, democratising web marketing and AI.",
           FR: "Groupe Meetup webmarketing, business et création de site (2 639 membres) : une conférence en présentiel par mois jusqu'en avril 2024, pour démocratiser le webmarketing et l'IA.",
         },
+        href: "https://drive.google.com/drive/folders/18pbk2kT2XA1pH0IWhliKrUQw612qmlp9?usp=sharing",
         tags: ["Meetup", "Community"],
       },
       {
@@ -695,6 +707,7 @@ export const projects: Project[] = [
           EN: "Meetup group on AI and Web3 (1,452 members): monthly face-to-face conferences until April 2024.",
           FR: "Groupe Meetup IA et Web3 (1 452 membres) : une conférence en présentiel par mois jusqu'en avril 2024.",
         },
+        href: "https://drive.google.com/drive/folders/18pbk2kT2XA1pH0IWhliKrUQw612qmlp9?usp=sharing",
         tags: ["Meetup", "Community"],
       },
     ],
