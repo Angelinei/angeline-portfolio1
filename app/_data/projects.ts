@@ -559,6 +559,7 @@ export const projects: Project[] = [
       {
         group: { EN: "Before EdTech", FR: "Avant les EdTechs" },
         title: "Center Hubstart",
+        href: "https://drive.google.com/file/d/1Rz1HJaYS_ZRwib-rSSDuJBXafY7ACEuz/view?usp=sharing",
         description: {
           EN: "Website animation, Facebook and Twitter creation and management, a monthly newsletter for incubatees and founders, a founders directory, and consulting and communication missions for incubatees.",
           FR: "Animation du site web, création et animation Facebook et Twitter, newsletter mensuelle pour les incubés et fondateurs, annuaire des fondateurs, missions de conseil et de communication pour les incubés.",
