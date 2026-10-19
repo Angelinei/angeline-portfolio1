@@ -63,6 +63,37 @@ function Img({ alt = "", ...props }: ComponentPropsWithoutRef<"img">) {
   return <img alt={alt} loading="lazy" className="mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10" {...props} />;
 }
 
+/** A clip hosted with the site (public/writing). */
+function Video({ src, poster, label }: { src: string; poster?: string; label: string }) {
+  return (
+    <video
+      src={src}
+      poster={poster}
+      controls
+      playsInline
+      preload="none"
+      aria-label={label}
+      className="my-8 block h-auto w-full rounded-[18px] border border-black/10 bg-black"
+    />
+  );
+}
+
+/** A clip kept on Google Drive, played in Drive's own player. */
+function DriveVideo({ id, label }: { id: string; label: string }) {
+  return (
+    <div className="my-8 aspect-video overflow-hidden rounded-[18px] border border-black/10 bg-black">
+      <iframe
+        src={`https://drive.google.com/file/d/${id}/preview`}
+        title={label}
+        allow="autoplay; fullscreen"
+        allowFullScreen
+        loading="lazy"
+        className="size-full"
+      />
+    </div>
+  );
+}
+
 function Hr() {
   return <hr className="my-10 border-0 border-t border-black/10" />;
 }
@@ -89,6 +120,8 @@ const components = {
   hr: Hr,
   img: Img,
   blockquote: Blockquote,
+  Video,
+  DriveVideo,
   VideoTodo,
   ImageTodo,
 };
