@@ -26,7 +26,7 @@ export type Slide = {
 };
 
 export const LINKEDIN = "https://www.linkedin.com/in/angelinepoitoutpro/";
-export const CONTACT_EMAIL = "angelinedigitalworld@gmail.com";
+export const CONTACT_EMAIL = "webnomadland@gmail.com";
 export const EASE = "ease-[cubic-bezier(.25,.46,.45,.94)]";
 export const BRAND = "#7660D8";
 
@@ -54,6 +54,45 @@ export const ui = {
     newTab: "(nouvel onglet)",
     avatar: "Avatar d'Angéline, un doigt levé, souriante",
   },
+};
+
+/** Opening slide of the home stage, also the About page band. */
+export const approachSlide: Slide = {
+  id: "approach",
+  nav: { EN: "Approach", FR: "Approche" },
+  eyebrow: { EN: "THE APPROACH", FR: "L'APPROCHE" },
+  title: { EN: "Approach", FR: "Approche" },
+  text: {
+    EN: "I work at the intersection of generative AI, learning design and digital products. I use AI as a creative and technical partner, with a focus on useful outcomes rather than technology for its own sake.",
+    FR: "Je travaille à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques. J'utilise l'IA comme partenaire créatif et technique, avec une priorité : produire quelque chose d'utile, pas simplement technologique.",
+  },
+  marquee: "Technology is the tool. Human potential is the point.",
+  tags: ["Generative AI", "Learning design", "Digital products"],
+  href: "/about",
+  cta: { EN: "Go further", FR: "Aller plus loin" },
+  visual: "about",
+  tint: "#ECE8FB",
+  marqueeColor: "#6A4FE0",
+  ink: "#7660D8",
+};
+
+export const writingSlide: Slide = {
+  id: "writing",
+  nav: { EN: "Writing", FR: "Écrits" },
+  eyebrow: { EN: "WRITING", FR: "ÉCRITS" },
+  title: { EN: "Writing", FR: "Écrits" },
+  text: {
+    EN: "Essays on building products, learning, and working with AI.",
+    FR: "Essais sur la construction de produits, l'apprentissage et le travail avec l'IA.",
+  },
+  marquee: "Essays on building, learning and working with AI.",
+  tags: ["Essays", "Building", "AI"],
+  href: "/writing",
+  cta: { EN: "Read", FR: "Lire" },
+  visual: "writing",
+  tint: "#F6F1E6",
+  marqueeColor: "#E7DCC4",
+  ink: "#7660D8",
 };
 
 /** The Path, shown after the last project (home stage and "next" block). */
@@ -121,15 +160,21 @@ export function SiteHeader({
           >
             Angéline Poitout<span style={{ color: BRAND }}>.</span>
           </Link>
-          <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noreferrer"
-            className={`w-fit text-[11px] leading-none text-black/55 underline decoration-black/20 underline-offset-[5px] transition-colors duration-300 hover:text-[#7660D8] hover:decoration-[#7660D8] ${EASE}`}
-          >
-            {t.collaborate}
-            <span className="sr-only"> {t.newTab}</span>
-          </a>
+          <span className="flex items-center gap-2">
+            <span aria-hidden="true" className="relative flex size-1.5">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#22C55E] opacity-60 [animation-duration:2s] motion-reduce:animate-none" />
+              <span className="relative inline-flex size-1.5 rounded-full bg-[#22C55E]" />
+            </span>
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+              className={`w-fit text-[11px] leading-none text-black/55 underline decoration-black/20 underline-offset-[5px] transition-colors duration-300 hover:text-[#7660D8] hover:decoration-[#7660D8] ${EASE}`}
+            >
+              {t.collaborate}
+              <span className="sr-only"> {t.newTab}</span>
+            </a>
+          </span>
         </div>
         <p
           className={`hidden text-xs leading-[1.2] text-black/60 sm:block ${

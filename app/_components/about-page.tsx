@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { BRAND, EASE, LINKEDIN, RollText, SiteHeader, WinkingPortrait, ui } from "./case-parts";
-import { Group, enter } from "./editorial";
+import { BRAND, RollText, SiteHeader, WinkingPortrait, approachSlide, ui } from "./case-parts";
+import { Group, PageHero } from "./editorial";
 import { useLang } from "./use-lang";
 
 const copy = {
@@ -15,8 +15,12 @@ const copy = {
     pathTitle: "The path",
     path: "The longer account, from training rooms to independent products, is written as The Path.",
     pathCta: "Read The Path",
-    collabTitle: "Collaboration",
-    collab: "Open to collaboration.",
+    noteTitle: "A short note",
+    note: [
+      "I build learning products that turn curiosity into capability. As the founder of SkillxTube, an AI agent that turns YouTube videos into structured skill paths, I work where generative AI, learning design and digital strategy meet.",
+      "My path is anything but linear, and that's my edge. I've worked at the French Ministry of the Armed Forces, partnered with 8+ EdTech ventures, generated $37,302 for Adobe in three months, and taught myself to code to ship my own products. I went through Google Ateliers Numériques, lived and worked in Bali, and make my music entirely with my voice.",
+      "Technology is the tool. Human potential is the point. I ship fast, document everything, and build only what genuinely helps people learn or make something.",
+    ],
     back: "Back to the studio",
     studio: "← Studio",
     newTab: "(opens in a new tab)",
@@ -30,8 +34,12 @@ const copy = {
     pathTitle: "Le parcours",
     path: "Le récit plus long, des salles de formation aux produits indépendants, est sur The Path.",
     pathCta: "Lire The Path",
-    collabTitle: "Collaboration",
-    collab: "Ouverte aux collaborations.",
+    noteTitle: "Un petit mot",
+    note: [
+      "Je conçois des produits d'apprentissage qui transforment la curiosité en compétence. Fondatrice de SkillxTube, un agent IA qui transforme des vidéos YouTube en parcours d'apprentissage structurés, je relie IA générative, ingénierie pédagogique et stratégie digitale.",
+      "Mon parcours n'a rien de linéaire, et c'est ce qui fait ma force. J'ai travaillé au Ministère des Armées, accompagné plus de 8 projets EdTech en France, généré 37 302 $ pour Adobe en trois mois, puis appris à coder pour construire mes propres produits. Je suis passée par Google Ateliers Numériques, j'ai vécu et travaillé à Bali, et je produis ma musique entièrement à la voix.",
+      "Je crois que la technologie est un outil et que le potentiel humain est le but. Je construis vite, je documente tout, et je ne lance rien qui ne serve vraiment à apprendre ou à créer.",
+    ],
     back: "Retour au studio",
     studio: "← Studio",
     newTab: "(nouvel onglet)",
@@ -55,27 +63,16 @@ export default function AboutPage() {
 
       <main>
         <article>
-          <header className="mx-auto w-full max-w-[760px] px-5 pt-36 sm:px-10 sm:pt-[180px]">
-            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-              {t.eyebrow}
-            </p>
-            <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-              <span
-                className={`block transition-transform delay-150 duration-[1000ms] motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
-              >
-                {t.title}
-              </span>
-            </h1>
-            <p
-              className={`mt-8 max-w-3xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}
-            >
-              {t.lead}
-            </p>
-          </header>
-
-          <figure className={`mx-auto mt-10 flex w-full max-w-[760px] justify-center px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-            <WinkingPortrait preload className="w-[min(220px,52vw)]" />
-          </figure>
+          <PageHero
+            eyebrow={t.eyebrow}
+            title={t.title}
+            marquee={approachSlide.marquee}
+            marqueeColor={approachSlide.marqueeColor}
+            visual={<WinkingPortrait preload className="w-[min(240px,56vw)]" />}
+            visualSize="card"
+          >
+            <p className="text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl">{t.lead}</p>
+          </PageHero>
 
           <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
             <Group title={t.workTitle}>
@@ -93,6 +90,14 @@ export default function AboutPage() {
               </ul>
             </Group>
 
+            <Group title={t.noteTitle}>
+              {t.note.map((paragraph) => (
+                <p key={paragraph} className="mb-4 text-base leading-8 text-black/75">
+                  {paragraph}
+                </p>
+              ))}
+            </Group>
+
             <Group title={t.pathTitle}>
               <p className="mb-4 text-base leading-8 text-black/75">{t.path}</p>
               <Link href="/the-path" className="group inline-flex text-lg font-medium tracking-[-0.03em]">
@@ -101,23 +106,6 @@ export default function AboutPage() {
                   ↗
                 </span>
               </Link>
-            </Group>
-
-            <Group title={t.collabTitle}>
-              <p className="text-base leading-8 text-black/75">
-                {t.collab}{" "}
-                <a
-                  href={LINKEDIN}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-medium underline underline-offset-4"
-                  style={{ color: BRAND }}
-                >
-                  LinkedIn
-                  <span className="sr-only"> {t.newTab}</span>
-                </a>
-                .
-              </p>
             </Group>
           </div>
         </article>

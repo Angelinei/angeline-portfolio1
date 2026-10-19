@@ -10,29 +10,12 @@ import {
   Stalker,
   projectToSlide,
   thePathSlide as path,
+  approachSlide as approach,
+  writingSlide as writing,
   ui,
   type Slide,
 } from "./case-parts";
 import { useLang } from "./use-lang";
-
-const approach: Slide = {
-  id: "approach",
-  nav: { EN: "Approach", FR: "Approche" },
-  eyebrow: { EN: "THE APPROACH", FR: "L'APPROCHE" },
-  title: { EN: "Approach", FR: "Approche" },
-  text: {
-    EN: "I work at the intersection of generative AI, learning design and digital products. I use AI as a creative and technical partner, with a focus on useful outcomes rather than technology for its own sake.",
-    FR: "Je travaille à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques. J'utilise l'IA comme partenaire créatif et technique, avec une priorité : produire quelque chose d'utile, pas simplement technologique.",
-  },
-  marquee: "Technology is the tool. Human potential is the point.",
-  tags: ["Generative AI", "Learning design", "Digital products"],
-  href: "/about",
-  cta: { EN: "Go further", FR: "Aller plus loin" },
-  visual: "about",
-  tint: "#ECE8FB",
-  marqueeColor: "#6A4FE0",
-  ink: "#7660D8",
-};
 
 const contact: Slide = {
   id: "contact",
@@ -48,25 +31,6 @@ const contact: Slide = {
   visual: "contact",
   tint: "#ECE8FB",
   marqueeColor: "#D9D1FA",
-  ink: "#7660D8",
-};
-
-const writing: Slide = {
-  id: "writing",
-  nav: { EN: "Writing", FR: "Écrits" },
-  eyebrow: { EN: "WRITING", FR: "ÉCRITS" },
-  title: { EN: "Writing", FR: "Écrits" },
-  text: {
-    EN: "Essays on building products, learning, and working with AI.",
-    FR: "Essais sur la construction de produits, l'apprentissage et le travail avec l'IA.",
-  },
-  marquee: "Essays on building, learning and working with AI.",
-  tags: ["Essays", "Building", "AI"],
-  href: "/writing",
-  cta: { EN: "Read", FR: "Lire" },
-  visual: "writing",
-  tint: "#F6F1E6",
-  marqueeColor: "#E7DCC4",
   ink: "#7660D8",
 };
 

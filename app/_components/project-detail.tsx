@@ -14,7 +14,6 @@ import {
 import {
   BRAND,
   CaseItem,
-  EASE,
   Marquee,
   ProjectVisual,
   RollText,
@@ -26,7 +25,7 @@ import {
   ui,
   type Slide,
 } from "./case-parts";
-import { ExternalLink, Group, enter, useInView } from "./editorial";
+import { ExternalLink, Group, PageHero, useInView } from "./editorial";
 import { useLang } from "./use-lang";
 import { DesignPortfolio } from "./design-portfolio";
 
@@ -116,54 +115,40 @@ export default function ProjectDetail({
 
       <main>
         <article>
-          {/* Head */}
-          <header className="mx-auto w-full max-w-[1120px] px-5 pt-36 sm:px-10 sm:pt-[200px]">
-            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-              {project.number} · {project.eyebrow[lang]}
-            </p>
-            <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-              <span
-                className={`block transition-transform duration-[1000ms] delay-150 motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
-              >
-                {project.title}
-              </span>
-            </h1>
-            {project.subtitle && (
-              <p
-                className={`mt-3 font-serif text-xl italic sm:text-2xl ${enter("delay-300")}`}
-                style={{ color: project.ink }}
-              >
-                {project.subtitle[lang]}
-              </p>
-            )}
-          </header>
-
-          {/* Cover (the portfolio case opens on its own hero instead) */}
-          {project.slug !== "portfolio" && (
-            <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-              <div
-                className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
-                style={{ backgroundColor: project.tint }}
-              >
-                <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
-                  <ProjectVisual
-                    kind={project.visual}
-                    tint={project.tint}
-                    ink={project.ink}
-                    linked={false}
-                    cover={covers[project.slug]}
-                    alt={project.title}
-                    preload
-                    sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
-                  />
+          {/* Head (the portfolio case opens on its own hero, so it shows the band alone) */}
+          <PageHero
+            eyebrow={`${project.number} · ${project.eyebrow[lang]}`}
+            title={project.title}
+            subtitle={project.subtitle?.[lang]}
+            subtitleColor={project.ink}
+            marquee={project.marquee}
+            marqueeColor={project.marqueeColor}
+            visual={
+              project.slug !== "portfolio" && (
+                <div
+                  className="relative @container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/9]"
+                  style={{ backgroundColor: project.tint }}
+                >
+                  <div className={covers[project.slug] ? "absolute inset-0" : "size-[78cqw] sm:size-[44cqw]"}>
+                    <ProjectVisual
+                      kind={project.visual}
+                      tint={project.tint}
+                      ink={project.ink}
+                      linked={false}
+                      cover={covers[project.slug]}
+                      alt={project.title}
+                      preload
+                      sizes={covers[project.slug] ? "(min-width: 640px) 70vw, 100vw" : "(min-width: 640px) 44vw, 78vw"}
+                    />
+                  </div>
                 </div>
-              </div>
-            </figure>
-          )}
+              )
+            }
+          />
 
           {project.slug === "portfolio" ? (
             <>
-              <div className="mt-14 sm:mt-20">
+              <div className="mt-6 sm:mt-10">
                 <DesignPortfolio lang={lang} />
               </div>
               <ContactBlock lang={lang} ink={project.ink} />

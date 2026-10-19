@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { thePath as thePathEn, thePathFr, type PathBlock } from "../_data/the-path";
-import { BRAND, CONTACT_EMAIL, EASE, LINKEDIN, ProjectVisual, RollText, SiteHeader, ui } from "./case-parts";
-import { ExternalLink, Group, Inline, enter } from "./editorial";
+import { BRAND, CONTACT_EMAIL, LINKEDIN, ProjectVisual, RollText, SiteHeader, thePathSlide, ui } from "./case-parts";
+import { ExternalLink, Group, Inline, PageHero } from "./editorial";
 import { useLang } from "./use-lang";
 
 const INK = "#2E6A48";
@@ -42,48 +42,35 @@ export default function ThePathPage({ cover }: { cover?: string }) {
 
       <main>
         <article lang={lang.toLowerCase()}>
-          <header className="mx-auto w-full max-w-[1120px] px-5 pt-36 sm:px-10 sm:pt-[200px]">
-            <p className={`mb-4 text-[10px] tracking-[0.18em] text-black/50 ${enter("delay-100")}`}>
-              {t.eyebrow}
-            </p>
-            <h1 className="overflow-clip pb-[0.08em] text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.02] font-medium tracking-[-0.065em]">
-              <span
-                className={`block transition-transform delay-150 duration-[1000ms] motion-reduce:transition-none starting:translate-y-[110%] ${EASE}`}
+          <PageHero
+            eyebrow={t.eyebrow}
+            title={thePath.title}
+            subtitle={thePath.subtitle}
+            subtitleColor={INK}
+            marquee={thePathSlide.marquee}
+            marqueeColor={thePathSlide.marqueeColor}
+            visual={
+              <div
+                className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)] sm:aspect-[16/9]"
+                style={{ backgroundColor: TINT }}
               >
-                {thePath.title}
-                <span className="sr-only"> – </span>
-              </span>
-              <span
-                className={`mt-2 block font-serif text-[0.42em] font-normal tracking-[-0.02em] italic ${enter("delay-300")}`}
-                style={{ color: INK }}
-              >
-                {thePath.subtitle}
-              </span>
-            </h1>
-            <p className={`mt-8 max-w-3xl text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl ${enter("delay-300")}`}>
-              {thePath.tagline}
-            </p>
-          </header>
-
-          <figure className={`mx-auto mt-10 w-full max-w-[1120px] px-5 sm:mt-14 sm:px-10 ${enter("delay-450")}`}>
-            <div
-              className="@container flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[22px] sm:aspect-[16/9]"
-              style={{ backgroundColor: TINT }}
-            >
-              <div className="size-[78cqw] sm:size-[44cqw]">
-                <ProjectVisual
-                  kind="path"
-                  tint={TINT}
-                  ink={INK}
-                  linked={false}
-                  cover={cover}
-                  alt={`${thePath.title} – ${thePath.subtitle}`}
-                  preload
-                  sizes="(min-width: 640px) 44vw, 78vw"
-                />
+                <div className="size-[78cqw] sm:size-[44cqw]">
+                  <ProjectVisual
+                    kind="path"
+                    tint={TINT}
+                    ink={INK}
+                    linked={false}
+                    cover={cover}
+                    alt={`${thePath.title} – ${thePath.subtitle}`}
+                    preload
+                    sizes="(min-width: 640px) 44vw, 78vw"
+                  />
+                </div>
               </div>
-            </div>
-          </figure>
+            }
+          >
+            <p className="text-lg leading-[1.5] font-medium tracking-[-0.02em] sm:text-2xl">{thePath.tagline}</p>
+          </PageHero>
 
           <div className="mx-auto w-full max-w-[760px] px-5 pt-14 sm:px-10 sm:pt-20">
             <p className="mb-6 text-base leading-8 text-black/75">{thePath.intro}</p>
