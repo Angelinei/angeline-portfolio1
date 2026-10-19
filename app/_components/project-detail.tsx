@@ -287,7 +287,7 @@ export default function ProjectDetail({
   );
 }
 
-const CONTACT_EMAIL = "hello@angelinepoitout.com";
+const CONTACT_EMAIL = "angelinedigitalworld@gmail.com";
 
 function ContactBlock({ lang, ink }: { lang: Lang; ink: string }) {
   const label = lang === "FR" ? "UNE IDÉE EN TÊTE ?" : "SOMETHING IN MIND?";
