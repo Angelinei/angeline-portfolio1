@@ -594,6 +594,7 @@ export const projects: Project[] = [
           FR: "Clash of Clans (clan The Big Boss, chef adjointe) et Squad Busters sur Twitch.",
         },
         tags: ["Gaming"],
+        href: "https://drive.google.com/drive/folders/1CKDMkTc8f2uIRrlPMwZr9u6wDwG_Dn5a?usp=sharing",
       },
       {
         group: { EN: "Hobbies", FR: "Loisirs" },

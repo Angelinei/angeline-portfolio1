@@ -2071,18 +2071,25 @@ export type LinkCard = { tag: L; title: string; text: L; href: string };
 export const bugReports = {
   label: { EN: "· Bug reports", FR: "· Signalement de bugs" },
   title: { EN: "Report a bug, from any screen", FR: "Signaler un bug, depuis n'importe quel écran" },
-  text: {
-    EN: "One modal in the app and the demo: a category (bug, content, UX, suggestion), a severity (minor, normal, blocking), what went wrong, optional steps and email. Only the browser name and screen size are attached.",
-    FR: "Une seule fenêtre, dans l'app comme dans la démo : une catégorie (bug, contenu, UX, suggestion), une gravité (mineure, normale, bloquante), ce qui s'est passé, les étapes et l'e-mail en option. Seuls le nom du navigateur et la taille d'écran sont joints.",
+  intro: {
+    EN: "The Report a bug modal, open from any screen of the app and the demo.",
+    FR: "La fenêtre « Report a bug », accessible depuis n'importe quel écran de l'app et de la démo.",
   },
-  text2: {
-    EN: "Each report emails the admins and lands in an admin view (new, triaging, confirmed, resolved, rejected); a confirmed report can be promoted to a GitHub issue. A honeypot and an hourly limit keep bots out, and the email is deleted when the report is closed, or after 90 days.",
-    FR: "Chaque signalement prévient les admins par e-mail et arrive dans une vue admin (nouveau, en tri, confirmé, résolu, rejeté) ; un signalement confirmé peut devenir une issue GitHub. Un pot de miel et une limite horaire écartent les bots, et l'e-mail est supprimé à la clôture du signalement, ou au bout de 90 jours.",
-  },
-  pills: [
-    { EN: "4 categories", FR: "4 catégories" },
-    { EN: "3 severities", FR: "3 gravités" },
-    { EN: "GitHub issues", FR: "Issues GitHub" },
+  points: [
+    { EN: "4 categories and 3 severity levels", FR: "4 catégories et 3 niveaux de gravité" },
+    {
+      EN: "Only the browser name and screen size are attached",
+      FR: "Seuls le nom du navigateur et la taille d'écran sont joints",
+    },
+    {
+      EN: "Admins get an email, and a confirmed report can become a GitHub issue",
+      FR: "Les admins reçoivent un e-mail, et un signalement confirmé peut devenir une issue GitHub",
+    },
+    { EN: "Bot protection and an hourly limit", FR: "Une protection anti-bots et une limite par heure" },
+    {
+      EN: "The email is deleted when the report is closed, or after 90 days",
+      FR: "L'e-mail est supprimé à la clôture, ou au bout de 90 jours",
+    },
   ],
   alt: {
     EN: "SkillxTube Report a bug modal: category, severity, what went wrong, steps to reproduce, page and optional email",
