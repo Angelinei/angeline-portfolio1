@@ -410,6 +410,7 @@ export const projects: Project[] = [
           EN: "Sprint coordinator with my teammate Anaïs: supporting high-impact entrepreneurial project leaders from concept to prototype, with the tools of the Makesense incubator.",
           FR: "Sprint coordinator avec ma coéquipière Anaïs : accompagner des porteurs de projets entrepreneuriaux à fort impact, de la conception au prototypage, avec les outils de l'incubateur Makesense.",
         },
+        href: "https://drive.google.com/drive/folders/1xaUnKidxVnJ4Phv0udoccfBlYCgEBG1c?usp=sharing",
         tags: ["Entrepreneurship", "Coaching"],
       },
       {
@@ -492,8 +493,14 @@ export const projects: Project[] = [
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
         title: "Bootcamp Codecademy",
-        href: "https://www.codecademy.com/bootcamps/ai-1/certificates/666ee420a0828b00151c841f",
+        href: "https://drive.google.com/file/d/1K1scCgXcFKqqKtZqvDSg8LLguZXeHjOv/view?usp=sharing",
         tags: ["AI", "Certificate"],
+      },
+      {
+        group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
+        title: "Intro to AI Coding with Cursor",
+        href: "https://drive.google.com/file/d/1u67PCpdmx9bDXsKLkS0FQLFr3b3KGj1v/view?usp=sharing",
+        tags: ["AI", "Cursor", "Certificate"],
       },
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
@@ -538,6 +545,7 @@ export const projects: Project[] = [
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
         title: "Double Master",
+        href: "https://drive.google.com/drive/folders/1s5OAJ0FJlwOLdh5JsJFsbiTBtPWZZOqn?usp=sharing",
       },
       {
         group: { EN: "Before EdTech", FR: "Avant les EdTechs" },
@@ -552,6 +560,7 @@ export const projects: Project[] = [
       {
         group: { EN: "Before EdTech", FR: "Avant les EdTechs" },
         title: "Center Hubstart",
+        href: "https://drive.google.com/file/d/1Rz1HJaYS_ZRwib-rSSDuJBXafY7ACEuz/view?usp=sharing",
         description: {
           EN: "Website animation, Facebook and Twitter creation and management, a monthly newsletter for incubatees and founders, a founders directory, and consulting and communication missions for incubatees.",
           FR: "Animation du site web, création et animation Facebook et Twitter, newsletter mensuelle pour les incubés et fondateurs, annuaire des fondateurs, missions de conseil et de communication pour les incubés.",
@@ -614,6 +623,7 @@ export const projects: Project[] = [
           EN: "Extra in the web series “Dans un autre monde”.",
           FR: "Figuration dans la websérie « Dans un autre monde ».",
         },
+        href: "https://drive.google.com/drive/folders/1uHTiLeYl0uqtQyHGmlzsf4uZt7ENQFYu?usp=sharing",
         tags: ["Acting"],
       },
     ],
