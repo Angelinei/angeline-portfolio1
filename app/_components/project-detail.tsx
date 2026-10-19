@@ -283,7 +283,7 @@ export default function ProjectDetail({
 const normalize = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const repeats = (marquee: string, text: string) => normalize(marquee).includes(normalize(text));
 
-const CONTACT_EMAIL = "hello@angelinepoitout.com";
+const CONTACT_EMAIL = "webnomadland@gmail.com";
 
 function ContactBlock({ lang, ink }: { lang: Lang; ink: string }) {
   const label = lang === "FR" ? "UNE IDÉE EN TÊTE ?" : "SOMETHING IN MIND?";
