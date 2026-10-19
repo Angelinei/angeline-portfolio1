@@ -492,8 +492,14 @@ export const projects: Project[] = [
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
         title: "Bootcamp Codecademy",
-        href: "https://www.codecademy.com/bootcamps/ai-1/certificates/666ee420a0828b00151c841f",
+        href: "https://drive.google.com/file/d/1K1scCgXcFKqqKtZqvDSg8LLguZXeHjOv/view?usp=sharing",
         tags: ["AI", "Certificate"],
+      },
+      {
+        group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
+        title: "Intro to AI Coding with Cursor",
+        href: "https://drive.google.com/file/d/1u67PCpdmx9bDXsKLkS0FQLFr3b3KGj1v/view?usp=sharing",
+        tags: ["AI", "Cursor", "Certificate"],
       },
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
