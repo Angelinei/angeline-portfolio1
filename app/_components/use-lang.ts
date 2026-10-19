@@ -19,20 +19,23 @@ function subscribe(onChange: () => void) {
 
 function getSnapshot(): Lang {
   try {
-    const stored = localStorage.getItem(KEY);
+    const stored = sessionStorage.getItem(KEY);
     if (stored === "EN" || stored === "FR") return stored;
   } catch {}
   return memory;
 }
 
-/** Language shared by every page, remembered across navigations. */
+/**
+ * Language shared by every page, remembered across navigations for the
+ * current visit only: every new visit opens in English.
+ */
 export function useLang() {
   const lang = useSyncExternalStore(subscribe, getSnapshot, () => "EN" as Lang);
 
   const setLang = useCallback((next: Lang) => {
     memory = next;
     try {
-      localStorage.setItem(KEY, next);
+      sessionStorage.setItem(KEY, next);
     } catch {}
     window.dispatchEvent(new Event(EVENT));
   }, []);
