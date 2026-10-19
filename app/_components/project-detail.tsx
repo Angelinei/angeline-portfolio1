@@ -101,6 +101,8 @@ export default function ProjectDetail({
   const next: Slide =
     index < projects.length - 1 ? projectToSlide(projects[index + 1]) : thePathSlide;
   const intro: Rich | undefined = project.intro ?? { paragraphs: [project.summary] };
+  // When the band already scrolls the subtitle, the title and band say it on their own.
+  const subtitle = project.subtitle && !repeats(project.marquee, project.subtitle.EN) ? project.subtitle[lang] : undefined;
 
   return (
     <div className="relative min-h-svh bg-[#F8F7F2] text-[#20201E] selection:bg-[#7660D8] selection:text-white">
@@ -119,7 +121,7 @@ export default function ProjectDetail({
           <PageHero
             eyebrow={`${project.number} · ${project.eyebrow[lang]}`}
             title={project.title}
-            subtitle={project.subtitle?.[lang]}
+            subtitle={subtitle}
             subtitleColor={project.ink}
             marquee={project.marquee}
             marqueeColor={project.marqueeColor}
@@ -275,6 +277,9 @@ export default function ProjectDetail({
     </div>
   );
 }
+
+const normalize = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const repeats = (marquee: string, text: string) => normalize(marquee).includes(normalize(text));
 
 const CONTACT_EMAIL = "hello@angelinepoitout.com";
 
