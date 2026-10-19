@@ -538,6 +538,7 @@ export const projects: Project[] = [
       {
         group: { EN: "Certifications — Continuous learning", FR: "Certifications — Formation continue" },
         title: "Double Master",
+        href: "https://drive.google.com/drive/folders/1s5OAJ0FJlwOLdh5JsJFsbiTBtPWZZOqn?usp=sharing",
       },
       {
         group: { EN: "Before EdTech", FR: "Avant les EdTechs" },
