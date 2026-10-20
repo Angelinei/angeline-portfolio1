@@ -5,7 +5,11 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 import type { WritingSlug } from "../_data/writing";
+import type { VideoId } from "../_data/media";
+import Image from "next/image";
+import { publicImageSize } from "../../lib/image-size";
 import { ImageTodo } from "./image-todo";
+import { LazyVideo } from "./lazy-video";
 import { VideoTodo } from "./video-todo";
 
 const heading = "mt-14 mb-4 text-[1.65rem] leading-[1.2] font-medium tracking-[-0.04em] text-[#20201E]";
@@ -57,28 +61,37 @@ function Li(props: ComponentPropsWithoutRef<"li">) {
   return <li className="text-base leading-8 text-black/75" {...props} />;
 }
 
-function Img({ alt = "", ...props }: ComponentPropsWithoutRef<"img">) {
-  // eslint-disable-next-line @next/next/no-img-element -- MDX images come with no known size
-  return (
-    <img
-      alt={alt}
-      loading="lazy"
-      className="mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10"
-      {...props}
-    />
-  );
+const imgClass = "mx-auto my-8 block h-auto max-w-full rounded-[18px] border border-black/10";
+
+/**
+ * Article images. Files of public/ go through next/image at their own size (never upscaled):
+ * lazy, AVIF/WebP, at most 2x the 680px column. Remote images (Drive, Medium) stay plain.
+ */
+function Img({ alt = "", src }: ComponentPropsWithoutRef<"img">) {
+  const url = typeof src === "string" ? src : "";
+  const size = url.startsWith("/") ? publicImageSize(url) : null;
+  if (size) {
+    return (
+      <Image
+        src={url}
+        alt={alt}
+        width={size.width}
+        height={size.height}
+        sizes={`(min-width: 760px) ${Math.min(size.width, 680)}px, calc(100vw - 40px)`}
+        className={imgClass}
+      />
+    );
+  }
+  // eslint-disable-next-line @next/next/no-img-element -- remote image of unknown size
+  return <img alt={alt} src={url} loading="lazy" className={imgClass} />;
 }
 
-/** A clip hosted with the site (public/writing). */
-function Video({ src, poster, label }: { src: string; poster?: string; label: string }) {
+/** A clip from app/_data/media.ts, loaded only when it comes near the viewport. */
+function Video({ id, label }: { id: VideoId; label: string }) {
   return (
-    <video
-      src={src}
-      poster={poster}
-      controls
-      playsInline
-      preload="none"
-      aria-label={label}
+    <LazyVideo
+      id={id}
+      label={label}
       className="my-8 block h-auto w-full rounded-[18px] border border-black/10 bg-black"
     />
   );

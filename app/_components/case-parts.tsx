@@ -409,10 +409,11 @@ export function WinkingPortrait({
   return (
     <span className={`relative block ${className}`}>
       <Image
-        src="/portrait.png"
+        src="/media/img/portrait.a0ca463a6f.webp"
         alt="Angéline Poitout"
         width={333}
         height={482}
+        sizes="250px"
         preload={preload}
         draggable={false}
         className="h-auto w-full"

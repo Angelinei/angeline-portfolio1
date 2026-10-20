@@ -19,37 +19,38 @@ import {
   type LinkCard,
 } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
+import { LazyVideo } from "./lazy-video";
 import { ThumbyEgg } from "./thumby-egg";
-import img1 from "../../public/portfolio/design/skillxtube-logo.png";
-import img2 from "../../public/portfolio/design/zip.png";
-import img3 from "../../public/portfolio/design/cc-happy.png";
-import img4 from "../../public/portfolio/design/ding.png";
-import img5 from "../../public/portfolio/design/landing-dark.png";
-import img6 from "../../public/portfolio/design/pricing-for-makers.png";
-import img7 from "../../public/portfolio/design/maker-projects.png";
-import img8 from "../../public/portfolio/design/affiliate-chat-start.png";
-import img9 from "../../public/portfolio/design/affiliate-chat-end.png";
-import img10 from "../../public/portfolio/design/affiliate-space.png";
-import img11 from "../../public/portfolio/design/advertise-page.png";
-import img12 from "../../public/portfolio/design/advertise-step-1-cells.png";
-import img13 from "../../public/portfolio/design/advertise-step-2-duration.png";
-import img14 from "../../public/portfolio/design/advertise-step-3-logo.png";
-import img15 from "../../public/portfolio/design/advertise-brand-space.png";
-import img16 from "../../public/portfolio/design/advertise-stripe.png";
-import img17 from "../../public/portfolio/design/demo-google-ads.png";
-import img18 from "../../public/portfolio/design/game-community-card.png";
-import img19 from "../../public/portfolio/design/game-page.png";
-import img20 from "../../public/portfolio/design/thumby-hunt.png";
-import img21 from "../../public/portfolio/design/buffer.png";
-import img22 from "../../public/portfolio/design/skip.png";
-import img23 from "../../public/portfolio/design/later.png";
-import img24 from "../../public/portfolio/design/thumby.png";
-import img25 from "../../public/portfolio/design/cc-blushing.png";
-import img26 from "../../public/portfolio/design/tiktok-ep5-later.png";
-import img27 from "../../public/portfolio/design/tiktok-ep7-teaser.png";
-import img28 from "../../public/portfolio/design/tiktok-ep7-gang.png";
-import communitySpace from "../../public/portfolio/design/community-space.png";
-import bugReport from "../../public/portfolio/design/bug-report.png";
+import img1 from "../_assets/design/skillxtube-logo.webp";
+import img2 from "../_assets/design/zip.webp";
+import img3 from "../_assets/design/cc-happy.webp";
+import img4 from "../_assets/design/ding.webp";
+import img5 from "../_assets/design/landing-dark.webp";
+import img6 from "../_assets/design/pricing-for-makers.webp";
+import img7 from "../_assets/design/maker-projects.webp";
+import img8 from "../_assets/design/affiliate-chat-start.webp";
+import img9 from "../_assets/design/affiliate-chat-end.webp";
+import img10 from "../_assets/design/affiliate-space.webp";
+import img11 from "../_assets/design/advertise-page.webp";
+import img12 from "../_assets/design/advertise-step-1-cells.webp";
+import img13 from "../_assets/design/advertise-step-2-duration.webp";
+import img14 from "../_assets/design/advertise-step-3-logo.webp";
+import img15 from "../_assets/design/advertise-brand-space.webp";
+import img16 from "../_assets/design/advertise-stripe.webp";
+import img17 from "../_assets/design/demo-google-ads.webp";
+import img18 from "../_assets/design/game-community-card.webp";
+import img19 from "../_assets/design/game-page.webp";
+import img20 from "../_assets/design/thumby-hunt.webp";
+import img21 from "../_assets/design/buffer.webp";
+import img22 from "../_assets/design/skip.webp";
+import img23 from "../_assets/design/later.webp";
+import img24 from "../_assets/design/thumby.webp";
+import img25 from "../_assets/design/cc-blushing.webp";
+import img26 from "../_assets/design/tiktok-ep5-later.webp";
+import img27 from "../_assets/design/tiktok-ep7-teaser.webp";
+import img28 from "../_assets/design/tiktok-ep7-gang.webp";
+import communitySpace from "../_assets/design/community-space.webp";
+import bugReport from "../_assets/design/bug-report.webp";
 
 export function DesignPortfolio({ lang }: { lang: Lang }) {
   const t = (key: keyof typeof designPortfolioText) => designPortfolioText[key][lang];
@@ -121,7 +122,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </p>
         <div style={{ marginTop: "28px", display: "flex", flexWrap: "wrap", gap: "10px" }}>
           <a href="https://skillxtube.com/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "48px", padding: "0 22px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "15px", textDecoration: "none" }}>
-            <Image src={img1} alt="" aria-hidden="true" loading="lazy" style={{ width: "22px", height: "22px" }} />
+            <Image src={img1} alt="" aria-hidden="true" width={22} height={22} loading="lazy" style={{ width: "22px", height: "22px" }} />
             {t("hero.4")}
           </a>
           <a href="https://skillxtube.com/play" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "48px", padding: "0 22px", borderRadius: "999px", border: "0.5px solid #1A1A1A", fontWeight: "800", fontSize: "15px", textDecoration: "none" }}>
@@ -181,7 +182,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </p>
           </div>
           <a href="https://skillxtube.com/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
-            <Image src={img1} alt="" aria-hidden="true" loading="lazy" style={{ width: "20px", height: "20px" }} />
+            <Image src={img1} alt="" aria-hidden="true" width={20} height={20} loading="lazy" style={{ width: "20px", height: "20px" }} />
             {t("evolution.4")}
           </a>
         </div>
@@ -325,14 +326,14 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
                 </span>
               </div>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px" }}>
-                <Image src={img2} alt={t("evolution.img1")} loading="lazy" style={{ width: "56px", height: "60px", objectFit: "contain" }} />
+                <Image src={img2} alt={t("evolution.img1")} width={56} height={60} loading="lazy" style={{ width: "56px", height: "60px", objectFit: "contain" }} />
                 <span style={{ fontSize: "9px", fontWeight: "800" }}>
                   {t("evolution.35")}
                 </span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-end" }}>
-                <Image src={img3} alt={t("evolution.img2")} loading="lazy" style={{ width: "36px", height: "38px", objectFit: "contain" }} />
-                <Image src={img4} alt={t("evolution.img3")} loading="lazy" style={{ width: "36px", height: "38px", objectFit: "contain" }} />
+                <Image src={img3} alt={t("evolution.img2")} width={36} height={38} loading="lazy" style={{ width: "36px", height: "38px", objectFit: "contain" }} />
+                <Image src={img4} alt={t("evolution.img3")} width={36} height={38} loading="lazy" style={{ width: "36px", height: "38px", objectFit: "contain" }} />
               </div>
             </div>
             <div style={{ padding: "16px 18px", display: "flex", flexDirection: "column", gap: "6px", flex: "1" }}>
@@ -429,7 +430,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           <div style={{ flex: "999 1 560px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
             <div style={{ background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "32px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: "32px", minHeight: "240px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <Image src={img1} alt={t("identity.img0")} loading="lazy" style={{ width: "52px", height: "52px" }} />
+                <Image src={img1} alt={t("identity.img0")} width={52} height={52} loading="lazy" style={{ width: "52px", height: "52px" }} />
                 <span style={{ fontSize: "30px", fontWeight: "900", letterSpacing: "-0.01em" }}>
                   {t("identity.7")}
                 </span>
@@ -545,7 +546,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px" }}>
           <div style={{ border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden" }}>
             <div style={{ height: "200px", background: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", gap: "14px" }}>
-              <Image src={img1} alt={t("logos.img0")} loading="lazy" style={{ width: "64px", height: "64px" }} />
+              <Image src={img1} alt={t("logos.img0")} width={64} height={64} loading="lazy" style={{ width: "64px", height: "64px" }} />
               <span style={{ fontSize: "34px", fontWeight: "900", letterSpacing: "-0.01em", color: "#1A1A1A" }}>
                 {t("logos.3")}
               </span>
@@ -556,7 +557,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden" }}>
             <div style={{ height: "200px", background: "#1A1A1A", display: "flex", alignItems: "center", justifyContent: "center", gap: "14px" }}>
-              <Image src={img1} alt={t("logos.img1")} loading="lazy" style={{ width: "64px", height: "64px" }} />
+              <Image src={img1} alt={t("logos.img1")} width={64} height={64} loading="lazy" style={{ width: "64px", height: "64px" }} />
               <span style={{ fontSize: "34px", fontWeight: "900", letterSpacing: "-0.01em", color: "#FFFFFF" }}>
                 {t("logos.5")}
               </span>
@@ -567,7 +568,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden" }}>
             <div style={{ height: "200px", background: "#FFE8EA", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <Image src={img1} alt={t("logos.img2")} loading="lazy" style={{ width: "120px", height: "120px" }} />
+              <Image src={img1} alt={t("logos.img2")} width={120} height={120} loading="lazy" style={{ width: "120px", height: "120px" }} />
             </div>
             <div style={{ padding: "12px 16px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
               {t("logos.7")}
@@ -575,25 +576,25 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ gridColumn: "1 / -1", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: "32px" }}>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-              <Image src={img1} alt={t("logos.img3")} loading="lazy" style={{ width: "128px", height: "128px" }} />
+              <Image src={img1} alt={t("logos.img3")} width={128} height={128} loading="lazy" style={{ width: "128px", height: "128px" }} />
               <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58" }}>
                 {t("logos.8")}
               </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-              <Image src={img1} alt={t("logos.img4")} loading="lazy" style={{ width: "64px", height: "64px" }} />
+              <Image src={img1} alt={t("logos.img4")} width={64} height={64} loading="lazy" style={{ width: "64px", height: "64px" }} />
               <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58" }}>
                 {t("logos.9")}
               </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-              <Image src={img1} alt={t("logos.img5")} loading="lazy" style={{ width: "32px", height: "32px" }} />
+              <Image src={img1} alt={t("logos.img5")} width={32} height={32} loading="lazy" style={{ width: "32px", height: "32px" }} />
               <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58" }}>
                 {t("logos.10")}
               </span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-              <Image src={img1} alt={t("logos.img6")} loading="lazy" style={{ width: "16px", height: "16px" }} />
+              <Image src={img1} alt={t("logos.img6")} width={16} height={16} loading="lazy" style={{ width: "16px", height: "16px" }} />
               <span style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58" }}>
                 {t("logos.11")}
               </span>
@@ -926,7 +927,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("landing.28")}
             </p>
           </div>
-          <Image src={img5} alt={t("landing.img0")} loading="lazy" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px" }} />
+          <Image src={img5} alt={t("landing.img0")} loading="lazy" sizes="(min-width: 1200px) 804px, calc(100vw - 64px)" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px" }} />
         </div>
       </section>
       {/* 03 DASHBOARD */}
@@ -1259,7 +1260,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <figure style={{ flex: "999 1 560px", minWidth: "0", margin: "0", background: "#0E0E10", borderRadius: "12px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-            <Image src={img6} alt={t("pricing.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+            <Image src={img6} alt={t("pricing.img0")} loading="lazy" sizes="(min-width: 1200px) 768px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
             <figcaption style={{ padding: "12px 16px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#BDBCB6" }}>
               {t("pricing.9")}
             </figcaption>
@@ -1287,7 +1288,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </p>
           </div>
           <figure style={{ flex: "999 1 560px", minWidth: "0", margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-            <Image src={img7} alt={t("maker.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+            <Image src={img7} alt={t("maker.img0")} loading="lazy" sizes="(min-width: 1200px) 766px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
             <figcaption style={{ padding: "12px 16px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
               {t("maker.5")}
             </figcaption>
@@ -1316,19 +1317,19 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "12px" }}>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#F7F7F5", display: "flex", flexDirection: "column" }}>
-              <Image src={img8} alt={t("affiliates.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img8} alt={t("affiliates.img0")} loading="lazy" sizes="(min-width: 1200px) 246px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("affiliates.5")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#F7F7F5", display: "flex", flexDirection: "column" }}>
-              <Image src={img9} alt={t("affiliates.img1")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img9} alt={t("affiliates.img1")} loading="lazy" sizes="(min-width: 1200px) 246px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("affiliates.6")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", gridColumn: "1 / -1", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img10} alt={t("affiliates.img2")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img10} alt={t("affiliates.img2")} loading="lazy" sizes="(min-width: 1200px) 766px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("affiliates.7")}
               </figcaption>
@@ -1372,37 +1373,37 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "12px" }}>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img11} alt={t("monetization.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img11} alt={t("monetization.img0")} loading="lazy" sizes="(min-width: 1200px) 376px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.9")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img12} alt={t("monetization.img1")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img12} alt={t("monetization.img1")} loading="lazy" sizes="(min-width: 1200px) 376px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.10")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img13} alt={t("monetization.img2")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img13} alt={t("monetization.img2")} loading="lazy" sizes="(min-width: 1200px) 376px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.11")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img14} alt={t("monetization.img3")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img14} alt={t("monetization.img3")} loading="lazy" sizes="(min-width: 1200px) 376px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.12")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", gridColumn: "1 / -1", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img15} alt={t("monetization.img4")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img15} alt={t("monetization.img4")} loading="lazy" sizes="(min-width: 1200px) 766px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.13")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF", display: "flex", flexDirection: "column" }}>
-              <Image src={img16} alt={t("monetization.img5")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src={img16} alt={t("monetization.img5")} loading="lazy" sizes="(min-width: 1200px) 376px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
               <figcaption style={{ padding: "10px 14px", borderTop: "0.5px solid #D8D6D0", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("monetization.14")}
               </figcaption>
@@ -1526,7 +1527,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
         </div>
         <figure style={{ margin: "32px 0 0", border: "0.5px solid #D8D6D0", borderRadius: "12px", overflow: "hidden", background: "#FFFFFF" }}>
-          <Image src={img17} alt={t("demos.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block" }} />
+          <Image src={img17} alt={t("demos.img0")} loading="lazy" sizes="(min-width: 1200px) 1134px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block" }} />
           <figcaption style={{ padding: "12px 16px", borderTop: "0.5px solid #D8D6D0", fontSize: "14px", lineHeight: "1.5", color: "#4A4943" }}>
             <b style={{ color: "#1A1A1A" }}>
               {t("demos.12")}
@@ -1753,7 +1754,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
             <div style={{ position: "relative", padding: "28px", display: "flex", justifyContent: "center" }}>
               <ThumbyEgg spot="portfolio" lang={lang} className="right-3 bottom-2" />
-              <Image src={img18} alt={t("game.img0")} loading="lazy" style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block", borderRadius: "12px" }} />
+              <Image src={img18} alt={t("game.img0")} loading="lazy" sizes="(min-width: 1200px) 560px, calc(100vw - 64px)" style={{ width: "100%", maxWidth: "560px", height: "auto", display: "block", borderRadius: "12px" }} />
             </div>
           </div>
         </div>
@@ -1769,7 +1770,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("game.10")}
             </p>
           </div>
-          <Image src={img19} alt={t("game.img1")} loading="lazy" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+          <Image src={img19} alt={t("game.img1")} loading="lazy" sizes="(min-width: 1200px) 802px, calc(100vw - 64px)" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
         </div>
         <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
           <div style={{ flex: "1 1 260px", minWidth: "0" }}>
@@ -1783,7 +1784,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("game.13")}
             </p>
           </div>
-          <Image src={img20} alt={t("game.img2")} loading="lazy" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+          <Image src={img20} alt={t("game.img2")} loading="lazy" sizes="(min-width: 1200px) 802px, calc(100vw - 64px)" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
         </div>
       </section>
       {/* 10.2 LA BANDE DE ZIP */}
@@ -1809,7 +1810,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </div>
         <div style={{ marginTop: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
           <div style={{ background: "#FFE8EA", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img2} alt={t("gang.img0")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img2} alt={t("gang.img0")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.5")}
@@ -1823,7 +1824,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img21} alt={t("gang.img1")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img21} alt={t("gang.img1")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.8")}
@@ -1837,7 +1838,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img4} alt={t("gang.img2")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img4} alt={t("gang.img2")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.11")}
@@ -1851,7 +1852,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img22} alt={t("gang.img3")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img22} alt={t("gang.img3")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.14")}
@@ -1865,7 +1866,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img23} alt={t("gang.img4")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img23} alt={t("gang.img4")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.17")}
@@ -1879,7 +1880,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img24} alt={t("gang.img5")} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={img24} alt={t("gang.img5")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.20")}
@@ -1895,8 +1896,8 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </div>
         <div style={{ marginTop: "12px", background: "#F1ECFC", borderRadius: "12px", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "28px" }}>
           <div style={{ display: "flex", gap: "12px", alignItems: "flex-end" }}>
-            <Image src={img3} alt={t("gang.img6")} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
-            <Image src={img25} alt={t("gang.img7")} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
+            <Image src={img3} alt={t("gang.img6")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
+            <Image src={img25} alt={t("gang.img7")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
           </div>
           <div style={{ flex: "1 1 280px", minWidth: "0" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
@@ -2020,19 +2021,19 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           </div>
           <div style={{ flex: "999 1 560px", minWidth: "0", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: "20px", alignItems: "start" }}>
             <figure style={{ margin: "0", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <Image src={img26} alt={t("tiktok.img0")} loading="lazy" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
+              <Image src={img26} alt={t("tiktok.img0")} loading="lazy" sizes="(min-width: 1200px) 217px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
               <figcaption style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("tiktok.18")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <Image src={img27} alt={t("tiktok.img1")} loading="lazy" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
+              <Image src={img27} alt={t("tiktok.img1")} loading="lazy" sizes="(min-width: 1200px) 217px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
               <figcaption style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("tiktok.19")}
               </figcaption>
             </figure>
             <figure style={{ margin: "0", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <Image src={img28} alt={t("tiktok.img2")} loading="lazy" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
+              <Image src={img28} alt={t("tiktok.img2")} loading="lazy" sizes="(min-width: 1200px) 217px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
               <figcaption style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px" }}>
                 {t("tiktok.20")}
               </figcaption>
@@ -2127,13 +2128,9 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             <p style={{ margin: "16px 0 0", fontSize: "16px", lineHeight: "1.6", color: "#4A4943" }}>{demoVideo.text[lang]}</p>
           </div>
           <div style={{ flex: "999 1 460px", minWidth: "0" }}>
-            <video
-              src="/portfolio/design/skillxtube-demo.mp4"
-              poster="/portfolio/design/skillxtube-demo-poster.jpg"
-              controls
-              playsInline
-              preload="none"
-              aria-label={demoVideo.label2[lang]}
+            <LazyVideo
+              id="skillxtubeDemo"
+              label={demoVideo.label2[lang]}
               style={{ display: "block", width: "100%", height: "auto", aspectRatio: "16 / 9", borderRadius: "12px", border: "0.5px solid #D8D6D0", background: "#F5F4EF" }}
             />
           </div>
