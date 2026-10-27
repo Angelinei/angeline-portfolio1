@@ -17,6 +17,7 @@ import {
   guides,
   rankbidOrigin,
   type LinkCard,
+  rooms,
 } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
 import { LazyVideo } from "./lazy-video";
@@ -49,6 +50,8 @@ import img25 from "../_assets/design/cc-blushing.webp";
 import img26 from "../_assets/design/tiktok-ep5-later.webp";
 import img27 from "../_assets/design/tiktok-ep7-teaser.webp";
 import img28 from "../_assets/design/tiktok-ep7-gang.webp";
+import arcadeShot from "../_assets/design/arcade.webp";
+import zenShot from "../_assets/design/zen-room.webp";
 import communitySpace from "../_assets/design/community-space.webp";
 import bugReport from "../_assets/design/bug-report.webp";
 
@@ -767,7 +770,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("ai.2")}
             </p>
           </div>
-          <div style={{ flex: "999 1 460px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
+          <div style={{ flex: "999 1 460px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "12px" }}>
             <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontWeight: "900" }}>
                 {t("ai.3")}
@@ -862,7 +865,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
                   {t("landing.14")}
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "12px" }}>
                 <div style={{ background: "#FFFFFF", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "18px" }}>
                   <span style={{ fontSize: "11px", fontWeight: "800", background: "#1A1A1A", color: "#FFFFFF", padding: "4px 10px", borderRadius: "999px" }}>
                     {t("landing.15")}
@@ -1785,6 +1788,60 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </p>
           </div>
           <Image src={img20} alt={t("game.img2")} loading="lazy" sizes="(min-width: 1200px) 802px, calc(100vw - 64px)" style={{ flex: "999 1 460px", minWidth: "0", width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+        </div>
+        {/* The Arcade, The Zen Room, The Library */}
+        <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ flex: "1 1 260px", minWidth: "0" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              {rooms.arcade.label[lang]}
+            </div>
+            <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>
+              {rooms.arcade.title[lang]}
+            </div>
+            <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>
+              {rooms.arcade.text[lang]}
+            </p>
+          </div>
+          <div style={{ flex: "999 1 460px", minWidth: "0", display: "flex", justifyContent: "center" }}>
+            <Image src={arcadeShot} alt={rooms.arcade.alt[lang]} loading="lazy" sizes="(min-width: 640px) 520px, calc(100vw - 64px)" style={{ width: "100%", maxWidth: "520px", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+          </div>
+        </div>
+        <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ flex: "1 1 260px", minWidth: "0" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              {rooms.zen.label[lang]}
+            </div>
+            <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>
+              {rooms.zen.title[lang]}
+            </div>
+            <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>
+              {rooms.zen.text[lang]}
+            </p>
+          </div>
+          <div style={{ flex: "999 1 460px", minWidth: "0", display: "flex", justifyContent: "center" }}>
+            <Image src={zenShot} alt={rooms.zen.alt[lang]} loading="lazy" sizes="(min-width: 640px) 520px, calc(100vw - 64px)" style={{ width: "100%", maxWidth: "520px", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+          </div>
+        </div>
+        <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center", background: "#F7F7F5", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ flex: "1 1 260px", minWidth: "0" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              {rooms.library.label[lang]}
+            </div>
+            <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>
+              {rooms.library.title[lang]}
+            </div>
+            <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>
+              {rooms.library.text[lang]}
+            </p>
+          </div>
+          <ul style={{ flex: "999 1 460px", minWidth: "0", margin: "0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "12px" }}>
+            {rooms.library.shelves.map((shelf) => (
+              <li key={shelf.title.EN} style={{ background: "#FFFFFF", border: "0.5px solid #D8D6D0", borderRadius: "10px", padding: "16px" }}>
+                <div style={{ fontSize: "16px", fontWeight: "800" }}>{shelf.title[lang]}</div>
+                <p style={{ margin: "6px 0 0", fontSize: "14px", lineHeight: "1.5", color: "#4A4943" }}>{shelf.text[lang]}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       {/* 10.2 LA BANDE DE ZIP */}
