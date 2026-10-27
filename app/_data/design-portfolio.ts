@@ -2284,3 +2284,69 @@ export const rooms = {
     } as L,
   },
 };
+
+/** "What type of learner are you?" quiz (skillxtube.com/quiz); profiles from libs/learner-quiz.js. */
+export const learnerQuiz = {
+  label: { EN: "Growth hacking · Free quiz", FR: "Growth hacking · Quiz gratuit" } as L,
+  title: { EN: "What type of learner are you?", FR: "What type of learner are you?" } as L,
+  text: {
+    EN: "A playful growth hack: 8 questions, 60 seconds, no account, 100% ad-free once you start. Each answer points to one of four learner profiles, and the result is a collectible card to share. Every share brings a new visitor to the quiz, and SkillxTube learns who is who: each profile gets the next step that fits it, and one free Shop resource at the end.",
+    FR: "Un growth hack ludique : 8 questions, 60 secondes, sans compte, 100 % sans pub une fois lancé. Chaque réponse pointe vers un des quatre profils d'apprenant, et le résultat est une carte à collectionner, faite pour être partagée. Chaque partage amène un nouveau visiteur au quiz, et SkillxTube sait qui est qui : chaque profil reçoit l'étape suivante qui lui correspond, plus une ressource du Shop offerte à la fin.",
+  } as L,
+  heroAlt: {
+    EN: "Quiz start screen: \"What type of learner are you? 8 questions, 60 seconds\", with Later and Zip",
+    FR: "Écran d'accueil du quiz : « What type of learner are you? 8 questions, 60 secondes », avec Later et Zip",
+  } as L,
+  cardsTitle: { EN: "Four profiles, four collectible cards", FR: "Quatre profils, quatre cartes à collectionner" } as L,
+  profiles: [
+    {
+      id: "archivist",
+      name: "The Archivist",
+      rarity: "Rare Holo",
+      mascot: "Later",
+      summary: { EN: "Saves everything, starts little.", FR: "Sauvegarde tout, commence peu." } as L,
+      verdict: {
+        EN: "You're not lacking motivation. You're lacking a filter.",
+        FR: "Ce n'est pas la motivation qui manque, c'est le filtre.",
+      } as L,
+      tip: { EN: "Clean your Watch Later first.", FR: "Commencer par vider son Watch Later." } as L,
+    },
+    {
+      id: "sprinter",
+      name: "The Sprinter",
+      rarity: "Ultra Rare",
+      mascot: "Zip",
+      summary: { EN: "Starts strong, stalls by day 3.", FR: "Démarre fort, cale au 3e jour." } as L,
+      verdict: { EN: "Your fire is real. It just needs fuel every day.", FR: "Le feu est réel. Il lui faut juste du carburant chaque jour." } as L,
+      tip: { EN: "Short daily sessions plus streaks.", FR: "Des sessions courtes chaque jour, et des séries." } as L,
+    },
+    {
+      id: "explorer",
+      name: "The Explorer",
+      rarity: "Secret Rare",
+      mascot: "Thumby",
+      summary: { EN: "Jumps between topics, never goes deep.", FR: "Saute d'un sujet à l'autre, sans jamais creuser." } as L,
+      verdict: {
+        EN: "Curiosity is your superpower, once you pick a playground.",
+        FR: "La curiosité est un super-pouvoir, une fois le terrain de jeu choisi.",
+      } as L,
+      tip: { EN: "One topic, 14 days.", FR: "Un sujet, 14 jours." } as L,
+    },
+    {
+      id: "builder",
+      name: "The Builder",
+      rarity: "Legendary",
+      mascot: "Golden Zip",
+      summary: { EN: "Steady, needs structure and direction.", FR: "Régulier, a besoin de structure et de cap." } as L,
+      verdict: {
+        EN: "You already have the discipline. Give it a direction.",
+        FR: "La discipline est déjà là. Il lui faut une direction.",
+      } as L,
+      tip: { EN: "A longer structured path.", FR: "Un parcours structuré plus long." } as L,
+    },
+  ],
+  tipLabel: { EN: "Free action", FR: "Action gratuite" } as L,
+  cardAlt: { EN: "collectible card", FR: "carte à collectionner" } as L,
+  cta: { EN: "Take the quiz", FR: "Faire le quiz" } as L,
+  href: "https://skillxtube.com/quiz",
+};

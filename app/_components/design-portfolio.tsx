@@ -17,6 +17,7 @@ import {
   guides,
   rankbidOrigin,
   type LinkCard,
+  learnerQuiz,
   rooms,
 } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
@@ -53,6 +54,13 @@ import img28 from "../_assets/design/tiktok-ep7-gang.webp";
 import arcadeShot from "../_assets/design/arcade.webp";
 import zenShot from "../_assets/design/zen-room.webp";
 import libraryShot from "../_assets/design/library.webp";
+import quizHero from "../_assets/quiz/quiz-hero.webp";
+import archivistCard from "../_assets/quiz/archivist.webp";
+import sprinterCard from "../_assets/quiz/sprinter.webp";
+import explorerCard from "../_assets/quiz/explorer.webp";
+import builderCard from "../_assets/quiz/builder.webp";
+
+const quizCards = { archivist: archivistCard, sprinter: sprinterCard, explorer: explorerCard, builder: builderCard };
 import communitySpace from "../_assets/design/community-space.webp";
 import bugReport from "../_assets/design/bug-report.webp";
 
@@ -1838,6 +1846,49 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
           <div style={{ flex: "999 1 460px", minWidth: "0", display: "flex", justifyContent: "center" }}>
             <Image src={libraryShot} alt={rooms.library.alt[lang]} loading="lazy" sizes="(min-width: 640px) 520px, calc(100vw - 64px)" style={{ width: "100%", maxWidth: "520px", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
           </div>
+        </div>
+        {/* Learner quiz: a growth hack with one collectible card per profile */}
+        <div style={{ marginTop: "24px", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center" }}>
+            <div style={{ flex: "1 1 260px", minWidth: "0" }}>
+              <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                {learnerQuiz.label[lang]}
+              </div>
+              <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>
+                {learnerQuiz.title[lang]}
+              </div>
+              <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>
+                {learnerQuiz.text[lang]}
+              </p>
+              <a href={learnerQuiz.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", marginTop: "16px", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+                {learnerQuiz.cta[lang]} ↗
+              </a>
+            </div>
+            <div style={{ flex: "999 1 460px", minWidth: "0", display: "flex", justifyContent: "center" }}>
+              <Image src={quizHero} alt={learnerQuiz.heroAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 760px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px", border: "0.5px solid #D8D6D0" }} />
+            </div>
+          </div>
+          <div style={{ marginTop: "32px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            {learnerQuiz.cardsTitle[lang]}
+          </div>
+          <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px", alignItems: "start" }}>
+            {learnerQuiz.profiles.map((profile) => (
+              <li key={profile.id} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <Image src={quizCards[profile.id as keyof typeof quizCards]} alt={`${profile.name}, ${learnerQuiz.cardAlt[lang]} ${profile.rarity}`} loading="lazy" sizes="(min-width: 1200px) 260px, (min-width: 640px) 45vw, calc(100vw - 64px)" style={{ width: "100%", maxWidth: "260px", height: "auto", display: "block", margin: "0 auto", filter: "drop-shadow(0 12px 24px rgba(26, 26, 26, 0.18))" }} />
+                <div>
+                  <div style={{ fontSize: "17px", fontWeight: "900" }}>{profile.name}</div>
+                  <div style={{ marginTop: "2px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", letterSpacing: "0.04em" }}>
+                    {profile.mascot} · {profile.rarity}
+                  </div>
+                  <p style={{ margin: "8px 0 0", fontSize: "14px", lineHeight: "1.5", color: "#1A1A1A", fontWeight: "700" }}>{profile.summary[lang]}</p>
+                  <p style={{ margin: "4px 0 0", fontSize: "14px", lineHeight: "1.5", color: "#4A4943" }}>{profile.verdict[lang]}</p>
+                  <p style={{ margin: "6px 0 0", fontSize: "13px", lineHeight: "1.5", color: "#4A4943" }}>
+                    <span style={{ fontWeight: "800", color: "#C62828" }}>{learnerQuiz.tipLabel[lang]}{lang === "FR" ? " :" : ":"}</span> {profile.tip[lang]}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       {/* 10.2 LA BANDE DE ZIP */}
