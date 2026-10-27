@@ -770,7 +770,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               {t("ai.2")}
             </p>
           </div>
-          <div style={{ flex: "999 1 460px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "12px" }}>
+          <div style={{ flex: "999 1 460px", minWidth: "0", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
             <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "16px" }}>
               <div style={{ fontWeight: "900" }}>
                 {t("ai.3")}
@@ -865,7 +865,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
                   {t("landing.14")}
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "12px" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
                 <div style={{ background: "#FFFFFF", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "18px" }}>
                   <span style={{ fontSize: "11px", fontWeight: "800", background: "#1A1A1A", color: "#FFFFFF", padding: "4px 10px", borderRadius: "999px" }}>
                     {t("landing.15")}
