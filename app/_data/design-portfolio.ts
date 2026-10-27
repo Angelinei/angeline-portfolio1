@@ -2350,3 +2350,63 @@ export const learnerQuiz = {
   cta: { EN: "Take the quiz", FR: "Faire le quiz" } as L,
   href: "https://skillxtube.com/quiz",
 };
+
+/** SkillxGames, the side project shown after RankBid (section 12.2). */
+export const skillxGames = {
+  nav: { EN: "SkillxGames", FR: "SkillxGames" } as L,
+  label: { EN: "Side project", FR: "Side project" } as L,
+  title: { EN: "SkillxGames", FR: "SkillxGames" } as L,
+  subtitle: { EN: "Small games. Sharp minds.", FR: "Petits jeux. Esprits vifs." } as L,
+  text: {
+    EN: "A companion project to SkillxTube: a modern arcade of bite-sized games for memory, puzzles and logic. Every game takes minutes, plays in the browser and asks for nothing but focus. No sign-up, no downloads, just play.",
+    FR: "Un projet connexe à SkillxTube : une arcade moderne de petits jeux de mémoire, de puzzle et de logique. Chaque jeu dure quelques minutes, se joue dans le navigateur et ne demande rien d'autre que de la concentration. Pas d'inscription, pas de téléchargement : on joue.",
+  } as L,
+  facts: [
+    {
+      EN: "4 categories: Memory, Puzzle, Logic, Quick Games",
+      FR: "4 catégories : Mémoire, Puzzle, Logique, Jeux rapides",
+    },
+    {
+      EN: "8 games of 1 to 6 minutes, Memory Match playable, 7 coming",
+      FR: "8 jeux de 1 à 6 minutes, Memory Match jouable, 7 à venir",
+    },
+    {
+      EN: "Arcade art direction: pixel fonts, ink outlines, coral, cobalt, sun and mint",
+      FR: "Direction artistique arcade : typos pixel, contours encrés, corail, cobalt, soleil et menthe",
+    },
+  ] as L[],
+  cta: { EN: "Play on skillxgames.com", FR: "Jouer sur skillxgames.com" } as L,
+  href: "https://skillxgames.com/",
+  shots: [
+    {
+      src: "/projects/skillxgames/01-hero.aece3f2689.webp",
+      width: 1040,
+      height: 650,
+      alt: {
+        EN: "SkillxGames home: “Small games. Sharp minds.” beside a coral arcade cabinet",
+        FR: "Accueil de SkillxGames : « Small games. Sharp minds. » à côté d'une borne d'arcade corail",
+      } as L,
+      caption: { EN: "The home page", FR: "La page d'accueil" } as L,
+    },
+    {
+      src: "/projects/skillxgames/02-memory-match.a24861ec80.webp",
+      width: 1040,
+      height: 728,
+      alt: {
+        EN: "Memory Match mid-game: 4 pairs out of 8 found in 12 moves",
+        FR: "Memory Match en cours de partie : 4 paires sur 8 trouvées en 12 coups",
+      } as L,
+      caption: { EN: "Memory Match, the first playable game", FR: "Memory Match, le premier jeu jouable" } as L,
+    },
+    {
+      src: "/projects/skillxgames/03-game-library.e48113eff7.webp",
+      width: 1040,
+      height: 583,
+      alt: {
+        EN: "The game library: search, category filters and cartridge-like game cards",
+        FR: "La ludothèque : recherche, filtres par catégorie et cartes de jeu en forme de cartouche",
+      } as L,
+      caption: { EN: "The library, one cartridge per game", FR: "La ludothèque, une cartouche par jeu" } as L,
+    },
+  ],
+};
