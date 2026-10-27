@@ -18,6 +18,7 @@ import {
   rankbidOrigin,
   type LinkCard,
   learnerQuiz,
+  skillxGames,
   rooms,
 } from "../_data/design-portfolio";
 import { jetbrainsMono, nunito } from "./design-fonts";
@@ -74,7 +75,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
       {/* NAV */}
       <header style={{ borderBottom: "0.5px solid #D8D6D0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "18px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
-          <nav style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "24px", fontSize: "14px", fontWeight: "700" }}>
+          <nav style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px 18px", fontSize: "14px", fontWeight: "700" }}>
             <a href="#evolution" style={{ textDecoration: "none" }}>
               {t("nav.2")}
             </a>
@@ -101,6 +102,9 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </a>
             <a href="#side" style={{ textDecoration: "none" }}>
               {t("nav.10")}
+            </a>
+            <a href="#skillxgames" style={{ textDecoration: "none" }}>
+              {skillxGames.nav[lang]}
             </a>
             <a href="https://skillxtube.com/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
               {t("nav.11")}
@@ -2327,6 +2331,41 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
         </div>
+      </section>
+      {/* 12.2 SKILLXGAMES */}
+      <section id="skillxgames" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px" }}>
+          <div style={{ flex: "1 1 320px", minWidth: "0", maxWidth: "720px" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <span style={{ color: "#C62828" }}>12.2</span> · {skillxGames.label[lang]}
+            </div>
+            <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{skillxGames.title[lang]}</h2>
+            <p style={{ margin: "8px 0 0", fontSize: "18px", fontWeight: "800", color: "#C62828" }}>{skillxGames.subtitle[lang]}</p>
+            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{skillxGames.text[lang]}</p>
+            <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {skillxGames.facts.map((fact) => (
+                <li key={fact.EN} style={{ padding: "8px 14px", borderRadius: "999px", background: "#F4F2EE", fontSize: "13px", lineHeight: "1.4", color: "#1A1A1A" }}>
+                  {fact[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <a href={skillxGames.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+            {skillxGames.cta[lang]} ↗
+          </a>
+        </div>
+        <ul style={{ margin: "24px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px", alignItems: "start" }}>
+          {skillxGames.shots.map((shot) => (
+            <li key={shot.src}>
+              <figure style={{ margin: "0" }}>
+                <Image src={shot.src} alt={shot.alt[lang]} width={shot.width} height={shot.height} loading="lazy" sizes="(min-width: 1200px) 370px, (min-width: 700px) 45vw, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
+                <figcaption style={{ marginTop: "8px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                  {shot.caption[lang]}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
       </section>
       {/* BEHANCE */}
       <section id="behance" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
