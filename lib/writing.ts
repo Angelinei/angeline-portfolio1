@@ -14,7 +14,9 @@ function readPost(slug: WritingSlug): WritingPost {
   if (typeof title !== "string" || typeof date !== "string" || typeof excerpt !== "string") {
     throw new Error(`Missing title, date or excerpt in content/blog/${slug}.en.mdx`);
   }
-  return { slug, title, date, excerpt };
+  // Optional shorter title for search results and share cards, when the title runs long.
+  const seoTitle = typeof data.seoTitle === "string" ? data.seoTitle : undefined;
+  return { slug, title, date, excerpt, seoTitle };
 }
 
 export function getWritingPosts(): WritingPost[] {
