@@ -24,9 +24,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
-  title: "Angéline Poitout — IA générative, apprentissage & innovation numérique",
+  title: "Angéline Poitout — Generative AI & Learning Design Studio",
   description:
-    "Studio créatif indépendant à la croisée de l'IA générative, de l'ingénierie pédagogique et des produits numériques : formations, expérimentations IA et expériences d'apprentissage.",
+    "Independent studio of Angéline Poitout at the crossroads of generative AI, learning design and digital products.",
+  authors: [{ name: "Angéline Poitout", url: "https://angelinepoitout.com" }],
+  openGraph: {
+    siteName: "Angéline Poitout",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

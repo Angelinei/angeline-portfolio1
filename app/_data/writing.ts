@@ -38,6 +38,8 @@ export type WritingPost = {
   title: string;
   date: string;
   excerpt: string;
+  /** Shorter title for search results and share cards (frontmatter `seoTitle`). */
+  seoTitle?: string;
 };
 
 const MONTHS = [
