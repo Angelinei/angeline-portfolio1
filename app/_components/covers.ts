@@ -3,7 +3,8 @@ import path from "node:path";
 
 const ROOT = path.join(process.cwd(), "public", "projects");
 const MEDIA = /\.(avif|webp|png|jpe?g|gif|mp4|webm)$/i;
-const COVER = /^cover\.[a-z0-9]+$/i;
+// cover.<ext>, or cover.<content hash>.<ext> so the file can be cached for good.
+const COVER = /^cover(\.[a-f0-9]{10})?\.[a-z0-9]+$/i;
 
 function listMedia(dir: string) {
   const full = path.join(ROOT, dir);

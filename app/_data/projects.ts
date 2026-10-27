@@ -11,6 +11,8 @@
  *   - any other image/video               → "Visuals" section, sorted by name
  */
 
+import { videoHref } from "./media";
+
 export type Lang = "EN" | "FR";
 export type Localized = Record<Lang, string>;
 export type Visual =
@@ -332,7 +334,7 @@ export const projects: Project[] = [
           EN: "A free challenge inspired by 100DaysOfCode: master web marketing in 100 days, without any investment. The whole challenge, from the editorial line to deployment, lives in my Drive.",
           FR: "Un challenge gratuit inspiré de 100DaysOfCode : maîtriser le webmarketing en 100 jours, sans aucun investissement. Tout le challenge, de la ligne éditoriale au déploiement, tient dans mon Drive.",
         },
-        href: "/portfolio/archives/100-days-of-webmarketing.mp4",
+        href: videoHref("hundredDaysOfWebmarketing"),
         tags: ["Web marketing", "Challenge"],
       },
       {
@@ -684,7 +686,7 @@ export const projects: Project[] = [
           EN: "My first website and idea. Looks familiar on certain points, huh?",
           FR: "Mon premier site et ma première idée. Ça vous rappelle quelque chose sur certains points, non ?",
         },
-        href: "/portfolio/archives/drive-freelance.mp4",
+        href: videoHref("driveFreelance"),
       },
       {
         title: "YouTube music channel",

@@ -2244,3 +2244,57 @@ export const guides = {
     },
   ].map((g) => ({ tag: { EN: "Guide", FR: "Guide" }, title: g.title, text: g.text, href: `${SITE}/guides/${g.slug}` })) as LinkCard[],
 };
+
+/** Rooms of the SkillxTube space shown under the mini-game (texts from skillxtube.com/answers). */
+export const rooms = {
+  arcade: {
+    label: { EN: "Zip & the gang · Logic games", FR: "Zip & la bande · Jeux de logique" } as L,
+    title: { EN: "The Arcade", FR: "The Arcade" } as L,
+    text: {
+      EN: "Nine short logic games starring the gang, one skill per cabinet: deduction, planning, synthesis, sequencing, focus, spatial reasoning, logic, strategy and patterns. Free in every plan, scores checked by the server, and the Arcade quests pay out in The Tavern.",
+      FR: "Neuf petits jeux de logique avec la bande, une compétence par borne : déduction, planification, synthèse, séquençage, concentration, raisonnement spatial, logique, stratégie et motifs. Inclus dans chaque offre, scores vérifiés par le serveur, et les quêtes de l'Arcade se récupèrent dans The Tavern.",
+    } as L,
+    alt: {
+      EN: "The Arcade: nine cabinets starring Zip, Thumby, Later, Skip and Buffer, from Zip vs the Brainrot to Zip 2048",
+      FR: "The Arcade : neuf bornes avec Zip, Thumby, Later, Skip et Buffer, de Zip vs the Brainrot à Zip 2048",
+    } as L,
+  },
+  zen: {
+    label: { EN: "Between two sessions", FR: "Entre deux sessions" } as L,
+    title: { EN: "The Zen Room", FR: "The Zen Room" } as L,
+    text: {
+      EN: "Six pixel landscapes, from rice terraces to a jungle waterfall, an ambient loop played live in the browser, 4 × 4 s box breathing and a 5, 10 or 25-minute focus timer. Breathe, reset, then get back to your path.",
+      FR: "Six paysages en pixel art, des rizières à une cascade dans la jungle, une boucle d'ambiance jouée en direct dans le navigateur, la respiration carrée 4 × 4 s et un minuteur de concentration de 5, 10 ou 25 minutes. On respire, on se recentre, puis on retourne à son parcours.",
+    } as L,
+    alt: {
+      EN: "The Zen Room: a pixel jungle waterfall, scene picker, Zen loop player, box breathing and a 10-minute focus timer",
+      FR: "The Zen Room : une cascade dans la jungle en pixel art, le choix des scènes, la boucle Zen, la respiration carrée et un minuteur de 10 minutes",
+    } as L,
+  },
+  library: {
+    label: { EN: "Community resources", FR: "Ressources de la communauté" } as L,
+    title: { EN: "The Library", FR: "The Library" } as L,
+    text: {
+      EN: "Every community resource on the same shelves. Some files are free, the rest unlock once with SkillXP and stay yours: you don't buy your way in, you earn the shelf.",
+      FR: "Toutes les ressources de la communauté sur les mêmes étagères. Certains fichiers sont gratuits, les autres se débloquent une fois avec des SkillXP et restent à vous : on n'achète pas sa place, on gagne son étagère.",
+    } as L,
+    shelves: [
+      {
+        title: { EN: "Guides and playbooks", FR: "Guides et playbooks" } as L,
+        text: { EN: "A full method on one topic.", FR: "Une méthode complète sur un sujet." } as L,
+      },
+      {
+        title: { EN: "Templates", FR: "Modèles" } as L,
+        text: { EN: "Docs, decks and sheets to fill in.", FR: "Docs, présentations et tableaux à remplir." } as L,
+      },
+      {
+        title: { EN: "Checklists", FR: "Checklists" } as L,
+        text: { EN: "One page to check your work before you ship.", FR: "Une page pour vérifier son travail avant de livrer." } as L,
+      },
+      {
+        title: { EN: "Starter kits", FR: "Kits de démarrage" } as L,
+        text: { EN: "Workflows and prompt packs to start from.", FR: "Des workflows et packs de prompts pour ne pas partir de zéro." } as L,
+      },
+    ],
+  },
+};

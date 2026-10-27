@@ -87,10 +87,11 @@ export function ThumbyEgg({ spot, lang, className = "" }: { spot: ThumbySpot; la
       className={`group absolute z-30 block w-[46px] cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:rotate-6 sm:w-[54px] ${className}`}
     >
       <Image
-        src="/thumby/thumby.png"
+        src="/media/img/thumby.db9c2efa3c.webp"
         alt=""
-        width={160}
-        height={174}
+        width={120}
+        height={130}
+        sizes="54px"
         className="h-auto w-full drop-shadow-[0_8px_16px_rgba(0,0,0,0.18)]"
       />
     </a>
