@@ -842,6 +842,38 @@ export function ProjectVisual({
         </span>
       )}
 
+      {!cover && kind === "games" && (
+        <span className="block w-[72cqw] -rotate-3 rounded-[4cqw] border-[0.8cqw] border-[#16130F] bg-[#16130F] p-[4cqw] shadow-[1.6cqw_1.6cqw_0_0_#16130F] transition-transform duration-700 group-hover:rotate-0">
+          <span className="mb-[4cqw] flex items-center justify-between">
+            <span className="text-[5cqw] font-bold tracking-tight text-[#FFF6E5]">SkillX</span>
+            <span className="rounded-[1.2cqw] bg-[#FFC72C] px-[2cqw] py-[0.6cqw] text-[3cqw] font-semibold tracking-[0.15em] text-[#16130F]">
+              GAMES
+            </span>
+          </span>
+          <span className="grid grid-cols-4 gap-[2cqw] rounded-[2.5cqw] bg-[#1B2A72] p-[2.5cqw]">
+            {["#FF5A3C", null, "#1FC28F", null, null, "#FF5A3C", null, "#1FC28F"].map((face, i) => (
+              <span
+                key={i}
+                className="flex aspect-square items-center justify-center rounded-[1.6cqw] border-[0.5cqw] border-[#0D1540]"
+                style={{ backgroundColor: face ? "#FFFDF7" : "#4061FF" }}
+              >
+                {face ? (
+                  <span
+                    className={`block size-[6cqw] ${face === "#1FC28F" ? "rotate-45" : "rounded-full"}`}
+                    style={{ backgroundColor: face }}
+                  />
+                ) : (
+                  <span className="block size-[2.4cqw] bg-[#FFC72C]" />
+                )}
+              </span>
+            ))}
+          </span>
+          <span className="mt-[3.5cqw] block text-center text-[2.8cqw] tracking-[0.25em] text-[#FFC72C]">
+            INSERT COIN
+          </span>
+        </span>
+      )}
+
       {!cover && kind === "about" && (
         <span className="relative flex size-[64cqw] items-center justify-center rounded-full bg-white shadow-xl">
           <span

@@ -22,6 +22,7 @@ export type Visual =
   | "archive"
   | "cemetery"
   | "lab"
+  | "games"
   | "path"
   | "writing"
   | "testimonials"
@@ -142,8 +143,123 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "portfolio",
+    slug: "skillxgames",
     number: "02",
+    title: "SkillXGames",
+    subtitle: { EN: "Small games. Sharp minds.", FR: "Petits jeux. Esprits vifs." },
+    eyebrow: { EN: "GAME DESIGN · WEB · 2026", FR: "GAME DESIGN · WEB · 2026" },
+    summary: {
+      EN: "A companion project to SkillxTube: a modern arcade of bite-sized games for memory, puzzles and logic, played in minutes in the browser.",
+      FR: "Un projet connexe à SkillxTube : une arcade moderne de mini-jeux de mémoire, de puzzle et de logique, qui se jouent en quelques minutes dans le navigateur.",
+    },
+    marquee: "Small games. Sharp minds. Insert coin to continue.",
+    tags: ["Game design", "Next.js", "Tailwind CSS", "Vercel"],
+    year: "2026",
+    visual: "games",
+    tint: "#FFF6E5",
+    marqueeColor: "#FFC72C",
+    ink: "#C0361A",
+    intro: {
+      paragraphs: [
+        {
+          EN: "SkillXGames is a modern arcade of bite-sized challenges for memory, puzzles and logic. Every game takes minutes, plays in the browser and asks for nothing but focus.",
+          FR: "SkillXGames est une arcade moderne de petits défis de mémoire, de puzzle et de logique. Chaque jeu dure quelques minutes, se joue dans le navigateur et ne demande rien d'autre que de la concentration.",
+        },
+        {
+          EN: "No sign-up, no downloads, just play.",
+          FR: "Pas d'inscription, pas de téléchargement : on joue.",
+        },
+      ],
+    },
+    context: {
+      paragraphs: [
+        {
+          EN: "A project born next to SkillxTube. Where SkillxTube turns videos into learning, SkillXGames trains the skills underneath (memory, reasoning, focus) in short sessions.",
+          FR: "Un projet né à côté de SkillxTube. Là où SkillxTube transforme les vidéos en apprentissage, SkillXGames entraîne les compétences qui sont dessous (mémoire, raisonnement, concentration) en sessions courtes.",
+        },
+      ],
+    },
+    intention: {
+      list: [
+        {
+          EN: "Four categories: Memory (hold it in mind), Puzzle (rearrange and resolve), Logic (reason your way out) and Quick Games (sixty seconds of focus)",
+          FR: "Quatre catégories : Mémoire (garder en tête), Puzzle (réarranger et résoudre), Logique (raisonner pour s'en sortir) et Jeux rapides (soixante secondes de concentration)",
+        },
+        {
+          EN: "Eight games in the catalogue, from 1 to 6 minutes each, with a level and a play time on every card",
+          FR: "Huit jeux au catalogue, de 1 à 6 minutes chacun, avec un niveau et une durée sur chaque carte",
+        },
+        {
+          EN: "Memory Match is live: flip tiles, find every pair, beat your best time in as few moves as possible",
+          FR: "Memory Match est jouable : retourner les cartes, trouver toutes les paires, battre son meilleur temps en un minimum de coups",
+        },
+        {
+          EN: "Coming next: Pattern Recall, Slide Shift, Line Up, Lights Off, Number Path, Quick Tap and Colour Clash",
+          FR: "À venir : Pattern Recall, Slide Shift, Line Up, Lights Off, Number Path, Quick Tap et Colour Clash",
+        },
+      ],
+    },
+    process: {
+      list: [
+        {
+          EN: "An arcade art direction: pixel fonts (Pixelify Sans, Silkscreen), thick ink outlines, hard shadows and four accents (coral, cobalt, sun, mint), one per category",
+          FR: "Une direction artistique arcade : typos pixel (Pixelify Sans, Silkscreen), contours encrés épais, ombres franches et quatre accents (corail, cobalt, soleil, menthe), un par catégorie",
+        },
+        {
+          EN: "A data-driven catalogue: adding a game is one entry, and cards, counters, search and category filters follow",
+          FR: "Un catalogue piloté par les données : ajouter un jeu tient en une entrée, les cartes, compteurs, la recherche et les filtres suivent",
+        },
+        {
+          EN: "Built with Next.js, React, TypeScript and Tailwind CSS, deployed on Vercel",
+          FR: "Développé avec Next.js, React, TypeScript et Tailwind CSS, déployé sur Vercel",
+        },
+      ],
+    },
+    captions: {
+      "01-hero.aece3f2689.webp": {
+        alt: {
+          EN: "SkillXGames home: “Small games. Sharp minds.” beside a coral arcade cabinet, with the games, categories and playable counters",
+          FR: "Accueil de SkillXGames : « Small games. Sharp minds. » à côté d'une borne d'arcade corail, avec les compteurs de jeux, catégories et jeux jouables",
+        },
+        caption: { EN: "The home page.", FR: "La page d'accueil." },
+      },
+      "02-memory-match.a24861ec80.webp": {
+        alt: {
+          EN: "Memory Match mid-game: 4 pairs out of 8 found in 12 moves, with the how-to-play steps on the left",
+          FR: "Memory Match en cours de partie : 4 paires sur 8 trouvées en 12 coups, avec les règles à gauche",
+        },
+        caption: {
+          EN: "Memory Match, the first playable game: moves, time and pairs are counted live.",
+          FR: "Memory Match, le premier jeu jouable : coups, temps et paires sont comptés en direct.",
+        },
+      },
+      "03-game-library.e48113eff7.webp": {
+        alt: {
+          EN: "The game library: a search field, category filters and cartridge-like game cards with level and play time",
+          FR: "La ludothèque : un champ de recherche, des filtres par catégorie et des cartes de jeu en forme de cartouche avec niveau et durée",
+        },
+        caption: {
+          EN: "The library: search, filter by category, one cartridge per game.",
+          FR: "La ludothèque : recherche, filtre par catégorie, une cartouche par jeu.",
+        },
+      },
+    },
+    links: [
+      {
+        label: { EN: "Play on skillxgames.vercel.app", FR: "Jouer sur skillxgames.vercel.app" },
+        href: "https://skillxgames.vercel.app/",
+        kind: "site",
+      },
+      {
+        label: { EN: "SkillxTube", FR: "SkillxTube" },
+        href: "https://skillxtube.com/",
+        kind: "site",
+      },
+    ],
+  },
+  {
+    slug: "portfolio",
+    number: "03",
     title: "The Portfolio",
     subtitle: { EN: "A studio built with AI.", FR: "Un studio construit avec l'IA." },
     eyebrow: {
@@ -202,7 +318,7 @@ export const projects: Project[] = [
   },
   {
     slug: "archives",
-    number: "03",
+    number: "04",
     title: "Les Archives Studio",
     eyebrow: { EN: "ARCHIVE · PAST WORK", FR: "ARCHIVES · RÉALISATIONS PASSÉES" },
     summary: {
@@ -654,7 +770,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cimetiere",
-    number: "04",
+    number: "05",
     title: "Le Cimetière",
     eyebrow: { EN: "CEMETERY · DISCONTINUED PROJECTS", FR: "CIMETIÈRE · PROJETS ARRÊTÉS" },
     summary: {
@@ -738,7 +854,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ai-experiments",
-    number: "05",
+    number: "06",
     title: "AI Learning Lab",
     subtitle: {
       EN: "From experimentation to application.",
