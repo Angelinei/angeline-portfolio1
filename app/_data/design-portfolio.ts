@@ -2278,23 +2278,9 @@ export const rooms = {
       EN: "Every community resource on the same shelves. Some files are free, the rest unlock once with SkillXP and stay yours: you don't buy your way in, you earn the shelf.",
       FR: "Toutes les ressources de la communauté sur les mêmes étagères. Certains fichiers sont gratuits, les autres se débloquent une fois avec des SkillXP et restent à vous : on n'achète pas sa place, on gagne son étagère.",
     } as L,
-    shelves: [
-      {
-        title: { EN: "Guides and playbooks", FR: "Guides et playbooks" } as L,
-        text: { EN: "A full method on one topic.", FR: "Une méthode complète sur un sujet." } as L,
-      },
-      {
-        title: { EN: "Templates", FR: "Modèles" } as L,
-        text: { EN: "Docs, decks and sheets to fill in.", FR: "Docs, présentations et tableaux à remplir." } as L,
-      },
-      {
-        title: { EN: "Checklists", FR: "Checklists" } as L,
-        text: { EN: "One page to check your work before you ship.", FR: "Une page pour vérifier son travail avant de livrer." } as L,
-      },
-      {
-        title: { EN: "Starter kits", FR: "Kits de démarrage" } as L,
-        text: { EN: "Workflows and prompt packs to start from.", FR: "Des workflows et packs de prompts pour ne pas partir de zéro." } as L,
-      },
-    ],
+    alt: {
+      EN: "The Library: pixel shelves around a red staircase, 81 files (11 free, 70 to unlock with SkillXP) and the featured guide Build Your First AI Agent",
+      FR: "The Library : des étagères en pixel art autour d'un escalier rouge, 81 fichiers (11 gratuits, 70 à débloquer avec des SkillXP) et le guide à la une Build Your First AI Agent",
+    } as L,
   },
 };
