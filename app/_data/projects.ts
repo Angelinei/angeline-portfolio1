@@ -251,6 +251,11 @@ export const projects: Project[] = [
         kind: "site",
       },
       {
+        label: { EN: "skillxgames.com", FR: "skillxgames.com" },
+        href: "https://skillxgames.com/",
+        kind: "site",
+      },
+      {
         label: { EN: "SkillxTube", FR: "SkillxTube" },
         href: "https://skillxtube.com/",
         kind: "site",
