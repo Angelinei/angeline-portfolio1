@@ -912,6 +912,11 @@ export const projects: Project[] = [
         href: "https://skillxtube.com/",
         kind: "site",
       },
+      {
+        label: { EN: "SkillxGames", FR: "SkillxGames" },
+        href: "https://skillxgames.com/",
+        kind: "site",
+      },
     ],
   },
 ];
