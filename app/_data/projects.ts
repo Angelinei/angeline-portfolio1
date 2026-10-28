@@ -182,20 +182,28 @@ export const projects: Project[] = [
     intention: {
       list: [
         {
-          EN: "Four categories: Memory (hold it in mind), Puzzle (rearrange and resolve), Logic (reason your way out) and Quick Games (sixty seconds of focus)",
-          FR: "Quatre catégories : Mémoire (garder en tête), Puzzle (réarranger et résoudre), Logique (raisonner pour s'en sortir) et Jeux rapides (soixante secondes de concentration)",
+          EN: "Six categories: Memory, Puzzle, Logic and Quick Games, plus Adventure (real-life skills, played) and Skillz (pro skills, game speed)",
+          FR: "Six catégories : Mémoire, Puzzle, Logique et Jeux rapides, plus Aventure (des compétences de la vraie vie, en jeu) et Skillz (des compétences pro, à vitesse de jeu)",
         },
         {
-          EN: "Eight games in the catalogue, from 1 to 6 minutes each, with a level and a play time on every card",
-          FR: "Huit jeux au catalogue, de 1 à 6 minutes chacun, avec un niveau et une durée sur chaque carte",
+          EN: "40 games in the catalogue, 36 of them playable, from a one-minute jackpot to a full game of chess",
+          FR: "40 jeux au catalogue, dont 36 jouables, d'un jackpot d'une minute à une vraie partie d'échecs",
         },
         {
-          EN: "Memory Match is live: flip tiles, find every pair, beat your best time in as few moves as possible",
-          FR: "Memory Match est jouable : retourner les cartes, trouver toutes les paires, battre son meilleur temps en un minimum de coups",
+          EN: "Real skills turned into games: spot a phishing email, survive a monthly budget, write a better hook, read a chart, give first aid",
+          FR: "De vraies compétences transformées en jeux : repérer un e-mail de phishing, tenir un budget du mois, écrire une meilleure accroche, lire un graphique, faire les gestes de premiers secours",
         },
         {
-          EN: "Coming next: Pattern Recall, Slide Shift, Line Up, Lights Off, Number Path, Quick Tap and Colour Clash",
-          FR: "À venir : Pattern Recall, Slide Shift, Line Up, Lights Off, Number Path, Quick Tap et Colour Clash",
+          EN: "Zip & the Gang: the 10 cabinets of the SkillxTube Arcade, played natively, with both sites linking to each other",
+          FR: "Zip & la bande : les 10 bornes de l'Arcade SkillxTube, jouables directement, les deux sites se renvoyant l'un à l'autre",
+        },
+        {
+          EN: "A card school for FreeCell, Klondike, Hearts, Gin Rummy and Spades: rules, a turn step by step and best-move puzzles",
+          FR: "Une école des cartes pour FreeCell, Klondike, Dame de pique, Gin Rummy et Spades : règles, un tour pas à pas et des puzzles du meilleur coup",
+        },
+        {
+          EN: "Coming next: Pattern Recall, Lights Off, Number Path and Colour Clash",
+          FR: "À venir : Pattern Recall, Lights Off, Number Path et Colour Clash",
         },
       ],
     },

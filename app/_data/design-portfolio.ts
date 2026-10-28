@@ -2363,12 +2363,16 @@ export const skillxGames = {
   } as L,
   facts: [
     {
-      EN: "4 categories: Memory, Puzzle, Logic, Quick Games",
-      FR: "4 catégories : Mémoire, Puzzle, Logique, Jeux rapides",
+      EN: "6 categories: Memory, Puzzle, Logic, Quick Games, Adventure, Skillz",
+      FR: "6 catégories : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Skillz",
     },
     {
-      EN: "8 games of 1 to 6 minutes, Memory Match playable, 7 coming",
-      FR: "8 jeux de 1 à 6 minutes, Memory Match jouable, 7 à venir",
+      EN: "40 games, 36 playable, including the 10 Zip & the Gang cabinets",
+      FR: "40 jeux, dont 36 jouables et les 10 bornes de Zip & la bande",
+    },
+    {
+      EN: "A card school: FreeCell, Klondike, Hearts, Gin Rummy, Spades",
+      FR: "Une école des cartes : FreeCell, Klondike, Dame de pique, Gin Rummy, Spades",
     },
     {
       EN: "Arcade art direction: pixel fonts, ink outlines, coral, cobalt, sun and mint",
