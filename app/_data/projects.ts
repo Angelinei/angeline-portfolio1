@@ -169,6 +169,10 @@ export const projects: Project[] = [
           EN: "No sign-up, no downloads, just play.",
           FR: "Pas d'inscription, pas de téléchargement : on joue.",
         },
+        {
+          EN: "Listed on Product Hunt: “A modern arcade of short, skill-based mini-games.”",
+          FR: "Présent sur Product Hunt : « A modern arcade of short, skill-based mini-games. »",
+        },
       ],
     },
     context: {
@@ -262,6 +266,11 @@ export const projects: Project[] = [
         label: { EN: "SkillxGames", FR: "SkillxGames" },
         href: "https://skillxgames.com/",
         kind: "site",
+      },
+      {
+        label: { EN: "SkillXGames on Product Hunt", FR: "SkillXGames sur Product Hunt" },
+        href: "https://www.producthunt.com/products/skillxgames",
+        kind: "other",
       },
       {
         label: { EN: "SkillxTube", FR: "SkillxTube" },

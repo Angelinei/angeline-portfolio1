@@ -2381,6 +2381,7 @@ export const skillxGames = {
   ] as L[],
   cta: { EN: "Play on skillxgames.com", FR: "Jouer sur skillxgames.com" } as L,
   href: "https://skillxgames.com/",
+  productHunt: { label: { EN: "See it on Product Hunt", FR: "Voir sur Product Hunt" } as L, href: "https://www.producthunt.com/products/skillxgames" },
   shots: [
     {
       src: "/projects/skillxgames/01-hero.aece3f2689.webp",

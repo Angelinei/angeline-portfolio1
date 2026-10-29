@@ -2350,9 +2350,14 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               ))}
             </ul>
           </div>
-          <a href={skillxGames.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
-            {skillxGames.cta[lang]} ↗
-          </a>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a href={skillxGames.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+              {skillxGames.cta[lang]} ↗
+            </a>
+            <a href={skillxGames.productHunt.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FF6154", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+              {skillxGames.productHunt.label[lang]} ↗
+            </a>
+          </div>
         </div>
         <ul style={{ margin: "24px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px", alignItems: "start" }}>
           {skillxGames.shots.map((shot) => (
