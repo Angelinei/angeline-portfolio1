@@ -2386,8 +2386,8 @@ export const skillxGames = {
     label: { EN: "Zoom · The community", FR: "Zoom · La communauté" } as L,
     title: { EN: "A pixel town to walk around", FR: "Une ville en pixels où se balader" } as L,
     text: {
-      EN: "The community is a place, not a forum. Pick a member of the gang (Zip, Skip, Thumby, Buffer, Later, Feed) or play as yourself, then walk with the arrows from door to door. The townsfolk greet you and each line slips in one real tip, wild Brainrots hide in the tall grass, and the bridge east leads to the SkillxTube community.",
-      FR: "La communauté est un lieu, pas un forum. On choisit un membre de la bande (Zip, Skip, Thumby, Buffer, Later, Feed) ou on joue en son nom, puis on se balade aux flèches de porte en porte. Les habitants saluent et chaque réplique glisse un vrai conseil, des Brainrots sauvages se cachent dans les hautes herbes, et le pont à l'est mène à la communauté SkillxTube.",
+      EN: "The community is a place, not a forum. Pick a member of the gang (Zip, Skip, Thumby, Buffer, Later, Feed) or play as yourself, then walk with the arrows from door to door. The townsfolk greet you and each line slips in one real tip, wild Brainrots hide in the tall grass, and the bridge east crosses to the SkillxTube town with the same character.",
+      FR: "La communauté est un lieu, pas un forum. On choisit un membre de la bande (Zip, Skip, Thumby, Buffer, Later, Feed) ou on joue en son nom, puis on se balade aux flèches de porte en porte. Les habitants saluent et chaque réplique glisse un vrai conseil, des Brainrots sauvages se cachent dans les hautes herbes, et le pont à l'est passe dans la ville SkillxTube avec le même personnage.",
     } as L,
     places: [
       { name: "Trophy Hall", text: { EN: "The leaderboards", FR: "Les classements" } as L },
@@ -2410,6 +2410,22 @@ export const skillxGames = {
       EN: "The Trophy Hall: trophies under glass and team jerseys on a pixel gallery wall, with how the boards work",
       FR: "Le Trophy Hall : trophées sous verre et maillots d'équipe sur un mur de galerie en pixels, avec le fonctionnement des classements",
     } as L,
+    live: [
+      {
+        title: { EN: "A multiplayer town", FR: "Une ville multijoueur" } as L,
+        text: {
+          EN: "Other players show up live and walk next to you, in rooms of 40 (Town #1, #2…). Only the character, its skin and its tile are shared: no names, no text, and every incoming message is checked.",
+          FR: "Les autres joueurs apparaissent en direct et marchent à côté de soi, dans des salons de 40 (Town #1, #2…). Seuls le personnage, sa couleur et sa case sont partagés : ni nom, ni texte, et chaque message reçu est vérifié.",
+        } as L,
+      },
+      {
+        title: { EN: "A live chat on every page", FR: "Un live chat sur toutes les pages" } as L,
+        text: {
+          EN: "A floating button bottom-right opens a Twitch-style panel (a bottom sheet on phones). Post with a SkillxTube account for a ✓ name, or with a nickname. SkillxTube runs the moderation: no links, no personal info, kind language, no caps lock, slow mode, a daily limit and a report button on every message.",
+          FR: "Un bouton flottant en bas à droite ouvre un panneau façon Twitch (un tiroir sur mobile). On poste avec un compte SkillxTube pour un nom ✓, ou avec un pseudo. SkillxTube gère la modération : pas de liens, pas d'infos perso, un langage bienveillant, pas de majuscules, un mode lent, une limite par jour et un bouton de signalement sur chaque message.",
+        } as L,
+      },
+    ],
     brands: {
       EN: "Brands get a place too: 4 town billboards and sponsor cells on the game pages, which never change a score.",
       FR: "Les marques ont aussi leur place : 4 panneaux en ville et des cases sponsor sur les pages de jeu, qui ne changent jamais un score.",
