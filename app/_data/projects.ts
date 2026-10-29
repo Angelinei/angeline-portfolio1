@@ -339,8 +339,62 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "archives",
+    slug: "ai-experiments",
     number: "04",
+    title: "AI Learning Lab",
+    subtitle: {
+      EN: "From experimentation to application.",
+      FR: "De l'expérimentation à l'application.",
+    },
+    eyebrow: { EN: "AI · LEARNING DESIGN · 2026", FR: "IA · INGÉNIERIE PÉDAGOGIQUE · 2026" },
+    summary: {
+      EN: "A growing collection of experiments around prompting, AI-assisted workflows, learning experiences and practical adoption.",
+      FR: "Des expérimentations autour du prompting, des workflows augmentés et de l'adoption concrète de l'IA.",
+    },
+    marquee: "From experimentation to application. Curiosity into capability.",
+    tags: ["AI workflows", "Prompting", "Learning design"],
+    year: "2026",
+    visual: "lab",
+    tint: "#FFE0C8",
+    marqueeColor: "#FCD0AE",
+    ink: "#974A20",
+    intro: {
+      paragraphs: [
+        {
+          EN: "An evolving collection of experiments, prototypes, and projects exploring Generative AI, AI-assisted development, automation, and digital learning.",
+          FR: "Une collection évolutive d'expérimentations, de prototypes et de projets autour de l'IA générative, du développement assisté par IA, de l'automatisation et de l'apprentissage numérique.",
+        },
+      ],
+    },
+    context: undefined,
+    intention: undefined,
+    process: undefined,
+    links: [
+      {
+        label: { EN: "GitHub repositories", FR: "Dépôts GitHub" },
+        href: GITHUB_PROFILE,
+        kind: "github",
+      },
+      {
+        label: { EN: "Behance portfolio", FR: "Portfolio Behance" },
+        href: BEHANCE_PROFILE,
+        kind: "behance",
+      },
+      {
+        label: { EN: "SkillxTube", FR: "SkillxTube" },
+        href: "https://skillxtube.com/",
+        kind: "site",
+      },
+      {
+        label: { EN: "SkillxGames", FR: "SkillxGames" },
+        href: "https://skillxgames.com/",
+        kind: "site",
+      },
+    ],
+  },
+  {
+    slug: "archives",
+    number: "05",
     title: "Les Archives Studio",
     eyebrow: { EN: "ARCHIVE · PAST WORK", FR: "ARCHIVES · RÉALISATIONS PASSÉES" },
     summary: {
@@ -792,7 +846,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cimetiere",
-    number: "05",
+    number: "06",
     title: "Le Cimetière",
     eyebrow: { EN: "CEMETERY · DISCONTINUED PROJECTS", FR: "CIMETIÈRE · PROJETS ARRÊTÉS" },
     summary: {
@@ -873,60 +927,6 @@ export const projects: Project[] = [
       },
     ],
     links: [],
-  },
-  {
-    slug: "ai-experiments",
-    number: "06",
-    title: "AI Learning Lab",
-    subtitle: {
-      EN: "From experimentation to application.",
-      FR: "De l'expérimentation à l'application.",
-    },
-    eyebrow: { EN: "AI · LEARNING DESIGN · 2026", FR: "IA · INGÉNIERIE PÉDAGOGIQUE · 2026" },
-    summary: {
-      EN: "A growing collection of experiments around prompting, AI-assisted workflows, learning experiences and practical adoption.",
-      FR: "Des expérimentations autour du prompting, des workflows augmentés et de l'adoption concrète de l'IA.",
-    },
-    marquee: "From experimentation to application. Curiosity into capability.",
-    tags: ["AI workflows", "Prompting", "Learning design"],
-    year: "2026",
-    visual: "lab",
-    tint: "#FFE0C8",
-    marqueeColor: "#FCD0AE",
-    ink: "#974A20",
-    intro: {
-      paragraphs: [
-        {
-          EN: "An evolving collection of experiments, prototypes, and projects exploring Generative AI, AI-assisted development, automation, and digital learning.",
-          FR: "Une collection évolutive d'expérimentations, de prototypes et de projets autour de l'IA générative, du développement assisté par IA, de l'automatisation et de l'apprentissage numérique.",
-        },
-      ],
-    },
-    context: undefined,
-    intention: undefined,
-    process: undefined,
-    links: [
-      {
-        label: { EN: "GitHub repositories", FR: "Dépôts GitHub" },
-        href: GITHUB_PROFILE,
-        kind: "github",
-      },
-      {
-        label: { EN: "Behance portfolio", FR: "Portfolio Behance" },
-        href: BEHANCE_PROFILE,
-        kind: "behance",
-      },
-      {
-        label: { EN: "SkillxTube", FR: "SkillxTube" },
-        href: "https://skillxtube.com/",
-        kind: "site",
-      },
-      {
-        label: { EN: "SkillxGames", FR: "SkillxGames" },
-        href: "https://skillxgames.com/",
-        kind: "site",
-      },
-    ],
   },
 ];
 
