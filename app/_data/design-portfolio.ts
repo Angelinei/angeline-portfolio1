@@ -1777,8 +1777,8 @@ export const designPortfolioText = {
     FR: "Code · TXT",
   },
   "rankbid.0": {
-    EN: "12",
-    FR: "12",
+    EN: "12.2",
+    FR: "12.2",
   },
   "rankbid.1": {
     EN: " · Side project",
@@ -2351,7 +2351,7 @@ export const learnerQuiz = {
   href: "https://skillxtube.com/quiz",
 };
 
-/** SkillxGames, the side project shown after RankBid (section 12.2). */
+/** SkillxGames, the first side project, shown before RankBid (section 12). */
 export const skillxGames = {
   nav: { EN: "SkillxGames", FR: "SkillxGames" } as L,
   label: { EN: "Side project", FR: "Side project" } as L,
@@ -2382,6 +2382,89 @@ export const skillxGames = {
   cta: { EN: "Play on skillxgames.com", FR: "Jouer sur skillxgames.com" } as L,
   href: "https://skillxgames.com/",
   productHunt: { label: { EN: "See it on Product Hunt", FR: "Voir sur Product Hunt" } as L, href: "https://www.producthunt.com/products/skillxgames" },
+  community: {
+    label: { EN: "Zoom · The community", FR: "Zoom · La communauté" } as L,
+    title: { EN: "A pixel town to walk around", FR: "Une ville en pixels où se balader" } as L,
+    text: {
+      EN: "The community is a place, not a forum. Pick a member of the gang (Zip, Skip, Thumby, Buffer, Later, Feed) or play as yourself, then walk with the arrows from door to door. The townsfolk greet you and each line slips in one real tip, wild Brainrots hide in the tall grass, and the bridge east leads to the SkillxTube community.",
+      FR: "La communauté est un lieu, pas un forum. On choisit un membre de la bande (Zip, Skip, Thumby, Buffer, Later, Feed) ou on joue en son nom, puis on se balade aux flèches de porte en porte. Les habitants saluent et chaque réplique glisse un vrai conseil, des Brainrots sauvages se cachent dans les hautes herbes, et le pont à l'est mène à la communauté SkillxTube.",
+    } as L,
+    places: [
+      { name: "Trophy Hall", text: { EN: "The leaderboards", FR: "Les classements" } as L },
+      { name: "Zen Room", text: { EN: "Pixel landscapes, box breathing, focus timer", FR: "Paysages en pixels, respiration carrée, minuteur" } as L },
+      { name: "Arcade Hall", text: { EN: "The Zip & the Gang cabinets", FR: "Les bornes de Zip & la bande" } as L },
+      { name: "Card Room", text: { EN: "Card games, with a sheet to learn each one", FR: "Jeux de cartes, avec une fiche pour apprendre chacun" } as L },
+      { name: "The Feed", text: { EN: "Short skill games, one scroll after another", FR: "Des jeux courts, d'un scroll à l'autre" } as L },
+      { name: "Shop", text: { EN: "Support the game, opening soon", FR: "Soutenir le jeu, bientôt ouvert" } as L },
+    ],
+    townAlt: {
+      EN: "The SkillXGames town: Zip stands between the Trophy Hall and the Arcade Hall, Thumby says “Limited time!”, a fountain and a “For sale” billboard",
+      FR: "La ville de SkillXGames : Zip entre le Trophy Hall et l'Arcade Hall, Thumby lance « Limited time! », une fontaine et un panneau « For sale »",
+    } as L,
+    hallTitle: { EN: "The Trophy Hall", FR: "Le Trophy Hall" } as L,
+    hallText: {
+      EN: "Four boards in one hall: the community's champions, you against your friends with a challenge link, your own records, and the big match SkillxTube vs SkillXGames. Free, no account needed.",
+      FR: "Quatre classements dans une seule salle : les champions de la communauté, soi contre ses amis avec un lien de défi, ses propres records, et le grand match SkillxTube vs SkillXGames. Gratuit, sans compte.",
+    } as L,
+    hallAlt: {
+      EN: "The Trophy Hall: trophies under glass and team jerseys on a pixel gallery wall, with how the boards work",
+      FR: "Le Trophy Hall : trophées sous verre et maillots d'équipe sur un mur de galerie en pixels, avec le fonctionnement des classements",
+    } as L,
+    brands: {
+      EN: "Brands get a place too: 4 town billboards and sponsor cells on the game pages, which never change a score.",
+      FR: "Les marques ont aussi leur place : 4 panneaux en ville et des cases sponsor sur les pages de jeu, qui ne changent jamais un score.",
+    } as L,
+  },
+  arcade: {
+    label: { EN: "The Arcade · SkillxTube bridge", FR: "L'Arcade · pont SkillxTube" } as L,
+    title: { EN: "Zip & the Gang, on both sites", FR: "Zip & la bande, sur les deux sites" } as L,
+    text: {
+      EN: "The whole SkillxTube Arcade lives in SkillXGames too: 10 logic cabinets set in the Zip & the Gang world, each training one skill, from deduction to planning, with the very same rules. Every cabinet keeps the same address on both sites, so links go both ways.",
+      FR: "Toute l'Arcade de SkillxTube vit aussi dans SkillXGames : 10 bornes de logique dans l'univers de Zip & la bande, chacune entraîne une compétence, de la déduction à la planification, avec exactement les mêmes règles. Chaque borne garde la même adresse sur les deux sites, donc les liens vont dans les deux sens.",
+    } as L,
+    cabinets: [
+      "Zip vs the Brainrot",
+      "Thumby's Way Out",
+      "Skill Stack",
+      "Later's Queue",
+      "Skip's Countdown",
+      "Buffer Blocks",
+      "Spark Circuit",
+      "Paper Zip.io",
+      "Zip 2048",
+      "Thumby's Jackpot",
+    ],
+    steps: [
+      {
+        title: { EN: "Play here", FR: "Jouer ici" } as L,
+        text: { EN: "Every cabinet runs right in SkillXGames. No account, no install.", FR: "Chaque borne tourne directement dans SkillXGames. Sans compte, sans installation." } as L,
+      },
+      {
+        title: { EN: "Beat SkillxTube", FR: "Battre SkillxTube" } as L,
+        text: {
+          EN: "Each run is dealt and checked by SkillxTube, so every score is fair, and it counts for Team SkillXGames on the shared board.",
+          FR: "Chaque partie est distribuée et vérifiée par SkillxTube, donc chaque score est juste, et elle compte pour l'équipe SkillXGames sur le classement commun.",
+        } as L,
+      },
+      {
+        title: { EN: "Learn the skill", FR: "Apprendre la compétence" } as L,
+        text: {
+          EN: "Each game trains one skill, and SkillxTube turns it into a learning path you can prove. Sign-in always goes through SkillxTube.",
+          FR: "Chaque jeu entraîne une compétence, et SkillxTube en fait un parcours d'apprentissage qu'on peut prouver. La connexion passe toujours par SkillxTube.",
+        } as L,
+      },
+    ],
+    arcadeAlt: {
+      EN: "The Arcade page: ten colourful pixel cabinets with the gang playing, “Zip & the Gang” and how it works",
+      FR: "La page Arcade : dix bornes en pixels colorées avec la bande qui joue, « Zip & the Gang » et le fonctionnement",
+    } as L,
+    bridgeAlt: {
+      EN: "The bridge band: “SkillXTube × SkillXGames” with Play here, Beat SkillXTube and Learn the skill",
+      FR: "Le bandeau du pont : « SkillXTube × SkillXGames » avec Play here, Beat SkillXTube et Learn the skill",
+    } as L,
+    cta: { EN: "Open the Arcade", FR: "Ouvrir l'Arcade" } as L,
+    href: "https://skillxgames.com/arcade",
+  },
   shots: [
     {
       src: "/projects/skillxgames/01-hero.aece3f2689.webp",
