@@ -60,6 +60,10 @@ import archivistCard from "../_assets/quiz/archivist.webp";
 import sprinterCard from "../_assets/quiz/sprinter.webp";
 import explorerCard from "../_assets/quiz/explorer.webp";
 import builderCard from "../_assets/quiz/builder.webp";
+import sxgTown from "../_assets/skillxgames/town.webp";
+import sxgArcade from "../_assets/skillxgames/arcade.webp";
+import sxgTrophyHall from "../_assets/skillxgames/trophy-hall.webp";
+import sxgBridge from "../_assets/skillxgames/bridge.webp";
 
 const quizCards = { archivist: archivistCard, sprinter: sprinterCard, explorer: explorerCard, builder: builderCard };
 import communitySpace from "../_assets/design/community-space.webp";
@@ -67,6 +71,7 @@ import bugReport from "../_assets/design/bug-report.webp";
 
 export function DesignPortfolio({ lang }: { lang: Lang }) {
   const t = (key: keyof typeof designPortfolioText) => designPortfolioText[key][lang];
+  const { community: c, arcade: a } = skillxGames;
   return (
     <div
       className={`${nunito.variable} ${jetbrainsMono.variable}`}
@@ -2250,7 +2255,117 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
       {/* 11.3 GUIDES */}
       <LinkCardsSection id="guides" number="11.3" lang={lang} {...guides} />
 
-      {/* 12 RANKBID */}
+      {/* 12 SKILLXGAMES */}
+      <section id="skillxgames" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "56px 32px 24px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px" }}>
+          <div style={{ flex: "1 1 320px", minWidth: "0", maxWidth: "720px" }}>
+            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <span style={{ color: "#C62828" }}>12</span> · {skillxGames.label[lang]}
+            </div>
+            <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{skillxGames.title[lang]}</h2>
+            <p style={{ margin: "8px 0 0", fontSize: "18px", fontWeight: "800", color: "#C62828" }}>{skillxGames.subtitle[lang]}</p>
+            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{skillxGames.text[lang]}</p>
+            <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {skillxGames.facts.map((fact) => (
+                <li key={fact.EN} style={{ padding: "8px 14px", borderRadius: "999px", background: "#F4F2EE", fontSize: "13px", lineHeight: "1.4", color: "#1A1A1A" }}>
+                  {fact[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a href={skillxGames.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+              {skillxGames.cta[lang]} ↗
+            </a>
+            <a href={skillxGames.productHunt.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#FF6154", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+              {skillxGames.productHunt.label[lang]} ↗
+            </a>
+          </div>
+        </div>
+        <ul style={{ margin: "24px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px", alignItems: "start" }}>
+          {skillxGames.shots.map((shot) => (
+            <li key={shot.src}>
+              <figure style={{ margin: "0" }}>
+                <Image src={shot.src} alt={shot.alt[lang]} width={shot.width} height={shot.height} loading="lazy" sizes="(min-width: 1200px) 370px, (min-width: 700px) 45vw, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
+                <figcaption style={{ marginTop: "8px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                  {shot.caption[lang]}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        {/* Zoom on the community: the walkable town and the Trophy Hall */}
+        <div style={{ marginTop: "32px", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "flex-start" }}>
+            <div style={{ flex: "1 1 280px", minWidth: "0" }}>
+              <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>{c.label[lang]}</div>
+              <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>{c.title[lang]}</div>
+              <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>{c.text[lang]}</p>
+              <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "grid", gap: "8px" }}>
+                {c.places.map((place) => (
+                  <li key={place.name} style={{ fontSize: "14px", lineHeight: "1.45", color: "#4A4943" }}>
+                    <span style={{ fontWeight: "800", color: "#1A1A1A" }}>{place.name}</span> · {place.text[lang]}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div style={{ flex: "999 1 460px", minWidth: "0" }}>
+              <Image src={sxgTown} alt={c.townAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 760px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
+            </div>
+          </div>
+          <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center" }}>
+            <div style={{ flex: "999 1 460px", minWidth: "0" }}>
+              <Image src={sxgTrophyHall} alt={c.hallAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 640px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
+            </div>
+            <div style={{ flex: "1 1 280px", minWidth: "0" }}>
+              <div style={{ fontSize: "18px", fontWeight: "900" }}>{c.hallTitle[lang]}</div>
+              <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>{c.hallText[lang]}</p>
+              <p style={{ margin: "12px 0 0", fontSize: "14px", lineHeight: "1.55", color: "#4A4943" }}>{c.brands[lang]}</p>
+            </div>
+          </div>
+        </div>
+        {/* The Arcade and the SkillxTube bridge */}
+        <div style={{ marginTop: "24px", border: "0.5px solid #D8D6D0", borderRadius: "12px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "flex-start" }}>
+            <div style={{ flex: "1 1 280px", minWidth: "0" }}>
+              <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.06em" }}>{a.label[lang]}</div>
+              <div style={{ marginTop: "8px", fontSize: "22px", fontWeight: "900", lineHeight: "1.2" }}>{a.title[lang]}</div>
+              <p style={{ margin: "8px 0 0", fontSize: "15px", lineHeight: "1.6", color: "#4A4943" }}>{a.text[lang]}</p>
+              <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                {a.cabinets.map((cabinet) => (
+                  <li key={cabinet} style={{ padding: "6px 10px", borderRadius: "999px", background: "#F4F2EE", fontSize: "12px", color: "#1A1A1A" }}>
+                    {cabinet}
+                  </li>
+                ))}
+              </ul>
+              <a href={a.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", marginTop: "16px", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
+                {a.cta[lang]} ↗
+              </a>
+            </div>
+            <div style={{ flex: "999 1 460px", minWidth: "0" }}>
+              <Image src={sxgArcade} alt={a.arcadeAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 760px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
+            </div>
+          </div>
+          <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center" }}>
+            <div style={{ flex: "999 1 460px", minWidth: "0" }}>
+              <Image src={sxgBridge} alt={a.bridgeAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 640px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }} />
+            </div>
+            <ol style={{ flex: "1 1 280px", minWidth: "0", margin: "0", padding: "0", listStyle: "none", display: "grid", gap: "14px" }}>
+              {a.steps.map((step, i) => (
+                <li key={step.title.EN} style={{ display: "flex", gap: "12px" }}>
+                  <span aria-hidden="true" style={{ flex: "0 0 28px", height: "28px", borderRadius: "8px", background: "#1A1A1A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: "800" }}>
+                    {i + 1}
+                  </span>
+                  <p style={{ margin: "3px 0 0", fontSize: "14px", lineHeight: "1.55", color: "#4A4943" }}>
+                    <span style={{ fontWeight: "800", color: "#1A1A1A" }}>{step.title[lang]}.</span> {step.text[lang]}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+      {/* 12.2 RANKBID */}
       <section id="side" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "56px 32px 96px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
           <div style={{ flex: "1 1 320px", minWidth: "0" }}>
@@ -2331,41 +2446,6 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
         </div>
-      </section>
-      {/* 12.2 SKILLXGAMES */}
-      <section id="skillxgames" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px" }}>
-          <div style={{ flex: "1 1 320px", minWidth: "0", maxWidth: "720px" }}>
-            <div style={{ fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "12px", color: "#5F5E58", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              <span style={{ color: "#C62828" }}>12.2</span> · {skillxGames.label[lang]}
-            </div>
-            <h2 style={{ margin: "12px 0 0", fontSize: "36px", lineHeight: "1.1", fontWeight: "900" }}>{skillxGames.title[lang]}</h2>
-            <p style={{ margin: "8px 0 0", fontSize: "18px", fontWeight: "800", color: "#C62828" }}>{skillxGames.subtitle[lang]}</p>
-            <p style={{ margin: "16px 0 0", fontSize: "17px", lineHeight: "1.6", color: "#4A4943" }}>{skillxGames.text[lang]}</p>
-            <ul style={{ margin: "16px 0 0", padding: "0", listStyle: "none", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-              {skillxGames.facts.map((fact) => (
-                <li key={fact.EN} style={{ padding: "8px 14px", borderRadius: "999px", background: "#F4F2EE", fontSize: "13px", lineHeight: "1.4", color: "#1A1A1A" }}>
-                  {fact[lang]}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <a href={skillxGames.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", minHeight: "44px", padding: "0 20px", borderRadius: "999px", background: "#1A1A1A", color: "#FFFFFF", fontWeight: "800", fontSize: "14px", textDecoration: "none" }}>
-            {skillxGames.cta[lang]} ↗
-          </a>
-        </div>
-        <ul style={{ margin: "24px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px", alignItems: "start" }}>
-          {skillxGames.shots.map((shot) => (
-            <li key={shot.src}>
-              <figure style={{ margin: "0" }}>
-                <Image src={shot.src} alt={shot.alt[lang]} width={shot.width} height={shot.height} loading="lazy" sizes="(min-width: 1200px) 370px, (min-width: 700px) 45vw, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
-                <figcaption style={{ marginTop: "8px", fontFamily: "var(--font-jbmono), ui-monospace, monospace", fontSize: "11px", color: "#5F5E58", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                  {shot.caption[lang]}
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
       </section>
       {/* BEHANCE */}
       <section id="behance" style={{ scrollMarginTop: "96px", maxWidth: "1200px", margin: "0 auto", padding: "0 32px 96px" }}>
