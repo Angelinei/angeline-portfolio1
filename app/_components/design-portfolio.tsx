@@ -2313,6 +2313,17 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
               <Image src={sxgTown} alt={c.townAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 760px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
             </div>
           </div>
+          <ul style={{ margin: "24px 0 0", padding: "0", listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "16px" }}>
+            {c.live.map((item) => (
+              <li key={item.title.EN} style={{ padding: "16px 18px", borderRadius: "12px", background: "#F4F2EE" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "16px", fontWeight: "900" }}>
+                  <span aria-hidden="true" style={{ flex: "0 0 8px", height: "8px", borderRadius: "999px", background: "#22C55E" }} />
+                  {item.title[lang]}
+                </div>
+                <p style={{ margin: "6px 0 0", fontSize: "14px", lineHeight: "1.55", color: "#4A4943" }}>{item.text[lang]}</p>
+              </li>
+            ))}
+          </ul>
           <div style={{ marginTop: "24px", display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "center" }}>
             <div style={{ flex: "999 1 460px", minWidth: "0" }}>
               <Image src={sxgTrophyHall} alt={c.hallAlt[lang]} loading="lazy" sizes="(min-width: 1200px) 640px, calc(100vw - 64px)" style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px", border: "0.5px solid #D8D6D0" }} />
