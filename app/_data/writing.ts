@@ -4,6 +4,7 @@
  * Replace an entry (and its file) to swap a text.
  */
 export const writing = [
+  "from-ai-drawing-to-299-game-arcade",
   "the-education-system-didnt-prepare-me",
   "the-art-of-writing-rules-for-ai-agents",
   "dream-team",
