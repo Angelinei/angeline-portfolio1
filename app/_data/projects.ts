@@ -94,8 +94,8 @@ export const projects: Project[] = [
       FR: "PRODUIT DIGITAL · EDTECH · 2026",
     },
     summary: {
-      EN: "An AI-powered learning experience that transforms online videos into structured learning paths, notes and exercises.",
-      FR: "Un produit EdTech qui explore comment l'IA peut transformer des vidéos en parcours d'apprentissage actifs.",
+      EN: "SkillxTube turns YouTube videos into 3, 7 or 14-day learning paths: one daily challenge, and proof that unlocks the next day. Free since November 2026.",
+      FR: "SkillxTube transforme les vidéos YouTube en parcours de 3, 7 ou 14 jours : un défi par jour, et une preuve qui débloque le jour suivant. Gratuit depuis novembre 2026.",
     },
     marquee: 'From "watch later" to "I made this"',
     tags: ["AI", "EdTech", "Product design", "Next.js"],
@@ -107,8 +107,8 @@ export const projects: Project[] = [
     intro: {
       paragraphs: [
         {
-          EN: "An AI-powered learning platform designed to turn online videos into structured, engaging learning experiences.",
-          FR: "Une plateforme d'apprentissage propulsée par l'IA, conçue pour transformer des vidéos en ligne en expériences d'apprentissage structurées et engageantes.",
+          EN: "Turn any YouTube video into real-life projects. SkillxTube builds a 3, 7 or 14-day learning path around what you want to learn: one lesson a day, one challenge, and proof before the next day opens.",
+          FR: "Transformer n'importe quelle vidéo YouTube en vrais projets. SkillxTube construit un parcours de 3, 7 ou 14 jours autour de ce qu'on veut apprendre : une leçon par jour, un défi, et une preuve avant que le jour suivant s'ouvre.",
         },
         {
           EN: "Watch. Understand. Practice. Keep going.",
@@ -116,24 +116,46 @@ export const projects: Project[] = [
         },
       ],
     },
-    context: undefined,
-    intention: {
-      list: [
+    context: {
+      paragraphs: [
         {
-          EN: "Transform video content into learning resources",
-          FR: "Transformer des contenus vidéo en ressources d'apprentissage",
-        },
-        {
-          EN: "Build structured learning paths with summaries and exercises",
-          FR: "Construire des parcours structurés avec résumés et exercices",
-        },
-        {
-          EN: "Make learning more engaging through gamification",
-          FR: "Rendre l'apprentissage plus engageant grâce à la gamification",
+          EN: "Most learning on YouTube ends in a “watch later” list. SkillxTube is the serious side of the SkillX family: you learn a skill in days, not months. Its games grew into their own site, SkillXGames, so the learning app could stay focused.",
+          FR: "La plupart des apprentissages sur YouTube finissent dans une liste « à regarder plus tard ». SkillxTube est le côté sérieux de la famille SkillX : on apprend une compétence en quelques jours, pas en quelques mois. Ses jeux sont devenus un site à part, SkillXGames, pour que l'app d'apprentissage reste concentrée.",
         },
       ],
     },
-    process: undefined,
+    intention: {
+      list: [
+        {
+          EN: "Free learning since November 2, 2026: every ready path, every day of it, daily challenges and proof, quizzes and progress. No plan, no trial, no card",
+          FR: "Un apprentissage gratuit depuis le 2 novembre 2026 : tous les parcours prêts, chacun de leurs jours, défis quotidiens et preuves, quiz et progression. Sans abonnement, sans essai, sans carte",
+        },
+        {
+          EN: "SkillXP, earned by learning and playing, unlocks the guides and templates of The Library; optional SkillXP packs are the only learner purchase",
+          FR: "Les SkillXP, gagnés en apprenant et en jouant, débloquent les guides et modèles de la Library ; des packs de SkillXP optionnels sont le seul achat côté apprenant",
+        },
+        {
+          EN: "The Arcade, the Community and the Wall of Fame keep learners coming back, with Zip and the crew as guides",
+          FR: "L'Arcade, la Communauté et le Wall of Fame font revenir les apprenants, avec Zip et la bande comme guides",
+        },
+        {
+          EN: "Brands pay for reviewed logo cells around the site, and affiliates who bring a brand earn 25% of what it pays for 12 months",
+          FR: "Les marques paient des emplacements logo vérifiés sur le site, et les affiliés qui amènent une marque touchent 25 % de ce qu'elle paie pendant 12 mois",
+        },
+      ],
+    },
+    process: {
+      list: [
+        {
+          EN: "Designed and built solo with AI, from the crew of characters to the learning paths",
+          FR: "Conçu et construit en solo avec l'IA, de la bande de personnages aux parcours d'apprentissage",
+        },
+        {
+          EN: "Next.js, Supabase, Stripe and Resend, deployed on Vercel",
+          FR: "Next.js, Supabase, Stripe et Resend, déployé sur Vercel",
+        },
+      ],
+    },
     links: [
       {
         label: { EN: "Visit skillxtube.com", FR: "Visiter skillxtube.com" },
@@ -149,8 +171,8 @@ export const projects: Project[] = [
     subtitle: { EN: "Small games. Sharp minds.", FR: "Petits jeux. Esprits vifs." },
     eyebrow: { EN: "GAME DESIGN · WEB · 2026", FR: "GAME DESIGN · WEB · 2026" },
     summary: {
-      EN: "A companion project to SkillxTube: a modern arcade of bite-sized games for memory, puzzles and logic, played in minutes in the browser.",
-      FR: "Un projet connexe à SkillxTube : une arcade moderne de mini-jeux de mémoire, de puzzle et de logique, qui se jouent en quelques minutes dans le navigateur.",
+      EN: "The playful side of SkillxTube: an AI-powered arcade of 299 short skill games across 13 universes, with a pixel town, seasons and a crew of mascots.",
+      FR: "Le côté ludique de SkillxTube : une arcade de 299 jeux de compétences courts, propulsée par l'IA, répartie en 13 univers, avec une ville en pixels, des saisons et une bande de mascottes.",
     },
     marquee: "Small games. Sharp minds. Insert coin to continue.",
     tags: ["Game design", "Next.js", "Tailwind CSS", "Vercel"],
@@ -162,12 +184,8 @@ export const projects: Project[] = [
     intro: {
       paragraphs: [
         {
-          EN: "SkillXGames is a modern arcade of bite-sized challenges for memory, puzzles and logic. Every game takes minutes, plays in the browser and asks for nothing but focus.",
-          FR: "SkillXGames est une arcade moderne de petits défis de mémoire, de puzzle et de logique. Chaque jeu dure quelques minutes, se joue dans le navigateur et ne demande rien d'autre que de la concentration.",
-        },
-        {
-          EN: "No sign-up, no downloads, just play.",
-          FR: "Pas d'inscription, pas de téléchargement : on joue.",
+          EN: "SkillXGames is an AI lab in the spirit of the old web arcades: short skill games that play in the browser, where the games are allowed to be weird and the only goal is to make people play, laugh and share.",
+          FR: "SkillXGames est un laboratoire IA dans l'esprit des arcades web d'autrefois : des jeux de compétences courts qui se jouent dans le navigateur, où les jeux ont le droit d'être bizarres et où le seul but est de faire jouer, rire et partager.",
         },
         {
           EN: "Listed on Product Hunt: “A modern arcade of short, skill-based mini-games.”",
@@ -178,52 +196,52 @@ export const projects: Project[] = [
     context: {
       paragraphs: [
         {
-          EN: "A project born next to SkillxTube. Where SkillxTube turns videos into learning, SkillXGames trains the skills underneath (memory, reasoning, focus) in short sessions.",
-          FR: "Un projet né à côté de SkillxTube. Là où SkillxTube transforme les vidéos en apprentissage, SkillXGames entraîne les compétences qui sont dessous (mémoire, raisonnement, concentration) en sessions courtes.",
+          EN: "The arcade was born inside SkillxTube, with one mini-game, Zip vs the Brainrot, in the Community space. Games want to be shared and played in 60 seconds; a learning app wants focus. So the two jobs split: SkillxTube stays the serious one, SkillXGames became the lab.",
+          FR: "L'arcade est née dans SkillxTube, avec un seul mini-jeu, Zip vs the Brainrot, dans l'espace Communauté. Les jeux veulent être partagés et joués en 60 secondes ; une app d'apprentissage veut de la concentration. Les deux rôles se sont donc séparés : SkillxTube reste le sérieux, SkillXGames est devenu le labo.",
         },
       ],
     },
     intention: {
       list: [
         {
-          EN: "Six categories: Memory, Puzzle, Logic and Quick Games, plus Adventure (real-life skills, played) and Skillz (pro skills, game speed)",
-          FR: "Six catégories : Mémoire, Puzzle, Logique et Jeux rapides, plus Aventure (des compétences de la vraie vie, en jeu) et Skillz (des compétences pro, à vitesse de jeu)",
+          EN: "299 games in 13 universes: Memory, Puzzle, Logic, Quick Games, Adventure, Skillz, Social Media, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room and Seasonal",
+          FR: "299 jeux dans 13 univers : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Skillz, Réseaux sociaux, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room et Saisonnier",
         },
         {
-          EN: "40 games in the catalogue, 36 of them playable, from a one-minute jackpot to a full game of chess",
-          FR: "40 jeux au catalogue, dont 36 jouables, d'un jackpot d'une minute à une vraie partie d'échecs",
+          EN: "Real skills turned into games: spot a con, read a chart, manage a first paycheck, write a better hook, survive absurd paperwork",
+          FR: "De vraies compétences transformées en jeux : repérer une arnaque, lire un graphique, gérer un premier salaire, écrire une meilleure accroche, survivre à une paperasse absurde",
         },
         {
-          EN: "Real skills turned into games: spot a phishing email, survive a monthly budget, write a better hook, read a chart, give first aid",
-          FR: "De vraies compétences transformées en jeux : repérer un e-mail de phishing, tenir un budget du mois, écrire une meilleure accroche, lire un graphique, faire les gestes de premiers secours",
+          EN: "One game page for every game: a start screen, how to play, full screen and a Record button that turns a run into a clip to share",
+          FR: "Une page par jeu : écran de départ, règles, plein écran et un bouton Record qui transforme une partie en clip à partager",
         },
         {
-          EN: "Zip & the Gang: the 10 cabinets of the SkillxTube Arcade, played natively, with both sites linking to each other",
-          FR: "Zip & la bande : les 10 bornes de l'Arcade SkillxTube, jouables directement, les deux sites se renvoyant l'un à l'autre",
+          EN: "A world to come back to: the pixel town with its dragon companion, a seasonal village, collectible crew cards unlocked with SkillXP, and the Trophy Hall",
+          FR: "Un monde où revenir : la ville en pixels et son dragon compagnon, un village saisonnier, des cartes de la bande à collectionner avec les SkillXP, et le Trophy Hall",
         },
         {
-          EN: "A card school for FreeCell, Klondike, Hearts, Gin Rummy and Spades: rules, a turn step by step and best-move puzzles",
-          FR: "Une école des cartes pour FreeCell, Klondike, Dame de pique, Gin Rummy et Spades : règles, un tour pas à pas et des puzzles du meilleur coup",
-        },
-        {
-          EN: "Coming next: Pattern Recall, Lights Off, Number Path and Colour Clash",
-          FR: "À venir : Pattern Recall, Lights Off, Number Path et Colour Clash",
+          EN: "Zip & the Gang: the SkillxTube Arcade cabinets played natively, with both sites linking to each other",
+          FR: "Zip & la bande : les bornes de l'Arcade SkillxTube jouables directement, les deux sites se renvoyant l'un à l'autre",
         },
       ],
     },
     process: {
       list: [
         {
-          EN: "An arcade art direction: pixel fonts (Pixelify Sans, Silkscreen), thick ink outlines, hard shadows and four accents (coral, cobalt, sun, mint), one per category",
-          FR: "Une direction artistique arcade : typos pixel (Pixelify Sans, Silkscreen), contours encrés épais, ombres franches et quatre accents (corail, cobalt, soleil, menthe), un par catégorie",
+          EN: "Design first, code second: the arcade cabinet, the seasons and the crew were built as reusable pieces, then the games",
+          FR: "Le design d'abord, le code ensuite : la borne d'arcade, les saisons et la bande ont été construites comme des pièces réutilisables, puis les jeux",
         },
         {
-          EN: "A data-driven catalogue: adding a game is one entry, and cards, counters, search and category filters follow",
-          FR: "Un catalogue piloté par les données : ajouter un jeu tient en une entrée, les cartes, compteurs, la recherche et les filtres suivent",
+          EN: "An arcade art direction: pixel fonts, thick ink outlines, hard shadows and bright accents",
+          FR: "Une direction artistique arcade : typos pixel, contours encrés épais, ombres franches et accents vifs",
         },
         {
-          EN: "Built with Next.js, React, TypeScript and Tailwind CSS, deployed on Vercel",
-          FR: "Développé avec Next.js, React, TypeScript et Tailwind CSS, déployé sur Vercel",
+          EN: "A data-driven catalogue: adding a game is one entry, and counters, search and filters follow",
+          FR: "Un catalogue piloté par les données : ajouter un jeu tient en une entrée, les compteurs, la recherche et les filtres suivent",
+        },
+        {
+          EN: "Built solo with AI, on Next.js and Tailwind CSS, deployed on Vercel, installable as an app",
+          FR: "Construit en solo avec l'IA, sur Next.js et Tailwind CSS, déployé sur Vercel, installable comme une app",
         },
       ],
     },
@@ -258,12 +276,7 @@ export const projects: Project[] = [
     },
     links: [
       {
-        label: { EN: "Play on skillxgames.vercel.app", FR: "Jouer sur skillxgames.vercel.app" },
-        href: "https://skillxgames.vercel.app/",
-        kind: "site",
-      },
-      {
-        label: { EN: "SkillxGames", FR: "SkillxGames" },
+        label: { EN: "Play on skillxgames.com", FR: "Jouer sur skillxgames.com" },
         href: "https://skillxgames.com/",
         kind: "site",
       },
