@@ -1089,8 +1089,8 @@ export const designPortfolioText = {
     FR: "For makers : gratuit, ou on génère",
   },
   "pricing.3": {
-    EN: "First a 7-step credit slider, then three Orchestra-style cards. Today, two cards on a dark background: the library is free, you only pay to generate a custom path.",
-    FR: "D'abord un curseur de crédits à 7 crans, puis trois cartes façon Orchestra. Aujourd'hui, deux cartes sur fond sombre : la bibliothèque est gratuite, on ne paie que pour générer un parcours sur mesure.",
+    EN: "First a 7-step credit slider, then three Orchestra-style cards, then two cards on a dark background: the library free, a fee only to generate a custom path. Since November 2, 2026, learning is free: no plan, no card, and optional SkillXP packs are the only purchase.",
+    FR: "D'abord un curseur de crédits à 7 crans, puis trois cartes façon Orchestra, puis deux cartes sur fond sombre : la bibliothèque gratuite, un paiement seulement pour générer un parcours sur mesure. Depuis le 2 novembre 2026, apprendre est gratuit : sans abonnement, sans carte, et des packs de SkillXP optionnels sont le seul achat.",
   },
   "pricing.4": {
     EN: "The Generate card carries a 3, 7 or 14-day picker, and the pay once / monthly toggle stays on top.",
@@ -1165,8 +1165,8 @@ export const designPortfolioText = {
     FR: "« Recommend once. Get paid every month for a year. » La candidature se fait dans un chat : nom, canal de diffusion, confirmation des 18 ans et des conditions, puis un bouton vers l'espace affilié.",
   },
   "affiliates.4": {
-    EN: "40% of every payment for 12 months. The affiliate space tracks clicks, sales, conversion and commissions, with a 10% code to give away.",
-    FR: "40 % de chaque paiement pendant 12 mois. L'espace affilié suit clics, ventes, conversion et commissions, avec un code de 10 % à offrir.",
+    EN: "First 40% of every payment for 12 months, with a 10% code to give away; the affiliate space tracks clicks, sales, conversion and commissions. Since November 2, 2026, affiliates bring brands and earn 25% of what a brand pays for 12 months.",
+    FR: "D'abord 40 % de chaque paiement pendant 12 mois, avec un code de 10 % à offrir ; l'espace affilié suit clics, ventes, conversion et commissions. Depuis le 2 novembre 2026, les affiliés amènent des marques et touchent 25 % de ce qu'une marque paie pendant 12 mois.",
   },
   "affiliates.img0": {
     EN: "Become an affiliate chat window asking for the applicant's name",
@@ -2363,8 +2363,8 @@ export const skillxGames = {
   } as L,
   facts: [
     {
-      EN: "299 games in 13 universes, from Memory to Absurd Bureaucracy",
-      FR: "299 jeux dans 13 univers, de la Mémoire à l'Absurd Bureaucracy",
+      EN: "299 games in 14 universes, from Memory to Edu Casino",
+      FR: "299 jeux dans 14 univers, de la Mémoire à l'Edu Casino",
     },
     {
       EN: "One page per game, with a Record button to share a run as a clip",
@@ -2386,43 +2386,47 @@ export const skillxGames = {
     label: { EN: "Zoom · The community", FR: "Zoom · La communauté" } as L,
     title: { EN: "A pixel town to walk around", FR: "Une ville en pixels où se balader" } as L,
     text: {
-      EN: "The community is a place, not a forum. Pick a member of the gang (Zip, Skip, Thumby, Buffer, Later, Feed) or play as yourself, then walk with the arrows from door to door. The townsfolk greet you and each line slips in one real tip, wild Brainrots hide in the tall grass, and the bridge east crosses to the SkillxTube town with the same character.",
-      FR: "La communauté est un lieu, pas un forum. On choisit un membre de la bande (Zip, Skip, Thumby, Buffer, Later, Feed) ou on joue en son nom, puis on se balade aux flèches de porte en porte. Les habitants saluent et chaque réplique glisse un vrai conseil, des Brainrots sauvages se cachent dans les hautes herbes, et le pont à l'est passe dans la ville SkillxTube avec le même personnage.",
+      EN: "The community is a place, not a forum. Pick a member of the crew (Zip, Skip, Thumby, Buffer, Later, Ding, CC, Feed) or play as yourself, then walk from door to door. Chat with the players in town, fish for news at Greg's Kiosk, raise a dragon by winning games, and cross the bridge east to the SkillxTube town with the same character.",
+      FR: "La communauté est un lieu, pas un forum. On choisit un membre de la bande (Zip, Skip, Thumby, Buffer, Later, Ding, CC, Feed) ou on joue en son nom, puis on se balade de porte en porte. On discute avec les joueurs présents, on pêche les nouvelles au kiosque de Greg, on élève un dragon en gagnant des parties, et on passe le pont à l'est vers la ville SkillxTube avec le même personnage.",
     } as L,
     places: [
       { name: "Trophy Hall", text: { EN: "The leaderboards", FR: "Les classements" } as L },
-      { name: "Zen Room", text: { EN: "Pixel landscapes, box breathing, focus timer", FR: "Paysages en pixels, respiration carrée, minuteur" } as L },
       { name: "Arcade Hall", text: { EN: "The Zip & the Gang cabinets", FR: "Les bornes de Zip & la bande" } as L },
       { name: "Card Room", text: { EN: "Card games, with a sheet to learn each one", FR: "Jeux de cartes, avec une fiche pour apprendre chacun" } as L },
+      { name: "Dragon Nest", text: { EN: "Pick an egg, raise your dragon by winning games", FR: "Choisir un œuf, élever son dragon en gagnant des parties" } as L },
+      { name: "The Lodge", text: { EN: "The seasonal games, each event once a year", FR: "Les jeux saisonniers, chaque événement une fois par an" } as L },
+      { name: "Zen Room", text: { EN: "Pixel landscapes, box breathing, focus timer", FR: "Paysages en pixels, respiration carrée, minuteur" } as L },
+      { name: "Edu Casino", text: { EN: "Fake chips, real maths (18+)", FR: "Faux jetons, vraies maths (18+)" } as L },
+      { name: "Shop · The Library", text: { EN: "SkillxTube's guides, some unlocked with SkillXP", FR: "Les guides de SkillxTube, certains débloqués avec les SkillXP" } as L },
+      { name: "Town Hall", text: { EN: "Every game in town, wing by wing", FR: "Tous les jeux de la ville, aile par aile" } as L },
       { name: "The Feed", text: { EN: "Short skill games, one scroll after another", FR: "Des jeux courts, d'un scroll à l'autre" } as L },
-      { name: "Shop", text: { EN: "Support the game, opening soon", FR: "Soutenir le jeu, bientôt ouvert" } as L },
     ],
     townAlt: {
-      EN: "The SkillXGames town: Zip stands between the Trophy Hall and the Arcade Hall, Thumby says “Limited time!”, a fountain and a “For sale” billboard",
-      FR: "La ville de SkillXGames : Zip entre le Trophy Hall et l'Arcade Hall, Thumby lance « Limited time! », une fontaine et un panneau « For sale »",
+      EN: "The SkillXGames town: Zip in front of the Trophy Hall and the Arcade Hall, a player in a cap, the Feed billboard, a fountain and a “For sale” sign",
+      FR: "La ville de SkillXGames : Zip devant le Trophy Hall et l'Arcade Hall, un joueur en casquette, le panneau du Feed, une fontaine et un panneau « For sale »",
     } as L,
     hallTitle: { EN: "The Trophy Hall", FR: "Le Trophy Hall" } as L,
     hallText: {
-      EN: "Four boards in one hall: the community's champions, you against your friends with a challenge link, your own records, and the big match SkillxTube vs SkillXGames. Free, no account needed.",
-      FR: "Quatre classements dans une seule salle : les champions de la communauté, soi contre ses amis avec un lien de défi, ses propres records, et le grand match SkillxTube vs SkillXGames. Gratuit, sans compte.",
+      EN: "The Hall of wins: every win earns its place behind glass, and the champion cup takes the spotlight. Record holders, a board to challenge friends, your best on every game, the live SkillxTube vs SkillXGames board, and SkillXP for this month's top 3. No account needed.",
+      FR: "Le Hall of wins : chaque victoire gagne sa place sous verre, et la coupe du champion prend la lumière. Les détenteurs de records, un classement pour défier ses amis, son meilleur score sur chaque jeu, le classement en direct SkillxTube vs SkillXGames, et des SkillXP pour le top 3 du mois. Sans compte.",
     } as L,
     hallAlt: {
-      EN: "The Trophy Hall: trophies under glass and team jerseys on a pixel gallery wall, with how the boards work",
-      FR: "Le Trophy Hall : trophées sous verre et maillots d'équipe sur un mur de galerie en pixels, avec le fonctionnement des classements",
+      EN: "The Trophy Hall: a pixel gallery of trophies under glass and team jerseys, the champion cup in a spotlight above a red carpet",
+      FR: "Le Trophy Hall : une galerie en pixels de trophées sous verre et de maillots d'équipe, la coupe du champion sous un projecteur au-dessus d'un tapis rouge",
     } as L,
     live: [
       {
         title: { EN: "A multiplayer town", FR: "Une ville multijoueur" } as L,
         text: {
-          EN: "Other players show up live and walk next to you, in rooms of 40 (Town #1, #2…). Only the character, its skin and its tile are shared: no names, no text, and every incoming message is checked.",
-          FR: "Les autres joueurs apparaissent en direct et marchent à côté de soi, dans des salons de 40 (Town #1, #2…). Seuls le personnage, sa couleur et sa case sont partagés : ni nom, ni texte, et chaque message reçu est vérifié.",
+          EN: "Other players show up live and walk next to you, in rooms of 20 (Town #1, #2…), and can greet each other with three fixed lines. Nothing is stored: only the character, its skin and its position cross the wire.",
+          FR: "Les autres joueurs apparaissent en direct et marchent à côté de soi, dans des salons de 20 (Town #1, #2…), et peuvent se saluer avec trois phrases toutes faites. Rien n'est stocké : seuls le personnage, sa couleur et sa position circulent.",
         } as L,
       },
       {
-        title: { EN: "A live chat on every page", FR: "Un live chat sur toutes les pages" } as L,
+        title: { EN: "A town chat", FR: "Un chat de la ville" } as L,
         text: {
-          EN: "A floating button bottom-right opens a Twitch-style panel (a bottom sheet on phones). Post with a SkillxTube account for a ✓ name, or with a nickname. SkillxTube runs the moderation: no links, no personal info, kind language, no caps lock, slow mode, a daily limit and a report button on every message.",
-          FR: "Un bouton flottant en bas à droite ouvre un panneau façon Twitch (un tiroir sur mobile). On poste avec un compte SkillxTube pour un nom ✓, ou avec un pseudo. SkillxTube gère la modération : pas de liens, pas d'infos perso, un langage bienveillant, pas de majuscules, un mode lent, une limite par jour et un bouton de signalement sur chaque message.",
+          EN: "A live chat sits right next to the town map. Post with a SkillxTube account for a ✓ name, or with a nickname. SkillxTube runs the moderation: no links, no personal info, kind language, no caps lock, slow mode, a daily limit and a report button on every message.",
+          FR: "Un chat en direct est posé juste à côté de la carte de la ville. On poste avec un compte SkillxTube pour un nom ✓, ou avec un pseudo. SkillxTube gère la modération : pas de liens, pas d'infos perso, un langage bienveillant, pas de majuscules, un mode lent, une limite par jour et un bouton de signalement sur chaque message.",
         } as L,
       },
     ],
@@ -2460,15 +2464,15 @@ export const skillxGames = {
       {
         title: { EN: "Beat SkillxTube", FR: "Battre SkillxTube" } as L,
         text: {
-          EN: "Each run is dealt and checked by SkillxTube, so every score is fair, and it counts for Team SkillXGames on the shared board.",
-          FR: "Chaque partie est distribuée et vérifiée par SkillxTube, donc chaque score est juste, et elle compte pour l'équipe SkillXGames sur le classement commun.",
+          EN: "Levels, three lives and a score. Bests show in the Trophy Hall, and the two classics, Zip vs the Brainrot and Later's Queue, also score for Team SkillXGames on the shared board.",
+          FR: "Des niveaux, trois vies et un score. Les records s'affichent dans le Trophy Hall, et les deux classiques, Zip vs the Brainrot et Later's Queue, comptent aussi pour l'équipe SkillXGames sur le classement commun.",
         } as L,
       },
       {
         title: { EN: "Learn the skill", FR: "Apprendre la compétence" } as L,
         text: {
-          EN: "Each game trains one skill, and SkillxTube turns it into a learning path you can prove. Sign-in always goes through SkillxTube.",
-          FR: "Chaque jeu entraîne une compétence, et SkillxTube en fait un parcours d'apprentissage qu'on peut prouver. La connexion passe toujours par SkillxTube.",
+          EN: "Each game trains one skill, and every run ends with a link to SkillxTube's lessons, where the skill becomes a learning path you can prove.",
+          FR: "Chaque jeu entraîne une compétence, et chaque partie se termine par un lien vers les leçons de SkillxTube, où la compétence devient un parcours d'apprentissage qu'on peut prouver.",
         } as L,
       },
     ],
@@ -2485,34 +2489,34 @@ export const skillxGames = {
   },
   shots: [
     {
-      src: "/projects/skillxgames/01-hero.aece3f2689.webp",
+      src: "/projects/skillxgames/01-home.319067e17c.webp",
       width: 1040,
-      height: 650,
+      height: 520,
       alt: {
-        EN: "SkillxGames home: “Small games. Sharp minds.” beside a coral arcade cabinet",
-        FR: "Accueil de SkillxGames : « Small games. Sharp minds. » à côté d'une borne d'arcade corail",
+        EN: "SkillXGames home: “Small games. Sharp minds.”, 299 games, 14 categories, 299 playable, beside the autumn arcade cabinet",
+        FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 299 jeux, 14 catégories, 299 jouables, à côté de la borne d'arcade d'automne",
       } as L,
-      caption: { EN: "The home page", FR: "La page d'accueil" } as L,
+      caption: { EN: "The home page, in its autumn look", FR: "La page d'accueil, en tenue d'automne" } as L,
     },
     {
-      src: "/projects/skillxgames/02-memory-match.a24861ec80.webp",
+      src: "/projects/skillxgames/02-game-page.0e16158eed.webp",
       width: 1040,
-      height: 728,
+      height: 636,
       alt: {
-        EN: "Memory Match mid-game: 4 pairs out of 8 found in 12 moves",
-        FR: "Memory Match en cours de partie : 4 paires sur 8 trouvées en 12 coups",
+        EN: "A game page: Memory Match on a dot-matrix display, with level, length, Start, Record and Full screen",
+        FR: "Une page de jeu : Memory Match sur un écran à matrice de points, avec niveau, durée, Start, Record et plein écran",
       } as L,
-      caption: { EN: "Memory Match, the first playable game", FR: "Memory Match, le premier jeu jouable" } as L,
+      caption: { EN: "One page per game, with Record", FR: "Une page par jeu, avec Record" } as L,
     },
     {
-      src: "/projects/skillxgames/03-game-library.e48113eff7.webp",
+      src: "/projects/skillxgames/03-universes.546a65d899.webp",
       width: 1040,
-      height: 583,
+      height: 838,
       alt: {
-        EN: "The game library: search, category filters and cartridge-like game cards",
-        FR: "La ludothèque : recherche, filtres par catégorie et cartes de jeu en forme de cartouche",
+        EN: "“Pick your kind of challenge”: the universes from Memory to Absurd Bureaucracy, with Halloween live",
+        FR: "« Pick your kind of challenge » : les univers, de Memory à Absurd Bureaucracy, avec Halloween en direct",
       } as L,
-      caption: { EN: "The library, one cartridge per game", FR: "La ludothèque, une cartouche par jeu" } as L,
+      caption: { EN: "The universes, one zone each", FR: "Les univers, une zone chacun" } as L,
     },
   ],
 };

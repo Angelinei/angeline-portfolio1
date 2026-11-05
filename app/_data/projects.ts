@@ -171,8 +171,8 @@ export const projects: Project[] = [
     subtitle: { EN: "Small games. Sharp minds.", FR: "Petits jeux. Esprits vifs." },
     eyebrow: { EN: "GAME DESIGN · WEB · 2026", FR: "GAME DESIGN · WEB · 2026" },
     summary: {
-      EN: "The playful side of SkillxTube: an AI-powered arcade of 299 short skill games across 13 universes, with a pixel town, seasons and a crew of mascots.",
-      FR: "Le côté ludique de SkillxTube : une arcade de 299 jeux de compétences courts, propulsée par l'IA, répartie en 13 univers, avec une ville en pixels, des saisons et une bande de mascottes.",
+      EN: "The playful side of SkillxTube: an AI-powered arcade of 299 short skill games across 14 universes, with a pixel town, seasons and a crew of mascots.",
+      FR: "Le côté ludique de SkillxTube : une arcade de 299 jeux de compétences courts, propulsée par l'IA, répartie en 14 univers, avec une ville en pixels, des saisons et une bande de mascottes.",
     },
     marquee: "Small games. Sharp minds. Insert coin to continue.",
     tags: ["Game design", "Next.js", "Tailwind CSS", "Vercel"],
@@ -204,8 +204,8 @@ export const projects: Project[] = [
     intention: {
       list: [
         {
-          EN: "299 games in 13 universes: Memory, Puzzle, Logic, Quick Games, Adventure, Skillz, Social Media, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room and Seasonal",
-          FR: "299 jeux dans 13 univers : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Skillz, Réseaux sociaux, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room et Saisonnier",
+          EN: "299 games in 14 universes: Memory, Puzzle, Logic, Quick Games, Adventure, Skillz, Social Media, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room, Edu Casino and Seasonal",
+          FR: "299 jeux dans 14 univers : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Skillz, Réseaux sociaux, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room, Edu Casino et Saisonnier",
         },
         {
           EN: "Real skills turned into games: spot a con, read a chart, manage a first paycheck, write a better hook, survive absurd paperwork",
@@ -246,31 +246,31 @@ export const projects: Project[] = [
       ],
     },
     captions: {
-      "01-hero.aece3f2689.webp": {
+      "01-home.319067e17c.webp": {
         alt: {
-          EN: "SkillXGames home: “Small games. Sharp minds.” beside a coral arcade cabinet, with the games, categories and playable counters",
-          FR: "Accueil de SkillXGames : « Small games. Sharp minds. » à côté d'une borne d'arcade corail, avec les compteurs de jeux, catégories et jeux jouables",
+          EN: "SkillXGames home: “Small games. Sharp minds.”, 299 games, 14 categories, 299 playable, beside the autumn arcade cabinet",
+          FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 299 jeux, 14 catégories, 299 jouables, à côté de la borne d'arcade d'automne",
         },
-        caption: { EN: "The home page.", FR: "La page d'accueil." },
+        caption: { EN: "The home page, in its autumn look.", FR: "La page d'accueil, en tenue d'automne." },
       },
-      "02-memory-match.a24861ec80.webp": {
+      "02-game-page.0e16158eed.webp": {
         alt: {
-          EN: "Memory Match mid-game: 4 pairs out of 8 found in 12 moves, with the how-to-play steps on the left",
-          FR: "Memory Match en cours de partie : 4 paires sur 8 trouvées en 12 coups, avec les règles à gauche",
+          EN: "A game page: Memory Match on a dot-matrix display, with level, length, Start, Record and Full screen",
+          FR: "Une page de jeu : Memory Match sur un écran à matrice de points, avec niveau, durée, Start, Record et plein écran",
         },
         caption: {
-          EN: "Memory Match, the first playable game: moves, time and pairs are counted live.",
-          FR: "Memory Match, le premier jeu jouable : coups, temps et paires sont comptés en direct.",
+          EN: "One page for every game: start screen, how to play, Record and full screen.",
+          FR: "Une page pour chaque jeu : écran de départ, règles, Record et plein écran.",
         },
       },
-      "03-game-library.e48113eff7.webp": {
+      "03-universes.546a65d899.webp": {
         alt: {
-          EN: "The game library: a search field, category filters and cartridge-like game cards with level and play time",
-          FR: "La ludothèque : un champ de recherche, des filtres par catégorie et des cartes de jeu en forme de cartouche avec niveau et durée",
+          EN: "“Pick your kind of challenge”: the universes from Memory to Absurd Bureaucracy, with Halloween live",
+          FR: "« Pick your kind of challenge » : les univers, de Memory à Absurd Bureaucracy, avec Halloween en direct",
         },
         caption: {
-          EN: "The library: search, filter by category, one cartridge per game.",
-          FR: "La ludothèque : recherche, filtre par catégorie, une cartouche par jeu.",
+          EN: "The universes: pick a zone, from Memory to Absurd Bureaucracy, plus the seasonal event.",
+          FR: "Les univers : on choisit une zone, de Memory à Absurd Bureaucracy, plus l'événement de saison.",
         },
       },
     },
