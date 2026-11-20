@@ -1481,8 +1481,8 @@ export const designPortfolioText = {
     FR: "Voir la bande",
   },
   "gang.img0": {
-    EN: "Zip, the red mascot with a lightning tuft",
-    FR: "Zip, la mascotte rouge à mèche-éclair",
+    EN: "Zip, the red flame mascot in his striped scarf, waving",
+    FR: "Zip, la mascotte flamme rouge dans son écharpe rayée, qui salue",
   },
   "gang.5": {
     EN: "Zip",
@@ -1497,8 +1497,8 @@ export const designPortfolioText = {
     FR: "Transforme les vidéos YouTube en vrais projets. Le seul qui garde la tête froide.",
   },
   "gang.img1": {
-    EN: "Buffer, the blue loading spinner",
-    FR: "Buffer, le cercle de chargement bleu",
+    EN: "Buffer, the blue loading spinner, hand on his chin",
+    FR: "Buffer, le cercle de chargement bleu, la main au menton",
   },
   "gang.8": {
     EN: "Buffer",
@@ -1545,8 +1545,8 @@ export const designPortfolioText = {
     FR: "Impatient, cash, ne parle qu'après 5 secondes. Grand frère de Buffer en secret.",
   },
   "gang.img4": {
-    EN: "Later, rolled up in his purple duvet with his phone",
-    FR: "Later, roulé dans sa couette violette avec son téléphone",
+    EN: "Later, the bear dozing in his navy quilted sleeping bag",
+    FR: "Later, l'ourson qui somnole dans son sac de couchage matelassé bleu marine",
   },
   "gang.17": {
     EN: "Later",
@@ -1561,8 +1561,8 @@ export const designPortfolioText = {
     FR: "Roulé dans sa couette, une pile de vidéos qu'il regardera « demain ». A peur de commencer.",
   },
   "gang.img5": {
-    EN: "Thumby, the thumbnail with an O-shaped mouth",
-    FR: "Thumby, la miniature à la bouche en O",
+    EN: "Thumby, the coral thumbnail with a timestamp, hands on his hips",
+    FR: "Thumby, la miniature corail avec son horodatage, les mains sur les hanches",
   },
   "gang.20": {
     EN: "Thumby",
@@ -1577,12 +1577,12 @@ export const designPortfolioText = {
     FR: "Surjoue tout, bouche en O permanente. Bouche fermée, personne ne le reconnaît.",
   },
   "gang.img6": {
-    EN: "CC smiling, subtitle Zip is happy",
-    FR: "CC qui sourit, sous-titre Zip is happy",
+    EN: "CC taking notes, subtitle Zip is happy",
+    FR: "CC qui prend des notes, sous-titre Zip is happy",
   },
   "gang.img7": {
-    EN: "CC blushing, subtitle CC is not blushing",
-    FR: "CC qui rougit, sous-titre CC is not blushing",
+    EN: "CC taking notes, subtitle CC is not blushing",
+    FR: "CC qui prend des notes, sous-titre CC is not blushing",
   },
   "gang.23": {
     EN: "CC",

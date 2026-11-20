@@ -49,6 +49,14 @@ import img22 from "../_assets/design/skip.webp";
 import img23 from "../_assets/design/later.webp";
 import img24 from "../_assets/design/thumby.webp";
 import img25 from "../_assets/design/cc-blushing.webp";
+import gangZip from "../_assets/design/gang-v3-zip.webp";
+import gangBuffer from "../_assets/design/gang-v3-buffer.webp";
+import gangDing from "../_assets/design/gang-v3-ding.webp";
+import gangSkip from "../_assets/design/gang-v3-skip.webp";
+import gangLater from "../_assets/design/gang-v3-later.webp";
+import gangThumby from "../_assets/design/gang-v3-thumby.webp";
+import gangCcHappy from "../_assets/design/gang-v3-cc-happy.webp";
+import gangCcBlushing from "../_assets/design/gang-v3-cc-blushing.webp";
 import img26 from "../_assets/design/tiktok-ep5-later.webp";
 import img27 from "../_assets/design/tiktok-ep7-teaser.webp";
 import img28 from "../_assets/design/tiktok-ep7-gang.webp";
@@ -1923,7 +1931,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </div>
         <div style={{ marginTop: "28px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
           <div style={{ background: "#FFE8EA", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img2} alt={t("gang.img0")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangZip} alt={t("gang.img0")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.5")}
@@ -1937,7 +1945,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img21} alt={t("gang.img1")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangBuffer} alt={t("gang.img1")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.8")}
@@ -1951,7 +1959,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img4} alt={t("gang.img2")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangDing} alt={t("gang.img2")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.11")}
@@ -1965,7 +1973,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img22} alt={t("gang.img3")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangSkip} alt={t("gang.img3")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.14")}
@@ -1979,7 +1987,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img23} alt={t("gang.img4")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangLater} alt={t("gang.img4")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.17")}
@@ -1993,7 +2001,7 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div style={{ background: "#F7F7F5", borderRadius: "12px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px" }}>
-            <Image src={img24} alt={t("gang.img5")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
+            <Image src={gangThumby} alt={t("gang.img5")} width={120} height={128} loading="lazy" style={{ width: "120px", height: "128px", objectFit: "contain" }} />
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
               <span style={{ fontSize: "22px", fontWeight: "900" }}>
                 {t("gang.20")}
@@ -2009,8 +2017,8 @@ export function DesignPortfolio({ lang }: { lang: Lang }) {
         </div>
         <div style={{ marginTop: "12px", background: "#F1ECFC", borderRadius: "12px", padding: "24px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "28px" }}>
           <div style={{ display: "flex", gap: "12px", alignItems: "flex-end" }}>
-            <Image src={img3} alt={t("gang.img6")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
-            <Image src={img25} alt={t("gang.img7")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
+            <Image src={gangCcHappy} alt={t("gang.img6")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
+            <Image src={gangCcBlushing} alt={t("gang.img7")} width={130} height={139} loading="lazy" style={{ width: "130px", height: "139px", objectFit: "contain" }} />
           </div>
           <div style={{ flex: "1 1 280px", minWidth: "0" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
