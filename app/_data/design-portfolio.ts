@@ -1089,8 +1089,8 @@ export const designPortfolioText = {
     FR: "For makers : gratuit, ou on génère",
   },
   "pricing.3": {
-    EN: "First a 7-step credit slider, then three Orchestra-style cards, then two cards on a dark background: the library free, a fee only to generate a custom path. Since November 2, 2026, learning is free: no plan, no card, and optional SkillXP packs are the only purchase.",
-    FR: "D'abord un curseur de crédits à 7 crans, puis trois cartes façon Orchestra, puis deux cartes sur fond sombre : la bibliothèque gratuite, un paiement seulement pour générer un parcours sur mesure. Depuis le 2 novembre 2026, apprendre est gratuit : sans abonnement, sans carte, et des packs de SkillXP optionnels sont le seul achat.",
+    EN: "First a 7-step credit slider, then three Orchestra-style cards, then two cards on a dark background: the library free, a fee only to generate a custom path. Since November 10, 2026, two cards again: Free (the 4 hand-made paths and 1 library path) and SkillxTube Unlimited, one plan at $12.99 a month for the whole catalogue.",
+    FR: "D'abord un curseur de crédits à 7 crans, puis trois cartes façon Orchestra, puis deux cartes sur fond sombre : la bibliothèque gratuite, un paiement seulement pour générer un parcours sur mesure. Depuis le 10 novembre 2026, de nouveau deux cartes : Free (les 4 parcours faits main et 1 parcours de la bibliothèque) et SkillxTube Unlimited, un seul abonnement à 12,99 $ par mois pour tout le catalogue.",
   },
   "pricing.4": {
     EN: "The Generate card carries a 3, 7 or 14-day picker, and the pay once / monthly toggle stays on top.",
