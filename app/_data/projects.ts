@@ -94,8 +94,8 @@ export const projects: Project[] = [
       FR: "PRODUIT DIGITAL · EDTECH · 2026",
     },
     summary: {
-      EN: "SkillxTube turns YouTube videos into 3, 7 or 14-day learning paths: one daily challenge, and proof that unlocks the next day. Free since November 2026.",
-      FR: "SkillxTube transforme les vidéos YouTube en parcours de 3, 7 ou 14 jours : un défi par jour, et une preuve qui débloque le jour suivant. Gratuit depuis novembre 2026.",
+      EN: "SkillxTube turns YouTube videos into 3, 7 or 14-day learning paths: one daily challenge, and proof that unlocks the next day. Free to start, then one plan for the whole catalogue: SkillxTube Unlimited at $12.99 a month.",
+      FR: "SkillxTube transforme les vidéos YouTube en parcours de 3, 7 ou 14 jours : un défi par jour, et une preuve qui débloque le jour suivant. Gratuit pour commencer, puis un seul abonnement pour tout le catalogue : SkillxTube Unlimited à 12,99 $ par mois.",
     },
     marquee: 'From "watch later" to "I made this"',
     tags: ["AI", "EdTech", "Product design", "Next.js"],
@@ -127,12 +127,16 @@ export const projects: Project[] = [
     intention: {
       list: [
         {
-          EN: "Free learning since November 2, 2026: every ready path, every day of it, daily challenges and proof, quizzes and progress. No plan, no trial, no card",
-          FR: "Un apprentissage gratuit depuis le 2 novembre 2026 : tous les parcours prêts, chacun de leurs jours, défis quotidiens et preuves, quiz et progression. Sans abonnement, sans essai, sans carte",
+          EN: "Free to start: the 4 hand-made paths and 1 path of your choice from the library, with daily challenges and proof, quizzes and progress. No card",
+          FR: "Gratuit pour commencer : les 4 parcours faits main et 1 parcours au choix dans la bibliothèque, avec défis quotidiens et preuves, quiz et progression. Sans carte",
         },
         {
-          EN: "SkillXP, earned by learning and playing, unlocks the guides and templates of The Library; optional SkillXP packs are the only learner purchase",
-          FR: "Les SkillXP, gagnés en apprenant et en jouant, débloquent les guides et modèles de la Library ; des packs de SkillXP optionnels sont le seul achat côté apprenant",
+          EN: "One plan for the whole catalogue: SkillxTube Unlimited, $12.99 a month, opens every path in the library (553 skills, 3, 7 or 14 days) and new ones as they come. Cancel anytime; paths already started stay yours",
+          FR: "Un seul abonnement pour tout le catalogue : SkillxTube Unlimited, 12,99 $ par mois, ouvre tous les parcours de la bibliothèque (553 compétences, 3, 7 ou 14 jours) et les nouveaux au fil de l'eau. Sans engagement ; les parcours commencés restent acquis",
+        },
+        {
+          EN: "SkillXP, earned by learning and playing, unlocks the guides and templates of The Library; optional SkillXP packs for those in a hurry",
+          FR: "Les SkillXP, gagnés en apprenant et en jouant, débloquent les guides et modèles de la Library ; des packs de SkillXP optionnels pour les plus pressés",
         },
         {
           EN: "The Arcade, the Community and the Wall of Fame keep learners coming back, with Zip and the crew as guides",
