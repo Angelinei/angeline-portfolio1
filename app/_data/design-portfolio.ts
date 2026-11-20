@@ -2363,8 +2363,8 @@ export const skillxGames = {
   } as L,
   facts: [
     {
-      EN: "299 games in 14 universes, from Memory to Edu Casino",
-      FR: "299 jeux dans 14 univers, de la Mémoire à l'Edu Casino",
+      EN: "Nearly 300 games in 15 universes, from Memory to Skillx Valley",
+      FR: "Près de 300 jeux dans 15 univers, de la Mémoire à Skillx Valley",
     },
     {
       EN: "One page per game, with a Record button to share a run as a clip",
@@ -2489,14 +2489,14 @@ export const skillxGames = {
   },
   shots: [
     {
-      src: "/projects/skillxgames/01-home.319067e17c.webp",
+      src: "/projects/skillxgames/01-home.65d65626d9.webp",
       width: 1040,
-      height: 520,
+      height: 528,
       alt: {
-        EN: "SkillXGames home: “Small games. Sharp minds.”, 299 games, 14 categories, 299 playable, beside the autumn arcade cabinet",
-        FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 299 jeux, 14 catégories, 299 jouables, à côté de la borne d'arcade d'automne",
+        EN: "SkillXGames home: “Small games. Sharp minds.”, 289 games, 15 categories, 289 guides, beside the arcade console",
+        FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 289 jeux, 15 catégories, 289 guides, à côté de la console d'arcade",
       } as L,
-      caption: { EN: "The home page, in its autumn look", FR: "La page d'accueil, en tenue d'automne" } as L,
+      caption: { EN: "The home page", FR: "La page d'accueil" } as L,
     },
     {
       src: "/projects/skillxgames/02-game-page.0e16158eed.webp",

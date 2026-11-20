@@ -171,14 +171,14 @@ export const projects: Project[] = [
     subtitle: { EN: "Small games. Sharp minds.", FR: "Petits jeux. Esprits vifs." },
     eyebrow: { EN: "GAME DESIGN · WEB · 2026", FR: "GAME DESIGN · WEB · 2026" },
     summary: {
-      EN: "The playful side of SkillxTube: an AI-powered arcade of 299 short skill games across 14 universes, with a pixel town, seasons and a crew of mascots.",
-      FR: "Le côté ludique de SkillxTube : une arcade de 299 jeux de compétences courts, propulsée par l'IA, répartie en 14 univers, avec une ville en pixels, des saisons et une bande de mascottes.",
+      EN: "The playful side of SkillxTube: an AI-powered arcade of nearly 300 short skill games across 15 universes, with a pixel town, seasons and a crew of mascots.",
+      FR: "Le côté ludique de SkillxTube : une arcade de près de 300 jeux de compétences courts, propulsée par l'IA, répartie en 15 univers, avec une ville en pixels, des saisons et une bande de mascottes.",
     },
     marquee: "Small games. Sharp minds. Insert coin to continue.",
     tags: ["Game design", "Next.js", "Tailwind CSS", "Vercel"],
     year: "2026",
     visual: "games",
-    tint: "#FFF6E5",
+    tint: "#FFF5E1",
     marqueeColor: "#FFC72C",
     ink: "#C0361A",
     intro: {
@@ -204,8 +204,8 @@ export const projects: Project[] = [
     intention: {
       list: [
         {
-          EN: "299 games in 14 universes: Memory, Puzzle, Logic, Quick Games, Adventure, Skillz, Social Media, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room, Edu Casino and Seasonal",
-          FR: "299 jeux dans 14 univers : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Skillz, Réseaux sociaux, Social Engineering, Money Moves, Absurd Bureaucracy, IQMaxxing, Card Room, Edu Casino et Saisonnier",
+          EN: "Nearly 300 games in 15 universes: Memory, Puzzle, Logic, Quick Games, Adventure, Pro Skills, Social Media, Social Engineering, Money Moves, Absurd Bureaucracy, Skillx Valley, IQMaxxing, Card Room, Edu Casino and Seasonal",
+          FR: "Près de 300 jeux dans 15 univers : Mémoire, Puzzle, Logique, Jeux rapides, Aventure, Pro Skills, Réseaux sociaux, Social Engineering, Money Moves, Absurd Bureaucracy, Skillx Valley, IQMaxxing, Card Room, Edu Casino et Saisonnier",
         },
         {
           EN: "Real skills turned into games: spot a con, read a chart, manage a first paycheck, write a better hook, survive absurd paperwork",
@@ -246,12 +246,12 @@ export const projects: Project[] = [
       ],
     },
     captions: {
-      "01-home.319067e17c.webp": {
+      "01-home.65d65626d9.webp": {
         alt: {
-          EN: "SkillXGames home: “Small games. Sharp minds.”, 299 games, 14 categories, 299 playable, beside the autumn arcade cabinet",
-          FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 299 jeux, 14 catégories, 299 jouables, à côté de la borne d'arcade d'automne",
+          EN: "SkillXGames home: “Small games. Sharp minds.”, 289 games, 15 categories, 289 guides, beside the arcade console",
+          FR: "Accueil de SkillXGames : « Small games. Sharp minds. », 289 jeux, 15 catégories, 289 guides, à côté de la console d'arcade",
         },
-        caption: { EN: "The home page, in its autumn look.", FR: "La page d'accueil, en tenue d'automne." },
+        caption: { EN: "The home page.", FR: "La page d'accueil." },
       },
       "02-game-page.0e16158eed.webp": {
         alt: {
